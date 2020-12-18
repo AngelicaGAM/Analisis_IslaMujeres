@@ -1,0 +1,221 @@
+library(arules)
+library(dplyr)
+library(arulesViz)
+library(readr)
+library(ggplot2)
+
+##########################################################################################
+############################ PRUEBA DEL LIBRO IGNORAR ####################################
+
+
+data(Boston, package = "MASS")
+b <- Boston
+#View(b)
+
+b$chas <- factor(b$chas,labels=c("river","noriver"))
+b$rad <- factor(b$rad)
+#View(b)
+
+b$black <- cut(b$black,breaks=4,labels=c(">31.5%","18.5-31.5%","8-18.5%","<8%"))
+discr <- function(x) cut(x,breaks=4, labels=c("low","medLow","medHigh","high"))
+
+b <- select(b,-one_of(c("chas","rad","black"))) %>%
+ mutate_each(funs(discr)) %>%
+ bind_cols(select(b,one_of(c("chas","rad","black"))))
+
+View(b)
+b <- as(b,"transactions")
+b
+summary(b)
+
+itemFrequencyPlot(b, support=0.3,cex.names=0.8)
+ars <- apriori(b, parameter=list(support=0.025, confidence=0.75))
+
+table(discr(Boston$medv))
+
+inspect(head(subset(ars, subset=rhs %in% "medv=high"),5,by="confidence"))
+
+inspect(head(subset(ars, subset=rhs %in% "medv=low"),5,by="confidence"))
+
+
+somerules <- subset(ars, subset=rhs %in% c("medv=high","medv=medHigh") & confidence>0.75)
+plot(somerules, method="matrix", measure="lift")
+
+somerules <- subset(ars, subset=rhs %in% "medv=high" & confidence > 0.95)
+plot(somerules, method="graph", control=list(type="itemsets"))
+ 
+
+# - - - - - - - - - - - - - - - - - FIN DEL PRUEBAS - - - - - - - - - - - - - - - - -- - #
+
+
+
+##########################################################################################
+################ INICIO DE PRUEBAS DE LAS SALINAS CON ASOCIACION #########################
+
+
+# - - - - - - - - - - - - - - - Lectura de la libreria - - - - - - - - - - - - - - - - - #
+datos <- read_csv("word_library.csv",skip = 0,col_names = TRUE)
+
+##########################################################################################
+############ PRUEBA 1 ME LLAMO LA ATENCION; ESTA MAL PERO ES INTERESANTE #################
+
+b <- datos[,c(2,3,4)]
+
+b$Sentimen_1 <- factor(b$Sentiment_1, labels = c("Sentiment"))
+b$word <- factor(b$word)
+
+
+discr <- function(x) cut(b$Sentiment,2, labels=c("Positivo", "Negativo"))
+
+b <- select(b,-one_of(c("Sentiment"))) %>%
+   mutate_each(funs(discr, "discr")) %>%
+   bind_cols(select(b,one_of(c("Sentiment"))))
+
+#View(b)
+b <- as(b,"transactions")
+summary(b)
+
+
+
+itemFrequencyPlot(b, support=0.3,cex.names=0.8)
+ars <- apriori(b, parameter=list(support=0.025, confidence=0.75))
+
+
+
+somerules <- subset(ars, confidence>0.75)
+plot(somerules, method="matrix", measure="lift")
+
+somerules <- subset(ars, confidence > 0.95)
+plot(somerules, method="graph", control=list(type="itemsets"))
+
+
+
+
+##########################################################################################
+############### PRUEBAS DE GRAFICACION DE FRECUENCIA DE LOS ITEMS ########################
+
+graficar_f <- function(b){
+   
+   soporte <- 30 / dim(b)[1]
+   itemsets <- apriori(data = b,parameter = list(support = soporte,minlen = 1,maxlen = 20,target = "frequent itemset"))
+   top_itemsets <- sort(itemsets, by = "support", decreasing = TRUE)
+   
+   
+   as(top_itemsets, Class = "data.frame") %>%
+      ggplot(aes(x = reorder(items, support), y = support)) +
+      geom_col() +
+      coord_flip() +
+      labs(title = "Itemsets más frecuentes", x = "itemsets") +
+      theme_bw()
+}
+
+##########################################################################################
+############## PRUEBA 2 CON EDICION DE REPRESSENTACION POR NOMBRE ########################
+
+#------------------------------- Prueba con Sentiment -----------------------------------#
+
+b <- datos[,c(1,3)]
+
+b$Sentiment <- factor(b$Sentiment)
+b$edicion <- factor(b$edicion)
+
+b <- as(b,"transactions")
+summary(b)
+
+itemFrequencyPlot(b, support=0.3,cex.names=0.8)
+ars <- apriori(b, parameter=list(support=0.015, confidence=0.015))
+
+
+inspect(b)
+
+somerules <- subset(ars, confidence>0.015)
+plot(somerules, method="matrix", measure="lift")
+
+somerules <- subset(ars, confidence > 0.015)
+plot(somerules, method="graph", control=list(type="itemsets"))
+
+graficar(b)
+
+#------------------------------ Prueba con Sentiment_1 ----------------------------------#
+
+b <- datos[,c(1,4)]
+
+b$Sentiment_1 <- factor(b$Sentiment_1)
+b$edicion <- factor(b$edicion)
+
+b <- as(b,"transactions")
+summary(b)
+
+itemFrequencyPlot(b, support=0.3,cex.names=0.8)
+ars <- apriori(b, parameter=list(support=0.015, confidence=0.015))
+
+
+somerules <- subset(ars, confidence>0.015)
+plot(somerules, method="matrix", measure="lift")
+
+somerules <- subset(ars, confidence > 0.015)
+plot(somerules, method="graph", control=list(type="itemsets"))
+
+graficar(b)
+
+##########################################################################################
+############## PRUEBA 3 CON EDICION DE REPRESSENTACION POR NOMBRE ########################
+
+#------------------------------- Prueba con Sentiment -----------------------------------#
+
+# Training Apriori on the dataset 
+b <- datos[,c(1,3)]
+b$edicion <- factor(b$edicion)
+b$Sentiment <- factor(b$Sentiment)
+
+
+#b <- as(b,"transactions")
+#View(b)
+b <- as(b,"transactions")
+#View(b)
+summary(b)
+
+itemFrequencyPlot(b, support=0.3,cex.names=0.8)
+associa_rules = apriori(data = b,  parameter = list(support=0.01, confidence = 0.2))
+# Cambiar parameter por el siguiente para obtener asociaciones de todos los valores:
+                                  #   parameter = list(support = 0.005,  
+                                       #    confidence = 0.05)) 
+
+inspect(sort(associa_rules, by = 'lift')) 
+plot(associa_rules, method = "graph",  
+     measure = "confidence", shading = "lift") 
+
+graficar(b)
+
+
+#------------------------------ Prueba con Sentiment_1 ----------------------------------#
+
+# Training Apriori on the dataset 
+b <- datos[,c(1,4)]
+b$edicion <- factor(b$edicion)
+b$Sentiment_1 <- factor(b$Sentiment_1)
+
+
+#b <- as(b,"transactions")
+#View(b)
+b <- as(b,"transactions")
+#View(b)
+summary(b)
+
+itemFrequencyPlot(b, support=0.3,cex.names=0.8)
+associa_rules = apriori(data = b,  parameter = list(support=0.01, confidence = 0.2))
+# Cambiar parameter por el siguiente para obtener valores de los 3 sentimientos:
+                             #        parameter = list(support = 0.005,  
+                                 #             confidence = 0.05)) 
+
+inspect(sort(associa_rules, by = 'lift')) 
+plot(associa_rules, method = "graph",  
+     measure = "confidence", shading = "lift") 
+
+graficar(b)
+
+plot(associa_rules, method="paracoord", control=list(reorder=TRUE))
+
+
+
+

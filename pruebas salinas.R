@@ -14,7 +14,7 @@ library(ggraph)
 
 library(janitor)
 library(dplyr)
-  source("UC/Proyecto Terminal/Analisis_IslaMujeres/limpieza.R")
+  source("limpieza.R")
 
 sentiment <- sentiment[1:461]
 sentiment1 <- sentiment1[1:461]
@@ -119,12 +119,6 @@ show_result_2(sentiment, text_word_df,sent_df)
 text_word_df1 <- Final_df %>%
   unnest_tokens(bigram, RESPUESTA, token = "ngrams", n = 2)
 text_word_df1 <- text_word_df1[-c(1),]
-text_word_df1
-
-text_word_df12 <- Final_df %>%
-  unnest_tokens(bigram, RESPUESTA, token = "ngrams", n = 3)
-text_word_df12 <- text_word_df1[-c(1),]
-text_word_df12
 
 
 text_word_df1 %>%
@@ -225,14 +219,14 @@ ggraph(bigram_graph, layout = "fr") +
   geom_node_text(aes(label = name), vjust = 1, hjust = 1)
 
 
-set.seed(2020)
+set.seed(2016)
 a <- grid::arrow(type = "closed", length = unit(.15, "inches"))
 ggraph(bigram_graph, layout = "fr") +
   geom_edge_link(aes(edge_alpha = n), show.legend = FALSE,
-                 arrow = a, end_cap = circle(.09, 'inches')) +
+                 arrow = a, end_cap = circle(.07, 'inches')) +
   geom_node_point(color = "lightblue", size = 5) +
   geom_node_text(aes(label = name), vjust = 1, hjust = 1) +
   theme_void()
 
-bigram_graph
+
 

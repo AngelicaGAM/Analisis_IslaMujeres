@@ -1,0 +1,247 @@
+"texto","valor"
+Hombre,H
+Mujer,M
+Otro,O
+Autobus,AUTOBUS
+"Combi, Colectivo",COMBI-COLECTIVO
+Taxi,TAXI
+Mototaxi,MOTOTAXI
+Motocicleta,MOTOCICLETA
+Automovil propio,AUTOMOVIL PROPIO
+Otro,OTRO
+Mercado de la colonia,MERCADO
+"Tienda de abarrotes, carnicerias de la colonia",ABARROTE-COLONIA
+Super mercado,SUPERMERCADO
+"Tienda de conveniencia(GoMart, Circle K)",CONVENIENCIA
+Plaza comercial,PLAZA
+Otro,OTRO
+Me atiendo en casa,CASA
+Médico particular en la comunidad,PARTICULAR-COMUNIDAD
+Médico particular Cancún,PARTICULAR-CANCUN
+Hospital General Cancún,HOSPITAL GENERAL
+Cruz Roja,CRUZ-ROJA
+Farmacia con consultorio,FARMACIA
+Otro,OTRO
+Parque,PARQUE
+Unidad deportiva,UNIDAD-DEPORTIVA
+Jardines,JARDINES
+Centro comunitario,CENTRO-COMUNITARIO
+Bilioteca,BIBLIOTECA
+Otro,OTRO
+Ninguna,NINGUNA
+Uno,UNO
+Dos,DOS
+Tres,TRES
+Cuatro,CUATRO
+Cinco o más,CINCO-MAS
+"Actividad agrícola, ganadera, pesca o caza",AGRICULA
+Industria y construcción,INDUSTRIA
+"Comercio, servicios, actividad gubernamental, educación, investigación, oficios",COMERCIO
+Jubilado pensionado,JUBILADO
+"Empresario, con cargo en el gobierno o representante popular.",EMPRESARIO
+Patrón o dueño.,PATRON
+Trabajador por su cuenta o arrendador.,TRABAJADOR-ARRENDADOR
+Empleado u obrero de nivel medio o superior.,EMPLEADO-MEDIO
+"Empleado u obrero de bajo nivel, sin personal bajo su mando.",EMPLEADO-BAJO
+Jubilado o pensionado.,JUBILADO
+Otro.,OTRO
+"De 0 a $1,200",$0-$1200
+"De $1,201 a $2,500",$1201-2500
+"De $2,501 a $5,000",$2501-$5000
+Más de $5 000,+$5000
+Posgrado,POSTGRADO
+Licenciatura o normal superior valor,LICENCIATURA
+Técnico superior universitario,TECNICO-SUPERIOR
+Normal básica,NORMAL
+Bachillerato o carrera técnica,BACHILLERATO
+Secundaria,SECUNDARIA
+Primaria,PRIMARIA
+Primaria incompleta,PRIMERIA-INCOMPLETA
+Ninguna,NINGUNA
+Ninguna,NINGUNA
+Uno,UNO
+Dos,DOS
+Tres,TRES
+Cuatro,Cuatro
+Cinco o más,CINCO-MAS
+Trabaja en casa,CASA
+Menos de 20 minutos,MENOS DE 20 MINUTOS
+más de 20 minutos y menos de una hora,MAS DE 20 MINUTOS
+Entre una hora y 2 horas,MAS-DE-UNA-HORA
+más de 2 horas,MAS-DE-DOS-HORAS
+Cozumel,COZUMEL
+Felipe Carrillo Partido,FELIPE CARRILLO PUERTO
+Isla Mujeres,ISLA-MUJERES
+Othón P. Blanco,OTHON
+Benito Juarez,BENITO
+José Maria Morelos,JOSE
+Lázaro Cardenaz,LAZARO
+Solidaridad,SOLIDARIDAD
+Tulum,TULUM
+Bacalar,BACALAR
+Puerto Morelos,PUERTO
+Otro,OTRO
+Aguascalientes,AGUASCALIENTES
+Baja California,BAJA CALIFORNIA
+Baja California Sur,BAJA CALIFORNIA SUR
+Campeche,CAMPECHE
+Chiapas,CHIAPAS
+Chihuahua,CHIHUAHUA
+Coahuila,COAHUILA
+Colima,COLIMA
+Distrito Federal,DISTRITO FEDERAL
+Durango,DURANGO
+Estado de México,ESTADO DE MÉXICO
+Guanajuato,GUANAJUATO
+Guerrero,GUERRERO
+Hidalgo,HIDALGO
+Jalisco,JALISCO
+Michoacán,MICHOACÁN
+Morelos,MORELOS
+Nayarit,NAYARIT
+Nuevo León,NUEVO LEON
+Oaxaca,OAXACA
+Puebla,PUEBLA
+Querétaro,QUERÉTARO
+Quintana Roo,QUINTANA ROO
+San Luis Potosí,SAN LUIS POTOSÍ
+Sinaloa,SINALOA
+Sonora,SONORA
+Tabasco,TABASCO
+Tamaulipas,TAMAULIPAS
+Tlaxcala,TLAXCALA
+Veracruz,VERACRUZ
+Yucatán,YUCATÁN
+Zacatecas,ZACATECAS
+Otro Pais,OTRO
+"Recién llegué, menos de un año",MENOS DE UN AÑO
+Entre un año y cinco,ENTRE UN AÑO Y CINCO
+Más de cinco años,MAS DE 5 ANOS
+Toda mi vida,TODA
+si,SI
+no,NO
+si,SI
+no,NO
+si,SI
+no,NO
+si,SI
+no,NO
+si,SI
+no,NO
+si,SI
+no,NO
+si,SI
+no,NO
+si,SI
+no,NO
+si,SI
+no,NO
+si,SI
+no,NO
+si,SI
+no,NO
+Ninguna,NINGUNA
+Católica,CATOLICA
+Evangélica,EVANGELICA
+Testigos de Jehová,TESTIGOS
+Adventista,ADVENTISTA
+Mormon,MORMON
+Otro,OTRO
+Fiestas en honor a la Virgen de Fátima,VIRGEN-FATIMA
+Fiestas patronales,PATRONALES
+Festival de la cultura del Caribe,CULTURA-DEL-CARIBE
+Carnaval,CARNAVAL
+Fin de año,FIN-DE-AÑO
+Día de muertos,DIA-DE-MUERTOS
+Otro,OTRO
+si,SI
+no,NO
+si,SI
+no,NO
+si,SI
+no,NO
+si,SI
+no,NO
+si,SI
+no,NO
+si,SI
+no,NO
+si,SI
+no,NO
+No,NO
+Quizas,QUIZAS
+"Si, en el mismo estado,",MISMO-ESTADO
+"Si, me regreso a mi lugar de origen",LUGAR DE ORIGEN
+"Si, al extranjero",EXTRANJERO
+Benito Juarez (Cancun),BENITO-JUAREZ
+Isla mujeres,ISLA-MUJERES
+Ninguno de los anteriores,NINGUNO
+Nunca,NUNCA
+A veces (varias veces al año),A-VECES
+Frecuentemente(al menos una vez al mes),FRECUENTEMENTE
+Casi siempre(mas de una vez al mes),CASI-SIEMPRE
+Siempre(una vez por semana),SIEMPRE
+si,SI
+no,NO
+si,SI
+no,NO
+si,SI
+no,NO
+si,SI
+no,NO
+si,SI
+no,NO
+si,SI
+no,NO
+Propia,PROPIA
+Prestada por,PRESTADA
+Si,SI
+No,NO
+Si a,SI A
+"Sí, pero solo vinieron a pedirnos desalojar",SI PERO
+"Sí, estamos en pláticas para la reubicación.",PLATICAS
+Herencia,HERENCIA
+Pago de contado,CONTADO
+Pagandola mensual,MENSUAL
+Televisión de paga (cable o satelital),TV-PAGA
+Internet,INTERNET
+Servicio telefónico celular,TELEFONO-CELULAR
+Servicio telefónico fijo,TELEFONO-FIJO
+Energía eléctrica,ELECTRICIDAD
+Agua,AGUA
+Recolección de basura,RECOLECCION-BASURA
+Si,SI
+No,NO
+Dejé mi casa y fui a un refugio.,REFUGIO
+Dejé mi casa y fui a casa de un familiar o amigo,FAMILIAR-AMIGO
+Aquí nos quedamos.,QUEDAMOS
+Vinieron las autoridades a desalojar pero decidimos quedarnos.,AUTORIDADES-QUEDAMOS
+Otro,OTRO
+No tengo otra alternativa de vivienda,NO-ALTERNATIVA
+Me agrada el lugar,ME-AGRADA-EL-LUGAR
+Estoy esperando un crédito y mientras aquí me quedo,ESPERANDO-CREDITO
+La ubicación del trabajo y escuela nos queda más cerca.,TRABAJO-ESCUELA-CERCA
+No dispongo de un trabajo que me permita acceder a un  crédito para vivienda.,NO-ACCESO-A-CREDITO
+Otro.,OTRO
+Si,SI
+No,NO
+Si,SI
+No,NO
+Si,SI
+No,NO
+si,SI
+no,NO
+si,SI
+no,NO
+si,SI
+no,NO
+si,SI
+no,NO
+si,SI
+no,NO
+si,SI
+no,NO
+"Tienda de abarrotes grandes (Dunosusa, Wilys)",ABARROTE-GRANDE
+Asentamiento Irregular o Informal,IRREGULAR
+Rentada y se paga mensual,RENTADA-PAGO-MENSUAL
+Esta en otra situacion,OTRA-SITUACION

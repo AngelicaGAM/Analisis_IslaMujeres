@@ -1,0 +1,12 @@
+name: AnalisisExploratorio
+title: AnalisisExploratorio
+username:
+account: analisisexploratorioislamujeres
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 3739367
+bundleId: 4303145
+url: https://analisisexploratorioislamujeres.shinyapps.io/AnalisisExploratorio/
+when: 1614917345.25644
+asMultiple: FALSE
+asStatic: FALSE

@@ -1,0 +1,1 @@
+Folder where the users uploaded files are stored 

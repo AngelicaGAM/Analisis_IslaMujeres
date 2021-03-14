@@ -1,121 +1,155 @@
-library(shinydashboard)
-library(plotly)
-library(shiny)
-library(ggplot2)
-library(leaflet)
-library(RColorBrewer)
 
+
+library(shinycssloaders)
 
 # header
-header <- dashboardHeader(
-  title="Analisis Exploratorio de Estudios Socio-Economicos y de Percepcion de Seguridad en el Municipio de Isla Mujeres.",
-  titleWidth = 1100
-)
+        header <- dashboardHeader( title="Analisis Exploratorio")
 
 
-# sidebar
-sidebar <- dashboardSidebar(
-  sidebarMenu(id="tabs",
-    # Create two `menuItem()`s, "Dashboard" and "Inputs"
-    menuItem(text = "Graficas", tabName = "graficas", icon = icon("chart-bar")), 
-    conditionalPanel(
-      condition = "input.tabs == 'graficas'", 
-      
-      selectInput(inputId='tipomapa', label = h3('Tipo de visualizacion grafica:'),
-                  choices = c("Barras" = "PO", "Polar" = "BA"  )),
-      
-      selectInput(inputId='seguridad1', label = h3('Graficas:'),
-                  choices = c("Situacion Vivienda" = "V1P1R1" ,
-                              "Adquisicion Vivienda" = "V1P4R1" ,
-                              " Huracanes " = "V1H1" 
-                  )
-      ), 
-      
-      
-      selectInput(inputId='seguridad2', label = h3('Nube de palabras:'),
-      choices = c("Accion Huracanes" = "HU" , "Accion Inundaciones" = "IN" )) 
-      
-      
-      
-    ),
-    menuItem(text = "Mapas",  tabName = "mapas", icon = icon("map-marker-alt")),
-    menuItem(text = "Analisis",  tabName = "analisis", icon = icon("search"))
-    
-  )
-)
+# Menu lateral 
+        sidebar <- dashboardSidebar(
+                sidebarMenu(id="tabs",
+                        tags$head(includeCSS("style.css")),
+                # Dashboard items
+                        menuItem(text = "Inicio",  tabName = "inicio", icon = icon("home")),
+                        menuItem(text = "Graficas", tabName = "graficas", icon = icon("chart-bar")), 
+                                conditionalPanel(condition = "input.tabs == 'graficas'", 
+                                                id="tabsS",
+                                        selectInput(inputId='tipomapa', label = h3('Estudio:'),  choices = c("Percepcion de seguridad" = "PS", "Socioeconómico y ambiental" = "IS" ,"Población y migración" = "EJ"), selected = "EJ")
+                                         
+                                              
+                                                
+
+                                       # selectInput(inputId='seguridad1', label = h3('Graficas:'),choices = c("Situacion Vivienda" = "V1P1R1" , "Adquisicion Vivienda" = "V1P4R1"," Huracanes " = "V1H1", " Inundaciones " = "V1I1")), 
+                                        #selectInput(inputId='seguridad2', label = h3('Nube de palabras:'),choices = c("Accion Huracanes" = "HU" , "Accion Inundaciones" = "IN" )) 
+                                ),
+                        menuItem(text = "Mapas",  tabName = "mapas", icon = icon("map-marker-alt"))
+                        
+                ))
 
 # body
-body <- dashboardBody(
-  tabItems(
-    # First tab content
-    tabItem(tabName = "graficas",
-            fluidRow(
-              column(12,
-                     #infoBox("Estudio socieconimico",55, icon=icon("leaf"), color = "olive", fill = TRUE, width = 12)
-                     infoBox("Percepcion de seguridad",376, icon=icon("lock"),color = "olive", fill = TRUE, width = 12)
-              ),
-              column(1,),
-              column(5,
-                     h1("Graficas")
-              ),
-              column(6,
-                     h1("Nube de palabras")
-              ),
-              
-              column(12,
-                     box(plotOutput("plot1", height = 500, width = 700)),
-                     box(plotOutput("plot2", height = 500, width = 800))
-              )
-            )
-    ),
-    
-    # Second tab content
-    tabItem(tabName = "mapas",
-            column(12,
-                leafletOutput("mymap"), 
-                absolutePanel(id = "controls", class = "panel panel-default", fixed = TRUE,
-                              draggable = TRUE, top = 60, left = "auto", right = 300, bottom = "auto",
-                              width = 330, height = "auto",
-                              column(12,
-                              h2("Analisis Exploratorio"),
-                              selectInput(inputId='showmapa', label = h3('Estudio:'),
-                              choices = c("Socieconimico" = "SO" ,"Percepcion de seguridad" = "PS")
-                              ),
-                              selectInput(inputId='showmapaTip', label = h3('Estudio:'),
-                                          choices = c("Socieconimico" = "SO" ,"Percepcion de seguridad" = "PS")
-                              ),
-                              box(plotOutput("plot3", height = 190, width = 250))
-                              )
+        body <- dashboardBody(
+        tabItems(
+                 # First tab content
+                        tabItem(tabName = "inicio",
+                                fluidRow(
+                                        column(12,
+                                         wellPanel(
+                                        #'arg' should be one of “default”, “primary”, “warning”, “danger”, “success”, “royal”
+                                              HTML(" <h2><b>Estudios Socio-Económicos, Percepción de Seguridad y Características sobre población y migración. </b></h2>"),
+                                             # h1("Estudios Socio-Económicos, Percepción de Seguridad y Características sobre población y migración. "),
+                                                br(),
+                                                infoBox( "Población y migración",108 , icon=icon("user-alt"), color = "light-blue", fill = TRUE ),
+                                                infoBox("Socieconimico y Ambiental",55, icon=icon("seedling"), color = "olive", fill = TRUE),
+                                                infoBox("Percepcion de seguridad",376, icon=icon("eye"),color = "aqua", fill = TRUE),
+                                                br(), br(), br(), br(),br(), br(), br(),
+                                        )
+
+                                        ),
+                                        br(), br(), br(), br(),br(), br(), br(),
+                                         
+                                                        column(4,
+                                                                wellPanel(
+                                                                        HTML(" <h2><b>Características sobre población y migración.</b></h2><h3>  Zona Urbana Isla Mujeres</h3><h4>Enfoque exclusivo a la percepción de seguridad en la Zona Continental de Isla Mujeres tomando los resultados de ambos conjuntos de datos realizados por diferentes instituciones.<br> <br>Enfoque:<br> <ul><li>Economico</li><li>Social</li><li>Vivienda</li><li>Apreciación de encuestador </li> <br><br></h4>"),
+                                                                         actionBttn(inputId = "PO1", label = "Cuestionario", style = "fill", color = "danger", icon = icon("poll-h"), size = "sm")
+                                                                )
+                                                        ),
+                                       
+                                                        column(4,
+                                                                wellPanel(
+                                                                        
+                                                                HTML(" <h2><b>Diagnóstico socio económico y ambiental.</b></h2><h3>  Salinas, Isla Mujeres.</h3><h4>Estudio enfocado en las colonias que colindan con las Salinas localizadas en el municipio de Isla Mujeres. <br> <br>Enfoque:<br> <ul><li>Economico</li><li>Social</li> <li>Ambiental</li> <br><br></h4>"),
+                                                                actionBttn(inputId = "PO2", label = "Cuestionario", style = "fill", color = "danger", icon = icon("poll-h"), size = "sm") 
+                                                                )
+                                                        ),
+                                     
+                                                        column(4,
+                                                                wellPanel(
+                                                                HTML(" <h2><b>Estudio de percepción de seguridad.</b></h2><h3>  Cancún, QRoo.</h3><h4> <br> <br>Enfoque:<br> <ul><li>Percepción de seguridad </li><br><br></h4>") ,
+                                                                actionBttn(inputId = "PO3", label = "Cuestionario", style = "fill", color = "danger", icon = icon("poll-h"), size = "sm") 
+                                                                
+                                                                )
+                                                        ),
+                                        
+                                    
+                                )
+                        ),
+
+                # First tab content
+                        tabItem(tabName = "graficas",
+                                fluidRow(
+                                       
+                                         column(12, 
+                                                wellPanel(
+                                                        h1(textOutput("Analisis Exploratorio")),
+                                                        h2(textOutput("TipoestudioG"), align = "center"),
+                                                        h3(textOutput("localiz"), align = "left"),
+                                         )),            
+                                              
+                                        column(6, 
+                                                  wellPanel(
+                                                          selectInput(inputId='enfoque', label = h3('Enfoque:'), choices= c("Datos generales del encuestado" = "DG", "Datos familiares" = "DF","Datos económicos" = "DE", "Identidad y Comunidad" = "ID" , "Vivienda" = "VI", "Apreciación del encuestador" = "AE"), selected = "VI") 
+                                                         
+                                        )), 
+                                         column(6, 
+                                                  wellPanel(
+                                                          
+                                                          selectInput(inputId='pregunta', label = h3('Graficas:'),choices = c("Situacion Vivienda" = "V1P1R1" , "Adquisicion Vivienda" = "V1P4R1"," Huracanes " = "V1H1", " Inundaciones " = "V1I1"), selected = "V1P1R1")
+                                        )),      
+                                            
+                                        
+                                                    ##-- Visualizar ----
+                                               # column(width = 2, style = "padding-top: 25px;",
+                                                #        actionBttn(inputId = "generar_plot", 
+                                                 #               label = "Buscar", 
+                                                  #              style = "fill", 
+                                                   #             color = "success", 
+                                                    #            icon = icon("check"), size = "sm") 
+                                                #)
+                                      
                                   
-                                  
-                    )),
-            column(12,
-                   h1("Grafica")
-            ),
-            column(12,
-                   box(plotOutput("plot4", height = 400, width = 700)),
-              )
-              
-            
-     ),
-    # Second tab content
-    tabItem(tabName = "analisis",
-            fluidRow(
-              column(10,
-                     h2("Datos generales"),  
-                     box(plotOutput("ana1", height = 550))       ),
-              column(10,
-                     h2("Datos economicos"),  
-                     box(plotOutput("anaeco1", height = 550))
-                            )
-              
-              
-              
-             
-            )
-    )
-  )
-)
+                                        column(width = 10,
+                                                           br(),
+                                                           withSpinner(plotlyOutput("plot1"), type = 6)
+                                                  ),
+                                   
+
+                                     
+                                )
+                        ),
+        
+                # Second tab content
+                 tabItem(tabName = "mapas",
+                        div(class="outer",
+                                tags$head(includeCSS("style.css")),
+                                #Mapa
+                                leafletOutput("mymap", height=600), 
+                                #Panel movil
+                                absolutePanel(id = "controls", class = "panel panel-default", 
+                                        top = 75, right = 300, width = 400, fixed=TRUE, 
+                                        draggable = TRUE, height = "auto",
+                                        h1("Analisis Exploratorio", style="color:#045a8d"),
+                                        h3(textOutput("Tipoestudio"), align = "right"),
+                                        h3(textOutput("zona"), align = "right"),
+                                        selectInput(inputId='showmapa', label = h3('Estudio:'), choices = c("Todos" = "ALL" ,"Percepcion de seguridad" = "PS", "Estudio Socioeconómico y ambiental" = "IS" ,"Población y migración" = "EJ")),
+                                        plotOutput("plot3", height = 190, width = 330)                    
+                                )),
+                                           
+                ),
+
+                # third tab content
+                tabItem(tabName = "mapa2",
+                        div(class="outer2",
+                        
+                     
+                             
+                         
+                          
+                          
+                          
+                        )#div
+                )#tabkl
+        ))#FIN
 
 
 

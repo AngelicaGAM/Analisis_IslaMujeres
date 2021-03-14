@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap');
+
+input[type="number"] {
+  max-width: 80%;
+}
+b, strong{
+  color: #26415d;
+}
+.skin-blue .main-header .navbar{
+  background-color: #095062;
+}
+.skin-blue .main-header .logo{
+  background-color: #095062;
+}
+.skin-blue .sidebar-menu>li.active>a, .skin-blue .sidebar-menu>li:hover>a{
+  border-left-color: #63bcef;
+}
+
+.well {
+  background-color: #e8ebf5;
+}
+h1, .h2, .h3, h1, h2 {
+  line-height: 1.5;
+  color: #26415d;
+}
+h1, h1 {
+  font-size: 36px;
+}
+.marker-cluster-small {
+  background-color: rgb(199 19 237 / 60%) !important
+ /**background-color: rgb(199 19 237 / 60%) !important;**/
+}
+.marker-cluster-medium {
+  background-color: rgb(199 19 237 / 60%) !important;
+}
+.marker-cluster-large {
+  /**background-color: rgb(199 19 237 / 60%) !important;**/
+   background-color: rgb(10,134,160 / 60%) !important; 
+}
+
+.marker-cluster-small div {
+  background-color: #1c9489 !important; 
+ /**background-color: rgb(7 13 58 / 60%) !important; **/ 
+ color: #fff !important;
+}
+.marker-cluster-medium div {
+   background-color: rgb(7 13 58 / 60%) !important; 
+  color: #fff !important; 
+}
+
+
+.marker-cluster-large div{
+  background-color: rgb(7 13 58 / 60%) !important; 
+ /**  background-color: rgb(128, 207, 224 /60%) !important; **/
+  color: #fff !important;
+}
+
+div.outer {
+  position: fixed;
+  top: 56px;
+  left: 10px;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+.form-group.shiny-input-container h3 {
+      font-weight: 200;
+      color: #b8c7ce;
+      font-family: 'Helvetica Neue', Helvetica;
+}
+
+/* Customize fonts */
+body, label, input, button, select { 
+  font-family: 'Helvetica Neue', Helvetica;
+  font-weight: 200;
+}
+h1, h2, h4 { font-weight: 400; }
+
+#controls  { 
+  /* Appearance */
+  background-color: white;
+  cursor: move;
+  padding: 20px;
+  /* Fade out while not hovering */
+  opacity: 0.75;
+  zoom: 0.9;
+  transition: opacity 500ms 1s;
+}
+
+#controls:hover {
+  /* Fade in while hovering */
+  opacity: 0.75;
+  transition-delay: 0;
+}
+
+#logo {
+  /* Appearance */
+  background-color: transparent;
+  cursor: move;
+  /* Fade out while not hovering */
+  opacity: 0.25;
+  zoom: 0.9;
+  transition: opacity 500ms 1s;
+}
+
+#logo:hover {
+  /* Fade in while hovering */
+  opacity: 0.95;
+  transition-delay: 0;
+}
+
+h3 {
+  font-size: 16px;
+  font-weight: 200 !important;
+  font-family: 'Source Sans Pro',sans-serif;
+
+}
+
+.selectize-input{
+      padding: 4px 8px;
+}

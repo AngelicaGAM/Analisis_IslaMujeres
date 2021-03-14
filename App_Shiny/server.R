@@ -1,68 +1,159 @@
-# server 
-
+# server library(shinyjs)
+library(shinyjs)
 server <- function(input, output, session) {
-  source("G.R", local=TRUE)
-  source("mapas.R", local=TRUE)
- 
-  
-  output$plot1=renderPlot({
-   print(input$seguridad1)
-    
-    
-      if(input$seguridad1=="V1P1R1"){V1P1R1}
-      else if(input$seguridad1=="V1P4R1"){V1P4R1}
-      else if(input$seguridad1=="V1H1"){V1H1}
-   
-  
+  source("librerias.R")
+  source("Funciones.R")
+  source("G.R")
+
+    #infoBox( "Población y migración",108 , icon=icon("user-alt"), color = "light-blue", fill = TRUE ),
+    #infoBox("Socieconimico y Ambiental",55, icon=icon("seedling"), color = "olive", fill = TRUE),
+    #infoBox("Percepcion de seguridad",376, icon=icon("eye"),color = "aqua", fill = TRUE)  
+
+    observeEvent(input$button, {
+
+        if(input$button %% 2 == 1){
+            shinyjs::hide(id = "myBox")
+        }else{
+            shinyjs::show(id = "myBox")
+        }
     })
-  
-  
-  output$plot2=renderPlot({
-    #print(input$seguridad2)
-    if(input$seguridad2=="HU"){HU}
-    else if(input$seguridad2=="IN"){IN}
+
+  # ---------------------------------------------------------------------
+  # HOME
+  output$box_01 <- renderValueBox({
+    entry_01<-108
+    box1<-valueBox(value=entry_01
+                   ,icon = icon("user-alt",lib="font-awesome")
+                   ,width=NULL
+                   ,color = "light-blue"
+                   ,href="#"
+                   ,subtitle=HTML("<b>Población y migración</b>")
+    )
+    box1$children[[1]]$attribs$class<-"action-button"
+    box1$children[[1]]$attribs$id<-"button_box_01"
+    return(box1)
   })
 
+    observeEvent(input$button_box_01, {
+    
+    output$print1<-renderText({
+      print("h2(Características sobre población y migración.")
+    })})
+
+
+
+  # ---------------------------------------------------------------------
+  # ---------------------------------------------------------------------
+    V1P1R1  # GRAFICAS 
+  
+  # Visualizacion principal 
+  output$plot1=renderLeaflet({
+     #datoG = Vgrafica()
+     #datoG
+     if(input$pregunta=="V1P1R1"){V1P1R1}
+     else if(input$pregunta=="V1P4R1"){V1P4R1}
+     else if(input$pregunta=="V1H1"){V1H1}
+     else if(input$pregunta=="V1H1"){V1H1}
+  })
+  
+  # Visualizacion secundaria 
+  ##-- + Dados do candidato e eleição selecionada ----
+  observe({
+
+  
+    
+
+    x <- input$enfoque
+    # Can use character(0) to remove all choices
+    if (is.null(x))
+      x <- character(0)
+    # Poblacion y migracion
+    # DG , DF, DE, ID, VI, AE
+    if (x== "DG"){
+            updateSelectInput(session, "pregunta",                
+                choices = c("d" = "DF21" , "Adquisigfcion Vivienda" = "DF212"," HurgacaneDs " = "DF23", " IngundDciones " = "DF24") 
+            )
+    }else  if (x== "DF"){
+            updateSelectInput(session, "pregunta",  
+            choices = c("d" = "DF1" , "Adquisicion Vivienda" = "DF12"," HuracaneDs " = "DF3", " InundDciones " = "DF4")
+            
+    )} else  if (x== "DE"){
+            updateSelectInput(session, "pregunta",  
+            choices = c("d" = "DF1" , "Adquisicion Vivienda" = "DF12"," HuracaneDs " = "DF3", " InundDciones " = "DF4")
+            
+    )} else  if (x== "ID"){
+            updateSelectInput(session, "pregunta",  
+            choices = c("d" = "DF1" , "Adquisicion Vivienda" = "DF12"," HuracaneDs " = "DF3", " InundDciones " = "DF4")
+            
+    )} else  if (x== "VI"){
+            updateSelectInput(session, "pregunta",  
+            choices = c("Situacion Vivienda" = "V1P1R1" , "Adquisicion Vivienda" = "V1P4R1"," Huracanes " = "V1H1", " Inundaciones " = "V1I1")
+            
+    )} else  if (x== "AE"){
+            updateSelectInput(session, "pregunta",  
+            choices = c("d" = "DF1" , "Adquisicion Vivienda" = "DF12"," HuracaneDs " = "DF3", " InundDciones " = "DF4")
+            
+    )} 
+
+
+
+
+
+
+
+
  
-  output$plot3=renderPlot({
-    #print(input$seguridad2)
-    V1P1R2
   })
-  
-  output$plot4=renderPlot({
-    #print(input$seguridad2)
-    V1P1R1
+  output$localiz <- renderText ({
+    if(input$tipomapa=="ALL"){ "Cancún - Isla Mujeres " }
+    else if(input$tipomapa=="PS"){ "Cancún, QRoo." }
+    else if(input$tipomapa=="IS"){ "Salinas, Isla Mujeres." }
+    else if(input$tipomapa=="EJ"){ " Zona Urbana Isla Mujeres "}
   })
+    output$TipoestudioG <- renderText ({
+    if(input$tipomapa=="PS"){ "Percepción sobre seguridad" }
+    else if(input$tipomapa=="IS"){ "Estudio Socioeconómico y ambiental" }
+    else if(input$tipomapa=="EJ"){ "Características sobre población y migración"}
+  })
+
+  # ---------------------------------------------------------------------
+  # MAPAS
   
-  
+  #Pintado de mapas
   output$mymap <- renderLeaflet({
-    
-    mapp(Ejido)
-  })
-  output$mymap1 <- renderLeaflet({
-    
-    mapp(Isla)
-  })
-  output$ana1 <- renderPlot({
-    reglas_seleccionadas_df %>%
-      head(by = "gini", n = 10) %>%
-      plot(method = "graph")
-    
+    if(input$showmapa=="ALL"){ GraphM(DataMap) }
+    else if(input$showmapa=="PS"){ GraphM(CancunM) }
+    else if(input$showmapa=="IS"){ GraphM(filtro) }
+    else if(input$showmapa=="EJ"){ GraphM(EjidoM) }
   })
   
-  output$anaeco1 <- renderPlot({
-  # Tipo grafo
-  reglas_seleccionadas_eco %>%
-    head(by = "gini", n = 10) %>%
-    plot(method = "graph")
-  
+  # Texto tipo de estudio
+  output$Tipoestudio <- renderText ({
+    if(input$showmapa=="ALL"){ "Estudios socioeconomicos, Percepción de seguridad y Características sobre población y migración. " }
+    else if(input$showmapa=="PS"){ "Percepción sobre seguridad" }
+    else if(input$showmapa=="IS"){ "Estudio Socioeconómico y ambiental" }
+    else if(input$showmapa=="EJ"){ "Características sobre población y migración"}
+  })
+
+  # Grafica de edades en Mapa 
+  output$plot3=renderPlot({
+    if(input$showmapa=="IS"){edadSalinas }
+    else if(input$showmapa=="PS"){ edadZonaUrbana  }
   })
   
-  output$table <- DT::renderDataTable(DT::datatable({
-    data <- Ejido
+
+  output$zona <- renderText ({
+    if(input$showmapa=="ALL"){ "Cancún - Isla Mujeres " }
+    else if(input$showmapa=="PS"){ "Cancún, QRoo." }
+    else if(input$showmapa=="IS"){ "Salinas, Isla Mujeres." }
+    else if(input$showmapa=="EJ"){ " Zona Urbana Isla Mujeres "}
+  })
+  
+
+  
+
    
-   
-  }))
+
   
 
 }

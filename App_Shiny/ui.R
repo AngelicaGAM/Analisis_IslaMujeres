@@ -1,10 +1,10 @@
-
-
 library(shinycssloaders)
-
+library(shinyWidgets)
 # header
         header <- dashboardHeader( title="Analisis Exploratorio")
-
+        varsx <- c("Origen", "Escolaridad", "Puesto","Trabajo")
+        varsy <- c("Puesto","Trabajo","Ingreso_sem","Escolaridad")
+        varsz <- c("Ninguno", "Edad", "Sexo")
 
 # Menu lateral 
         sidebar <- dashboardSidebar(
@@ -23,7 +23,19 @@ library(shinycssloaders)
                                        # selectInput(inputId='seguridad1', label = h3('Graficas:'),choices = c("Situacion Vivienda" = "V1P1R1" , "Adquisicion Vivienda" = "V1P4R1"," Huracanes " = "V1H1", " Inundaciones " = "V1I1")), 
                                         #selectInput(inputId='seguridad2', label = h3('Nube de palabras:'),choices = c("Accion Huracanes" = "HU" , "Accion Inundaciones" = "IN" )) 
                                 ),
-                        menuItem(text = "Mapas",  tabName = "mapas", icon = icon("map-marker-alt"))
+                        menuItem(text = "Mapas",  tabName = "mapas", icon = icon("map-marker-alt")),
+                        menuItem(text = "Mosaicos",  tabName = "mosaics", icon = icon("chart-bar")),
+                        conditionalPanel(
+                                condition = "input.tabs == 'mosaics'",
+                        
+                                selectInput("var1","Primera variable de cruce",varsx,selected = "Origen"),
+                        
+                                selectInput("var2","Segunda variable de cruce",varsy,selected = "Puesto"
+                                ), 
+                                selectInput("var3","Tercera variable de cruce",varsz
+                                )
+                        
+                        )
                         
                 ))
 
@@ -39,7 +51,7 @@ library(shinycssloaders)
                                               HTML(" <h2><b>Estudios Socio-Económicos, Percepción de Seguridad y Características sobre población y migración. </b></h2>"),
                                              # h1("Estudios Socio-Económicos, Percepción de Seguridad y Características sobre población y migración. "),
                                                 br(),
-                                                infoBox( "Población y migración",108 , icon=icon("user-alt"), color = "light-blue", fill = TRUE ),
+                                                infoBox( "Población y migración",377 , icon=icon("user-alt"), color = "light-blue", fill = TRUE ),
                                                 infoBox("Socieconimico y Ambiental",55, icon=icon("seedling"), color = "olive", fill = TRUE),
                                                 infoBox("Percepcion de seguridad",376, icon=icon("eye"),color = "aqua", fill = TRUE),
                                                 br(), br(), br(), br(),br(), br(), br(),
@@ -141,14 +153,16 @@ library(shinycssloaders)
                 tabItem(tabName = "mapa2",
                         div(class="outer2",
                         
-                     
                              
                          
                           
                           
                           
                         )#div
-                )#tabkl
+                ),#tabkl
+                tabItem(tabName = "mosaics",
+                        plotOutput("mosaico1", height = 500, width = "100%")
+                )
         ))#FIN
 
 

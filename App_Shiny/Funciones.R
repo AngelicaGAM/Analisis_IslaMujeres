@@ -1,7 +1,7 @@
 
 #Funciones y carga de archivos 
 
-setwd("~/UC/PT")
+setwd("./")
 
 #Datos graficar 
   Ejido <- read.csv("Zona-urbana-Ejido-230030286.csv", header = TRUE, sep= ",",strip.white = TRUE,na.strings = "EMPTY", fileEncoding  = "UTF-8")

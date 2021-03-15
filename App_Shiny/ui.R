@@ -5,6 +5,9 @@ library(ggplot2)
 library(leaflet)
 library(RColorBrewer)
 
+varsx <- c("Origen", "Escolaridad", "Puesto","Trabajo")
+varsy <- c("Puesto","Trabajo","Ingreso_sem","Escolaridad")
+varsz <- c("Ninguno", "Edad", "Sexo")
 
 # header
 header <- dashboardHeader(
@@ -39,7 +42,19 @@ sidebar <- dashboardSidebar(
       
     ),
     menuItem(text = "Mapas",  tabName = "mapas", icon = icon("map-marker-alt")),
-    menuItem(text = "Analisis",  tabName = "analisis", icon = icon("search"))
+    menuItem(text = "Analisis",  tabName = "analisis", icon = icon("search")),
+    menuItem(text = "Mosaicos",  tabName = "mosaics", icon = icon("chart-bar")),
+    conditionalPanel(
+      condition = "input.tabs == 'mosaics'",
+      
+      selectInput("var1","Primera variable de cruce",varsx,selected = "Origen"),
+      
+      selectInput("var2","Segunda variable de cruce",varsy,selected = "Puesto"
+      ), 
+      selectInput("var3","Tercera variable de cruce",varsz
+      )
+      
+    )
     
   )
 )
@@ -113,7 +128,11 @@ body <- dashboardBody(
               
              
             )
-    )
+    ),
+    
+    tabItem(tabName = "mosaics",
+            plotOutput("mosaico1", height = 500, width = "100%")
+            )
   )
 )
 

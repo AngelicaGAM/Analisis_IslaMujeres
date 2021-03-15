@@ -10,7 +10,7 @@ library(gridExtra)
 library(dplyr, quietly = TRUE)
 library(ggwordcloud)
 
-setwd("~/UC/Analisis_IslaMujeres/App_Shiny")
+#setwd("C:/Users/gxhdz/Desktop/Analisis_IslaMujeres-main/App_Shiny")
 
 Ejido <- read.csv("./CSV/ps/Zona-urbana-Ejido-230030286.csv", header = TRUE, sep= ",",strip.white = TRUE,na.strings = "EMPTY", encoding = "UTF-8")
 Cancun <- read.csv("./CSV/ps/Cancun-230050001.csv", header = TRUE, sep= ",",strip.white = TRUE,na.strings = "EMPTY", encoding = "UTF-8")

@@ -12,7 +12,7 @@ library(shinyWidgets)
                         tags$head(includeCSS("style.css")),
                 # Dashboard items
                         menuItem(text = "Inicio",  tabName = "inicio", icon = icon("home")),
-                        menuItem(text = "Graficas", tabName = "graficas", icon = icon("chart-bar")), 
+                        menuItem(text = "Graficas", tabName = "graficas", icon = icon("chart-pie")), 
                                 conditionalPanel(condition = "input.tabs == 'graficas'", 
                                                 id="tabsS",
                                         selectInput(inputId='tipomapa', label = h3('Estudio:'),  choices = c("Percepcion de seguridad" = "PS", "Socioeconómico y ambiental" = "IS" ,"Población y migración" = "EJ"), selected = "EJ")
@@ -23,7 +23,6 @@ library(shinyWidgets)
                                        # selectInput(inputId='seguridad1', label = h3('Graficas:'),choices = c("Situacion Vivienda" = "V1P1R1" , "Adquisicion Vivienda" = "V1P4R1"," Huracanes " = "V1H1", " Inundaciones " = "V1I1")), 
                                         #selectInput(inputId='seguridad2', label = h3('Nube de palabras:'),choices = c("Accion Huracanes" = "HU" , "Accion Inundaciones" = "IN" )) 
                                 ),
-                        menuItem(text = "Mapas",  tabName = "mapas", icon = icon("map-marker-alt")),
                         menuItem(text = "Mosaicos",  tabName = "mosaics", icon = icon("chart-bar")),
                         conditionalPanel(
                                 condition = "input.tabs == 'mosaics'",
@@ -35,7 +34,9 @@ library(shinyWidgets)
                                 selectInput("var3","Tercera variable de cruce",varsz
                                 )
                         
-                        )
+                        ),
+                        menuItem(text = "Mapas",  tabName = "mapas", icon = icon("map-marker-alt"))
+                   
                         
                 ))
 

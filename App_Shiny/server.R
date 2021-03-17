@@ -8,6 +8,7 @@ server <- function(input, output, session) {
   xdf  <- read.csv("./x.csv", header = TRUE, sep= ",",strip.white = TRUE,na.strings = "EMPTY", encoding = "UTF-8")
 
 
+
   # ---------------------------------------------------------------------
   # HOME
   #cuestionarios
@@ -36,7 +37,7 @@ server <- function(input, output, session) {
     })
 
   # ---------------------------------------------------------------------
-    V1P1R1  # GRAFICAS 
+  # GRAFICAS 
   
   # Visualizacion principal 
   output$plot1=renderLeaflet({
@@ -52,11 +53,8 @@ server <- function(input, output, session) {
   ##-- + Dados do candidato e eleição selecionada ----
   observe({
 
-  
-    
-
     x <- input$enfoque
-    # Can use character(0) to remove all choices
+
     if (is.null(x))
       x <- character(0)
     # Poblacion y migracion
@@ -86,17 +84,15 @@ server <- function(input, output, session) {
             choices = c("d" = "DF1" , "Adquisicion Vivienda" = "DF12"," HuracaneDs " = "DF3", " InundDciones " = "DF4")
             
     )} 
-
-
-
- 
   })
+  
   output$localiz <- renderText ({
     if(input$tipomapa=="ALL"){ "Cancún - Isla Mujeres " }
     else if(input$tipomapa=="PS"){ "Cancún, QRoo." }
     else if(input$tipomapa=="IS"){ "Salinas, Isla Mujeres." }
     else if(input$tipomapa=="EJ"){ " Zona Urbana Isla Mujeres "}
   })
+
     output$TipoestudioG <- renderText ({
     if(input$tipomapa=="PS"){ "Percepción sobre seguridad" }
     else if(input$tipomapa=="IS"){ "Estudio Socioeconómico y ambiental" }

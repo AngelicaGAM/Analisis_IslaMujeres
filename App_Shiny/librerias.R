@@ -13,7 +13,7 @@ library(shinydashboard)
 library(RColorBrewer)
 library(shinycssloaders)
 library(psych)
-library(ggplot2)
+
 library(sp)
 library(leaflet)
 library(dplyr)
@@ -23,3 +23,4 @@ library(shinyWidgets)
 library(plyr)
 
 library(janitor)
+

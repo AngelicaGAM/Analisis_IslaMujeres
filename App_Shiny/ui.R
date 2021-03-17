@@ -64,7 +64,7 @@ library(shinyWidgets)
                                                         column(4,
                                                                 wellPanel(
                                                                         HTML(" <h2><b>Características sobre población y migración.</b></h2><h3>  Zona Urbana Isla Mujeres</h3><h4>Enfoque exclusivo a la percepción de seguridad en la Zona Continental de Isla Mujeres tomando los resultados de ambos conjuntos de datos realizados por diferentes instituciones.<br> <br>Enfoque:<br> <ul><li>Economico</li><li>Social</li><li>Vivienda</li><li>Apreciación de encuestador </li> <br><br></h4>"),
-                                                                         actionBttn(inputId = "PO1", label = "Cuestionario", style = "fill", color = "danger", icon = icon("poll-h"), size = "sm")
+                                                                         actionBttn(inputId = "popPyM", label = "Cuestionario", style = "fill", color = "danger", icon = icon("poll-h"), size = "sm")
                                                                 )
                                                         ),
                                        
@@ -72,14 +72,14 @@ library(shinyWidgets)
                                                                 wellPanel(
                                                                         
                                                                 HTML(" <h2><b>Diagnóstico socio económico y ambiental.</b></h2><h3>  Salinas, Isla Mujeres.</h3><h4>Estudio enfocado en las colonias que colindan con las Salinas localizadas en el municipio de Isla Mujeres. <br> <br>Enfoque:<br> <ul><li>Economico</li><li>Social</li> <li>Ambiental</li> <br><br></h4>"),
-                                                                actionBttn(inputId = "PO2", label = "Cuestionario", style = "fill", color = "danger", icon = icon("poll-h"), size = "sm") 
+                                                                actionBttn(inputId = "poSyA", label = "Cuestionario", style = "fill", color = "danger", icon = icon("poll-h"), size = "sm") 
                                                                 )
                                                         ),
                                      
                                                         column(4,
                                                                 wellPanel(
-                                                                HTML(" <h2><b>Estudio de percepción de seguridad.</b></h2><h3>  Cancún, QRoo.</h3><h4> <br> <br>Enfoque:<br> <ul><li>Percepción de seguridad </li><br><br></h4>") ,
-                                                                actionBttn(inputId = "PO3", label = "Cuestionario", style = "fill", color = "danger", icon = icon("poll-h"), size = "sm") 
+                                                                HTML(" <h2><b>Estudio de percepción de seguridad.</b></h2><h3>  Estado de Quintana Roo.</h3><h4> Estudio donde 16,671 encuestas válidas aplicadas en el Estado de Quintana Roo, donde 9,233 son en Benito Juárez/Puerto Morelos y 208 en Isla Mujeres(Isla y Zona Urbana Ejido)<br> <br>Enfoque:<br> <ul><li>Percepción de seguridad </li><br><br></h4>") ,
+                                                                actionBttn(inputId = "popC", label = "Cuestionario", style = "fill", color = "danger", icon = icon("poll-h"), size = "sm") 
                                                                 
                                                                 )
                                                         ),

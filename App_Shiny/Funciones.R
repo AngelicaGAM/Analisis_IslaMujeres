@@ -1,7 +1,7 @@
 
 #Funciones y carga de archivos 
 
-setwd("~/UC/Analisis_IslaMujeres/App_Shiny")
+#setwd("~/UC/Analisis_IslaMujeres/App_Shiny")
 
 #Datos graficar 
   Ejido <- read.csv("Zona-urbana-Ejido-230030286.csv", header = TRUE, sep= ",",strip.white = TRUE,na.strings = "EMPTY", fileEncoding  = "UTF-8")

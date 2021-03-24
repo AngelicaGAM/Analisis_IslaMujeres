@@ -1,0 +1,12 @@
+name: App_Shiny
+title: App_Shiny
+username:
+account: analisisexploratorioislamujeres
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 3842572
+bundleId: 4389844
+url: https://analisisexploratorioislamujeres.shinyapps.io/App_Shiny/
+when: 1616598473.93655
+asMultiple: FALSE
+asStatic: FALSE

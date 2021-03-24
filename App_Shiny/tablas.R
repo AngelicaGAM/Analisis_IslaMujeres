@@ -1,4 +1,5 @@
 library(vcd)
+library(shiny)
 
 #graficas
 mosaics <- function(tbl, rot, offs){

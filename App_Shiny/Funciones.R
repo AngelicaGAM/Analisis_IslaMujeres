@@ -2,14 +2,16 @@ library(shiny)
 
 #Funciones y carga de archivos 
 
-#setwd("~/UC/Analisis_IslaMujeres/App_Shiny")
+setwd("~/UC/Analisis_IslaMujeres/App_Shiny")
 
 #Datos graficar 
   Ejido <- read.csv("Zona-urbana-Ejido-230030286.csv", header = TRUE, sep= ",",strip.white = TRUE,na.strings = "EMPTY", fileEncoding  = "UTF-8")
   Cancun <- read.csv("Cancun-230050001.csv", header = TRUE, sep= ",",strip.white = TRUE,na.strings = "EMPTY", fileEncoding  = "UTF-8")
   Isla  <- read.csv("Isla-Mujeres-230030001.csv", header = TRUE, sep= ",",strip.white = TRUE,na.strings = "EMPTY", fileEncoding  = "UTF-8")
   columna <- read.csv("columnas.csv", header = TRUE, sep= ",",strip.white = TRUE,na.strings = "EMPTY", fileEncoding = "latin1")
-  
+df_fin <- read.csv("columnas.csv",header=TRUE,sep=",",strip.white = TRUE,na.strings="EMPTY",encoding = "UTF-8")
+
+df02 <- read.csv("df_02.csv",header=TRUE,sep=",",strip.white = TRUE,na.strings="EMPTY",encoding = "UTF-8")  
 #Datos mapas
   CancunM <- read.csv("Cancun.csv", header = TRUE, sep= ",",strip.white = TRUE,na.strings = "EMPTY", encoding = "UTF-8")
   EjidoM <- read.csv("Urbana.csv", header = TRUE, sep= ",",strip.white = TRUE,na.strings = "EMPTY", encoding = "UTF-8")
@@ -114,7 +116,7 @@ graficarPlot <- function(dff,  textX, textY, tituloGrifco){
                  text = ~RESPUESTA,
                  type = 'bar'
   ) %>%
-    layout(title = "", 
+    layout(title = tituloGrifco, 
            xaxis = list(title = textX),
            yaxis = list(title = textY,
                         showgrid = FALSE,

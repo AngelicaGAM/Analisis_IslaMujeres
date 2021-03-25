@@ -1,19 +1,5 @@
 # server library(shinyjs)
-library(shinyjs)
 
-library(shiny)
-library(rsconnect)
-library(dplyr)
-library(tidyr)
-library(tidyverse)
-library(caret)
-library(arules)
-library(arulesViz)
-library(ggplot2)
-library(plyr)
-library(janitor)
-library(shinythemes)
-require(visNetwork)
 
 
 server <- function(input, output, session) {
@@ -28,6 +14,7 @@ server <- function(input, output, session) {
   # ---------------------------------------------------------------------
   # HOME
   #cuestionarios
+
   observeEvent(input$popPyM, {
     showModal(modalDialog(
       title = HTML("Población y migración<br>",
@@ -37,48 +24,103 @@ server <- function(input, output, session) {
   })
   
   observeEvent( input$poSyA, {
-    showModal(modalDialog(
-      title = HTML("Diagnóstico socio económico y ambiental<br>",
-                   "Social <br><br>1. Entre los vecinos, realizan alguna actividad en común:  fiestas, reuniones vecinales, levantar quejas etc <br>2. ¿Cómo es la relación con sus vecinos? <br>3. ¿Ha tenido problemas con sus vecinos: pleitos, demandas…? <br>4. ¿Con qué frecuencia se hacen favores entre vecinos? <br>5. ¿En algún problema que se le presente, sus vecinos le ayudan? <br>6. ¿Pertenecen a alguna organización? <br><br>Economico <br><br>1.  ¿Cuántas personas de esta familia trabajan? <br>2.  ¿En qué trabajan? <br>3. ¿Realizan alguna actividad productiva por su cuenta: manualidad, artesanía u oficio, cultivo de hortalizas?<br>4. ¿Intercambian productos con sus vecinos? <br>5. ¿Se ayudan entre vecinos para algún trabajo que beneficie la economía familiar dentro de sus casas?<br><br>Ambiental <br><br>1. ¿Qué uso le dan sus vecinos a la salina? <br>2.¿Qué beneficio recibe de vivir aquí?<br>3.¿Qué desventajas recibe de vivir aquí cerca de la salina? <br>4.¿En qué condiciones considera que se encuentra la salina? <br>5.¿Qué efectos genera la condición (sucia o contaminada) de la Salina? <br>6.¿Han llevado a cabo alguna actividad de limpieza, saneamiento o conservación de la Salina?<br>7.¿Están conectados al drenaje?<br>8.¿Por qué decidieron vivir aquí?<br>"),
-      easyClose = TRUE
-    ))
-  })
-  
-  observeEvent(input$popC, {
-    showModal(modalDialog(
-      title = HTML("Percepcion de seguridad<br>",
-                   "  <br>"),
-      easyClose = TRUE
-    ))
-  })
-  
-  
-  output$localiz <- renderText ({
-    if(input$tipomapa=="ALL"){ "Cancún - Isla Mujeres " }
-    else if(input$tipomapa=="PS"){ "Cancún, QRoo." }
-    else if(input$tipomapa=="IS"){ "Salinas, Isla Mujeres." }
-    else if(input$tipomapa=="EJ"){ " Zona Urbana Isla Mujeres "}
-  })
-  
-  output$TipoestudioG <- renderText ({
-    if(input$tipomapa=="PS"){ "Percepción sobre seguridad" }
-    else if(input$tipomapa=="IS"){ "Estudio Socioeconómico y ambiental" }
-    else if(input$tipomapa=="EJ"){ "Características sobre población y migración"}
-  })
-  
+      showModal(modalDialog(
+        title = HTML("Diagnóstico socio económico y ambiental<br>",
+          "Social <br><br>1. Entre los vecinos, realizan alguna actividad en común:  fiestas, reuniones vecinales, levantar quejas etc <br>2. ¿Cómo es la relación con sus vecinos? <br>3. ¿Ha tenido problemas con sus vecinos: pleitos, demandas…? <br>4. ¿Con qué frecuencia se hacen favores entre vecinos? <br>5. ¿En algún problema que se le presente, sus vecinos le ayudan? <br>6. ¿Pertenecen a alguna organización? <br><br>Economico <br><br>1.  ¿Cuántas personas de esta familia trabajan? <br>2.  ¿En qué trabajan? <br>3. ¿Realizan alguna actividad productiva por su cuenta: manualidad, artesanía u oficio, cultivo de hortalizas?<br>4. ¿Intercambian productos con sus vecinos? <br>5. ¿Se ayudan entre vecinos para algún trabajo que beneficie la economía familiar dentro de sus casas?<br><br>Ambiental <br><br>1. ¿Qué uso le dan sus vecinos a la salina? <br>2.¿Qué beneficio recibe de vivir aquí?<br>3.¿Qué desventajas recibe de vivir aquí cerca de la salina? <br>4.¿En qué condiciones considera que se encuentra la salina? <br>5.¿Qué efectos genera la condición (sucia o contaminada) de la Salina? <br>6.¿Han llevado a cabo alguna actividad de limpieza, saneamiento o conservación de la Salina?<br>7.¿Están conectados al drenaje?<br>8.¿Por qué decidieron vivir aquí?<br>"),
+        easyClose = TRUE
+      ))
+    })
+
+    observeEvent(input$popC, {
+      showModal(modalDialog(
+        title = HTML("Percepcion de seguridad<br>",
+          "1. En esta calle o zona, Usted participa: <br><br>En eventos deportivos<br>En tandas<br>En fiestas<br>En iglesia o templo<br>En otras actividades<br>Para solucionar problemas de la comunidad<br>2. Usted conoce a sus vecinos: <br><br>Respuesta “Si”, desplegar los siguientes reactivos:<br>Les confiaría a los niños<br>Les confiaría su casa<br>Participa con ellos para mejorar la seguridad<br>Respuesta “No”, desplegar el siguiente reactivo:<br>Le interesaría participar<br>Día en que podría participar en actividades con su comunidad. <br>Horario en que podría participar: Mañana Tarde Noche<br>3. Participa con la autoridad para mejorar la seguridad:<br><br>Respuesta “No”, desplegar el siguiente reactivo:<br>Le interesaría participar<br>4. Día en que podría participar en actividades con la autoridad<br><br>5. Horario en el que podría participar Mañana Tarde Noche<br><br>6. Cuando hay un delito, en esta calle o zona los vecinos:<br><br>Se reúnen<br>Se organizan para vigilar<br>Intercambian números telefónicos<br>Forman un chat<br>Ponen letreros de advertencia<br>Llaman a la policía<br>Denuncian ante la autoridad<br>Vigilan<br>Buscan desquitarse<br>No hacen nada<br>7. Durante el último año, en esta calle o zona ha habido:<br><br>Robo en casa<br>Robo en la calle<br>Robo en transporte<br>Robo en negocio<br>Robo de partes de auto<br>Robo de vehículo<br>Balaceras<br>Cobro de piso<br>Violencia familiar<br>Peleas de gallos o perros<br>8. Valore el riesgo de sufrir un delito en alguno de los siguientes<br><br>lugares:<br>En su casa<br>En esta calle<br>En esta zona<br>En esta ciudad<br>9. ¿Usted ha sido víctima de algún delito en el último año? si No<br><br>10. En caso de ser víctima del delito Usted:<br><br>Llama a la policía<br>Hace una denuncia<br>Advierte a sus vecinos del peligro<br>Advierte a su familia del peligro<br>Busca desquitarse<br>Amenazas<br>11. Ha sido víctima de algún delito y no denuncio:<br><br>¿Podría señalar las razones por las que no denunció?<br>Respuesta “Si”, desplegar el siguiente reactivo:<br>Falta de pruebas<br>Considera que es un delito de poca importancia<br>Conoce al agresor o agresores<br>Desconfía de las autoridades<br>Teme a que lo extorsionen<br>Falta de tiempo<br>Son trámites complicados<br>No sabe dónde denunciar<br>Aunque denuncie no va a pasar nada<br>12. En esta calle o zona:<br><br>Los padres participan en actividades con hijos<br>Los vecinos se organizan para prevenir delitos<br>Las personas son amables<br>Hay alguna persona que siempre ayuda a los demás<br>13.En esta calle o zona hay personas:<br><br>A las que todos tienen miedo<br>Que acosan a menores<br>Que acosan a mujeres<br>Que se emborrachan o se drogan<br>Que han estado en la cárcel<br>Sospechosas<br>14. En esta calle o zona hay violencia:<br><br>Entre mujeres<br>Entre hombres<br>Entre familias<br>Entre adultos y jóvenes<br>Entre jóvenes<br>15. En esta calle o zona, cuando hay conflictos entre vecinos se manejan:<br><br>Amistosamente<br>Dialogando<br>De manera respetuosa<br>A gritos<br>Con golpes<br>Con cuchillos, navajas o machetes<br>Con armas de fuego, como pistolas o rifles<br>Desquitándose del otro<br>16. En esta calle o zona hay niños o adolescentes que se quedan<br><br>encerrados con llave:<br>Respuesta “Si”, desplegar los siguientes reactivos:<br>Por la inseguridad<br>Descuido de los padres<br>Castigo<br>Trabajo de los padres<br>17. En esta calle o zona hay niños que se quedan la mayor parte del día sin comer: Respuesta “Si”, desplegar los siguientes reactivos:<br><br>Por descuido de los padres<br>Castigo<br>Falta de dinero<br>Trabajo de los padres<br>18. En esta calle o zona hay jóvenes que:<br><br>Hacen deporte<br>Ayudan a los demás<br>La mayoría de los jóvenes estudian o trabajan.<br>Andan en pandillas<br>Respuesta “Si”, desplegar los siguientes reactivos:<br>Andan armados<br>Destruyen o vandalizan la propiedad ajena<br>Son violentos<br>Amenazan a los vecinos<br>19. En esta calle o zona hay un parque<br><br>Respuesta “Si”, desplegar los siguientes reactivos:<br>Está en buen estado<br>¿Quiénes lo utilizan?: Mostrar menú abajo<br>Niños y niñas<br>Jóvenes<br>Pandillas<br>Familias<br>Adultos<br>Personas de la tercera edad<br>Hay actividades supervisadas por adultos<br>Vándalos<br>Usted lo utiliza<br>20. En esta calle o zona hay:<br><br>Banquetas<br>Baches<br>Letreros con nombres de las calles<br>Tiendita<br>Alumbrado<br>Consumo de alcohol en la calle<br>21. En esta zona hay:<br><br>Horarios de transporte que convienen<br>Una parada de camión cerca de esta casa<br>Terrenos baldíos<br>Basura<br>Autos abandonados<br>Casas abandonadas<br>Vandalismo<br>Grafiti<br>Venta de tiner o pegamento a menores<br>Venta de alcohol o cigarros a menores<br>Venta de droga<br>Venta de alcohol después de las 11:00 de la noche<br>22. En el último año Usted supo que algún menor de 18 años:<br><br>Se fue de la casa<br>Sufrió violencia<br>Abandonó la escuela<br>Tiene problemas de conducta<br>Quedó embarazada<br>23. Para corregir a un niño o niña que se porta mal, Usted recomienda:<br><br>Castigarle<br>Gritarle<br>Darle nalgadas<br>Darle una golpiza / cueriza <br>Explicarle lo que está mal<br>Aconsejarle<br>Darle buen ejemplo24. En esta casa: (APLICA TARJETON)<br>Todos se conocen<br>Platican unos con otros<br>Comen juntos<br>Se ayudan con los gastos<br>Discuten<br>Se gritan entre sí<br>Llegan a los golpes<br>Se ignoran<br>En esta casa alguien: (APLICA TARJETON)<br>Tiene discapacidad SI LA RESPUESTA ES SI, ENTONCES:<br>Por su discapacidad, ha vivido violencia<br>Sabe manejar armas de fuego, como pistolas o rifles<br>Habla de comprar armas de fuego<br>Habla lengua indigena<br>Necesita ayuda por obesidad<br>Necesita ayuda por fumar<br>Necesita ayuda por beber<br>Necesita ayuda por drogas<br>26. En el último año, por cuestiones de seguridad Usted ha<br>pensado:<br>Cambiarse de casa<br>Cambiarse de ciudad<br>Cambiarse de estado<br>Cambiar de trabajo N/A<br>Cerrar su negocio N/A<br>Cambiar a los hijos de escuela N/ASeguir como hasta ahora<br>27. En el último año, por cuestiones de seguridad Usted dejó de:Dejo de salir de noche<br><br>Dejo de salir a caminar o hacer ejercicio<br>Impidio que los niños salgan a la calle N/A<br>Evito relacionarse con nuevas personas<br>Dejo de visitar a parientes o amigos<br>Dejo de usar transporte público /combi N/A<br>Dejo de usar taxi<br>Dejo de llevar mucho dinero en efectivo<br>Dejo de usar joyas<br>28. En esta calle o zona la policía:<br>Cuida o vigila bien<br>Comete abusos<br>Acude a los llamados<br>Pide mordidas<br>Hace rondines<br>Comete delitos<br>"),
+        easyClose = TRUE
+      ))
+    })
+
+
   # ---------------------------------------------------------------------
   # GRAFICAS 
   
   # Visualizacion principal 
   output$plot1=renderLeaflet({
-    #datoG = Vgrafica()
-    #datoG
-    if(input$pregunta=="V1P1R1"){V1P1R1}
-    else if(input$pregunta=="V1P4R1"){V1P4R1}
-    else if(input$pregunta=="V1H1"){V1H1}
-    else if(input$pregunta=="V1H1"){V1H1}
+     #datoG = Vgrafica()
+     #Caracteristicas de poblacion y migracion
+#vivienda
+     if(input$pregunta=="V1P1R1"){V1P1R1}
+     else if(input$pregunta=="V1P4R1"){V1P4R1}
+     else if(input$pregunta=="V1H1"){V1H1}
+     else if(input$pregunta=="V1H1"){V1H1}
+#Familiares
+    else if(input$pregunta=="PFAM1"){PFAM1}
+    else if(input$pregunta=="PFAM2"){PFAM2}
+    else if(input$pregunta=="PFAM3"){PFAM3}
+    else if(input$pregunta=="PFAM4"){PFAM4}
+# Economicos
+    else if(input$pregunta=="PPECO1"){PECO1}
+    else if(input$pregunta=="PPECO2"){PECO2}
+    else if(input$pregunta=="PPECO3"){PECO3}
+    else if(input$pregunta=="PPECO4"){PECO4}
+    else if(input$pregunta=="PPECO5"){PECO5}
+    else if(input$pregunta=="PPECO6"){PECO6}
+    else if(input$pregunta=="PPECO7"){PECO7}
+#Identidad  y comunidad
+    else if(input$pregunta=="PPIyC1"){PIyC1}
+    else if(input$pregunta=="PPIyC2"){PIyC2}
+    else if(input$pregunta=="PPIyC3"){PIyC3}
+    else if(input$pregunta=="PPIyC4"){PIyC4}
+    else if(input$pregunta=="PPIyC5"){PIyC5}
+    else if(input$pregunta=="PPIyC6"){PIyC6}
+
+
+    else if(input$pregunta=="PPCC1"){PCC1}
+    else if(input$pregunta=="PPCC2"){PCC2}
+    else if(input$pregunta=="PPCC3"){PCC3}
+    else if(input$pregunta=="PPCC4"){PCC4}
+
+
+
+     #Salinas
+    else if(input$pregunta=="PAMB1"){AMB1}
+    else if(input$pregunta=="PAMB2"){AMB2}
+    else if(input$pregunta=="PAMB3"){AMB3}
+    else if(input$pregunta=="PAMB4"){AMB4}
+    else if(input$pregunta=="PAMB5"){AMB5}
+    else if(input$pregunta=="SOC1"){SOC1}
+    else if(input$pregunta=="SOC2"){SOC2}
+    else if(input$pregunta=="SOC3"){SOC3}
+    else if(input$pregunta=="SOC4"){SOC4}
+    else if(input$pregunta=="SOC5"){SOC5}
+    else if(input$pregunta=="SOC6"){SOC6}
+    else if(input$pregunta=="ECO1"){EC1}
+    else if(input$pregunta=="ECO2"){EC2}
+    else if(input$pregunta=="ECO3"){EC3}
+    else if(input$pregunta=="ECO4"){EC4}
+    else if(input$pregunta=="ECO5"){EC5}
+
   })
   
+    observeEvent(input$tipomapa, {
+
+      if (input$tipomapa== "PS"){
+                updateSelectInput(session, "enfoque",                
+                    choices = c( "Sin carga de datos" = "ps1") 
+                )
+        }else if (input$tipomapa== "IS"){
+                updateSelectInput(session, "enfoque",                
+                    choices = c("Ambiental" = "ambi1" , "Economico" = "eco1","Social"="soc1") 
+                )
+        }else if (input$tipomapa== "EJ"){
+                updateSelectInput(session, "enfoque",                
+                   choices= c( "Datos familiares" = "DF","Datos económicos" = "DE", "Identidad y Comunidad" = "ID" , "Vivienda" = "VI", "Apreciación del encuestador" = "AE")
+                )
+        }
+  })
+
+
+
+   
   # Visualizacion secundaria 
   ##-- + Dados do candidato e eleição selecionada ----
   observe({
@@ -89,31 +131,43 @@ server <- function(input, output, session) {
       x <- character(0)
     # Poblacion y migracion
     # DG , DF, DE, ID, VI, AE
-    if (x== "DG"){
-      updateSelectInput(session, "pregunta",                
-                        choices = c("d" = "DF21" , "Adquisigfcion Vivienda" = "DF212"," HurgacaneDs " = "DF23", " IngundDciones " = "DF24") 
-      )
-    }else  if (x== "DF"){
-      updateSelectInput(session, "pregunta",  
-                        choices = c("d" = "DF1" , "Adquisicion Vivienda" = "DF12"," HuracaneDs " = "DF3", " InundDciones " = "DF4")
-                        
-      )} else  if (x== "DE"){
-        updateSelectInput(session, "pregunta",  
-                          choices = c("d" = "DF1" , "Adquisicion Vivienda" = "DF12"," HuracaneDs " = "DF3", " InundDciones " = "DF4")
-                          
-        )} else  if (x== "ID"){
-          updateSelectInput(session, "pregunta",  
-                            choices = c("d" = "DF1" , "Adquisicion Vivienda" = "DF12"," HuracaneDs " = "DF3", " InundDciones " = "DF4")
-                            
-          )} else  if (x== "VI"){
+    if (x== "DF"){
             updateSelectInput(session, "pregunta",  
-                              choices = c("Situacion Vivienda" = "V1P1R1" , "Adquisicion Vivienda" = "V1P4R1"," Huracanes " = "V1H1", " Inundaciones " = "V1I1")
-                              
-            )} else  if (x== "AE"){
-              updateSelectInput(session, "pregunta",  
-                                choices = c("d" = "DF1" , "Adquisicion Vivienda" = "DF12"," HuracaneDs " = "DF3", " InundDciones " = "DF4")
-                                
-              )} 
+            choices = c("¿Qué medio de transporte utilizan?" = "PFAM1" , "¿Dónde adquiere sus víveres?" = "PFAM2"," ¿A dónde acude en caso de urgencia médica? " = "PFAM3", "¿Con qué áreas de recreo cuenta en su colonia?" = "PFAM4")
+            
+    )} else  if (x== "DE"){
+            updateSelectInput(session, "pregunta",  
+            choices = c("¿Cuál es el principal trabajo pagado del jefe o jefa de familia?" = "PPECO1" , "Máximo nivel de estudios completo del jefe p jefa de familia" = "PPECO2","Puesto o posición de trabajo del jefe o jefa de familia " = "PPECO3", "¿A cuánto asciende el salario total semanal del jefe o jefa de familia?" = "PPECO4", "Además del jefe de familia ¿Cuántas personas trabajan en el hogar con salario remunerado?"="PPECO5" , "Número de personas que no perciben ingreso económico"= "PPECO6", "¿Cuánto tiempo tarda el jefe de familia en llegar a su lugar de trabajo?"  ="PPECO7" )
+            
+    )} else  if (x== "ID"){
+            updateSelectInput(session, "pregunta",  
+            choices = c("¿Cuál es su lugar de origen? " = "PPIyC1" , "¿Cuánto tiempo lleva viviendo en este lugar?" = "PPIyC2","¿Qué lo motivó a venir a vivir en esta localidad?" = "PPIyC3", " ¿Qué religión practica? " = "PPIyC4", "¿Cuáles son las ventajas de vivir en este lugar?"="PPIyC5",  "¿Piensa irse a vivir a otra localidad?"= "PPIyC6", "¿Usted a qué municipio siente que pertenece?" = "PPIyC7","¿Qué tan frecuente va a la Isla, la cabecera municipal de Isla Mujeres?" = "PPIyC8","¿Cuáles son los motivos por los que viaja a la Isla?"= "PPIyC9" )
+            
+    )} else  if (x== "VI"){
+            updateSelectInput(session, "pregunta",  
+          choices = c("Situacion Vivienda" = "V1P1R1" , "Adquisicion Vivienda" = "V1P4R1"," Huracanes " = "V1H1", " Inundaciones " = "V1I1")
+           
+            
+    )} else  if (x== "AE"){
+            updateSelectInput(session, "pregunta",  
+            choices = c("Sin informacion" = "DF1")      
+    )} 
+    #SALINAS
+    else  if (x== "ambi1"){
+            updateSelectInput(session, "pregunta",  
+            choices = c("Qué uso le dan sus vecinos a la salina?" = "PAMB1" , "¿Qué beneficio recibe de vivir aquí?" = "PAMB2","¿Qué desventajas recibe de vivir aquí cerca de la salina? " = "PAMB3", "¿En qué condiciones considera que se encuentra la salina? " = "PAMB4", "¿Qué efectos genera la condición de la Salina?" = "PAMB5")
+            
+    )} else  if (x== "soc1"){
+            updateSelectInput(session, "pregunta",  
+            choices = c("¿Entre los vecinos, realizan alguna actividad en común?" = "SOC1" , "¿Cómo es la relación con sus vecinos?" = "SOC2"," ¿Ha tenido problemas con sus vecinos? " = "SOC3", " ¿Con qué frecuencia se hacen favores entre vecinos? " = "SOC4", "¿En algún problema que se le presente, sus vecinos le ayudan?"= "SOC5")
+            
+    )} else  if (x== "eco1"){
+            updateSelectInput(session, "pregunta",  
+            choices = c("¿Cuántas personas de esta familia trabajan? " = "ECO1" , "¿En qué trabajan?" = "ECO2"," ¿Realizan alguna actividad productiva por su cuenta? " = "ECO3", " ¿Intercambian productos con sus vecinos? " = "ECO4")      
+    )}  else  if (x== "ps1"){
+            updateSelectInput(session, "pregunta",  
+            choices = c("Sin informacion")      
+    )} 
   })
   
   output$localiz <- renderText ({

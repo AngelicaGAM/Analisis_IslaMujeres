@@ -21,4 +21,16 @@ library(shinyWidgets)
 library(plyr)
 library(janitor)
 
-library(shiny)
+library(shinyjs)
+
+
+library(rsconnect)
+
+library(tidyr)
+
+library(caret)
+library(arules)
+library(arulesViz)
+library(shinythemes)
+library(visNetwork)
+

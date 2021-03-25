@@ -9,6 +9,8 @@ server <- function(input, output, session) {
   source("graficas.R")
   source("graficarSE.R")
   source("G.R")
+  source("graficas.R")
+  source("graficarSE.R")
   source("tablas.R")
   xdf  <- read.csv("./x.csv", header = TRUE, sep= ",",strip.white = TRUE,na.strings = "EMPTY", encoding = "UTF-8")
   
@@ -225,28 +227,28 @@ server <- function(input, output, session) {
   # graficas de mosaico
   output$mosaico1 <- renderPlot({
     if(input$var1 == "Origen" & input$var2 == "Puesto" & input$var3 == "Edad"){
-      mosaics2(tbl15, c(0,0,0,0), c(0,0,0,2))
+      mosaics(tbl15, c(90,0,0,0), c(0,0,0,2))
     }else{
       if(input$var1 == "Origen" & input$var2 == "Puesto" & input$var3 == "Sexo"){
-        mosaics2(tbl16, c(0,0,0,0), c(0,0,0,2))
+        mosaics(tbl16, c(0,0,0,0), c(0,0,0,2))
       }else{
         if(input$var1 == "Origen" & input$var2 == "Trabajo" & input$var3 == "Edad"){
-          mosaics2(tbl17, c(0,0,0,0), c(0,0,0,2))
+          mosaics(tbl17, c(0,0,0,0), c(0,0,0,2))
         }else{
           if(input$var1 == "Origen" & input$var2 == "Trabajo" & input$var3 == "Sexo"){
-            mosaics2(tbl18, c(0,0,0,0), c(0,0,0,2))
+            mosaics(tbl18, c(0,0,0,0), c(0,0,0,2))
           }else{
             if(input$var1 == "Origen" & input$var2 == "Escolaridad" & input$var3 == "Edad"){
-              mosaics2(tbl19, c(0,0,0,0), c(0,0,0,2))
+              mosaics(tbl19, c(90,0,0,0), c(0,0,0,2))
             }else{
               if(input$var1 == "Origen" & input$var2 == "Escolaridad" & input$var3 == "Sexo"){
-                mosaics2(tbl20, c(0,0,0,0), c(0,0,0,2))
+                mosaics(tbl20, c(90,0,0,0), c(0,0,0,2))
               }else{
                 if(input$var1 == "Origen" & input$var2 == "Ingreso_sem" & input$var3 == "Edad"){
-                  mosaics2(tbl21, c(0,0,0,0), c(0,0,0,2))
+                  mosaics(tbl21, c(0,0,0,0), c(0,0,0,2))
                 }else{
                   if(input$var1 == "Origen" & input$var2 == "Ingreso_sem" & input$var3 == "Sexo"){
-                    mosaics2(tbl22, c(0,0,0,0), c(0,0,0,2))
+                    mosaics(tbl22, c(0,0,0,0), c(0,0,0,2))
                   }else{
                     if(input$var1 == "Escolaridad" & input$var2 == "Puesto" & input$var3 == "Edad"){
                       mosaics2(tbl23, c(0,0,0,0), c(0,0,0,2))
@@ -400,8 +402,22 @@ server <- function(input, output, session) {
       }
     }
   })
-  
-  
+  output$Expl1 <- renderUI({
+    if(input$var3 == "Edad"){
+      word <- paste("<b>",tags$i("o Edad:"),"</b>",tags$i("Grupo A: Encuestados entre 18 y 40 años,
+                                                          Grupo B: Encuestados mayores de 40 años"))
+      HTML(paste(word))
+    }
+  })
+  output$Expl2 <- renderUI({
+    if(input$var2 == "Ingreso_sem"){
+      word <- paste("<b>",tags$i("o Ingreso semanal:"),"</b>",tags$i("Grupo A: $0 a $1200,
+                                                          Grupo B: $1201 a $2500
+                                                          Grupo C: $2501 a $5000
+                                                          Grupo D: Más de $5000"))
+      HTML(paste(word))
+    }
+  })
   
  
   output$data <- DT::renderDataTable({

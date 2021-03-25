@@ -3,7 +3,7 @@ library(reshape2)
 library(plotrix)
 library(scales)
 library(tidyverse)
-setwd("~/UC/Analisis_IslaMujeres/App_Shiny/Barplots")
+#setwd("~/UC/Analisis_IslaMujeres/App_Shiny/Barplots")
 
 
 

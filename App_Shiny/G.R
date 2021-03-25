@@ -1,6 +1,7 @@
 #source("UC/PT/Entregables APP Isla/DatosEjido/Graficas/Funciones.R")
 source("Funciones.R")
 #------------------------------------------------------------------------
+library(shiny)
 
 #SALINAS 
 

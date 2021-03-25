@@ -9,7 +9,7 @@ mosaics <- function(tbl, rot, offs){
                                                                          "left", 
                                                                          "left"),
                                                          offset_labels = offs,
-                                                         gp_labels = gpar(fontsize = 8),
+                                                         gp_labels = gpar(fontsize = 10),
                                                          gp_varnames = gpar(fontsize = 0, fontface = 2)))
 }
 mosaics2 <- function(tbl, rot, offs){
@@ -20,7 +20,7 @@ mosaics2 <- function(tbl, rot, offs){
                                                                         "left"),
                                                         offset_labels = offs,
                                                         abbreviate_labs = TRUE,
-                                                        gp_labels = gpar(fontsize = 8),
+                                                        gp_labels = gpar(fontsize = 10),
                                                         gp_varnames = gpar(fontsize = 0, fontface = 2)))
 }
 
@@ -70,28 +70,78 @@ tbl14 <- xtabs(~Trabajo + Ingreso_sem, xdf)
 #3
 tbl15 <- xtabs(~Origen + Puesto + Edad, xdf)
 tbl15 <- tbl15[c(1,2,11,13,15,16),c(1,2,6,5,3,4),]
+rownames(tbl15)[rownames(tbl15) == "Campeche"] = "CHIS"
+rownames(tbl15)[rownames(tbl15) == "Chiapas"] = "CAM"
+rownames(tbl15)[rownames(tbl15) == "Quintana Roo"] = "QROO"
+rownames(tbl15)[rownames(tbl15) == "Tabasco"] = "TAB"
+rownames(tbl15)[rownames(tbl15) == "Veracruz"] = "VER"
+rownames(tbl15)[rownames(tbl15) == "Yucatan"] = "YUC"
+
 
 tbl16 <- xtabs(~Origen + Puesto + Sexo, xdf)
 tbl16 <- tbl16[c(1,2,11,13,15,16),c(1,2,6,5,3,4),]
+rownames(tbl16)[rownames(tbl16) == "Campeche"] = "CHIS"
+rownames(tbl16)[rownames(tbl16) == "Chiapas"] = "CAM"
+rownames(tbl16)[rownames(tbl16) == "Quintana Roo"] = "QROO"
+rownames(tbl16)[rownames(tbl16) == "Tabasco"] = "TAB"
+rownames(tbl16)[rownames(tbl16) == "Veracruz"] = "VER"
+rownames(tbl16)[rownames(tbl16) == "Yucatan"] = "YUC"
 
 tbl17 <- xtabs(~Origen + Trabajo + Edad, xdf)
 tbl17 <- tbl17[c(1,2,11,13,15,16),,]
+rownames(tbl17)[rownames(tbl17) == "Campeche"] = "CHIS"
+rownames(tbl17)[rownames(tbl17) == "Chiapas"] = "CAM"
+rownames(tbl17)[rownames(tbl17) == "Quintana Roo"] = "QROO"
+rownames(tbl17)[rownames(tbl17) == "Tabasco"] = "TAB"
+rownames(tbl17)[rownames(tbl17) == "Veracruz"] = "VER"
+rownames(tbl17)[rownames(tbl17) == "Yucatan"] = "YUC"
 
 tbl18 <- xtabs(~Origen + Trabajo + Sexo, xdf)
 tbl18 <- tbl18[c(1,2,11,13,15,16),,]
+rownames(tbl18)[rownames(tbl18) == "Campeche"] = "CHIS"
+rownames(tbl18)[rownames(tbl18) == "Chiapas"] = "CAM"
+rownames(tbl18)[rownames(tbl18) == "Quintana Roo"] = "QROO"
+rownames(tbl18)[rownames(tbl18) == "Tabasco"] = "TAB"
+rownames(tbl18)[rownames(tbl18) == "Veracruz"] = "VER"
+rownames(tbl18)[rownames(tbl18) == "Yucatan"] = "YUC"
 
 tbl19 <- xtabs(~Origen + Escolaridad + Edad, xdf)
 tbl19 <- tbl19[c(1,2,11,13,15,16),c(4,5,6,1,7,2,3),]
+rownames(tbl19)[rownames(tbl19) == "Campeche"] = "CHIS"
+rownames(tbl19)[rownames(tbl19) == "Chiapas"] = "CAM"
+rownames(tbl19)[rownames(tbl19) == "Quintana Roo"] = "QROO"
+rownames(tbl19)[rownames(tbl19) == "Tabasco"] = "TAB"
+rownames(tbl19)[rownames(tbl19) == "Veracruz"] = "VER"
+rownames(tbl19)[rownames(tbl19) == "Yucatan"] = "YUC"
 
 tbl20 <- xtabs(~Origen + Escolaridad + Sexo, xdf)
 tbl20 <- tbl20[c(1,2,11,13,15,16),c(4,5,6,1,7,2,3),]
+rownames(tbl20)[rownames(tbl20) == "Campeche"] = "CHIS"
+rownames(tbl20)[rownames(tbl20) == "Chiapas"] = "CAM"
+rownames(tbl20)[rownames(tbl20) == "Quintana Roo"] = "QROO"
+rownames(tbl20)[rownames(tbl20) == "Tabasco"] = "TAB"
+rownames(tbl20)[rownames(tbl20) == "Veracruz"] = "VER"
+rownames(tbl20)[rownames(tbl20) == "Yucatan"] = "YUC"
+
 
 ######################################################
 tbl21 <- xtabs(~Origen + Ingreso_sem + Edad, xdf)
 tbl21 <- tbl21[c(1,2,11,13,15,16),,]
+rownames(tbl21)[rownames(tbl21) == "Campeche"] = "CHIS"
+rownames(tbl21)[rownames(tbl21) == "Chiapas"] = "CAM"
+rownames(tbl21)[rownames(tbl21) == "Quintana Roo"] = "QROO"
+rownames(tbl21)[rownames(tbl21) == "Tabasco"] = "TAB"
+rownames(tbl21)[rownames(tbl21) == "Veracruz"] = "VER"
+rownames(tbl21)[rownames(tbl21) == "Yucatan"] = "YUC"
 
 tbl22 <- xtabs(~Origen + Ingreso_sem + Sexo, xdf)
 tbl22 <- tbl22[c(1,2,11,13,15,16),,]
+rownames(tbl22)[rownames(tbl22) == "Campeche"] = "CHIS"
+rownames(tbl22)[rownames(tbl22) == "Chiapas"] = "CAM"
+rownames(tbl22)[rownames(tbl22) == "Quintana Roo"] = "QROO"
+rownames(tbl22)[rownames(tbl22) == "Tabasco"] = "TAB"
+rownames(tbl22)[rownames(tbl22) == "Veracruz"] = "VER"
+rownames(tbl22)[rownames(tbl22) == "Yucatan"] = "YUC"
 
 tbl23 <- xtabs(~Escolaridad + Puesto + Edad, xdf)
 tbl23 <- tbl23[c(4,5,6,1,7,2,3),c(1,2,6,5,3,4),]

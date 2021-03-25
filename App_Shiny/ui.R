@@ -170,10 +170,20 @@ body <- dashboardBody(
     # MOSAICOS
     tabItem(tabName = "mosaics",
             column(12, wellPanel(
-              h2("Caracteristicas de migracion"),
-              h3("localiz"),
+              h2("Características sobre población y migración"),
+              h3("Zona Urbana Isla Mujeres"),
             )), 
-            plotOutput("mosaico1", height = 700, width = "100%")
+            plotOutput("mosaico1", height = 800, width = "100%"),
+              
+            br(),
+            br(),
+            br(),
+            br(),
+            br(),
+            br(),
+            br(),
+            htmlOutput("Expl1"),tags$head(tags$style("#Expl1{font-size: 20px;font-style: italic;}")),
+            htmlOutput("Expl2"),tags$head(tags$style("#Expl2{font-size: 20px;font-style: italic;}")),
     ),
     
     tabItem(tabName = "asociation",

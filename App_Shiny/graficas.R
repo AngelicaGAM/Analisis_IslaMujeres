@@ -351,7 +351,7 @@ transporte <- function(df, N){
   
   g = df$DF_tr_otro
   g_0 = contar(g)
-  
+  total <- c(a_0,b_0,c_0,d_0,e_0,f_0,g_0)
   a_0 = as.integer((a_0/N)*100)
   b_0 = as.integer((b_0/N)*100)
   c_0 = as.integer((c_0/N)*100)
@@ -363,7 +363,7 @@ transporte <- function(df, N){
   RESPUESTA = c("Autobús","Colectivo","Moto","Mototaxi","Taxi","Auto","Otro")
   n <- c(a_0,b_0,c_0,d_0,e_0,f_0,g_0)
   group = c(rep('Transporte', 7))
-  dff <- data.frame(RESPUESTA, n,group)
+  dff <- data.frame(RESPUESTA, n,group, total)
   return(dff)
 }
 viveres <- function(df, N){
@@ -384,7 +384,7 @@ viveres <- function(df, N){
   
   f = df$DF_v_otro
   f_0 = contar(f)
-  
+  total  <- c(a_0,b_0,c_0,d_0,e_0,f_0)
   a_0 = as.integer((a_0/N)*100)
   b_0 = as.integer((b_0/N)*100)
   c_0 = as.integer((c_0/N)*100)
@@ -395,7 +395,7 @@ viveres <- function(df, N){
   RESPUESTA = c("Mercado de la colonia","Tienda abarrotes","Super mercado","Tienda de conveniencia","Plaza comercial","Otro")
   n <- c(a_0,b_0,c_0,d_0,e_0,f_0)
   group = c(rep("Víveres",6))
-  dff <- data.frame(RESPUESTA, n, group)
+  dff <- data.frame(RESPUESTA, n, group, total)
   
   return(dff)
 }
@@ -420,7 +420,7 @@ medico <- function(df, N){
   
   g = df$DF_urg_otro
   g_0 = contar(g)
-  
+  total <- c(a_0,b_0,c_0,d_0,e_0,f_0,g_0)
   a_0 = as.integer((a_0/N)*100)
   b_0 = as.integer((b_0/N)*100)
   c_0 = as.integer((c_0/N)*100)
@@ -432,7 +432,7 @@ medico <- function(df, N){
   RESPUESTA = c("Me atiendo en casa","Médico part en comunidad","Médico particular Cancún","Hospital general Cancún","Cruz roja","Farmacia","Otro")
   n <- c(a_0,b_0,c_0,d_0,e_0,f_0,g_0)
   group = c(rep("Acude Médico",7))
-  dff <- data.frame(RESPUESTA, n,group)
+  dff <- data.frame(RESPUESTA, n,group, total)
   
   return(dff)
 }
@@ -457,7 +457,7 @@ areas <- function(df, N){
   
   g = df$DF_a_otro
   g_0 = contar(g)
-  
+    total <- c(a_0,b_0,c_0,d_0,e_0,f_0,g_0)
   a_0 = as.integer((a_0/N)*100)
   b_0 = as.integer((b_0/N)*100)
   c_0 = as.integer((c_0/N)*100)
@@ -469,7 +469,7 @@ areas <- function(df, N){
   RESPUESTA = c("Parque","Unidad deportiva","Jardines","Casa de la cultura","Biblioteca","Otros(Ninguna)", "Otros(Varios)")
   n <- c(a_0,b_0,c_0,d_0,e_0,f_0,g_0)
   group = c(rep("Áreas recreo",7))
-  dff <- data.frame(RESPUESTA, n,group)
+  dff <- data.frame(RESPUESTA, n,group, total)
   
   dff = dff %>% arrange(n)
   for (x in dff) {
@@ -482,7 +482,7 @@ areas <- function(df, N){
 trabajos <- function(df,N){
   a = df$DE02_trabajo
   a_0 = contar_tr(a)
-  
+  total <- c(a_0[1],a_0[2],a_0[3],a_0[4])
   a_0[1] = as.integer((a_0[1]/N)*100)
   a_0[2] = as.integer((a_0[2]/N)*100)
   a_0[3] = as.integer((a_0[3]/N)*100)
@@ -491,13 +491,13 @@ trabajos <- function(df,N){
   RESPUESTA <- c("Comercio", "Industria", "Jubilado", "Agrícola")
   n <- c(a_0[1],a_0[2],a_0[3],a_0[4])
   group = c(rep("Trabajo", 4))
-  dff <- data.frame(RESPUESTA, n,group)
+  dff <- data.frame(RESPUESTA, n,group, total)
   return(dff)
 }
 escolaridad <- function(df,N){
   a = df$DE06_esc_jefe
   a_0 = contar_tr2(a)
-  
+  total <- c(a_0[1],a_0[2],a_0[3],a_0[4],a_0[5],a_0[6],a_0[7])
   a_0[1] = as.integer((a_0[1]/N)*100)
   a_0[2] = as.integer((a_0[2]/N)*100)
   a_0[3] = as.integer((a_0[3]/N)*100)
@@ -509,14 +509,14 @@ escolaridad <- function(df,N){
   RESPUESTA <- c("Primaria", "Secundaria", "Bachillerato","Licenciatura", "Técnico-superior","Primaria incompleta","Posgrado")
   n <- c(a_0[1],a_0[2],a_0[3],a_0[4],a_0[5],a_0[6],a_0[7])
   group = c(rep("Escolaridad",7))
-  dff <- data.frame(RESPUESTA, n,group)
+  dff <- data.frame(RESPUESTA, n,group, total)
   
   return(dff)
 }
 puesto <- function(df, N){
   a = df$DE03_puesto
   a_0 = contar_puesto(a)
-  
+    total <- c(a_0[1],a_0[2],a_0[3],a_0[4],a_0[5],a_0[6])
   a_0[1] = as.integer((a_0[1]/N)*100)
   a_0[2] = as.integer((a_0[2]/N)*100)
   a_0[3] = as.integer((a_0[3]/N)*100)
@@ -527,13 +527,13 @@ puesto <- function(df, N){
   RESPUESTA <- c("Empleado-bajo", "Empleado-medio", "Jubilado","Otro", "Patrón","Trabajador-arrendador")
   n <- c(a_0[1],a_0[2],a_0[3],a_0[4],a_0[5],a_0[6])
   group = c(rep("Puesto", 6))
-  dff <- data.frame(RESPUESTA, n,group)
+  dff <- data.frame(RESPUESTA, n,group, total)
   return(dff)
 }
 salario <- function(df, N){
   a = df$DE05_ingreso_sem
   a_0 = contar_salario(a)
-  
+  total <- c(a_0[1],a_0[2],a_0[3],a_0[4])
   a_0[1] = as.integer((a_0[1]/N)*100)
   a_0[2] = as.integer((a_0[2]/N)*100)
   a_0[3] = as.integer((a_0[3]/N)*100)
@@ -542,13 +542,13 @@ salario <- function(df, N){
   RESPUESTA <- c("$0 a $1200", "$1201 - $2500", "$2501 - $5000","Más de $5000")
   n <- c(a_0[1],a_0[2],a_0[3],a_0[4])
   group = c(rep("Ingr x Sem.", 4))
-  dff <- data.frame(RESPUESTA, n,group)
+  dff <- data.frame(RESPUESTA, n,group, total)
   return(dff)
 }
 trabajan <- function(df, N){
   a = df$DE01_hogar_trabajan
   a_0 = contar_tr3(a)
-  
+  total <- c(a_0[1],a_0[2],a_0[3],a_0[4],a_0[5],a_0[6])
   a_0[1] = as.integer((a_0[1]/N)*100)
   a_0[2] = as.integer((a_0[2]/N)*100)
   a_0[3] = as.integer((a_0[3]/N)*100)
@@ -559,13 +559,13 @@ trabajan <- function(df, N){
   RESPUESTA <- c("Ninguno", "1", "2","3", "4","5")
   n <- c(a_0[1],a_0[2],a_0[3],a_0[4],a_0[5],a_0[6])
   #group = c(rep("Puesto", 6))
-  dff <- data.frame(RESPUESTA, n)
+  dff <- data.frame(RESPUESTA, n, total)
   return(dff)
 }
 sIngreso <- function(df, N){
   a = df$DE07_sIngreso
   a_0 = contar_tr3(a)
-  
+  total <- c(a_0[1],a_0[2],a_0[3],a_0[4],a_0[5],a_0[6])
   a_0[1] = as.integer((a_0[1]/N)*100)
   a_0[2] = as.integer((a_0[2]/N)*100)
   a_0[3] = as.integer((a_0[3]/N)*100)
@@ -576,13 +576,13 @@ sIngreso <- function(df, N){
   RESPUESTA <- c("Ninguno", "1", "2","3", "4","5")
   n <- c(a_0[1],a_0[2],a_0[3],a_0[4],a_0[5],a_0[6])
   #group = c(rep("Puesto", 6))
-  dff <- data.frame(RESPUESTA, n)
+  dff <- data.frame(RESPUESTA, n, total)
   return(dff)
 }
 tiempo <- function(df,N){
   a = df$DE08_tmp
   a_0 = contar_tmp(a)
-  
+  total <- c(a_0[1],a_0[2],a_0[3],a_0[4],a_0[5])
   a_0[1] = as.integer((a_0[1]/N)*100)
   a_0[2] = as.integer((a_0[2]/N)*100)
   a_0[3] = as.integer((a_0[3]/N)*100)
@@ -591,7 +591,7 @@ tiempo <- function(df,N){
   
   RESPUESTA <- c("Trabaja en casa", "Menos de 20 minutos", "Menos de una hora","Más de una hora","Más de 2 horas")
   n <- c(a_0[1],a_0[2],a_0[3],a_0[4],a_0[5])
-  dff <- data.frame(RESPUESTA, n)
+  dff <- data.frame(RESPUESTA, n, total)
   return(dff)
 }
 
@@ -641,7 +641,7 @@ origen <- function(df, N){
   
   o = df$IyC02_Estado_Origen_YUCAT.c1.N
   o_0 = contar(o)
-  
+  total <- c(a_0,b_0,c_0, d_0, e_0,f_0,g_0, h_0, i_0, j_0, k_0 ,l_0, m_0, n_0,o_0)
   a_0 = as.integer((a_0/N)*100)
   b_0 = as.integer((b_0/N)*100)
   c_0 = as.integer((c_0/N)*100)
@@ -659,10 +659,10 @@ origen <- function(df, N){
   o_0 = as.integer((o_0/N)*100)
   
   
-  RESPUESTA <- c("Chiapas","Q.Roo","Tabasco","Veracruz","Yucatán")
-  n <- c(b_0,j_0,l_0,n_0,o_0)
+  RESPUESTA <- c("Campeche","Chiapas","Chihuahua","DF", "Guanajuato", "Guerrero","Hidalgo","Oaxaca","Puebla","Q.Roo","Sonora", "Tabasco","Tamaulipas" ,"Veracruz","Yucatán")
+  n <- c(a_0,b_0,c_0, d_0, e_0,f_0,g_0, h_0, i_0, j_0, k_0 ,l_0, m_0, n_0,o_0)
   group <- c(rep("Origen",5))
-  dff <- data.frame(RESPUESTA,n,group)
+  dff <- data.frame(RESPUESTA,n,group, total)
   
   dff = dff %>% arrange(n)
   return(dff)
@@ -679,7 +679,7 @@ tmp_viv <- function(df,N){
   
   d = df$IyC03_Tiempo_Viviendo_Lugar_TODA
   d_0 = contar(d)
-
+total <- c(a_0,b_0,c_0,d_0)
   a_0 = as.integer((a_0/N)*100)
   b_0 = as.integer((b_0/N)*100)
   c_0 = as.integer((c_0/N)*100)
@@ -688,7 +688,7 @@ tmp_viv <- function(df,N){
   RESPUESTA <- c("Menos de un año", "Entre un año y cinco", "Más de cinco años", "Toda mi vida")
   n <- c(a_0,b_0,c_0,d_0)
   group = c(rep("Tiempo aquí", 4))
-  dff <- data.frame(RESPUESTA, n, group)
+  dff <- data.frame(RESPUESTA, n, group, total)
   return(dff)
 }
 motivo <- function(df, N){
@@ -709,7 +709,7 @@ motivo <- function(df, N){
   
   f = df$IyC04_Motivo_Localidad_Otro
   f_0 = contar(f)
-  
+  total <- c(a_0,b_0,c_0,d_0,e_0,f_0)
   a_0 = as.integer((a_0/N)*100)
   b_0 = as.integer((b_0/N)*100)
   c_0 = as.integer((c_0/N)*100)
@@ -720,7 +720,7 @@ motivo <- function(df, N){
   RESPUESTA <- c("Parientes","Amigos","Trabajo","Negocio","Oportunidad","Otro")
   n <- c(a_0,b_0,c_0,d_0,e_0,f_0)
   group <- c(rep("Motivo venir",6))
-  dff <- data.frame(RESPUESTA,n,group)
+  dff <- data.frame(RESPUESTA,n,group, total)
   return(dff)
 }
 ayuda <- function(df,N){
@@ -738,7 +738,7 @@ ayuda <- function(df,N){
   
   e = df$IyC05_Acudo_Otro
   e_0 = contar(e)
-  
+  total <- c(a_0,b_0,c_0,d_0,e_0)
   a_0 = as.integer((a_0/N)*100)
   b_0 = as.integer((b_0/N)*100)
   c_0 = as.integer((c_0/N)*100)
@@ -748,7 +748,7 @@ ayuda <- function(df,N){
   RESPUESTA <- c("Vecinos", "Familia","Autoridad","Iglesia","Otro")
   n <- c(a_0,b_0,c_0,d_0,e_0)
   group <- c(rep("Acudo ayuda",5))
-  dff <- data.frame(RESPUESTA,n,group)
+  dff <- data.frame(RESPUESTA,n,group, total)
   return(dff)
 }
 religion <- function(df,N){
@@ -772,7 +772,7 @@ religion <- function(df,N){
   
   g = df$IyC06_Religion_OTRO
   g_0 = contar(g)
-  
+  total <- c(a_0,b_0,c_0,d_0,e_0,f_0,g_0)
   a_0 = as.integer((a_0/N)*100)
   b_0 = as.integer((b_0/N)*100)
   c_0 = as.integer((c_0/N)*100)
@@ -784,7 +784,7 @@ religion <- function(df,N){
   RESPUESTA <- c("Adventista", "Católica","Evangélica","Mormón","Ninguna","Testigos","Otro")
   n <- c(a_0,b_0,c_0,d_0,e_0,f_0,g_0)
   group <- c(rep("Religión",7))
-  dff <- data.frame(RESPUESTA,n,group)
+  dff <- data.frame(RESPUESTA,n,group, total)
   return(dff)
 }
 ventajas <- function(df,N){
@@ -808,7 +808,7 @@ ventajas <- function(df,N){
   
   g = df$IyC08_Ventajas_Otro
   g_0 = contar(g)
-  
+  total <- c(a_0,b_0,c_0,d_0,e_0,f_0,g_0)
   a_0 = as.integer((a_0/N)*100)
   b_0 = as.integer((b_0/N)*100)
   c_0 = as.integer((c_0/N)*100)
@@ -820,7 +820,7 @@ ventajas <- function(df,N){
   RESPUESTA <- c("Tengo casa", "Tengo trabajo","Tengo familia","Tengo más tiempo","Es tranquilo","Es seguro","Otro")
   n <- c(a_0,b_0,c_0,d_0,e_0,f_0,g_0)
   group <- c(rep("Causa residencia",7))
-  dff <- data.frame(RESPUESTA,n,group)
+  dff <- data.frame(RESPUESTA,n,group, total)
   return(dff)
 }
 irse <- function(df, N){
@@ -835,7 +835,7 @@ irse <- function(df, N){
   
   d = df$IyC09_Emigrar_QUIZAS
   d_0 = contar(d)
-  
+   total <- c(a_0,b_0,c_0,d_0)
   a_0 = as.integer((a_0/N)*100)
   b_0 = as.integer((b_0/N)*100)
   c_0 = as.integer((c_0/N)*100)
@@ -844,7 +844,7 @@ irse <- function(df, N){
   RESPUESTA <- c("Me regreso a mi lugar de origen", "En el mismo estado","No","Quizás")
   n <- c(a_0,b_0,c_0,d_0)
   group <- c(rep("Irse",4))
-  dff <- data.frame(RESPUESTA,n,group)
+  dff <- data.frame(RESPUESTA,n,group, total)
   return(dff)
 }
 pertenencia <- function(df,N){
@@ -856,7 +856,7 @@ pertenencia <- function(df,N){
   
   c = df$IyC10_Pertenencia_NINGUNO
   c_0 = contar(c)
-  
+    total <- c(a_0,b_0,c_0)
   a_0 = as.integer((a_0/N)*100)
   b_0 = as.integer((b_0/N)*100)
   c_0 = as.integer((c_0/N)*100)
@@ -864,7 +864,7 @@ pertenencia <- function(df,N){
   RESPUESTA <- c("Benito Juárez", "Isla Mujeres","Ninguno")
   n <- c(a_0,b_0,c_0)
   group <- c(rep("Pertenencia",3))
-  dff <- data.frame(RESPUESTA,n,group)
+  dff <- data.frame(RESPUESTA,n,group, total)
   return(dff)
 }
 frecuencia <- function(df, N){
@@ -882,7 +882,7 @@ frecuencia <- function(df, N){
   
   e = df$IyC11_Frecuencia_Cabecera_Isla_NUNCA
   e_0 = contar(e)
-  
+    total <- c(a_0,b_0,c_0,d_0,e_0)
   a_0 = as.integer((a_0/N)*100)
   b_0 = as.integer((b_0/N)*100)
   c_0 = as.integer((c_0/N)*100)
@@ -892,7 +892,7 @@ frecuencia <- function(df, N){
   RESPUESTA <- c("Siempre", "Casi siempre","Frecuentemente","A veces", "Nunca")
   n <- c(a_0,b_0,c_0,d_0,e_0)
   group <- c(rep("Va a Isla",5))
-  dff <- data.frame(RESPUESTA,n,group)
+  dff <- data.frame(RESPUESTA,n,group, total)
   return(dff)
 }
 motivos <- function(df,N){
@@ -913,7 +913,7 @@ motivos <- function(df,N){
   
   f = df$IyC12_Motivo_Viaja_Otro
   f_0 = contar(f)
-  
+   total <- c(a_0,b_0,c_0,d_0,e_0,f_0) 
   a_0 = as.integer((a_0/N)*100)
   b_0 = as.integer((b_0/N)*100)
   c_0 = as.integer((c_0/N)*100)
@@ -924,7 +924,7 @@ motivos <- function(df,N){
   RESPUESTA <- c("Asuntos administrativos", "Pago de servicios","Trabajo","Recreación","Familia","Otro")
   n <- c(a_0,b_0,c_0,d_0,e_0,f_0)
   group <- c(rep("Motivos para Isla",6))
-  dff <- data.frame(RESPUESTA,n,group)
+  dff <- data.frame(RESPUESTA,n,group, total)
   return(dff)
 }
 
@@ -963,15 +963,26 @@ mots = motivos(df_fin,N)
 #Circular bar plots#
 #Familiares
 #dev.off()
+
 data = rbind(tr,vivs,med,ar)
 data = data %>% arrange(group, n)
+#¿Cuántas personas viven en esta casa?
 
+#Grafias
 PFAM1 = graficarPlot(tr,"Respuesta","%", "¿Qué medio de transporte utilizan?")
 PFAM2 = graficarPlot(viv,"Respuesta","%", "¿Dónde adquiere sus víveres?")
 PFAM3 = graficarPlot(med,"Respuesta","%", "¿A dónde acude en caso de urgencia médica?")
 PFAM4 = graficarPlot(ar,"Respuesta","%", "¿Con qué áreas de recreo cuenta en su colonia?")
+
+#tablas
+TFAM1 = graficarTable(tr,"Respuesta","%", "¿Qué medio de transporte utilizan?")
+TFAM2 = graficarTable(viv,"Respuesta","%", "¿Dónde adquiere sus víveres?")
+TFAM3 = graficarTable(med,"Respuesta","%", "¿A dónde acude en caso de urgencia médica?  ")
+TFAM4 = graficarTable(ar,"Respuesta","%", "¿Con qué áreas de recreo cuenta en su colonia?")
+
 #Económicos
 #Económicos
+#Grafias
 PECO1 = graficarPlot(tr2,"Respuesta","%","¿Cuál es el principal trabajo pagado del jefe o jefa de familia?")
 PECO2 = graficarPlot(esc,"Respuesta","%","Máximo nivel de estudios completo del jefe p jefa de familia")
 PECO3 = graficarPlot(ps,"Respuesta","%","Puesto o posición de trabajo del jefe o jefa de familia")
@@ -979,6 +990,15 @@ PECO4 = graficarPlot(sal,"Respuesta","%","¿A cuánto asciende el salario total 
 PECO5 = graficarPlot(trab,"Respuesta","%","Además del jefe de familia, ¿Cuántas personas trabajan en el hogar con salario remunerado?")
 PECO6 = graficarPlot(ing,"Respuesta","%","Número de personas que no perciben ingreso económico")
 PECO7 = graficarPlot(tmp,"Respuesta","%","¿Cuánto tiempo tarda el jefe de familia en llegar a su lugar de trabajo?")
+#tablas
+TECO1 = graficarTable(tr2,"Respuesta","%","¿Cuál es el principal trabajo pagado del jefe o jefa de familia?")
+TECO2 = graficarTable(esc,"Respuesta","%","Máximo nivel de estudios completo del jefe p jefa de familia")
+TECO3 = graficarTable(ps,"Respuesta","%","Puesto o posición de trabajo del jefe o jefa de familia")
+TECO4 = graficarTable(sal,"Respuesta","%","¿A cuánto asciende el salario total semanal del jefe o jefa de familia?")
+TECO5 = graficarTable(trab,"Respuesta","%","Además del jefe de familia, ¿Cuántas personas trabajan en el hogar con salario remunerado?")
+TECO6 = graficarTable(ing,"Respuesta","%","Número de personas que no perciben ingreso económico")
+TECO7 = graficarTable(tmp,"Respuesta","%","¿Cuánto tiempo tarda el jefe de familia en llegar a su lugar de trabajo?")
+
 #Identidad y comunidad
 #Identidad
 PIyC1 = graficarPlot(or,"Respuesta","%","¿Cuál es su lugar de origen")
@@ -987,9 +1007,22 @@ PIyC3 = graficarPlot(mot,"Respuesta","%","¿Qué lo motivó a venir a vivir en e
 PIyC4 = graficarPlot(ay,"Respuesta","%","En caso de requerir ayuda, apoyo legal o económico ante algún problema acudo a:")
 PIyC5 = graficarPlot(rel,"Respuesta","%","¿Qué religión practica?")
 PIyC6 = graficarPlot(ven,"Respuesta","%","¿Cuáles son las ventajas de vivir en este lugar?")
+
+TIyC1 = graficarTable(or,"Respuesta","%","¿Cuál es su lugar de origen")
+TIyC2 = graficarTable(viv,"Respuesta","%","¿Cuánto tiempo lleva viviendo en este lugar?")
+TIyC3 = graficarTable(mot,"Respuesta","%","¿Qué lo motivó a venir a vivir en esta localidad?")
+TIyC4 = graficarTable(ay,"Respuesta","%","En caso de requerir ayuda, apoyo legal o económico ante algún problema acudo a:")
+TIyC5 = graficarTable(rel,"Respuesta","%","¿Qué religión practica?")
+TIyC6 = graficarTable(ven,"Respuesta","%","¿Cuáles son las ventajas de vivir en este lugar?")
+
 #Comunidad
 PCC1 = graficarPlot(ir,"Respuesta","%","¿Piensa irse a vivir a otra localidad?")
 PCC2 =graficarPlot(pert,"Respuesta","%","¿Usted a qué municipio siente que pertenece?")
 PCC3 =graficarPlot(frec,"Respuesta","%","¿Qué tan frecuente va a la Isla, la cabecera municipal de Isla Mujeres?")
 PCC4 =graficarPlot(mots,"Respuesta","%","¿Cuáles son los motivos por los que viaja a la Isla?")
+
+TCC1 = graficarTable(ir,"Respuesta","%","¿Piensa irse a vivir a otra localidad?")
+TCC2 =graficarTable(pert,"Respuesta","%","¿Usted a qué municipio siente que pertenece?")
+TCC3 =graficarTable(frec,"Respuesta","%","¿Qué tan frecuente va a la Isla, la cabecera municipal de Isla Mujeres?")
+TCC4 =graficarTable(mots,"Respuesta","%","¿Cuáles son los motivos por los que viaja a la Isla?")
 

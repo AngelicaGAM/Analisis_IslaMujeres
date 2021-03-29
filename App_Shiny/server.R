@@ -45,8 +45,66 @@ server <- function(input, output, session) {
   # ---------------------------------------------------------------------
   # GRAFICAS 
   
+ output$tableGraficas=renderLeaflet({
+ #Caracteristicas de poblacion y migracion
+#vivienda
+    #  if(input$pregunta=="V1P1R1"){V1P1R1}
+    #  else if(input$pregunta=="V1P4R1"){V1P4R1}
+    #  else if(input$pregunta=="V1H1"){V1H1}
+    #  else if(input$pregunta=="V1H1"){V1H1}
+#Familiares
+     if(input$pregunta=="PFAM1"){TFAM1}
+    else if(input$pregunta=="PFAM2"){TFAM2}
+    else if(input$pregunta=="PFAM3"){TFAM3}
+    else if(input$pregunta=="PFAM4"){TFAM4}
+# Economicos
+    else if(input$pregunta=="PPECO1"){TECO1}
+    else if(input$pregunta=="PPECO2"){TECO2}
+    else if(input$pregunta=="PPECO3"){TECO3}
+    else if(input$pregunta=="PPECO4"){TECO4}
+    else if(input$pregunta=="PPECO5"){TECO5}
+    else if(input$pregunta=="PPECO6"){TECO6}
+    else if(input$pregunta=="PPECO7"){TECO7}
+#Identidad  y comunidad
+    else if(input$pregunta=="PPIyC1"){TIyC1}
+    else if(input$pregunta=="PPIyC2"){TIyC2}
+    else if(input$pregunta=="PPIyC3"){TIyC3}
+    else if(input$pregunta=="PPIyC4"){TIyC4}
+    else if(input$pregunta=="PPIyC5"){TIyC5}
+    else if(input$pregunta=="PPIyC6"){TIyC6}
+
+
+    else if(input$pregunta=="PPCC1"){TCC1}
+    else if(input$pregunta=="PPCC2"){TCC2}
+    else if(input$pregunta=="PPCC3"){TCC3}
+    else if(input$pregunta=="PPCC4"){TCC4}
+
+
+
+     #Salinas
+    else if(input$pregunta=="PAMB1"){AMB1}
+    else if(input$pregunta=="PAMB2"){AMB2}
+    else if(input$pregunta=="PAMB3"){AMB3}
+    else if(input$pregunta=="PAMB4"){AMB4}
+    else if(input$pregunta=="PAMB5"){AMB5}
+    else if(input$pregunta=="SOC1"){SOC1}
+    else if(input$pregunta=="SOC2"){SOC2}
+    else if(input$pregunta=="SOC3"){SOC3}
+    else if(input$pregunta=="SOC4"){SOC4}
+    else if(input$pregunta=="SOC5"){SOC5}
+    else if(input$pregunta=="SOC6"){SOC6}
+    else if(input$pregunta=="ECO1"){EC1}
+    else if(input$pregunta=="ECO2"){EC2}
+    else if(input$pregunta=="ECO3"){EC3}
+    else if(input$pregunta=="ECO4"){EC4}
+    else if(input$pregunta=="ECO5"){EC5}
+
+
+  })
+  
   # Visualizacion principal 
   output$plot1=renderLeaflet({
+    #tableGraficas
      #datoG = Vgrafica()
      #Caracteristicas de poblacion y migracion
 #vivienda
@@ -192,10 +250,11 @@ server <- function(input, output, session) {
   
   #Pintado de mapas
   output$mymap <- renderLeaflet({
-    if(input$showmapa=="ALL"){ GraphM(DataMap) }
-    else if(input$showmapa=="PS"){ GraphM(CancunM) }
+   # if(input$showmapa=="ALL"){ GraphM(percepcion) }
+  #  else
+   if(input$showmapa=="PS"){ GraphM(percepcion) }
     else if(input$showmapa=="IS"){ GraphM(filtro) }
-    else if(input$showmapa=="EJ"){ GraphM(EjidoM) }
+    else if(input$showmapa=="EJ"){ GraphM(df_fin) }
   })
   
   # Texto tipo de estudio

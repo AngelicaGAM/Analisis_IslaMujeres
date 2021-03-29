@@ -5,20 +5,33 @@ library(shiny)
 setwd("~/UC/Analisis_IslaMujeres/App_Shiny")
 
 #Datos graficar 
-  Ejido <- read.csv("Zona-urbana-Ejido-230030286.csv", header = TRUE, sep= ",",strip.white = TRUE,na.strings = "EMPTY", fileEncoding  = "UTF-8")
-  Cancun <- read.csv("Cancun-230050001.csv", header = TRUE, sep= ",",strip.white = TRUE,na.strings = "EMPTY", fileEncoding  = "UTF-8")
+  percepcion <- read.csv("percepcion.csv", header = TRUE, sep= ",",strip.white = TRUE,na.strings = "EMPTY", fileEncoding  = "UTF-8")
   Isla  <- read.csv("Isla-Mujeres-230030001.csv", header = TRUE, sep= ",",strip.white = TRUE,na.strings = "EMPTY", fileEncoding  = "UTF-8")
+ 
+  df02 <- read.csv("df_02.csv",header=TRUE,sep=",",strip.white = TRUE,na.strings="EMPTY",encoding = "latin1")  
   columna <- read.csv("columnas.csv", header = TRUE, sep= ",",strip.white = TRUE,na.strings = "EMPTY", fileEncoding = "latin1")
-df_fin <- read.csv("columnas.csv",header=TRUE,sep=",",strip.white = TRUE,na.strings="EMPTY",encoding = "UTF-8")
+  df_fin <- columna
+  
 
-df02 <- read.csv("df_02.csv",header=TRUE,sep=",",strip.white = TRUE,na.strings="EMPTY",encoding = "UTF-8")  
-#Datos mapas
-  CancunM <- read.csv("Cancun.csv", header = TRUE, sep= ",",strip.white = TRUE,na.strings = "EMPTY", encoding = "UTF-8")
-  EjidoM <- read.csv("Urbana.csv", header = TRUE, sep= ",",strip.white = TRUE,na.strings = "EMPTY", encoding = "UTF-8")
-  IslaM <- read.csv("Isla.csv", header = TRUE, sep= ",",strip.white = TRUE,na.strings = "EMPTY", encoding = "UTF-8")
+  Isla$id <- 1
+  Isla$est <- 'Percepcion de seguridad'
+  Isla$zona <- 'Isla Mujeres'
+
+
+  #Datos mapas
+  df_fin$id <- 2
+  df_fin$est <- 'Caracteristicas de poblacion y migracion'
+  df_fin$zona <- 'Zona continental, Isla Mujeres'
+
+  percepcion$id <- 3
+  percepcion$est <- 'Percepcion de seguridad'
+  percepcion$zona <- 'Estado de Quintana Roo'
+  
+  
+  # <- read.csv("Cancun.csv", header = TRUE, sep= ",",strip.white = TRUE,na.strings = "EMPTY", encoding = "UTF-8")
   DataMap  <- read.csv("result.csv", header = TRUE, sep= ",",strip.white = TRUE,na.strings = "EMPTY", fileEncoding  = "UTF-8")
 
-  filtro  <- filter(IslaM, encuesta_latitude > 21.2365 & encuesta_latitude < 21.241)
+  filtro  <- filter(Isla, encuesta_latitude > 21.2365 & encuesta_latitude < 21.241)
 
 
 
@@ -81,16 +94,16 @@ Social_df <- Social_df[-c(57,58,115,116,173,174,231,232),]
 #-------------------------------------
 #Mapas
 
-CorE <- Ejido[2:3]
-CorC <- Cancun[2:3]
-CorI <- Isla[2:3]
-CorPS <- columna[3:4]
-names(CorE) = c("lat", "lng")
-names(CorC) = c("lat", "lng")
-names(CorI) = c("lat", "lng")
-names(CorPS) = c("lat", "lng")
-CorPS['country.etc'] = 'MX'
-CorPS['city'] = 'Zona continental'
+#CorE <- Ejido[2:3]
+# CorC <- Cancun[2:3]
+# CorI <- Isla[2:3]
+# CorPS <- columna[3:4]
+# names(CorE) = c("lat", "lng")
+# names(CorC) = c("lat", "lng")
+# names(CorI) = c("lat", "lng")
+# names(CorPS) = c("lat", "lng")
+# CorPS['country.etc'] = 'MX'
+# CorPS['city'] = 'Zona continental'
 
 #-------------------------------------
 
@@ -111,23 +124,50 @@ graficarPlot <- function(dff,  textX, textY, tituloGrifco){
   bar <- plot_ly(dff,
                  x = ~RESPUESTA, 
                  y = ~n, 
-                 hoverinfo = ~n,
+                # hoverinfo = ~n,
                  color = ~RESPUESTA, 
-                 text = ~RESPUESTA,
+                 #text = ~RESPUESTA,
                  type = 'bar'
   ) %>%
     layout(title = tituloGrifco, 
            xaxis = list(title = textX),
-           yaxis = list(title = textY,
-                        showgrid = FALSE,
-                        showline = FALSE,
-                        showticklabels = FALSE,
-                        zeroline = FALSE),
-           margin = list(l = 5, r = 5, t = 25, b = 45),
-           showlegend = T)
+           yaxis = list(title = textY))
   
   bar
 }
+
+graficarTable <- function(dff,  textX, textY, tituloGrifco){
+ m <- list(
+    l = 50,
+    r = 50,
+    b = 50,
+    t = 50,
+    pad = 0
+  )
+
+fig <- plot_ly(
+  type = 'table',
+
+  header = list(
+    values = c('Respuesta', 'Recuento','Porcentajes (%)'),
+    line = list(color = '#B0C4DE'),
+    fill = list(color = '#4169E1'),
+    align = c('left','center'),
+    font = list(color = 'white', size = 16)
+  ),
+  cells = list(
+    values = rbind( dff$RESPUESTA, dff$total, paste(dff$n,'%') ),
+    line = list(color = '#B0C4DE'),
+    fill = list(color = c('#6495ED', 'white')),
+    fill = list(color = c( 'white','#6495ED')),
+    align = c('left', 'center'),
+    font = list(color = c('white','#696969'), size = 14)
+    ))
+
+fig
+}
+
+
 
 graficarPlotS <- function(df,  textX, textY, tituloGrifco){
   #var = subset(Ambiental_df, Ambiental_df$FOLIO == Ambiental_df$FOLIO , select=c("FOLIO", "RESPUESTA")) 

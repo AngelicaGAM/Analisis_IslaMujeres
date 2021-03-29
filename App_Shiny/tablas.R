@@ -3,7 +3,7 @@ library(shiny)
 
 #graficas
 mosaics <- function(tbl, rot, offs){
-  vcd::mosaic(tbl,shade=TRUE,labeling = labeling_border(rot_labels = rot, 
+  vcd::mosaic(tbl,gp = shading_Friendly2,labeling = labeling_border(rot_labels = rot, 
                                                          just_labels = c("left", 
                                                                          "left", 
                                                                          "left", 
@@ -13,7 +13,7 @@ mosaics <- function(tbl, rot, offs){
                                                          gp_varnames = gpar(fontsize = 0, fontface = 2)))
 }
 mosaics2 <- function(tbl, rot, offs){
-  vcd::mosaic(tbl,shade=TRUE,direction = TRUE,labeling = labeling_border(rot_labels = rot, 
+  vcd::mosaic(tbl,gp = shading_Friendly2,direction = TRUE,labeling = labeling_border(rot_labels = rot, 
                                                         just_labels = c("left", 
                                                                         "left", 
                                                                         "left", 
@@ -24,10 +24,11 @@ mosaics2 <- function(tbl, rot, offs){
                                                         gp_varnames = gpar(fontsize = 0, fontface = 2)))
 }
 
-xdf <- read.csv("./x.csv",header=TRUE,sep=",",strip.white = TRUE,na.strings="EMPTY",encoding = "UTF-8")
+xdf <- read.csv("x.csv",header=TRUE,sep=",",strip.white = TRUE,na.strings="EMPTY",encoding = "UTF-8")
 
 tbl1 <- xtabs(~Origen + Puesto, xdf)
 tbl1 <- tbl1[c(1,2,11,13,15,16),c(1,2,6,5,3,4)]
+
 
 tbl2 <- xtabs(~Origen + Trabajo, xdf)
 tbl2 <- tbl2[c(1,2,11,13,15,16),]

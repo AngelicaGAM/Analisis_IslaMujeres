@@ -3,16 +3,13 @@
 
 
 server <- function(input, output, session) {
-
   source("librerias.R")
   source("Funciones.R")
-  source("graficas.R")
-  source("graficarSE.R")
   source("G.R")
   source("graficas.R")
   source("graficarSE.R")
   source("tablas.R")
-  xdf  <- read.csv("./x.csv", header = TRUE, sep= ",",strip.white = TRUE,na.strings = "EMPTY", encoding = "UTF-8")
+  xdf  <- read.csv("x.csv", header = TRUE, sep= ",",strip.white = TRUE,na.strings = "EMPTY", encoding = "UTF-8")
   
   
   
@@ -146,7 +143,7 @@ server <- function(input, output, session) {
             
     )} else  if (x== "ID"){
             updateSelectInput(session, "pregunta",  
-            choices = c("¿Cuál es su lugar de origen? " = "PPIyC1" , "¿Cuánto tiempo lleva viviendo en este lugar?" = "PPIyC2","¿Qué lo motivó a venir a vivir en esta localidad?" = "PPIyC3", " ¿Qué religión practica? " = "PPIyC5", "¿Cuáles son las ventajas de vivir en este lugar?"="PPIyC6",  "¿Piensa irse a vivir a otra localidad?"= "PPCC1", "¿Usted a qué municipio siente que pertenece?" = "PPCC2","¿Qué tan frecuente va a la Isla, la cabecera municipal de Isla Mujeres?" = "PPCC2","¿Cuáles son los motivos por los que viaja a la Isla?"= "PPCC4" )
+            choices = c("¿Cuál es su lugar de origen? " = "PPIyC1" , "¿Cuánto tiempo lleva viviendo en este lugar?" = "PPIyC2","¿Qué lo motivó a venir a vivir en esta localidad?" = "PPIyC3", " ¿Qué religión practica? " = "PPIyC4", "¿Cuáles son las ventajas de vivir en este lugar?"="PPIyC5",  "¿Piensa irse a vivir a otra localidad?"= "PPIyC6", "¿Usted a qué municipio siente que pertenece?" = "PPIyC7","¿Qué tan frecuente va a la Isla, la cabecera municipal de Isla Mujeres?" = "PPIyC8","¿Cuáles son los motivos por los que viaja a la Isla?"= "PPIyC9" )
             
     )} else  if (x== "VI"){
             updateSelectInput(session, "pregunta",  
@@ -314,7 +311,7 @@ server <- function(input, output, session) {
                                                               mosaics(tbl1, c(90,0,0,0), c(0,0,0,6.5))
                                                             }else{
                                                               if(input$var1 == "Origen" & input$var2 == "Trabajo"){
-                                                                mosaics(tbl2, c(90,0,0,0), c(0,0,0,6.5))
+                                                                mosaics(tbl2, c(0,0,0,0), c(0,0,0,6.5))
                                                               }else{
                                                                 if(input$var1 == "Origen" & input$var2 == "Escolaridad"){
                                                                   mosaics(tbl3, c(90,0,0,0), c(0,0,0,6.5))
@@ -412,8 +409,8 @@ server <- function(input, output, session) {
   output$Expl2 <- renderUI({
     if(input$var2 == "Ingreso_sem"){
       word <- paste("<b>",tags$i("o Ingreso semanal:"),"</b>",tags$i("Grupo A: $0 a $1200,
-                                                          Grupo B: $1201 a $2500
-                                                          Grupo C: $2501 a $5000
+                                                          Grupo B: $1201 a $2500,
+                                                          Grupo C: $2501 a $5000,
                                                           Grupo D: Más de $5000"))
       HTML(paste(word))
     }

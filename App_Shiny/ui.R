@@ -173,8 +173,7 @@ body <- dashboardBody(
               h2("Características sobre población y migración"),
               h3("Zona Urbana Isla Mujeres"),
             )), 
-            plotOutput("mosaico1", height = 800, width = "100%"),
-              
+            plotOutput("mosaico1", height = 700, width = "100%"),
             br(),
             br(),
             br(),

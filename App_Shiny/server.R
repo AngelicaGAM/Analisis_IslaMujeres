@@ -5,8 +5,6 @@
 server <- function(input, output, session) {
   source("librerias.R")
   source("Funciones.R")
-  source("graficas.R")
-  source("graficarSE.R")
   source("G.R")
    source("PSCUN.r")
    source("PSEjido.r")
@@ -1192,7 +1190,7 @@ server <- function(input, output, session) {
       word <- paste("<b>",tags$i("o Ingreso semanal:"),"</b>",tags$i("Grupo A: $0 a $1200,
                                                           Grupo B: $1201 a $2500,
                                                           Grupo C: $2501 a $5000,
-                                                          Grupo D: MÃ¡s de $5000"))
+                                                          Grupo D: Más de $5000"))
       HTML(paste(word))
     }
   })

@@ -914,6 +914,7 @@ motivos <- function(df,N){
   f = df$IyC12_Motivo_Viaja_Otro
   f_0 = contar(f)
    total <- c(a_0,b_0,c_0,d_0,e_0,f_0) 
+   
   a_0 = as.integer((a_0/N)*100)
   b_0 = as.integer((b_0/N)*100)
   c_0 = as.integer((c_0/N)*100)

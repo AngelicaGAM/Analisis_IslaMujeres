@@ -126,9 +126,13 @@ body <- dashboardBody(
               wellPanel(h1(textOutput("TipoestudioG"), align = "center")),    
               column(3, wellPanel(
                 selectInput(inputId='tipomapa', label = h3('Estudio:'),  choices = c("Percepcion de seguridad" = "PS", "Socioeconómico y ambiental" = "IS" ,"Población y migración" = "EJ"), selected = "EJ"),
+                    conditionalPanel(
+                            condition = "input.tipomapa == 'PS'",
+                            selectInput(inputId='localizPS', label = h3('Ubicación:'),choices = c("Comparativa"= "PSVS", "Isla Mujeres"= "PSI", "Cancun"="PSC", "Ejido"="PSE"), selected = "PSI")
+                    ),
                 selectInput(inputId='enfoque', label = h3('Enfoque:'), choices= c("Datos generales del encuestado" = "DG", "Datos familiares" = "DF","Datos económicos" = "DE", "Identidad y Comunidad" = "ID" , "Vivienda" = "VI", "Apreciación del encuestador" = "AE"), selected = "VI"), 
-                selectInput(inputId='pregunta', label = h3('Graficas:'),choices = c("Situacion Vivienda" = "V1P1R1" , "Adquisicion Vivienda" = "V1P4R1"," Huracanes " = "V1H1", " Inundaciones " = "V1I1"), selected = "V1P1R1")
-                
+                selectInput(inputId='pregunta', label = h3('Graficas:'),choices = c("Situacion Vivienda" = "V1P1R1" , "Adquisicion Vivienda" = "V1P4R1"," Huracanes " = "V1H1", " Inundaciones " = "V1I1"), selected = "V1P1R1") 
+                  
               )), 
               
               column(width = 9,

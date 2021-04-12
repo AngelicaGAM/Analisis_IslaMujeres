@@ -7,7 +7,9 @@ library(shiny)
 #Datos graficar 
   percepcion <- read.csv("percepcion.csv", header = TRUE, sep= ",",strip.white = TRUE,na.strings = "EMPTY", fileEncoding  = "UTF-8")
   Isla  <- read.csv("Isla-Mujeres-230030001.csv", header = TRUE, sep= ",",strip.white = TRUE,na.strings = "EMPTY", fileEncoding  = "UTF-8")
- 
+  Cancun  <- read.csv("Cancun-230050001.csv", header = TRUE, sep= ",",strip.white = TRUE,na.strings = "EMPTY", fileEncoding  = "UTF-8")
+  Ejido  <- read.csv("Zona-urbana-Ejido-230030286.csv", header = TRUE, sep= ",",strip.white = TRUE,na.strings = "EMPTY", fileEncoding  = "UTF-8")
+
   df02 <- read.csv("df_02.csv",header=TRUE,sep=",",strip.white = TRUE,na.strings="EMPTY",encoding = "latin1")  
   columna <- read.csv("columnas.csv", header = TRUE, sep= ",",strip.white = TRUE,na.strings = "EMPTY", fileEncoding = "latin1")
   df_fin <- columna
@@ -85,9 +87,6 @@ row.names(Social_df) <- NULL
 Social_df <- Social_df[-c(57,58,115,116,173,174,231,232),]
 
 
-
-
-  
 #--------------------------------------
 #HOME 
 
@@ -124,9 +123,8 @@ graficarPlot <- function(dff,  textX, textY, tituloGrifco){
   bar <- plot_ly(dff,
                  x = ~RESPUESTA, 
                  y = ~n, 
-                # hoverinfo = ~n,
                  color = ~RESPUESTA, 
-                 #text = ~RESPUESTA,
+                 text = paste(dff$n,'%'),
                  type = 'bar'
   ) %>%
     layout(title = tituloGrifco, 
@@ -135,6 +133,22 @@ graficarPlot <- function(dff,  textX, textY, tituloGrifco){
   
   bar
 }
+
+graficarPlotGroup <- function(data1,   textX, textY, tituloGrifco){
+fig <- plot_ly(data1, x = ~RESP, y = ~Isl, type = 'bar', name = 'Isla')
+fig <- fig %>% add_trace(y = ~Can, name = 'Cancun')
+fig <- fig %>% add_trace(y = ~Eji, name = 'Ejido')
+fig <- fig  %>%
+   layout(title = tituloGrifco, 
+          xaxis = list(title = textX),
+          yaxis = list(title = textY),barmode = 'group')
+fig
+
+
+}
+
+        
+
 
 graficarTable <- function(dff,  textX, textY, tituloGrifco){
  m <- list(
@@ -168,6 +182,40 @@ fig
 }
 
 
+graficarTableGroup <- function(dataFI,dataFC, dataE,  textX, textY, tituloGrifco){
+  m <- list(
+    l = 50,
+    r = 50,
+    b = 50,
+    t = 50,
+    pad = 0
+  )
+  
+  data = merge(dataFI, dataFC , all = TRUE)
+  data1 = merge(dataFE, data ,  all = TRUE)
+  dataT = arrange(data1, RESPUESTA)
+ # dataT = order(data1$loc)
+  fig <- plot_ly(
+    type = 'table',
+    
+    header = list(
+      values = c('Respuesta', 'Recuento','Porcentajes (%)', 'Ubicación'),
+      line = list(color = '#B0C4DE'),
+      fill = list(color = '#4169E1'),
+      align = c('left','center'),
+      font = list(color = 'white', size = 16)
+    ),
+    cells = list(
+      values = rbind( dataT$RESPUESTA, dataT$total, paste(dataT$n,'%'), dataT$loc ),
+      line = list(color = '#B0C4DE'),
+      fill = list(color = c('#6495ED', 'white')),
+      fill = list(color = c( 'white','#6495ED')),
+      align = c('left', 'center'),
+      font = list(color = c('white','#696969'), size = 14)
+    ))
+  
+  fig
+}
 
 graficarPlotS <- function(df,  textX, textY, tituloGrifco){
   #var = subset(Ambiental_df, Ambiental_df$FOLIO == Ambiental_df$FOLIO , select=c("FOLIO", "RESPUESTA")) 

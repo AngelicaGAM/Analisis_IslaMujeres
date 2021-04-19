@@ -5,130 +5,6 @@ library(scales)
 library(tidyverse)
 #setwd("~/UC/Analisis_IslaMujeres/App_Shiny/Barplots")
 
-
-
-#Circular Barplots
-graficarCirBar <- function(data){
-  empty_bar <- 2
-  to_add <- data.frame( matrix(NA, empty_bar*nlevels(data$group), ncol(data)) )
-  colnames(to_add) <- colnames(data)
-  to_add$group <- rep(levels(data$group), each=empty_bar)
-  data <- rbind(data, to_add)
-  data <- data %>% arrange(group)
-  data$id <- seq(1, nrow(data))
-  
-  # Get the name and the y position of each label
-  label_data <- data
-  number_of_bar <- nrow(label_data)
-  angle <- 90 - 360 * (label_data$id-0.5) /number_of_bar     # I substract 0.5 because the letter must have the angle of the center of the bars. Not extreme right(1) or extreme left (0)
-  label_data$hjust <- ifelse( angle < -90, 1, 0)
-  label_data$angle <- ifelse(angle < -90, angle+180, angle)
-  
-  # prepare a data frame for base lines
-  base_data <- data %>% 
-    group_by(group) %>% 
-    summarize(start=min(id), end=max(id) - empty_bar) %>% 
-    rowwise() %>% 
-    mutate(title=mean(c(start, end)))
-  
-  # prepare a data frame for grid (scales)
-  grid_data <- base_data
-  grid_data$end <- grid_data$end[ c( nrow(grid_data), 1:nrow(grid_data)-1)] + 1
-  grid_data$start <- grid_data$start - 1
-  grid_data <- grid_data[-1,]
-  # Make the plot
-  p <- ggplot(data, aes(x=as.factor(id), y=n, fill=group)) +       # Note that id is a factor. If x is numeric, there is some space between the first bar
-    
-    geom_bar(aes(x=as.factor(id), y=n, fill=group), stat="identity", alpha=0.5) +
-    
-    # Add a val=100/75/50/25 lines. I do it at the beginning to make sur barplots are OVER it.
-    geom_segment(data=grid_data, aes(x = end, y = 80, xend = start, yend = 80), colour = "grey", alpha=1, size=0.3 , inherit.aes = FALSE ) +
-    geom_segment(data=grid_data, aes(x = end, y = 60, xend = start, yend = 60), colour = "grey", alpha=1, size=0.3 , inherit.aes = FALSE ) +
-    geom_segment(data=grid_data, aes(x = end, y = 40, xend = start, yend = 40), colour = "grey", alpha=1, size=0.3 , inherit.aes = FALSE ) +
-    geom_segment(data=grid_data, aes(x = end, y = 20, xend = start, yend = 20), colour = "grey", alpha=1, size=0.3 , inherit.aes = FALSE ) +
-    
-    # Add text showing the value of each 100/75/50/25 lines
-    annotate("text", x = rep(max(data$id),4), y = c(20, 40, 60, 80), label = c("20", "40", "60", "80") , color="grey", size=3 , angle=0, fontface="bold", hjust=1) +
-    
-    geom_bar(aes(x=as.factor(id), y=n, fill=group), stat="identity", alpha=0.5) +
-    ylim(-100,120) +
-    theme_minimal() +
-    theme(
-      legend.position = "none",
-      axis.text = element_blank(),
-      axis.title = element_blank(),
-      panel.grid = element_blank(),
-      plot.margin = unit(rep(-1,4), "cm") 
-    ) +
-    coord_polar() + 
-    geom_text(data=label_data, aes(x=id, y=n+10, label=RESPUESTA, hjust=hjust), color="black", fontface="bold",alpha=0.6, size=3, angle= label_data$angle, inherit.aes = FALSE ) +
-    
-    # Add base line information
-    geom_segment(data=base_data, aes(x = start, y = -5, xend = end, yend = -5), colour = "black", alpha=0.8, size=0.6 , inherit.aes = FALSE )  +
-    geom_text(data=base_data, aes(x = title, y = -18, label=group), hjust=c(1,1,0,0), colour = "black", alpha=0.8, size=3.5, fontface="bold", inherit.aes = FALSE)
-  return(p)
-}
-graficarCirBar2 <- function(data){
-  empty_bar <- 2
-  to_add <- data.frame( matrix(NA, empty_bar*nlevels(data$group), ncol(data)) )
-  colnames(to_add) <- colnames(data)
-  to_add$group <- rep(levels(data$group), each=empty_bar)
-  data <- rbind(data, to_add)
-  data <- data %>% arrange(group)
-  data$id <- seq(1, nrow(data))
-  
-  # Get the name and the y position of each label
-  label_data <- data
-  number_of_bar <- nrow(label_data)
-  angle <- 90 - 360 * (label_data$id-0.5) /number_of_bar     # I substract 0.5 because the letter must have the angle of the center of the bars. Not extreme right(1) or extreme left (0)
-  label_data$hjust <- ifelse( angle < -90, 1, 0)
-  label_data$angle <- ifelse(angle < -90, angle+180, angle)
-  
-  # prepare a data frame for base lines
-  base_data <- data %>% 
-    group_by(group) %>% 
-    summarize(start=min(id), end=max(id) - empty_bar) %>% 
-    rowwise() %>% 
-    mutate(title=mean(c(start, end)))
-  
-  # prepare a data frame for grid (scales)
-  grid_data <- base_data
-  grid_data$end <- grid_data$end[ c( nrow(grid_data), 1:nrow(grid_data)-1)] + 1
-  grid_data$start <- grid_data$start - 1
-  grid_data <- grid_data[-1,]
-  # Make the plot
-  p <- ggplot(data, aes(x=as.factor(id), y=n, fill=group)) +       # Note that id is a factor. If x is numeric, there is some space between the first bar
-    
-    geom_bar(aes(x=as.factor(id), y=n, fill=group), stat="identity", alpha=0.5) +
-    
-    # Add a val=100/75/50/25 lines. I do it at the beginning to make sur barplots are OVER it.
-    geom_segment(data=grid_data, aes(x = end, y = 80, xend = start, yend = 80), colour = "grey", alpha=1, size=0.3 , inherit.aes = FALSE ) +
-    geom_segment(data=grid_data, aes(x = end, y = 60, xend = start, yend = 60), colour = "grey", alpha=1, size=0.3 , inherit.aes = FALSE ) +
-    geom_segment(data=grid_data, aes(x = end, y = 40, xend = start, yend = 40), colour = "grey", alpha=1, size=0.3 , inherit.aes = FALSE ) +
-    geom_segment(data=grid_data, aes(x = end, y = 20, xend = start, yend = 20), colour = "grey", alpha=1, size=0.3 , inherit.aes = FALSE ) +
-    
-    # Add text showing the value of each 100/75/50/25 lines
-    annotate("text", x = rep(max(data$id),4), y = c(20, 40, 60, 80), label = c("20", "40", "60", "80") , color="grey", size=3 , angle=0, fontface="bold", hjust=1) +
-    
-    geom_bar(aes(x=as.factor(id), y=n, fill=group), stat="identity", alpha=0.5) +
-    ylim(-100,120) +
-    theme_minimal() +
-    theme(
-      legend.position = "none",
-      axis.text = element_blank(),
-      axis.title = element_blank(),
-      panel.grid = element_blank(),
-      plot.margin = unit(rep(-1,4), "cm") 
-    ) +
-    coord_polar() + 
-    geom_text(data=label_data, aes(x=id, y=n+10, label=RESPUESTA, hjust=hjust), color="black", fontface="bold",alpha=0.6, size=3, angle= label_data$angle, inherit.aes = FALSE ) +
-    
-    # Add base line information
-    geom_segment(data=base_data, aes(x = start, y = -5, xend = end, yend = -5), colour = "black", alpha=0.8, size=0.6 , inherit.aes = FALSE )  +
-    geom_text(data=base_data, aes(x = title, y = -18, label=group), hjust=c(1,1,1,0,0), colour = "black", alpha=0.8, size=3.5, fontface="bold", inherit.aes = FALSE)
-  return(p)
-}
-
 ## Conteo de variables ##
 contar <- function(indice){
   i = 0
@@ -457,7 +333,7 @@ areas <- function(df, N){
   
   g = df$DF_a_otro
   g_0 = contar(g)
-    total <- c(a_0,b_0,c_0,d_0,e_0,f_0,g_0)
+  total <- c(a_0,b_0,c_0,d_0,e_0,f_0,g_0)
   a_0 = as.integer((a_0/N)*100)
   b_0 = as.integer((b_0/N)*100)
   c_0 = as.integer((c_0/N)*100)
@@ -487,7 +363,7 @@ trabajos <- function(df,N){
   a_0[2] = as.integer((a_0[2]/N)*100)
   a_0[3] = as.integer((a_0[3]/N)*100)
   a_0[4] = as.integer((a_0[4]/N)*100)
-
+  
   RESPUESTA <- c("Comercio", "Industria", "Jubilado", "Agrícola")
   n <- c(a_0[1],a_0[2],a_0[3],a_0[4])
   group = c(rep("Trabajo", 4))
@@ -516,7 +392,7 @@ escolaridad <- function(df,N){
 puesto <- function(df, N){
   a = df$DE03_puesto
   a_0 = contar_puesto(a)
-    total <- c(a_0[1],a_0[2],a_0[3],a_0[4],a_0[5],a_0[6])
+  total <- c(a_0[1],a_0[2],a_0[3],a_0[4],a_0[5],a_0[6])
   a_0[1] = as.integer((a_0[1]/N)*100)
   a_0[2] = as.integer((a_0[2]/N)*100)
   a_0[3] = as.integer((a_0[3]/N)*100)
@@ -598,49 +474,49 @@ tiempo <- function(df,N){
 #Datos identidad y comunidad#
 origen <- function(df, N){
   a = df$IyC02_Estado_Origen_CAMPECHE
-  a_0 = contar(a)
+  a_0 = 38
   
   b = df$IyC02_Estado_Origen_CHIAPAS
-  b_0 = contar(b)
+  b_0 =51
   
   c = df$IyC02_Estado_Origen_CHIHUAHUA
-  c_0 = contar(c)
+  c_0 = 1
   
   d = df$IyC02_Estado_Origen_DISTRITO.FEDERAL
-  d_0 = contar(d)
+  d_0 = 6
   
   e = df$IyC02_Estado_Origen_GUANAJUATO
-  e_0 = contar(e)
+  e_0 = 1
   
   f = df$IyC02_Estado_Origen_GUERRERO
-  f_0 = contar(f)
+  f_0 = 8
   
   g = df$IyC02_Estado_Origen_HIDALGO
-  g_0 = contar(g)
+  g_0 = 1
   
   h = df$IyC02_Estado_Origen_OAXACA
-  h_0 = contar(h)
+  h_0 = 4
   
   i = df$IyC02_Estado_Origen_PUEBLA
-  i_0 = contar(i)
+  i_0 = 2
   
   j = df$IyC02_Estado_Origen_QUINTANA.ROO
-  j_0 = contar(j)
+  j_0 = 52
   
   k = df$IyC02_Estado_Origen_SONORA
-  k_0 = contar(k)
+  k_0 = 2
   
   l = df$IyC02_Estado_Origen_TABASCO
-  l_0 = contar(l)
+  l_0 = 80
   
   m = df$IyC02_Estado_Origen_TAMAULIPAS
-  m_0 = contar(m)
+  m_0 = 5
   
   n = df$IyC02_Estado_Origen_VERACRUZ
-  n_0 = contar(n)
+  n_0 = 48
   
   o = df$IyC02_Estado_Origen_YUCAT.c1.N
-  o_0 = contar(o)
+  o_0 = 71
   total <- c(a_0,b_0,c_0, d_0, e_0,f_0,g_0, h_0, i_0, j_0, k_0 ,l_0, m_0, n_0,o_0)
   a_0 = as.integer((a_0/N)*100)
   b_0 = as.integer((b_0/N)*100)
@@ -669,17 +545,17 @@ origen <- function(df, N){
 }
 tmp_viv <- function(df,N){
   a = df$IyC03_Tiempo_Viviendo_Lugar_MENOS.DE.UN.A.d1.O
-  a_0 = contar(a)
+  a_0 = 36
   
   b = df$IyC03_Tiempo_Viviendo_Lugar_ENTRE.UN.A.d1.O.Y.CINCO
-  b_0 = contar(b)
+  b_0 = 97
   
   c = df$IyC03_Tiempo_Viviendo_Lugar_MAS.DE.5.ANOS
-  c_0 = contar(c)
+  c_0 = 211
   
   d = df$IyC03_Tiempo_Viviendo_Lugar_TODA
-  d_0 = contar(d)
-total <- c(a_0,b_0,c_0,d_0)
+  d_0 = 36
+  total <- c(a_0,b_0,c_0,d_0)
   a_0 = as.integer((a_0/N)*100)
   b_0 = as.integer((b_0/N)*100)
   c_0 = as.integer((c_0/N)*100)
@@ -835,7 +711,7 @@ irse <- function(df, N){
   
   d = df$IyC09_Emigrar_QUIZAS
   d_0 = contar(d)
-   total <- c(a_0,b_0,c_0,d_0)
+  total <- c(a_0,b_0,c_0,d_0)
   a_0 = as.integer((a_0/N)*100)
   b_0 = as.integer((b_0/N)*100)
   c_0 = as.integer((c_0/N)*100)
@@ -856,7 +732,7 @@ pertenencia <- function(df,N){
   
   c = df$IyC10_Pertenencia_NINGUNO
   c_0 = contar(c)
-    total <- c(a_0,b_0,c_0)
+  total <- c(a_0,b_0,c_0)
   a_0 = as.integer((a_0/N)*100)
   b_0 = as.integer((b_0/N)*100)
   c_0 = as.integer((c_0/N)*100)
@@ -882,7 +758,7 @@ frecuencia <- function(df, N){
   
   e = df$IyC11_Frecuencia_Cabecera_Isla_NUNCA
   e_0 = contar(e)
-    total <- c(a_0,b_0,c_0,d_0,e_0)
+  total <- c(a_0,b_0,c_0,d_0,e_0)
   a_0 = as.integer((a_0/N)*100)
   b_0 = as.integer((b_0/N)*100)
   c_0 = as.integer((c_0/N)*100)
@@ -913,8 +789,7 @@ motivos <- function(df,N){
   
   f = df$IyC12_Motivo_Viaja_Otro
   f_0 = contar(f)
-   total <- c(a_0,b_0,c_0,d_0,e_0,f_0) 
-   
+  total <- c(a_0,b_0,c_0,d_0,e_0,f_0) 
   a_0 = as.integer((a_0/N)*100)
   b_0 = as.integer((b_0/N)*100)
   c_0 = as.integer((c_0/N)*100)
@@ -970,51 +845,54 @@ data = data %>% arrange(group, n)
 #¿Cuántas personas viven en esta casa?
 
 #Grafias
-PFAM1 = graficarPlot(tr,"Respuesta","%", "¿Qué medio de transporte utilizan?")
-PFAM2 = graficarPlot(viv,"Respuesta","%", "¿Dónde adquiere sus víveres?")
-PFAM3 = graficarPlot(med,"Respuesta","%", "¿A dónde acude en caso de urgencia médica?")
-PFAM4 = graficarPlot(ar,"Respuesta","%", "¿Con qué áreas de recreo cuenta en su colonia?")
+PFAM1 = graficarPlot(tr,"Respuesta","%",  "3. ¿Qué medio de transporte utilizan?")
+PFAM3 = graficarPlot(med,"Respuesta","%", "5. ¿A dónde acude en caso de urgencia médica?")
+PFAM4 = graficarPlot(ar,"Respuesta","%",  "6.¿Con qué áreas de recreo cuenta en su colonia?")
 
 #tablas
-TFAM1 = graficarTable(tr,"Respuesta","%", "¿Qué medio de transporte utilizan?")
-TFAM2 = graficarTable(viv,"Respuesta","%", "¿Dónde adquiere sus víveres?")
-TFAM3 = graficarTable(med,"Respuesta","%", "¿A dónde acude en caso de urgencia médica?  ")
-TFAM4 = graficarTable(ar,"Respuesta","%", "¿Con qué áreas de recreo cuenta en su colonia?")
+TFAM1 = graficarTable(tr,"Respuesta","%", "3. ¿Qué medio de transporte utilizan?")
+TFAM3 = graficarTable(med,"Respuesta","%", "4. ¿A dónde acude en caso de urgencia médica?  ")
+TFAM4 = graficarTable(ar,"Respuesta","%", "5. ¿Con qué áreas de recreo cuenta en su colonia?")
 
 #Económicos
 #Económicos
 #Grafias
-PECO1 = graficarPlot(tr2,"Respuesta","%","¿Cuál es el principal trabajo pagado del jefe o jefa de familia?")
-PECO2 = graficarPlot(esc,"Respuesta","%","Máximo nivel de estudios completo del jefe p jefa de familia")
-PECO3 = graficarPlot(ps,"Respuesta","%","Puesto o posición de trabajo del jefe o jefa de familia")
-PECO4 = graficarPlot(sal,"Respuesta","%","¿A cuánto asciende el salario total semanal del jefe o jefa de familia?")
-PECO5 = graficarPlot(trab,"Respuesta","%","Además del jefe de familia, ¿Cuántas personas trabajan en el hogar con salario remunerado?")
-PECO6 = graficarPlot(ing,"Respuesta","%","Número de personas que no perciben ingreso económico")
-PECO7 = graficarPlot(tmp,"Respuesta","%","¿Cuánto tiempo tarda el jefe de familia en llegar a su lugar de trabajo?")
-#tablas
-TECO1 = graficarTable(tr2,"Respuesta","%","¿Cuál es el principal trabajo pagado del jefe o jefa de familia?")
-TECO2 = graficarTable(esc,"Respuesta","%","Máximo nivel de estudios completo del jefe p jefa de familia")
-TECO3 = graficarTable(ps,"Respuesta","%","Puesto o posición de trabajo del jefe o jefa de familia")
-TECO4 = graficarTable(sal,"Respuesta","%","¿A cuánto asciende el salario total semanal del jefe o jefa de familia?")
-TECO5 = graficarTable(trab,"Respuesta","%","Además del jefe de familia, ¿Cuántas personas trabajan en el hogar con salario remunerado?")
-TECO6 = graficarTable(ing,"Respuesta","%","Número de personas que no perciben ingreso económico")
-TECO7 = graficarTable(tmp,"Respuesta","%","¿Cuánto tiempo tarda el jefe de familia en llegar a su lugar de trabajo?")
+PECO1 = graficarPlot(tr2,"Respuesta","%","1. ¿Cuál es el principal trabajo pagado del jefe o jefa de familia?")
+PECO3 = graficarPlot(ps,"Respuesta","%","2. Puesto o posición en el trabajo del jefe de familia")
+PECO4 = graficarPlot(sal,"Respuesta","%","3. ¿A  cuánto asciende el ingreso total semanal del jefe de familia?")
+PECO2 = graficarPlot(esc,"Respuesta","%","4. Máximo nivel de estudios completo del jefe o jefa de familia")
+PECO6 = graficarPlot(ing,"Respuesta","%","5. ¿Número de personas que dependen del Jefe de Familia?")
+#PECO7 = graficarPlot(tmp,"Respuesta","%","6. ¿Cuánto tiempo tarda el jefe de familia en llegar a su lugar de trabajo?")
+#PECO5 = graficarPlot(trab,"Respuesta","%","7. Además del jefe de familia ¿Cuántas personas trabajan en el hogar  con salario remunerado?")
+#tables
+TECO1 = graficarTable(tr2,"Respuesta","%","1. ¿Cuál es el principal trabajo pagado del jefe o jefa de familia?")
+TECO3 = graficarTable(ps,"Respuesta","%","2. Puesto o posición en el trabajo del jefe de familia")
+TECO4 = graficarTable(sal,"Respuesta","%","3. ¿A  cuánto asciende el ingreso total semanal del jefe de familia?")
+TECO2 = graficarTable(esc,"Respuesta","%","4. Máximo nivel de estudios completo del jefe o jefa de familia")
+TECO6 = graficarTable(ing,"Respuesta","%","5. ¿Número de personas que dependen del Jefe de Familia?")
+#PECO7 = graficarTable(tmp,"Respuesta","%","6. ¿Cuánto tiempo tarda el jefe de familia en llegar a su lugar de trabajo?")
+#PECO5 = graficarTable(trab,"Respuesta","%","7. Además del jefe de familia ¿Cuántas personas trabajan en el hogar  con salario remunerado?")
+
 
 #Identidad y comunidad
 #Identidad
-PIyC1 = graficarPlot(or,"Respuesta","%","¿Cuál es su lugar de origen")
-PIyC2 = graficarPlot(viv,"Respuesta","%","¿Cuánto tiempo lleva viviendo en este lugar?")
-PIyC3 = graficarPlot(mot,"Respuesta","%","¿Qué lo motivó a venir a vivir en esta localidad?")
-PIyC4 = graficarPlot(ay,"Respuesta","%","En caso de requerir ayuda, apoyo legal o económico ante algún problema acudo a:")
-PIyC5 = graficarPlot(rel,"Respuesta","%","¿Qué religión practica?")
-PIyC6 = graficarPlot(ven,"Respuesta","%","¿Cuáles son las ventajas de vivir en este lugar?")
+PIyC1 = graficarPlot(or,"Respuesta","%","1. ¿Cuál es su lugar de origen")
+PIyC2 = graficarPlot(viv,"Respuesta","%","2. ¿Cuánto tiempo lleva viviendo en este lugar?")
+PIyC3 = graficarPlot(mot,"Respuesta","%","3. ¿Qué lo motivó a venir a vivir en esta localidad?")
+PIyC4 = graficarPlot(ay,"Respuesta","%","4 En caso de requerir ayuda, apoyo legal o económico ante algún problema acudo a:")
+PIyC5 = graficarPlot(rel,"Respuesta","%","5. ¿Qué religión practica?")
+PIyC6 = graficarPlot(ven,"Respuesta","%","6. ¿Cuáles son las ventajas de vivir en este lugar?")
 
-TIyC1 = graficarTable(or,"Respuesta","%","¿Cuál es su lugar de origen")
-TIyC2 = graficarTable(viv,"Respuesta","%","¿Cuánto tiempo lleva viviendo en este lugar?")
-TIyC3 = graficarTable(mot,"Respuesta","%","¿Qué lo motivó a venir a vivir en esta localidad?")
-TIyC4 = graficarTable(ay,"Respuesta","%","En caso de requerir ayuda, apoyo legal o económico ante algún problema acudo a:")
-TIyC5 = graficarTable(rel,"Respuesta","%","¿Qué religión practica?")
-TIyC6 = graficarTable(ven,"Respuesta","%","¿Cuáles son las ventajas de vivir en este lugar?")
+TIyC1 = graficarTable(or,"Respuesta","%","1. ¿Cuál es su lugar de origen")
+TIyC2 = graficarTable(viv,"Respuesta","%","2. ¿Cuánto tiempo lleva viviendo en este lugar?")
+TIyC3 = graficarTable(mot,"Respuesta","%","3. ¿Qué lo motivó a venir a vivir en esta localidad?")
+TIyC4 = graficarTable(ay,"Respuesta","%","4 En caso de requerir ayuda, apoyo legal o económico ante algún problema acudo a:")
+TIyC5 = graficarTable(rel,"Respuesta","%","5. ¿Qué religión practica?")
+TIyC6 = graficarTable(ven,"Respuesta","%","6. ¿Cuáles son las ventajas de vivir en este lugar?")
+
+
+
+
 
 #Comunidad
 PCC1 = graficarPlot(ir,"Respuesta","%","¿Piensa irse a vivir a otra localidad?")
@@ -1026,4 +904,231 @@ TCC1 = graficarTable(ir,"Respuesta","%","¿Piensa irse a vivir a otra localidad?
 TCC2 =graficarTable(pert,"Respuesta","%","¿Usted a qué municipio siente que pertenece?")
 TCC3 =graficarTable(frec,"Respuesta","%","¿Qué tan frecuente va a la Isla, la cabecera municipal de Isla Mujeres?")
 TCC4 =graficarTable(mots,"Respuesta","%","¿Cuáles son los motivos por los que viaja a la Isla?")
+
+# DF 1 y 2
+
+A = 1045
+B = 589
+total = c(A, B)
+A = as.integer((A/376)*100)
+B = as.integer((B/376)*100)
+n = c(A, B)
+RESPUESTA = c("ADULTOS", "NIÑOS")
+VI04 <- data.frame(n,RESPUESTA,total)
+PFAM01 = graficarPlot(VI04 ,"Respuesta ", "%", "1. ¿Cuántas personas viven en esta casa?" )
+TFAM01 = graficarTable(VI04 ,"Respuesta ", "%", "1. ¿Cuántas personas viven en esta casa?" )
+
+
+A = sum(df_fin$DF_kinder == 1)
+B = sum(df_fin$DF_primaria == 1)
+C = sum(df_fin$DF_secundaria == 1)
+D = sum(df_fin$DF_bachillerato == 1)
+E = sum(df_fin$DF_licenciatura == 1)
+FF = sum(df_fin$DF_posgrado == 1)
+to = A+B+C+D+E+FF
+total = c(A, B, C, D,E,FF)
+
+A = as.integer((A/to)*100)
+B = as.integer((B/to)*100)
+C = as.integer((C/to)*100)
+D = as.integer((D/to)*100)
+E = as.integer((E/to)*100)
+FF = as.integer((FF/to)*100)
+n = c(A, B, C, D,E,FF)
+
+RESPUESTA = c("Jardín de niños", "Primaria" , "Secundaria" , "Bachillerato" ,"Licenciatura" , "Posgrado" )
+VI04 <- data.frame(n ,RESPUESTA,total)
+#P1 Qu´W uso le dan sus vecinos a la salina?
+PFAM02 = graficarPlot(VI04,"Respuesta ", "%", "2. ¿ A qué niveles de escolaridad asisten los integrantes de esta familia?")
+TFAM02 = graficarTable(VI04,"Respuesta ", "%", "2. ¿ A qué niveles de escolaridad asisten los integrantes de esta familia?")
+
+
+A = sum(df_fin$DF_v_col == 1)
+B = sum(df_fin$DF_v_abarrote == 1)
+C = sum(df_fin$DF_v_super == 1)
+D = sum(df_fin$DF_v_conv == 1)
+E = sum(df_fin$DF_v_plaza == 1)
+FF = sum(df_fin$DF_v_otro == 1)
+to = A+B+C+D+E+FF
+total = c(A, B, C, D,E,FF)
+
+A = as.integer((A/to)*100)
+B = as.integer((B/to)*100)
+C = as.integer((C/to)*100)
+D = as.integer((D/to)*100)
+E = as.integer((E/to)*100)
+FF = as.integer((FF/to)*100)
+n = c(A, B, C, D,E,FF)
+
+RESPUESTA = c("Mercado de la colonia ", "Tienda de abarrotes, carnicerías","súper mercado","Tienda de conveniencia ", "Plaza comercial", "Otro" )
+VI04 <- data.frame(n ,RESPUESTA,total)
+#P1 Qu´W uso le dan sus vecinos a la salina?
+
+
+PFAM2 = graficarPlot(VI04,"Respuesta","%", "4. ¿Dónde adquiere sus víveres?")
+TFAM2 = graficarTable(VI04,"Respuesta","%", "4. ¿Dónde adquiere sus víveres?")
+
+
+
+#DE
+
+A = 37
+B = 123
+C = 161
+D = 39
+
+to = A+B+C+D
+total = c(A, B, C, D)
+
+A = as.integer((A/to)*100)
+B = as.integer((B/to)*100)
+C = as.integer((C/to)*100)
+D = as.integer((D/to)*100)
+
+n = c(A, B, C, D)
+
+RESPUESTA = c("menos de 20 minutos", "más de 20 minutos y menos de una hora", "más de una hora", "trabaja en casa" )
+VI04 <- data.frame(n ,RESPUESTA,total)
+#P1 Qu´W uso le dan sus vecinos a la salina?
+
+
+PPECO7 = graficarPlot(VI04,"Respuesta","%", "7. ¿Cuánto tiempo tarda el jefe de familia en llegar a su lugar de trabajo?")
+TECO7 = graficarTable(VI04,"Respuesta","%", "7. ¿Cuánto tiempo tarda el jefe de familia en llegar a su lugar de trabajo?")
+
+
+df_fin
+A = 190
+B = 110
+C = 42
+D = 28
+E = 5
+
+
+
+to = A+B+C+D+E
+total = c(A, B, C, D,E)
+
+A = as.integer((A/to)*100)
+B = as.integer((B/to)*100)
+C = as.integer((C/to)*100)
+D = as.integer((D/to)*100)
+E = as.integer((E/to)*100)
+
+
+n = c(A, B, C, D,E)
+
+RESPUESTA = c("Ninguna" , "Uno", "Dos ", "Tres ", "Cuatro")
+VI04 <- data.frame(n ,RESPUESTA,total)
+#P1 Qu´W uso le dan sus vecinos a la salina?
+
+
+PPECO8 = graficarPlot(VI04,"Respuesta","%", "8. Además del jefe de familia ¿Cuántas personas trabajan en el hogar  con salario remunerado? ")
+TECO8 = graficarTable(VI04,"Respuesta","%", "8. Además del jefe de familia ¿Cuántas personas trabajan en el hogar  con salario remunerado? ")
+
+
+
+#Identidad y comunidad
+
+#7 
+
+A =  335
+B = 5
+C = 27
+D = 9
+
+to = A+B+C+D
+total = c(A, B, C, D)
+A = as.integer((A/to)*100)
+B = as.integer((B/to)*100)
+C = as.integer((C/to)*100)
+D = as.integer((D/to)*100)
+
+
+
+n = c(A, B, C, D)
+
+RESPUESTA = c("NO" , "Mismo estado", "Quizas ", "Lugar de origen ")
+VI04 <- data.frame(n ,RESPUESTA,total)
+#P1 Qu´W uso le dan sus vecinos a la salina?
+
+
+PIyC7 = graficarPlot(VI04,"Respuesta","%", " 7. ¿Piensa irse a vivir a otra localidad?")
+TIyC7 = graficarTable(VI04,"Respuesta","%", " 7. ¿Piensa irse a vivir a otra localidad?")
+
+
+# 8
+
+A =  347
+B = 20
+C = 9
+D = 8
+to = A+B+C+D
+total = c(A, B, C,D)
+A = as.integer((A/to)*100)
+B = as.integer((B/to)*100)
+C = as.integer((C/to)*100)
+D = as.integer((D/to)*100)
+
+n =  c(A, B, C,D)
+
+RESPUESTA = c("ISLA-MUJERES" , "BENITO-JUAREZ", "NINGUNO", "DESCONOCE")
+VI04 <- data.frame(n ,RESPUESTA,total)
+#P1 Qu´W uso le dan sus vecinos a la salina?
+
+
+PIyC8 = graficarPlot(VI04,"Respuesta","%", " 8. ¿Usted a qué municipio siente que pertenece?")
+TIyC8 = graficarTable(VI04,"Respuesta","%", " 8. ¿Usted a qué municipio siente que pertenece?")
+
+
+
+# 9
+
+A =  264
+B = 97
+C = 3
+D = 8
+to = A+B+C+D
+total = c(A, B, C,D)
+A = as.integer((A/to)*100)
+B = as.integer((B/to)*100)
+C = as.integer((C/to)*100)
+D = as.integer((D/to)*100)
+
+n =  c(A, B, C,D)
+
+RESPUESTA = c("NUNCA" , "A-VECES", "CASI-SIEMPRE", "FRECUENTEMENTE")
+VI04 <- data.frame(n ,RESPUESTA,total)
+#P1 Qu´W uso le dan sus vecinos a la salina?
+
+
+PIyC9 = graficarPlot(VI04,"Respuesta","%", " 9. ¿Qué tan frecuente va a la Isla, la cabecera municipal de Isla Mujeres?")
+TIyC9 = graficarTable(VI04,"Respuesta","%", " 9. ¿Qué tan frecuente va a la Isla, la cabecera municipal de Isla Mujeres?")
+
+
+
+
+# 10
+A =  16
+B = 13
+C = 26
+D = 63
+E = 31
+FF = 3
+
+to = A+B+C+D+E+FF
+total = c(A, B, C,D,E,FF)
+A = as.integer((A/to)*100)
+B = as.integer((B/to)*100)
+C = as.integer((C/to)*100)
+D = as.integer((D/to)*100)
+E = as.integer((E/to)*100)
+FF = as.integer((FF/to)*100)
+
+n =  c(A, B, C,D,E,FF)
+
+RESPUESTA = c("Asuntos administrativos" , "Pagos de servicios", "Trabajo", "Recreación", "Visita de la familia", "Otro")
+VI04 <- data.frame(n ,RESPUESTA,total)
+#P1 Qu´W uso le dan sus vecinos a la salina?
+PIyC10 = graficarPlot(VI04,"Respuesta","%", " 10. ¿Cuáles son los motivos por los que viaja a la Isla?")
+TIyC10 = graficarTable(VI04,"Respuesta","%", " 10. ¿Cuáles son los motivos por los que viaja a la Isla?")
 

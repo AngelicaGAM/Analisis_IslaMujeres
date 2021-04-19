@@ -165,15 +165,15 @@ fig <- plot_ly(
   header = list(
     values = c('Respuesta', 'Recuento','Porcentajes (%)'),
     line = list(color = '#B0C4DE'),
-    fill = list(color = '#4169E1'),
+    fill = list(color = '#01579B'),
     align = c('left','center'),
     font = list(color = 'white', size = 16)
   ),
   cells = list(
     values = rbind( dff$RESPUESTA, dff$total, paste(dff$n,'%') ),
     line = list(color = '#B0C4DE'),
-    fill = list(color = c('#6495ED', 'white')),
-    fill = list(color = c( 'white','#6495ED')),
+    fill = list(color = c('#0277BD', 'white')),
+    fill = list(color = c( 'white','#0277BD')),
     align = c('left', 'center'),
     font = list(color = c('white','#696969'), size = 14)
     ))

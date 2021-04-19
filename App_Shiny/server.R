@@ -5,9 +5,10 @@
 server <- function(input, output, session) {
   source("librerias.R")
   source("Funciones.R")
-  source("G.R")
   source("graficas.R")
-  source("graficarSE.R")
+  source("graficarSE.r")
+  source("G.r")
+  #source("PSCUN.R")
   source("tablas.R")
   xdf  <- read.csv("x.csv", header = TRUE, sep= ",",strip.white = TRUE,na.strings = "EMPTY", encoding = "UTF-8")
   
@@ -46,257 +47,235 @@ server <- function(input, output, session) {
   # GRAFICAS 
   
   output$tableGraficas=renderLeaflet({
-    #Caracteristicas de poblacion y migracion
-    #vivienda
-    #  if(input$pregunta=="V1P1R1"){V1P1R1}
-    #  else if(input$pregunta=="V1P4R1"){V1P4R1}
-    #  else if(input$pregunta=="V1H1"){V1H1}
-    #  else if(input$pregunta=="V1H1"){V1H1}
-    #Familiares
-    if(input$pregunta=="PFAM1"){TFAM1}
-    else if(input$pregunta=="PFAM2"){TFAM2}
-    else if(input$pregunta=="PFAM3"){TFAM3}
-    else if(input$pregunta=="PFAM4"){TFAM4}
-    # Economicos
-    else if(input$pregunta=="PPECO1"){TECO1}
-    else if(input$pregunta=="PPECO2"){TECO2}
-    else if(input$pregunta=="PPECO3"){TECO3}
-    else if(input$pregunta=="PPECO4"){TECO4}
-    else if(input$pregunta=="PPECO5"){TECO5}
-    else if(input$pregunta=="PPECO6"){TECO6}
-    else if(input$pregunta=="PPECO7"){TECO7}
-    #Identidad  y comunidad
-    else if(input$pregunta=="PPIyC1"){TIyC1}
-    else if(input$pregunta=="PPIyC2"){TIyC2}
-    else if(input$pregunta=="PPIyC3"){TIyC3}
-    else if(input$pregunta=="PPIyC4"){TIyC4}
-    else if(input$pregunta=="PPIyC5"){TIyC5}
-    else if(input$pregunta=="PPIyC6"){TIyC6}
-    
-    
-    else if(input$pregunta=="PPCC1"){TCC1}
-    else if(input$pregunta=="PPCC2"){TCC2}
-    else if(input$pregunta=="PPCC3"){TCC3}
-    else if(input$pregunta=="PPCC4"){TCC4}
-    
-    
-    
-    #Salinas
-    else if(input$pregunta=="PAMB1"){TAMB1}
-    else if(input$pregunta=="PAMB2"){TAMB2}
-    else if(input$pregunta=="PAMB3"){TAMB3}
-    else if(input$pregunta=="PAMB4"){TAMB4}
-    else if(input$pregunta=="PAMB5"){TAMB5}
-    else if(input$pregunta=="SOC1"){TSOC1}
-    else if(input$pregunta=="SOC2"){TSOC2}
-    else if(input$pregunta=="SOC3"){TSOC3}
-    else if(input$pregunta=="SOC4"){TSOC4}
-    else if(input$pregunta=="SOC5"){TSOC5}
-    else if(input$pregunta=="SOC6"){TSOC6}
-    else if(input$pregunta=="ECO1"){TEC1}
-    else if(input$pregunta=="ECO2"){TEC2}
-    else if(input$pregunta=="ECO3"){TEC3}
-    else if(input$pregunta=="ECO4"){TEC4}
-    else if(input$pregunta=="ECO5"){TEC5}
-    
-    #percepcion de seguridad 
-    else if(input$pregunta=="GPSP1"){TPSP1}
-    else if(input$pregunta=="GPSP2"){TPSP2}
-    else if(input$pregunta=="GPSP3"){TPSP3}
-    else if(input$pregunta=="GPSP6"){TPSP6}
-    else if(input$pregunta=="GPSP7"){TPSP7}
-    else if(input$pregunta=="GPSP9"){TPSP9}
-    else if(input$pregunta=="GPSP10"){TPSP10}
-    else if(input$pregunta=="GPSP11"){TPSP11}
-    else if(input$pregunta=="GPSP12"){TPSP12}
-    else if(input$pregunta=="GPSP13"){TPSP13}
-    else if(input$pregunta=="GPSP14"){TPSP14}
-    else if(input$pregunta=="GPSP15"){TPSP15}
+          #  Caracteristicas de poblacion y migracion
 
 
-      #percepcion de seguridad 
-    # else if(input$localizPS=="GPSP1"){TPSP1}
-    # else if(input$localizPS=="GPSP2"){TPSP2}
-    # else if(input$localizPS=="GPSP3"){TPSP3}
-    # else if(input$localizPS=="GPSP6"){TPSP6}
-    # else if(input$localizPS=="GPSP7"){TPSP7}
-    # else if(input$localizPS=="GPSP9"){TPSP9}
-    # else if(input$localizPS=="GPSP10"){TPSP10}
-    # else if(input$localizPS=="GPSP11"){TPSP11}
-    # else if(input$localizPS=="GPSP12"){TPSP12}
-    # else if(input$localizPS=="GPSP13"){TPSP13}
-    # else if(input$localizPS=="GPSP14"){TPSP14}
-    # else if(input$localizPS=="GPSP15"){TPSP15}
+          #           Familiares
 
-                     
+                  if(input$pregunta=="PFAM01"){TFAM01}
+            else if(input$pregunta=="PFAM02"){TFAM02}
+            else if(input$pregunta=="PFAM1"){TFAM1}
+            else if(input$pregunta=="PFAM2"){TFAM2}
+            else if(input$pregunta=="PFAM3"){TFAM3}
+            else if(input$pregunta=="PFAM4"){TFAM4}
+          #          Economicos
+            else if(input$pregunta=="PPECO1"){TECO1}
+            else if(input$pregunta=="PPECO2"){TECO2}
+            else if(input$pregunta=="PPECO3"){TECO3}
+            else if(input$pregunta=="PPECO4"){TECO4}
+            else if(input$pregunta=="PPECO5"){TECO5}
+            else if(input$pregunta=="PPECO6"){TECO6}
+            else if(input$pregunta=="PPECO7"){TECO7}
+            else if(input$pregunta=="PPECO8"){TECO8}
 
-    #percepcion de seguridad  isla 
-    else if(input$pregunta=="GPSP1I"){TPSP1I}
-    else if(input$pregunta=="GPSP2I"){TPSP2I}
-    else if(input$pregunta=="GPSP3I"){TPSP3I}
-    else if(input$pregunta=="GPSP6I"){TPSP6I}
-    else if(input$pregunta=="GPSP7I"){TPSP7I}
-
-    else if(input$pregunta=="GPSP81I"){TPSP81I}
-    else if(input$pregunta=="GPSP82I"){TPSP82I}
-    else if(input$pregunta=="GPSP83I"){TPSP83I}
-    else if(input$pregunta=="GPSP84I"){TPSP84I}
-    
-    else if(input$pregunta=="GPSP9I"){TPSP9I}
-    else if(input$pregunta=="GPSP10I"){TPSP10I}
-    else if(input$pregunta=="GPSP11I"){TPSP11I}
-    else if(input$pregunta=="GPSP12I"){TPSP12I}
-    else if(input$pregunta=="GPSP13I"){TPSP13I}
-    else if(input$pregunta=="GPSP14I"){TPSP14I}
-    else if(input$pregunta=="GPSP15I"){TPSP15I}
-    else if(input$pregunta=="GPSP16I"){TPSP16I}
-    else if(input$pregunta=="GPSP17I"){TPSP17I}
-    else if(input$pregunta=="GPSP18I"){TPSP18I}
-    else if(input$pregunta=="GPSP19I"){TPSP19I}
-    else if(input$pregunta=="GPSP20I"){TPSP20I}
-
-    else if(input$pregunta=="GPSP21I"){TPSP21I}
-    else if(input$pregunta=="GPSP22I"){TPSP22I}
-    else if(input$pregunta=="GPSP23I"){TPSP23I}
-    else if(input$pregunta=="GPSP24I"){TPSP24I}
-    else if(input$pregunta=="GPSP25I"){TPSP25I}
-    else if(input$pregunta=="GPSP26I"){TPSP26I}
-    else if(input$pregunta=="GPSP27I"){TPSP27I}
-    else if(input$pregunta=="GPSP28I"){TPSP28I}
-
-    else if(input$pregunta=="GPSP291I"){TPSP291I}
-    else if(input$pregunta=="GPSP292I"){TPSP292I}
-    else if(input$pregunta=="GPSP293I"){TPSP293I}
-    else if(input$pregunta=="GPSP294I"){TPSP294I}
-    else if(input$pregunta=="GPSP295I"){TPSP295I}
-    else if(input$pregunta=="GPSP296I"){TPSP296I}
-
-    else if(input$pregunta=="GPSP301I"){TPSP301I}
-    else if(input$pregunta=="GPSP302I"){TPSP302I}
-    else if(input$pregunta=="GPSP303I"){TPSP303I}
-    else if(input$pregunta=="GPSP304I"){TPSP304I}
-    else if(input$pregunta=="GPSP305I"){TPSP305I}
-    else if(input$pregunta=="GPSP306I"){TPSP306I}
-
-    else if(input$pregunta=="GPSP31I"){TPSP31I}
-    else if(input$pregunta=="GPSP311I"){TPSP311I}
-    else if(input$pregunta=="GPSP312I"){TPSP312I}
-    else if(input$pregunta=="GPSP313I"){TPSP313I}
-    else if(input$pregunta=="GPSP314I"){TPSP314I}
-    else if(input$pregunta=="GPSP315I"){TPSP315I}
+          #       Identidad  y comunidad
+            else if(input$pregunta=="PPIyC1"){TIyC1}
+            else if(input$pregunta=="PPIyC2"){TIyC2}
+            else if(input$pregunta=="PPIyC3"){TIyC3}
+            else if(input$pregunta=="PPIyC4"){TIyC4}
+            else if(input$pregunta=="PPIyC5"){TIyC5}
+            else if(input$pregunta=="PPIyC6"){TIyC6}
+            else if(input$pregunta=="PPIyC7"){TIyC7}
+            else if(input$pregunta=="PPIyC8"){TIyC8}
+            else if(input$pregunta=="PPIyC9"){TIyC9}
+            else if(input$pregunta=="PPIyC10"){TIyC10}
 
 
-
-    #percepcion de seguridad  cancun 
-    else if(input$pregunta=="GPSP1C"){TPSP1C}
-    else if(input$pregunta=="GPSP2C"){TPSP2C}
-    else if(input$pregunta=="GPSP3C"){TPSP3C}
-    else if(input$pregunta=="GPSP6C"){TPSP6C}
-    else if(input$pregunta=="GPSP7C"){TPSP7C}
-
-    else if(input$pregunta=="GPSP81C"){TPSP81C}
-    else if(input$pregunta=="GPSP82C"){TPSP82C}
-    else if(input$pregunta=="GPSP83C"){TPSP83C}
-    else if(input$pregunta=="GPSP84C"){TPSP84C}
-    
-    else if(input$pregunta=="GPSP9C"){TPSP9C}
-    else if(input$pregunta=="GPSP10C"){TPSP10C}
-    else if(input$pregunta=="GPSP11C"){TPSP11C}
-    else if(input$pregunta=="GPSP12C"){TPSP12C}
-    else if(input$pregunta=="GPSP13C"){TPSP13C}
-    else if(input$pregunta=="GPSP14C"){TPSP14C}
-    else if(input$pregunta=="GPSP15C"){TPSP15C}
-    else if(input$pregunta=="GPSP16C"){TPSP16C}
-    else if(input$pregunta=="GPSP17C"){TPSP17C}
-    else if(input$pregunta=="GPSP18C"){TPSP18C}
-    else if(input$pregunta=="GPSP19C"){TPSP19C}
-    else if(input$pregunta=="GPSP20C"){TPSP20C}
-
-    else if(input$pregunta=="GPSP21C"){TPSP21C}
-    else if(input$pregunta=="GPSP22C"){TPSP22C}
-    else if(input$pregunta=="GPSP23C"){TPSP23C}
-    else if(input$pregunta=="GPSP24C"){TPSP24C}
-    else if(input$pregunta=="GPSP25C"){TPSP25C}
-    else if(input$pregunta=="GPSP26C"){TPSP26C}
-    else if(input$pregunta=="GPSP27C"){TPSP27C}
-    else if(input$pregunta=="GPSP28C"){TPSP28C}
-
-    else if(input$pregunta=="GPSP291C"){TPSP291C}
-    else if(input$pregunta=="GPSP292C"){TPSP292C}
-    else if(input$pregunta=="GPSP293C"){TPSP293C}
-    else if(input$pregunta=="GPSP294C"){TPSP294C}
-    else if(input$pregunta=="GPSP295C"){TPSP295C}
-    else if(input$pregunta=="GPSP296C"){TPSP296C}
-
-    else if(input$pregunta=="GPSP301C"){TPSP301C}
-    else if(input$pregunta=="GPSP302C"){TPSP302C}
-    else if(input$pregunta=="GPSP303C"){TPSP303C}
-    else if(input$pregunta=="GPSP304C"){TPSP304C}
-    else if(input$pregunta=="GPSP305C"){TPSP305C}
-    else if(input$pregunta=="GPSP306C"){TPSP306C}
-
-    else if(input$pregunta=="GPSP31C"){TPSP31C}
-    else if(input$pregunta=="GPSP311C"){TPSP311C}
-    else if(input$pregunta=="GPSP312C"){TPSP312C}
-    else if(input$pregunta=="GPSP313C"){TPSP313C}
-    else if(input$pregunta=="GPSP314C"){TPSP314C}
-    else if(input$pregunta=="GPSP315C"){TPSP315C}
+            #       vivienda
+            else if(input$pregunta=="V1P1R1"){T1P1R1}
+            else if(input$pregunta=="V1P2R1"){T1P2R1}
+            else if(input$pregunta=="V1P3R1"){T1P3R1}
+            else if(input$pregunta=="V1P4R1"){T1P4R1}
+            else if(input$pregunta=="V1P5R1"){T1P5R1}
+            else if(input$pregunta=="V1P6R1"){T1P6R1}
+            else if(input$pregunta=="V1P7R1"){T1P7R1}
+            else if(input$pregunta=="V1P8R1"){T1P8R1}
 
 
-#percepcion de seguridad  EJIDO 
-    else if(input$pregunta=="GPSP1E"){TPSP1E}
-    else if(input$pregunta=="GPSP2E"){TPSP2E}
-    else if(input$pregunta=="GPSP3E"){TPSP3E}
-    else if(input$pregunta=="GPSP6E"){TPSP6E}
-    else if(input$pregunta=="GPSP7E"){TPSP7E}
+            
+            else if(input$pregunta=="PPCC1"){TCC1}
+            else if(input$pregunta=="PPCC2"){TCC2}
+            else if(input$pregunta=="PPCC3"){TCC3}
+            else if(input$pregunta=="PPCC4"){TCC4}
+            
+            
+            
+            #Salinas
+            else if(input$pregunta=="PAMB1"){TAMB1}
+            else if(input$pregunta=="PAMB2"){TAMB2}
+            else if(input$pregunta=="PAMB3"){TAMB3}
+            else if(input$pregunta=="PAMB4"){TAMB4}
+            else if(input$pregunta=="PAMB5"){TAMB5}
+            else if(input$pregunta=="PAMB6"){TAMB6}
+            else if(input$pregunta=="PAMB7"){TAMB7}
 
-    else if(input$pregunta=="GPSP81E"){TPSP81E}
-    else if(input$pregunta=="GPSP82E"){TPSP82E}
-    else if(input$pregunta=="GPSP83E"){TPSP83E}
-    else if(input$pregunta=="GPSP84E"){TPSP84E}
-    
-    else if(input$pregunta=="GPSP9E"){TPSP9E}
-    else if(input$pregunta=="GPSP10E"){TPSP10E}
-    else if(input$pregunta=="GPSP11E"){TPSP11E}
-    else if(input$pregunta=="GPSP12E"){TPSP12E}
-    else if(input$pregunta=="GPSP13E"){TPSP13E}
-    else if(input$pregunta=="GPSP14E"){TPSP14E}
-    else if(input$pregunta=="GPSP15E"){TPSP15E}
-    else if(input$pregunta=="GPSP16E"){TPSP16E}
-    else if(input$pregunta=="GPSP17E"){TPSP17E}
-    else if(input$pregunta=="GPSP18E"){TPSP18E}
-    else if(input$pregunta=="GPSP19E"){TPSP19E}
-    else if(input$pregunta=="GPSP20E"){TPSP20E}
+            else if(input$pregunta=="SOC1"){TSOC1}
+            else if(input$pregunta=="SOC2"){TSOC2}
+            else if(input$pregunta=="SOC3"){TSOC3}
+            else if(input$pregunta=="SOC4"){TSOC4}
+            else if(input$pregunta=="SOC5"){TSOC5}
+            else if(input$pregunta=="SOC6"){TSOC6}
 
-    else if(input$pregunta=="GPSP21E"){TPSP21E}
-    else if(input$pregunta=="GPSP22E"){TPSP22E}
-    else if(input$pregunta=="GPSP23E"){TPSP23E}
-    else if(input$pregunta=="GPSP24E"){TPSP24E}
-    else if(input$pregunta=="GPSP25E"){TPSP25E}
-    else if(input$pregunta=="GPSP26E"){TPSP26E}
-    else if(input$pregunta=="GPSP27E"){TPSP27E}
-    else if(input$pregunta=="GPSP28E"){TPSP28E}
 
-    else if(input$pregunta=="GPSP291E"){TPSP291E}
-    else if(input$pregunta=="GPSP292E"){TPSP292E}
-    else if(input$pregunta=="GPSP293E"){TPSP293E}
-    else if(input$pregunta=="GPSP294E"){TPSP294E}
-    else if(input$pregunta=="GPSP295E"){TPSP295E}
-    else if(input$pregunta=="GPSP296E"){TPSP296E}
+            else if(input$pregunta=="SOC6"){TSOC6}
+            else if(input$pregunta=="ECO1"){TEC1}
+            else if(input$pregunta=="ECO2"){TEC2}
+            else if(input$pregunta=="ECO3"){TEC3}
+            else if(input$pregunta=="ECO4"){TEC4}
+            else if(input$pregunta=="ECO5"){TEC5}
+            
+   #          percepcion de seguridad  Isla
+             else if(input$pregunta=="GPSI1"){TPSI1}
+             else if(input$pregunta=="GPSI2"){TPSI2}
+             else if(input$pregunta=="GPSI3"){TPSI3}
+             else if(input$pregunta=="GPSI6"){TPSI6}
+             else if(input$pregunta=="GPSI7"){TPSI7}
+            else if(input$pregunta=="GPSI81"){TPSI81}
+            else if(input$pregunta=="GPSI82"){TPSI82}
+            else if(input$pregunta=="GPSI83"){TPSI83}
+            else if(input$pregunta=="GPSI84"){TPSI84}
+            else if(input$pregunta=="GPSI9"){TPSI9}
+             else if(input$pregunta=="GPSI10"){TPSI10}
+             else if(input$pregunta=="GPSI11"){TPSI11}
+             else if(input$pregunta=="GPSI12"){TPSI12}
+             else if(input$pregunta=="GPSI13"){TPSI13}
+             else if(input$pregunta=="GPSI14"){TPSI14}
+             else if(input$pregunta=="GPSI15"){TPSI15}
+             else if(input$pregunta=="GPSI16"){TPSI16}
+             else if(input$pregunta=="GPSI17"){TPSI17}
+             else if(input$pregunta=="GPSI18"){TPSI18}
+             else if(input$pregunta=="GPSI19"){TPSI19}
+             else if(input$pregunta=="GPSI20"){TPSI20}
+             else if(input$pregunta=="GPSI21"){TPSI21}
+             else if(input$pregunta=="GPSI22"){TPSI22}
+             else if(input$pregunta=="GPSI23"){TPSI23}
 
-    else if(input$pregunta=="GPSP301E"){TPSP301E}
-    else if(input$pregunta=="GPSP302E"){TPSP302E}
-    else if(input$pregunta=="GPSP303E"){TPSP303E}
-    else if(input$pregunta=="GPSP304E"){TPSP304E}
-    else if(input$pregunta=="GPSP305E"){TPSP305E}
-    else if(input$pregunta=="GPSP306E"){TPSP306E}
+             else if(input$pregunta=="GPSI25"){TPSI25}
+             else if(input$pregunta=="GPSI26"){TPSI26}
+             else if(input$pregunta=="GPSI27"){TPSI27}
+             else if(input$pregunta=="GPSI28"){TPSI28}
+             else if(input$pregunta=="GPSI291"){TPSI291}
+             else if(input$pregunta=="GPSI292"){TPSI292}
+             else if(input$pregunta=="GPSI293"){TPSI293}
+             else if(input$pregunta=="GPSI294"){TPSI294}
+             else if(input$pregunta=="GPSI295"){TPSI295}
+             else if(input$pregunta=="GPSI296"){TPSI296}
+             else if(input$pregunta=="GPSI301"){TPSI301}
+             else if(input$pregunta=="GPSI302"){TPSI302}
+             else if(input$pregunta=="GPSI303"){TPSI303}
+             else if(input$pregunta=="GPSI304"){TPSI304}
+             else if(input$pregunta=="GPSI305"){TPSI305}
+             else if(input$pregunta=="GPSI306"){TPSI306}
+            else if(input$pregunta=="GPSI311"){TPSI311}
+             else if(input$pregunta=="GPSI312"){TPSI312}
+             else if(input$pregunta=="GPSI313"){TPSI313}
+             else if(input$pregunta=="GPSI314"){TPSI314}
+             else if(input$pregunta=="GPSI315"){TPSI315}
+             else if(input$pregunta=="GPSI316"){TPSI316}
 
-    else if(input$pregunta=="GPSP31E"){TPSP31E}
-    else if(input$pregunta=="GPSP311E"){TPSP311E}
-    else if(input$pregunta=="GPSP312E"){TPSP312E}
-    else if(input$pregunta=="GPSP313E"){TPSP313E}
-    else if(input$pregunta=="GPSP314E"){TPSP314E}
-    else if(input$pregunta=="GPSP315E"){TPSP315E}
+               #          percepcion de seguridad  Cancun
+             else if(input$pregunta=="GPSC1"){TPSC1}
+             else if(input$pregunta=="GPSC2"){TPSC2}
+             else if(input$pregunta=="GPSC3"){TPSC3}
+             else if(input$pregunta=="GPSC6"){TPSC6}
+             else if(input$pregunta=="GPSC7"){TPSC7}
+            else if(input$pregunta=="GPSC81"){TPSC81}
+            else if(input$pregunta=="GPSC82"){TPSC82}
+            else if(input$pregunta=="GPSC83"){TPSC83}
+            else if(input$pregunta=="GPSC84"){TPSC84}
+            else if(input$pregunta=="GPSC9"){TPSC9}
+             else if(input$pregunta=="GPSC10"){TPSC10}
+             else if(input$pregunta=="GPSC11"){TPSC11}
+             else if(input$pregunta=="GPSC12"){TPSC12}
+             else if(input$pregunta=="GPSC13"){TPSC13}
+             else if(input$pregunta=="GPSC14"){TPSC14}
+             else if(input$pregunta=="GPSC15"){TPSC15}
+             else if(input$pregunta=="GPSC16"){TPSC16}
+             else if(input$pregunta=="GPSC17"){TPSC17}
+             else if(input$pregunta=="GPSC18"){TPSC18}
+             else if(input$pregunta=="GPSC19"){TPSC19}
+             else if(input$pregunta=="GPSC20"){TPSC20}
+             else if(input$pregunta=="GPSC21"){TPSC21}
+             else if(input$pregunta=="GPSC22"){TPSC22}
+             else if(input$pregunta=="GPSC23"){TPSC23}
+
+             else if(input$pregunta=="GPSC25"){TPSC25}
+             else if(input$pregunta=="GPSC26"){TPSC26}
+             else if(input$pregunta=="GPSC27"){TPSC27}
+             else if(input$pregunta=="GPSC28"){TPSC28}
+             else if(input$pregunta=="GPSC291"){TPSC291}
+             else if(input$pregunta=="GPSC292"){TPSC292}
+             else if(input$pregunta=="GPSC293"){TPSC293}
+             else if(input$pregunta=="GPSC294"){TPSC294}
+             else if(input$pregunta=="GPSC295"){TPSC295}
+             else if(input$pregunta=="GPSC296"){TPSC296}
+             else if(input$pregunta=="GPSC301"){TPSC301}
+             else if(input$pregunta=="GPSC302"){TPSC302}
+             else if(input$pregunta=="GPSC303"){TPSC303}
+             else if(input$pregunta=="GPSC304"){TPSC304}
+             else if(input$pregunta=="GPSC305"){TPSC305}
+             else if(input$pregunta=="GPSC306"){TPSC306}
+            else if(input$pregunta=="GPSC311"){TPSC311}
+             else if(input$pregunta=="GPSC312"){TPSC312}
+             else if(input$pregunta=="GPSC313"){TPSC313}
+             else if(input$pregunta=="GPSC314"){TPSC314}
+             else if(input$pregunta=="GPSC315"){TPSC315}
+             else if(input$pregunta=="GPSC316"){TPSC316}
+
+
+               #          percepcion de seguridad  Cancun
+             else if(input$pregunta=="GPSE1"){TPSE1}
+             else if(input$pregunta=="GPSE2"){TPSE2}
+             else if(input$pregunta=="GPSE3"){TPSE3}
+             else if(input$pregunta=="GPSE6"){TPSE6}
+             else if(input$pregunta=="GPSE7"){TPSE7}
+            else if(input$pregunta=="GPSE81"){TPSE81}
+            else if(input$pregunta=="GPSE82"){TPSE82}
+            else if(input$pregunta=="GPSE83"){TPSE83}
+            else if(input$pregunta=="GPSE84"){TPSE84}
+            else if(input$pregunta=="GPSE9"){TPSE9}
+             else if(input$pregunta=="GPSE10"){TPSE10}
+             else if(input$pregunta=="GPSE11"){TPSE11}
+             else if(input$pregunta=="GPSE12"){TPSE12}
+             else if(input$pregunta=="GPSE13"){TPSE13}
+             else if(input$pregunta=="GPSE14"){TPSE14}
+             else if(input$pregunta=="GPSE15"){TPSE15}
+             else if(input$pregunta=="GPSE16"){TPSE16}
+             else if(input$pregunta=="GPSE17"){TPSE17}
+             else if(input$pregunta=="GPSE18"){TPSE18}
+             else if(input$pregunta=="GPSE19"){TPSE19}
+             else if(input$pregunta=="GPSE20"){TPSE20}
+             else if(input$pregunta=="GPSE21"){TPSE21}
+             else if(input$pregunta=="GPSE22"){TPSE22}
+             else if(input$pregunta=="GPSE23"){TPSE23}
+
+             else if(input$pregunta=="GPSE25"){TPSE25}
+             else if(input$pregunta=="GPSE26"){TPSE26}
+             else if(input$pregunta=="GPSE27"){TPSE27}
+             else if(input$pregunta=="GPSE28"){TPSE28}
+             else if(input$pregunta=="GPSE291"){TPSE291}
+             else if(input$pregunta=="GPSE292"){TPSE292}
+             else if(input$pregunta=="GPSE293"){TPSE293}
+             else if(input$pregunta=="GPSE294"){TPSE294}
+             else if(input$pregunta=="GPSE295"){TPSE295}
+             else if(input$pregunta=="GPSE296"){TPSE296}
+             else if(input$pregunta=="GPSE301"){TPSE301}
+             else if(input$pregunta=="GPSE302"){TPSE302}
+             else if(input$pregunta=="GPSE303"){TPSE303}
+             else if(input$pregunta=="GPSE304"){TPSE304}
+             else if(input$pregunta=="GPSE305"){TPSE305}
+             else if(input$pregunta=="GPSE306"){TPSE306}
+            else if(input$pregunta=="GPSE311"){TPSE311}
+             else if(input$pregunta=="GPSE312"){TPSE312}
+             else if(input$pregunta=="GPSE313"){TPSE313}
+             else if(input$pregunta=="GPSE314"){TPSE314}
+             else if(input$pregunta=="GPSE315"){TPSE315}
+             else if(input$pregunta=="GPSE316"){TPSE316}
+           
+
+                            
+
+            else {GPSI1}
 
 
     
@@ -304,621 +283,524 @@ server <- function(input, output, session) {
   
   # Visualizacion principal 
   output$plot1=renderLeaflet({
-    #tableGraficas
-    #datoG = Vgrafica()
-    #Caracteristicas de poblacion y migracion
-    #vivienda
-    if(input$pregunta=="V1P1R1"){V1P1R1}
-    else if(input$pregunta=="V1P4R1"){V1P4R1}
-    else if(input$pregunta=="V1H1"){V1H1}
-    else if(input$pregunta=="V1H1"){V1H1}
-    #Familiares
-    else if(input$pregunta=="PFAM1"){PFAM01}
-    else if(input$pregunta=="PFAM2"){PFAM02}
-    else if(input$pregunta=="PFAM1"){PFAM1}
-    else if(input$pregunta=="PFAM2"){PFAM2}
-    else if(input$pregunta=="PFAM3"){PFAM3}
-    else if(input$pregunta=="PFAM4"){PFAM4}
-    # Economicos
-    else if(input$pregunta=="PPECO1"){PECO1}
-    else if(input$pregunta=="PPECO2"){PECO2}
-    else if(input$pregunta=="PPECO3"){PECO3}
-    else if(input$pregunta=="PPECO4"){PECO4}
-    else if(input$pregunta=="PPECO5"){PECO5}
-    else if(input$pregunta=="PPECO6"){PECO6}
-    else if(input$pregunta=="PPECO7"){PECO7}
-    #Identidad  y comunidad
-    else if(input$pregunta=="PPIyC1"){PIyC1}
-    else if(input$pregunta=="PPIyC2"){PIyC2}
-    else if(input$pregunta=="PPIyC3"){PIyC3}
-    else if(input$pregunta=="PPIyC4"){PIyC4}
-    else if(input$pregunta=="PPIyC5"){PIyC5}
-    else if(input$pregunta=="PPIyC6"){PIyC6}
-    
-    
-    else if(input$pregunta=="PPCC1"){PCC1}
-    else if(input$pregunta=="PPCC2"){PCC2}
-    else if(input$pregunta=="PPCC3"){PCC3}
-    else if(input$pregunta=="PPCC4"){PCC4}
-    
-    
-    
-    #Salinas
-    else if(input$pregunta=="PAMB1"){AMB1}
-    else if(input$pregunta=="PAMB2"){AMB2}
-    else if(input$pregunta=="PAMB3"){AMB3}
-    else if(input$pregunta=="PAMB4"){AMB4}
-    else if(input$pregunta=="PAMB5"){AMB5}
-    else if(input$pregunta=="SOC1"){SOC1}
-    else if(input$pregunta=="SOC2"){SOC2}
-    else if(input$pregunta=="SOC3"){SOC3}
-    else if(input$pregunta=="SOC4"){SOC4}
-    else if(input$pregunta=="SOC5"){SOC5}
-    else if(input$pregunta=="SOC6"){SOC6}
-    else if(input$pregunta=="ECO1"){EC1}
-    else if(input$pregunta=="ECO2"){EC2}
-    else if(input$pregunta=="ECO3"){EC3}
-    else if(input$pregunta=="ECO4"){EC4}
-    else if(input$pregunta=="ECO5"){EC5}
+
+        # Caracteristicas de poblacion y migracion
+        #             Familiares
+            if(input$pregunta=="PFAM01"){PFAM01}
+        else if(input$pregunta=="PFAM02"){PFAM02}
+        else if(input$pregunta=="PFAM1"){PFAM1}
+        else if(input$pregunta=="PFAM2"){PFAM2}
+        else if(input$pregunta=="PFAM3"){PFAM3}
+        else if(input$pregunta=="PFAM4"){PFAM4}
+        # Economicos
+        else if(input$pregunta=="PPECO1"){PECO1}
+        else if(input$pregunta=="PPECO2"){PECO2}
+        else if(input$pregunta=="PPECO3"){PECO3}
+        else if(input$pregunta=="PPECO4"){PECO4}
+        else if(input$pregunta=="PPECO5"){PECO5}
+        else if(input$pregunta=="PPECO6"){PECO6}
+        else if(input$pregunta=="PPECO7"){PPECO7}
+        else if(input$pregunta=="PPECO8"){PPECO8}
+        #Identidad  y comunidad
+        else if(input$pregunta=="PPIyC1"){PIyC1}
+        else if(input$pregunta=="PPIyC2"){PIyC2}
+        else if(input$pregunta=="PPIyC3"){PIyC3}
+        else if(input$pregunta=="PPIyC4"){PIyC4}
+        else if(input$pregunta=="PPIyC5"){PIyC5}
+        else if(input$pregunta=="PPIyC6"){PIyC6}
+        else if(input$pregunta=="PPIyC7"){PIyC7}
+        else if(input$pregunta=="PPIyC8"){PIyC8}
+        else if(input$pregunta=="PPIyC9"){PIyC9}
+        else if(input$pregunta=="PPIyC10"){PIyC10}
+          #vivienda
+        #       vivienda
+        else if(input$pregunta=="V1P1R1"
+        ){V1P1R1}
+        else if(input$pregunta=="V1P2R1"){V1P2R1}
+        else if(input$pregunta=="V1P3R1"){V1P3R1}
+        else if(input$pregunta=="V1P4R1"){V1P4R1}
+        else if(input$pregunta=="V1P5R1"){V1P5R1}
+        else if(input$pregunta=="V1P6R1"){V1P6R1}
+        else if(input$pregunta=="V1P7R1"){V1P7R1}
+        else if(input$pregunta=="V1P8R1"){V1P8R1}
+        
+        else if(input$pregunta=="PPCC1"){PCC1}
+        else if(input$pregunta=="PPCC2"){PCC2}
+        else if(input$pregunta=="PPCC3"){PCC3}
+        else if(input$pregunta=="PPCC4"){PCC4}
+        
+        
+        
+        #------------- SALINAS --------------
+        #             Ambiental 
+        else if(input$pregunta=="PAMB1"){AMB1}
+        else if(input$pregunta=="PAMB2"){AMB2}
+        else if(input$pregunta=="PAMB3"){AMB3}
+        else if(input$pregunta=="PAMB4"){AMB4}
+        else if(input$pregunta=="PAMB5"){AMB5}
+        else if(input$pregunta=="PAMB6"){AMB6}
+        else if(input$pregunta=="PAMB7"){AMB7}
+    #             Social 
+        else if(input$pregunta=="SOC1"){SOC1}
+        else if(input$pregunta=="SOC2"){SOC2}
+        else if(input$pregunta=="SOC3"){SOC3}
+        else if(input$pregunta=="SOC4"){SOC4}
+        else if(input$pregunta=="SOC5"){SOC5}
+        else if(input$pregunta=="SOC6"){SOC6}
+    #             Economico
+        else if(input$pregunta=="ECO1"){EC1}
+        else if(input$pregunta=="ECO2"){EC2}
+        else if(input$pregunta=="ECO3"){EC3}
+        else if(input$pregunta=="ECO4"){EC4}
+        else if(input$pregunta=="ECO5"){EC5}
+
+  
+
+  #percepcion de seguridad 
+             else if(input$pregunta=="GPSI1"){GPSI1}
+             else if(input$pregunta=="GPSI2"){GPSI2}
+             else if(input$pregunta=="GPSI3"){GPSI3}
+             else if(input$pregunta=="GPSI6"){GPSI6}
+             else if(input$pregunta=="GPSI7"){GPSI7}
+            else if(input$pregunta=="GPSI81"){GPSI81}
+            else if(input$pregunta=="GPSI82"){GPSI82}
+            else if(input$pregunta=="GPSI83"){GPSI83}
+            else if(input$pregunta=="GPSI84"){GPSI84}
+            else if(input$pregunta=="GPSI9"){GPSI9}
+             else if(input$pregunta=="GPSI10"){GPSI10}
+             else if(input$pregunta=="GPSI11"){GPSI11}
+             else if(input$pregunta=="GPSI12"){GPSI12}
+             else if(input$pregunta=="GPSI13"){GPSI13}
+             else if(input$pregunta=="GPSI14"){GPSI14}
+             else if(input$pregunta=="GPSI15"){GPSI15}
+             else if(input$pregunta=="GPSI16"){GPSI16}
+             else if(input$pregunta=="GPSI17"){GPSI17}
+             else if(input$pregunta=="GPSI18"){GPSI18}
+             else if(input$pregunta=="GPSI19"){GPSI19}
+             else if(input$pregunta=="GPSI20"){GPSI20}
+             else if(input$pregunta=="GPSI21"){GPSI21}
+             else if(input$pregunta=="GPSI22"){GPSI22}
+             else if(input$pregunta=="GPSI23"){GPSI23}
+
+             else if(input$pregunta=="GPSI25"){GPSI25}
+             else if(input$pregunta=="GPSI26"){GPSI26}
+             else if(input$pregunta=="GPSI27"){GPSI27}
+             else if(input$pregunta=="GPSI28"){GPSI28}
+             else if(input$pregunta=="GPSI291"){GPSI291}
+             else if(input$pregunta=="GPSI292"){GPSI292}
+             else if(input$pregunta=="GPSI293"){GPSI293}
+             else if(input$pregunta=="GPSI294"){GPSI294}
+             else if(input$pregunta=="GPSI295"){GPSI295}
+             else if(input$pregunta=="GPSI296"){GPSI296}
+             else if(input$pregunta=="GPSI301"){GPSI301}
+             else if(input$pregunta=="GPSI302"){GPSI302}
+             else if(input$pregunta=="GPSI303"){GPSI303}
+             else if(input$pregunta=="GPSI304"){GPSI304}
+             else if(input$pregunta=="GPSI305"){GPSI305}
+             else if(input$pregunta=="GPSI306"){GPSI306}
+            else if(input$pregunta=="GPSI311"){GPSI311}
+             else if(input$pregunta=="GPSI312"){GPSI312}
+             else if(input$pregunta=="GPSI313"){GPSI313}
+             else if(input$pregunta=="GPSI314"){GPSI314}
+             else if(input$pregunta=="GPSI315"){GPSI315}
+             else if(input$pregunta=="GPSI316"){GPSI316}
 
 
-                               #"En esta calle o zona, hay violencia:" = "GPSP14" ,
-                               #"En esta calle o zona, cuando hay conflictos entre vecinos se manejan:" = "GPSP15" 
-#PERCEPCION COMPARATIVA
-       else if(input$pregunta=="PSG1"){PSG1}
-    else if(input$pregunta=="PSG2"){PSG2}
-    else if(input$pregunta=="PSG3"){PSG3}
-    else if(input$pregunta=="PSG4"){PSG4}
-    else if(input$pregunta=="PSG5"){PSG5}
+              #percepcion de seguridad 
+             else if(input$pregunta=="GPSC1"){GPSC1}
+             else if(input$pregunta=="GPSC2"){GPSC2}
+             else if(input$pregunta=="GPSC3"){GPSC3}
+             else if(input$pregunta=="GPSC6"){GPSC6}
+             else if(input$pregunta=="GPSC7"){GPSC7}
+            else if(input$pregunta=="GPSC81"){GPSC81}
+            else if(input$pregunta=="GPSC82"){GPSC82}
+            else if(input$pregunta=="GPSC83"){GPSC83}
+            else if(input$pregunta=="GPSC84"){GPSC84}
+            else if(input$pregunta=="GPSC9"){GPSC9}
+             else if(input$pregunta=="GPSC10"){GPSC10}
+             else if(input$pregunta=="GPSC11"){GPSC11}
+             else if(input$pregunta=="GPSC12"){GPSC12}
+             else if(input$pregunta=="GPSC13"){GPSC13}
+             else if(input$pregunta=="GPSC14"){GPSC14}
+             else if(input$pregunta=="GPSC15"){GPSC15}
+             else if(input$pregunta=="GPSC16"){GPSC16}
+             else if(input$pregunta=="GPSC17"){GPSC17}
+             else if(input$pregunta=="GPSC18"){GPSC18}
+             else if(input$pregunta=="GPSC19"){GPSC19}
+             else if(input$pregunta=="GPSC20"){GPSC20}
+             else if(input$pregunta=="GPSC21"){GPSC21}
+             else if(input$pregunta=="GPSC22"){GPSC22}
+             else if(input$pregunta=="GPSC23"){GPSC23}
 
-    else if(input$pregunta=="PSG5"){PSG5}
-    else if(input$pregunta=="PSG7"){PSG7}
-
-    else if(input$pregunta=="PSG8"){PSG8}
-    else if(input$pregunta=="PSG82"){PSG82}
-    else if(input$pregunta=="PSG83"){PSG83}
-    else if(input$pregunta=="PSG84"){PSG84}
-
-
-    else if(input$pregunta=="PSG9"){PSG9}
-    
-    else if(input$pregunta=="PSG10"){PSG10}
-    else if(input$pregunta=="PSG11"){PSG11}
-    else if(input$pregunta=="PSG12"){PSG12}
-    else if(input$pregunta=="PSG13"){PSG13}
-    else if(input$pregunta=="PSG14"){PSG14}
-    else if(input$pregunta=="PSG15"){PSG15}
-    else if(input$pregunta=="PSG16"){PSG16}
-    else if(input$pregunta=="PSG17"){PSG17}
-    else if(input$pregunta=="PSG18"){PSG18}
-
-    else if(input$pregunta=="PSG14"){PSG14}
-    else if(input$pregunta=="PSG15"){PSG15}
-    else if(input$pregunta=="PSG16"){PSG16}
-    else if(input$pregunta=="PSG17"){PSG17}
-    else if(input$pregunta=="PSG18"){PSG18}
-
-
-    else if(input$pregunta=="PSG182"){PSG182}
-    else if(input$pregunta=="PSG20"){PSG20}
-    else if(input$pregunta=="PSG19"){PSG19}
-
-    else if(input$pregunta=="PSG20"){PSG20}
-    else if(input$pregunta=="PSG21"){PSG21}
-
-    else if(input$pregunta=="PSG22"){PSG22}
-    else if(input$pregunta=="PSG23"){PSG23}
-    else if(input$pregunta=="PSG24"){PSG24}
-    else if(input$pregunta=="PSG25"){PSG25}
-    else if(input$pregunta=="PSG26"){PSG26}
-    else if(input$pregunta=="PSG27"){PSG27}
-    else if(input$pregunta=="PSG28"){PSG28}
-    else if(input$pregunta=="PSG29"){PSG29}
-
-    else if(input$pregunta=="GPSP291I"){GPSP291I}
-    else if(input$pregunta=="GPSP292I"){GPSP292I}
-    else if(input$pregunta=="GPSP293I"){GPSP293I}
-    else if(input$pregunta=="GPSP294I"){GPSP294I}
-    else if(input$pregunta=="GPSP295I"){GPSP295I}
-    else if(input$pregunta=="GPSP296I"){GPSP296I}
-
-    else if(input$pregunta=="GPSP301I"){GPSP301I}
-    else if(input$pregunta=="GPSP302I"){GPSP302I}
-    else if(input$pregunta=="GPSP303I"){GPSP303I}
-    else if(input$pregunta=="GPSP304I"){GPSP304I}
-    else if(input$pregunta=="GPSP305I"){GPSP305I}
-    else if(input$pregunta=="GPSP306I"){GPSP306I}
-
-    else if(input$pregunta=="GPSP31I"){GPSP31I}
-    else if(input$pregunta=="GPSP311I"){GPSP311I}
-    else if(input$pregunta=="GPSP312I"){GPSP312I}
-    else if(input$pregunta=="GPSP313I"){GPSP313I}
-    else if(input$pregunta=="GPSP314I"){GPSP314I}
-    else if(input$pregunta=="GPSP315I"){GPSP315I}
-
-
-                         
-
-    #percepcion de seguridad  isla 
-    else if(input$pregunta=="GPSP1I"){GPSP1I}
-    else if(input$pregunta=="GPSP2I"){GPSP2I}
-    else if(input$pregunta=="GPSP3I"){GPSP3I}
-    else if(input$pregunta=="GPSP6I"){GPSP6I}
-    else if(input$pregunta=="GPSP7I"){GPSP7I}
-
-    else if(input$pregunta=="GPSP81I"){GPSP81I}
-    else if(input$pregunta=="GPSP82I"){GPSP82I}
-    else if(input$pregunta=="GPSP83I"){GPSP83I}
-    else if(input$pregunta=="GPSP84I"){GPSP84I}
-    
-    else if(input$pregunta=="GPSP9I"){GPSP9I}
-    else if(input$pregunta=="GPSP10I"){GPSP10I}
-    else if(input$pregunta=="GPSP11I"){GPSP11I}
-    else if(input$pregunta=="GPSP12I"){GPSP12I}
-    else if(input$pregunta=="GPSP13I"){GPSP13I}
-    else if(input$pregunta=="GPSP14I"){GPSP14I}
-    else if(input$pregunta=="GPSP15I"){GPSP15I}
-    else if(input$pregunta=="GPSP16I"){GPSP16I}
-    else if(input$pregunta=="GPSP17I"){GPSP17I}
-    else if(input$pregunta=="GPSP18I"){GPSP18I}
-    else if(input$pregunta=="GPSP19I"){GPSP19I}
-    else if(input$pregunta=="GPSP20I"){GPSP20I}
-
-    else if(input$pregunta=="GPSP21I"){GPSP21I}
-    else if(input$pregunta=="GPSP22I"){GPSP22I}
-    else if(input$pregunta=="GPSP23I"){GPSP23I}
-    else if(input$pregunta=="GPSP24I"){GPSP24I}
-    else if(input$pregunta=="GPSP25I"){GPSP25I}
-    else if(input$pregunta=="GPSP26I"){GPSP26I}
-    else if(input$pregunta=="GPSP27I"){GPSP27I}
-    else if(input$pregunta=="GPSP28I"){GPSP28I}
-
-    else if(input$pregunta=="GPSP291I"){GPSP291I}
-    else if(input$pregunta=="GPSP292I"){GPSP292I}
-    else if(input$pregunta=="GPSP293I"){GPSP293I}
-    else if(input$pregunta=="GPSP294I"){GPSP294I}
-    else if(input$pregunta=="GPSP295I"){GPSP295I}
-    else if(input$pregunta=="GPSP296I"){GPSP296I}
-
-    else if(input$pregunta=="GPSP301I"){GPSP301I}
-    else if(input$pregunta=="GPSP302I"){GPSP302I}
-    else if(input$pregunta=="GPSP303I"){GPSP303I}
-    else if(input$pregunta=="GPSP304I"){GPSP304I}
-    else if(input$pregunta=="GPSP305I"){GPSP305I}
-    else if(input$pregunta=="GPSP306I"){GPSP306I}
-
-    else if(input$pregunta=="GPSP31I"){GPSP31I}
-    else if(input$pregunta=="GPSP311I"){GPSP311I}
-    else if(input$pregunta=="GPSP312I"){GPSP312I}
-    else if(input$pregunta=="GPSP313I"){GPSP313I}
-    else if(input$pregunta=="GPSP314I"){GPSP314I}
-    else if(input$pregunta=="GPSP315I"){GPSP315I}
+             else if(input$pregunta=="GPSC25"){GPSC25}
+             else if(input$pregunta=="GPSC26"){GPSC26}
+             else if(input$pregunta=="GPSC27"){GPSC27}
+             else if(input$pregunta=="GPSC28"){GPSC28}
+             else if(input$pregunta=="GPSC291"){GPSC291}
+             else if(input$pregunta=="GPSC292"){GPSC292}
+             else if(input$pregunta=="GPSC293"){GPSC293}
+             else if(input$pregunta=="GPSC294"){GPSC294}
+             else if(input$pregunta=="GPSC295"){GPSC295}
+             else if(input$pregunta=="GPSC296"){GPSC296}
+             else if(input$pregunta=="GPSC301"){GPSC301}
+             else if(input$pregunta=="GPSC302"){GPSC302}
+             else if(input$pregunta=="GPSC303"){GPSC303}
+             else if(input$pregunta=="GPSC304"){GPSC304}
+             else if(input$pregunta=="GPSC305"){GPSC305}
+             else if(input$pregunta=="GPSC306"){GPSC306}
+            else if(input$pregunta=="GPSC311"){GPSC311}
+             else if(input$pregunta=="GPSC312"){GPSC312}
+             else if(input$pregunta=="GPSC313"){GPSC313}
+             else if(input$pregunta=="GPSC314"){GPSC314}
+             else if(input$pregunta=="GPSC315"){GPSC315}
+             else if(input$pregunta=="GPSC316"){GPSC316}
 
 
 
-    #percepcion de seguridad  cancun 
-    else if(input$pregunta=="GPSP1C"){GPSP1C}
-    else if(input$pregunta=="GPSP2C"){GPSP2C}
-    else if(input$pregunta=="GPSP3C"){GPSP3C}
-    else if(input$pregunta=="GPSP6C"){GPSP6C}
-    else if(input$pregunta=="GPSP7C"){GPSP7C}
+              #percepcion de seguridad 
+             else if(input$pregunta=="GPSE1"){GPSE1}
+             else if(input$pregunta=="GPSE2"){GPSE2}
+             else if(input$pregunta=="GPSE3"){GPSE3}
+             else if(input$pregunta=="GPSE6"){GPSE6}
+             else if(input$pregunta=="GPSE7"){GPSE7}
+            else if(input$pregunta=="GPSE81"){GPSE81}
+            else if(input$pregunta=="GPSE82"){GPSE82}
+            else if(input$pregunta=="GPSE83"){GPSE83}
+            else if(input$pregunta=="GPSE84"){GPSE84}
+            else if(input$pregunta=="GPSE9"){GPSE9}
+             else if(input$pregunta=="GPSE10"){GPSE10}
+             else if(input$pregunta=="GPSE11"){GPSE11}
+             else if(input$pregunta=="GPSE12"){GPSE12}
+             else if(input$pregunta=="GPSE13"){GPSE13}
+             else if(input$pregunta=="GPSE14"){GPSE14}
+             else if(input$pregunta=="GPSE15"){GPSE15}
+             else if(input$pregunta=="GPSE16"){GPSE16}
+             else if(input$pregunta=="GPSE17"){GPSE17}
+             else if(input$pregunta=="GPSE18"){GPSE18}
+             else if(input$pregunta=="GPSE19"){GPSE19}
+             else if(input$pregunta=="GPSE20"){GPSE20}
+             else if(input$pregunta=="GPSE21"){GPSE21}
+             else if(input$pregunta=="GPSE22"){GPSE22}
+             else if(input$pregunta=="GPSE23"){GPSE23}
 
-    else if(input$pregunta=="GPSP81C"){GPSP81C}
-    else if(input$pregunta=="GPSP82C"){GPSP82C}
-    else if(input$pregunta=="GPSP83C"){GPSP83C}
-    else if(input$pregunta=="GPSP84C"){GPSP84C}
-    
-    else if(input$pregunta=="GPSP9C"){GPSP9C}
-    else if(input$pregunta=="GPSP10C"){GPSP10C}
-    else if(input$pregunta=="GPSP11C"){GPSP11C}
-    else if(input$pregunta=="GPSP12C"){GPSP12C}
-    else if(input$pregunta=="GPSP13C"){GPSP13C}
-    else if(input$pregunta=="GPSP14C"){GPSP14C}
-    else if(input$pregunta=="GPSP15C"){GPSP15C}
-    else if(input$pregunta=="GPSP16C"){GPSP16C}
-    else if(input$pregunta=="GPSP17C"){GPSP17C}
-    else if(input$pregunta=="GPSP18C"){GPSP18C}
-    else if(input$pregunta=="GPSP19C"){GPSP19C}
-    else if(input$pregunta=="GPSP20C"){GPSP20C}
+             else if(input$pregunta=="GPSE25"){GPSE25}
+             else if(input$pregunta=="GPSE26"){GPSE26}
+             else if(input$pregunta=="GPSE27"){GPSE27}
+             else if(input$pregunta=="GPSE28"){GPSE28}
+             else if(input$pregunta=="GPSE291"){GPSE291}
+             else if(input$pregunta=="GPSE292"){GPSE292}
+             else if(input$pregunta=="GPSE293"){GPSE293}
+             else if(input$pregunta=="GPSE294"){GPSE294}
+             else if(input$pregunta=="GPSE295"){GPSE295}
+             else if(input$pregunta=="GPSE296"){GPSE296}
+             else if(input$pregunta=="GPSE301"){GPSE301}
+             else if(input$pregunta=="GPSE302"){GPSE302}
+             else if(input$pregunta=="GPSE303"){GPSE303}
+             else if(input$pregunta=="GPSE304"){GPSE304}
+             else if(input$pregunta=="GPSE305"){GPSE305}
+             else if(input$pregunta=="GPSE306"){GPSE306}
+            else if(input$pregunta=="GPSE311"){GPSE311}
+             else if(input$pregunta=="GPSE312"){GPSE312}
+             else if(input$pregunta=="GPSE313"){GPSE313}
+             else if(input$pregunta=="GPSE314"){GPSE314}
+             else if(input$pregunta=="GPSE315"){GPSE315}
+             else if(input$pregunta=="GPSE316"){GPSE316}
+               
+           
 
-    else if(input$pregunta=="GPSP21C"){GPSP21C}
-    else if(input$pregunta=="GPSP22C"){GPSP22C}
-    else if(input$pregunta=="GPSP23C"){GPSP23C}
-    else if(input$pregunta=="GPSP24C"){GPSP24C}
-    else if(input$pregunta=="GPSP25C"){GPSP25C}
-    else if(input$pregunta=="GPSP26C"){GPSP26C}
-    else if(input$pregunta=="GPSP27C"){GPSP27C}
-    else if(input$pregunta=="GPSP28C"){GPSP28C}
+                            
 
-    else if(input$pregunta=="GPSP291C"){GPSP291C}
-    else if(input$pregunta=="GPSP292C"){GPSP292C}
-    else if(input$pregunta=="GPSP293C"){GPSP293C}
-    else if(input$pregunta=="GPSP294C"){GPSP294C}
-    else if(input$pregunta=="GPSP295C"){GPSP295C}
-    else if(input$pregunta=="GPSP296C"){GPSP296C}
-
-    else if(input$pregunta=="GPSP301C"){GPSP301C}
-    else if(input$pregunta=="GPSP302C"){GPSP302C}
-    else if(input$pregunta=="GPSP303C"){GPSP303C}
-    else if(input$pregunta=="GPSP304C"){GPSP304C}
-    else if(input$pregunta=="GPSP305C"){GPSP305C}
-    else if(input$pregunta=="GPSP306C"){GPSP306C}
-
-    else if(input$pregunta=="GPSP31C"){GPSP31C}
-    else if(input$pregunta=="GPSP311C"){GPSP311C}
-    else if(input$pregunta=="GPSP312C"){GPSP312C}
-    else if(input$pregunta=="GPSP313C"){GPSP313C}
-    else if(input$pregunta=="GPSP314C"){GPSP314C}
-    else if(input$pregunta=="GPSP315C"){GPSP315C}
+            else {GPSI1}
 
 
-#percepcion de seguridad  EJIDO 
-    else if(input$pregunta=="GPSP1E"){GPSP1E}
-    else if(input$pregunta=="GPSP2E"){GPSP2E}
-    else if(input$pregunta=="GPSP3E"){GPSP3E}
-    else if(input$pregunta=="GPSP6E"){GPSP6E}
-    else if(input$pregunta=="GPSP7E"){GPSP7E}
 
-    else if(input$pregunta=="GPSP81E"){GPSP81E}
-    else if(input$pregunta=="GPSP82E"){GPSP82E}
-    else if(input$pregunta=="GPSP83E"){GPSP83E}
-    else if(input$pregunta=="GPSP84E"){GPSP84E}
-    
-    else if(input$pregunta=="GPSP9E"){GPSP9E}
-    else if(input$pregunta=="GPSP10E"){GPSP10E}
-    else if(input$pregunta=="GPSP11E"){GPSP11E}
-    else if(input$pregunta=="GPSP12E"){GPSP12E}
-    else if(input$pregunta=="GPSP13E"){GPSP13E}
-    else if(input$pregunta=="GPSP14E"){GPSP14E}
-    else if(input$pregunta=="GPSP15E"){GPSP15E}
-    else if(input$pregunta=="GPSP16E"){GPSP16E}
-    else if(input$pregunta=="GPSP17E"){GPSP17E}
-    else if(input$pregunta=="GPSP18E"){GPSP18E}
-    else if(input$pregunta=="GPSP19E"){GPSP19E}
-    else if(input$pregunta=="GPSP20E"){GPSP20E}
-
-    else if(input$pregunta=="GPSP21E"){GPSP21E}
-    else if(input$pregunta=="GPSP22E"){GPSP22E}
-    else if(input$pregunta=="GPSP23E"){GPSP23E}
-    else if(input$pregunta=="GPSP24E"){GPSP24E}
-    else if(input$pregunta=="GPSP25E"){GPSP25E}
-    else if(input$pregunta=="GPSP26E"){GPSP26E}
-    else if(input$pregunta=="GPSP27E"){GPSP27E}
-    else if(input$pregunta=="GPSP28E"){GPSP28E}
-
-    else if(input$pregunta=="GPSP291E"){GPSP291E}
-    else if(input$pregunta=="GPSP292E"){GPSP292E}
-    else if(input$pregunta=="GPSP293E"){GPSP293E}
-    else if(input$pregunta=="GPSP294E"){GPSP294E}
-    else if(input$pregunta=="GPSP295E"){GPSP295E}
-    else if(input$pregunta=="GPSP296E"){GPSP296E}
-
-    else if(input$pregunta=="GPSP301E"){GPSP301E}
-    else if(input$pregunta=="GPSP302E"){GPSP302E}
-    else if(input$pregunta=="GPSP303E"){GPSP303E}
-    else if(input$pregunta=="GPSP304E"){GPSP304E}
-    else if(input$pregunta=="GPSP305E"){GPSP305E}
-    else if(input$pregunta=="GPSP306E"){GPSP306E}
-
-    else if(input$pregunta=="GPSP31E"){GPSP31E}
-    else if(input$pregunta=="GPSP311E"){GPSP311E}
-    else if(input$pregunta=="GPSP312E"){GPSP312E}
-    else if(input$pregunta=="GPSP313E"){GPSP313E}
-    else if(input$pregunta=="GPSP314E"){GPSP314E}
-    else if(input$pregunta=="GPSP315E"){GPSP315E}
-
-    
     
   })
   
-
-
-
-
-
-  observeEvent(input$tipomapa, {
-    
-    if (input$tipomapa== "PS"){
-      updateSelectInput(session, "enfoque",                
-                        choices = c( "Eficacia colectiva" = "PSEC" ,"Impunidad autoridad" = "PSIA", "Social" = "PSS", "Situacional" = "PSSIA") 
-      )
-
-
-    }else if (input$tipomapa== "IS"){
-      updateSelectInput(session, "enfoque",                
-                        choices = c("Ambiental" = "ambi1" , "Economico" = "eco1","Social"="soc1") 
-      )
-    }else if (input$tipomapa== "EJ"){
-      updateSelectInput(session, "enfoque",                
-                        choices= c( "Datos familiares" = "DF","Datos económicos" = "DE", "Identidad y Comunidad" = "ID" , "Vivienda" = "VI", "Apreciación del encuestador" = "AE")
-      )
-    }
+  observeEvent(input$tipomapa, {  
+       if (input$tipomapa== "PSQ"){
+        updateSelectInput(session, "enfoque",                        
+                           choices = c("Isla Mujeres"= "PSI", "Cancun"="PSC", "Ejido"="PSE")
+         )
+       }else
+       if (input$tipomapa== "IS"){
+        updateSelectInput(session, "enfoque",                
+                          choices = c("Ambiental" = "ambi1" , "Economico" = "eco1","Social"="soc1") 
+        )
+      }else if (input$tipomapa== "EJ"){
+        updateSelectInput(session, "enfoque",                
+                          choices= c( "Datos familiares" = "DF","Datos económicos" = "DE", "Identidad y Comunidad" = "ID" , "Vivienda" = "VI", "Apreciación del encuestador" = "AE")
+        )
+      }
   })
-
-    observeEvent(input$localizPS, {
+  
  
-       if (input$localizPS == "PSE"){
-                 updateSelectInput(session, "pregunta",  
-                      choices = c(
-                        "1. En esta calle o zona, Usted participa:" = "GPSP1E", 
-                        "2. Usted conoce a sus vecinos:" = "GPSP2E" ,
-                        "3. Participa con la autoridad para mejorar la seguridad:" = "GPSP3E" ,
-                        "6. Cuando hay un delito, en esta calle o zona los vecinos:" = "GPSP6E", 
-                        "7. Durante el último año, en esta calle o zona ha habido:" = "GPSP7E" ,
-                        "8. Valore el riesgo de sufrir un delito en alguno de los siguientes lugares: Casa" = "GPSP81E",
-                        "8. Valore el riesgo de sufrir un delito en alguno de los siguientes lugares: Calle" = "GPSP82E",
-                        "8. Valore el riesgo de sufrir un delito en alguno de los siguientes lugares: Zona" = "GPSP83E",
-                        "8. Valore el riesgo de sufrir un delito en alguno de los siguientes lugares: Ciudad" = "GPSP84E",
-                        "9. ¿Usted ha sido víctima de algún delito en el último año?" = "GPSP9E" ,
-                        "10. En caso de ser víctima del delito Usted:" = "GPSP10E", 
-                        "11. Ha sido víctima de algún delito y no denuncio:" = "GPSP11E" ,
-                        "12. En esta calle o zona:" = "GPSP12E" ,
-                        "13. En esta calle o zona, hay personas" = "GPSP13E", 
-                        "14. En esta calle o zona hay violencia:" = "GPSP14E" ,
-                        "15. En esta calle o zona, cuando hay conflictos entre vecinos se manejan:" = "GPSP15E" ,
-                        "16. En esta calle o zona hay niños o adolescentes que se quedan encerrados con llave:" = "GPSP16E" ,
-                        "17. En esta calle o zona hay niños que se quedan la mayor parte del día sin comer: " = "GPSP17E" ,
-                        "18. En esta calle o zona hay jóvenes que:" = "GPSP18E" ,
-                        "19. En esta calle o zona hay un parque" = "GPSP19E" ,
-                        "20. En esta calle o zona hay:" = "GPSP20E" ,
-                        "21. En esta zona hay" = "GPSP21E" ,
-                        "22. En el último año Usted supo que algún menor de 18 años:" = "GPSP22E" ,
-                        "23 .Para corregir a un niño o niña que se porta mal, Usted recomienda:" = "GPSP23E" ,
-                        "24. En esta casa: (APLICA TARJETON)" = "GPSP24E" ,
-                        "25. En esta casa alguien: (APLICA TARJETON)" = "GPSP25E" ,
-                        "26. En el último año, por cuestiones de seguridad Usted ha pensado:" = "GPSP26E" ,
-                        "27. En el último año, por cuestiones de seguridad Usted dejó de:" = "GPSP27E" ,
-                        "28. En esta calle o zona la policía:" = "GPSP28E" ,
-                        "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: La policía " = "GPSP291E" ,
-                        "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: El Ministerio Público para denunciar " = "GPSP292E" ,
-                        "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: Las escuelas públicas de la zona " = "GPSP293E" ,
-                        "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: Su Comisario ejidal " = "GPSP294E" ,
-                        "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: Su presidente municipal " = "GPSP295E" ,
-                        "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: El Gobernador " = "GPSP296E" ,
-                        "30. Del 1 al 5, califique el trabajo de: La policía" = "GPSP301E" ,
-                        "30. Del 1 al 5, califique el trabajo de: El Ministerio Público para denunciar" = "GPSP302E" ,
-                        "30. Del 1 al 5, califique el trabajo de: Los empleados de gobierno" = "GPSP303E" ,
-                        "30. Del 1 al 5, califique el trabajo de: Su Comisario Ejida" = "GPSP304E" ,
-                        "30. Del 1 al 5, califique el trabajo de: Su presidente municipal" = "GPSP305E" ,
-                        "30. Del 1 al 5, califique el trabajo de: El Gobernador" = "GPSP306E" ,                          
-                        "31. Del 1 al 5, califique el trato que recibe de: La policía" = "GPSP30E" ,
-                        "31. Del 1 al 5, califique el trato que recibe de:El Ministerio Público para denunciar" = "GPSP311E" ,
-                        "31. Del 1 al 5, califique el trato que recibe de: Los empleados de gobierno" = "GPSP312E" ,
-                        "31. Del 1 al 5, califique el trato que recibe de: Su Comisario ejidal" = "GPSP313E" ,
-                        "31. Del 1 al 5, califique el trato que recibe de: Su presidente municipa" = "GPSP314E" ,
-                        "31. Del 1 al 5, califique el trato que recibe de: El Gobernador" = "GPSP315E"   )      
-    )}  else  if (input$localizPS == "PSC"){
-             updateSelectInput(session, "pregunta",  
-                      choices = c(
-                        "1. En esta calle o zona, Usted participa:" = "GPSP1C", 
-                        "2. Usted conoce a sus vecinos:" = "GPSP2C" ,
-                        "3. Participa con la autoridad para mejorar la seguridad:" = "GPSP3C" ,
-                        "6. Cuando hay un delito, en esta calle o zona los vecinos:" = "GPSP6C", 
-                        "7. Durante el último año, en esta calle o zona ha habido:" = "GPSP7C" ,
-                        "8. Valore el riesgo de sufrir un delito en alguno de los siguientes lugares: Casa" = "GPSP81C",
-                        "8. Valore el riesgo de sufrir un delito en alguno de los siguientes lugares: Calle" = "GPSP82C",
-                        "8. Valore el riesgo de sufrir un delito en alguno de los siguientes lugares: Zona" = "GPSP83C",
-                        "8. Valore el riesgo de sufrir un delito en alguno de los siguientes lugares: Ciudad" = "GPSP84C",
-                        "9. ¿Usted ha sido víctima de algún delito en el último año?" = "GPSP9C" ,
-                        "10. En caso de ser víctima del delito Usted:" = "GPSP10C", 
-                        "11. Ha sido víctima de algún delito y no denuncio:" = "GPSP11C" ,
-                        "12. En esta calle o zona:" = "GPSP12C" ,
-                        "13. En esta calle o zona, hay personas" = "GPSP13C", 
-                        "14. En esta calle o zona hay violencia:" = "GPSP14C" ,
-                        "15. En esta calle o zona, cuando hay conflictos entre vecinos se manejan:" = "GPSP15C" ,
-                        "16. En esta calle o zona hay niños o adolescentes que se quedan encerrados con llave:" = "GPSP16C" ,
-                        "17. En esta calle o zona hay niños que se quedan la mayor parte del día sin comer: " = "GPSP17C" ,
-                        "18. En esta calle o zona hay jóvenes que:" = "GPSP18C" ,
-                        "19. En esta calle o zona hay un parquC" = "GPSP19C" ,
-                        "20. En esta calle o zona hay:" = "GPSP20C" ,
-                        "21. En esta zona hay" = "GPSP21C" ,
-                        "22. En el último año Usted supo que algún menor de 18 años:" = "GPSP22C" ,
-                        "23 .Para corregir a un niño o niña que se porta mal, Usted recomienda:" = "GPSP23C" ,
-                        "24. En esta casa: (APLICA TARJETON)" = "GPSP24C" ,
-                        "25. En esta casa alguien: (APLICA TARJETON)" = "GPSP25C" ,
-                        "26. En el último año, por cuestiones de seguridad Usted ha pensado:" = "GPSP26C" ,
-                        "27. En el último año, por cuestiones de seguridad Usted dejó de:" = "GPSP27C" ,
-                        "28. En esta calle o zona la policía:" = "GPSP28C" ,
-                        "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: La policía " = "GPSP291C" ,
-                        "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: El Ministerio Público para denunciar " = "GPSP292C" ,
-                        "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: Las escuelas públicas de la zona " = "GPSP293C" ,
-                        "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: Su Comisario ejidal " = "GPSP294C" ,
-                        "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: Su presidente municipal " = "GPSP295C" ,
-                        "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: El Gobernador " = "GPSP296C" ,
-                        "30. Del 1 al 5, califique el trabajo de: La policía" = "GPSP301C" ,
-                        "30. Del 1 al 5, califique el trabajo de: El Ministerio Público para denunciar" = "GPSP302C" ,
-                        "30. Del 1 al 5, califique el trabajo de: Los empleados de gobierno" = "GPSP303C" ,
-                        "30. Del 1 al 5, califique el trabajo de: Su Comisario Ejida" = "GPSP304C" ,
-                        "30. Del 1 al 5, califique el trabajo de: Su presidente municipal" = "GPSP305C" ,
-                        "30. Del 1 al 5, califique el trabajo de: El Gobernador" = "GPSP306C" ,                          
-                        "31. Del 1 al 5, califique el trato que recibe de: La policía" = "GPSP30C" ,
-                        "31. Del 1 al 5, califique el trato que recibe de:El Ministerio Público para denunciar" = "GPSP311C" ,
-                        "31. Del 1 al 5, califique el trato que recibe de: Los empleados de gobierno" = "GPSP312C" ,
-                        "31. Del 1 al 5, califique el trato que recibe de: Su Comisario ejidal" = "GPSP313C" ,
-                        "31. Del 1 al 5, califique el trato que recibe de: Su presidente municipa" = "GPSP314C" ,
-                        "31. Del 1 al 5, califique el trato que recibe de: El Gobernador" = "GPSP315C"                          
-                        
-                        )      
-    )}  else  if (input$localizPS == "PSI"){
-              updateSelectInput(session, "pregunta",  
-                      choices = c(
-                        "1. En esta calle o zona, Usted participa:" = "GPSP1I", 
-                        "2. Usted conoce a sus vecinos:" = "GPSP2I" ,
-                        "3. Participa con la autoridad para mejorar la seguridad:" = "GPSP3I" ,
-                        "6. Cuando hay un delito, en esta calle o zona los vecinos:" = "GPSP6I", 
-                        "7. Durante el último año, en esta calle o zona ha habido:" = "GPSP7I" ,
-                        "8. Valore el riesgo de sufrir un delito en alguno de los siguientes lugares: Casa" = "GPSP81I",
-                        "8. Valore el riesgo de sufrir un delito en alguno de los siguientes lugares: Calle" = "GPSP82I",
-                        "8. Valore el riesgo de sufrir un delito en alguno de los siguientes lugares: Zona" = "GPSP83I",
-                        "8. Valore el riesgo de sufrir un delito en alguno de los siguientes lugares: Ciudad" = "GPSP84I",
-                        "9. ¿Usted ha sido víctima de algún delito en el último año?" = "GPSP9I" ,
-                        "10. En caso de ser víctima del delito Usted:" = "GPSP10I", 
-                        "11. Ha sido víctima de algún delito y no denuncio:" = "GPSP11I" ,
-                        "12. En esta calle o zona:" = "GPSP12I" ,
-                        "13. En esta calle o zona, hay personas" = "GPSP13I", 
-                        "14. En esta calle o zona hay violencia:" = "GPSP14I" ,
-                        "15. En esta calle o zona, cuando hay conflictos entre vecinos se manejan:" = "GPSP15I" ,
-                        "16. En esta calle o zona hay niños o adolescentes que se quedan encerrados con llave:" = "GPSP16I" ,
-                        "17. En esta calle o zona hay niños que se quedan la mayor parte del día sin comer: " = "GPSP17I" ,
-                        "18. En esta calle o zona hay jóvenes que:" = "GPSP18I" ,
-                        "19. En esta calle o zona hay un parquI" = "GPSP19I" ,
-                        "20. En esta calle o zona hay:" = "GPSP20I" ,
-                        "21. En esta zona hay" = "GPSP21I" ,
-                        "22. En el último año Usted supo que algún menor de 18 años:" = "GPSP22I" ,
-                        "23 .Para corregir a un niño o niña que se porta mal, Usted recomienda:" = "GPSP23I" ,
-                        "24. En esta casa: (APLICA TARJETON)" = "GPSP24I" ,
-                        "25. En esta casa alguien: (APLICA TARJETON)" = "GPSP25I" ,
-                        "26. En el último año, por cuestiones de seguridad Usted ha pensado:" = "GPSP26I" ,
-                        "27. En el último año, por cuestiones de seguridad Usted dejó de:" = "GPSP27I" ,
-                        "28. En esta calle o zona la policía:" = "GPSP28I" ,
-                        "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: La policía " = "GPSP291I" ,
-                        "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: El Ministerio Público para denunciar " = "GPSP292I" ,
-                        "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: Las escuelas públicas de la zona " = "GPSP293I" ,
-                        "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: Su Comisario ejidal " = "GPSP294I" ,
-                        "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: Su presidente municipal " = "GPSP295I" ,
-                        "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: El Gobernador " = "GPSP296I" ,
-                        "30. Del 1 al 5, califique el trabajo de: La policía" = "GPSP301I" ,
-                        "30. Del 1 al 5, califique el trabajo de: El Ministerio Público para denunciar" = "GPSP302I" ,
-                        "30. Del 1 al 5, califique el trabajo de: Los empleados de gobierno" = "GPSP303I" ,
-                        "30. Del 1 al 5, califique el trabajo de: Su Comisario Ejida" = "GPSP304I" ,
-                        "30. Del 1 al 5, califique el trabajo de: Su presidente municipal" = "GPSP305I" ,
-                        "30. Del 1 al 5, califique el trabajo de: El Gobernador" = "GPSP306I" ,                          
-                        "31. Del 1 al 5, califique el trato que recibe de: La policía" = "GPSP30I" ,
-                        "31. Del 1 al 5, califique el trato que recibe de:El Ministerio Público para denunciar" = "GPSP311I" ,
-                        "31. Del 1 al 5, califique el trato que recibe de: Los empleados de gobierno" = "GPSP312I" ,
-                        "31. Del 1 al 5, califique el trato que recibe de: Su Comisario ejidal" = "GPSP313I" ,
-                        "31. Del 1 al 5, califique el trato que recibe de: Su presidente municipa" = "GPSP314I" ,
-                        "31. Del 1 al 5, califique el trato que recibe de: El Gobernador" = "GPSP315I"                          
-                        
-                        )      
-    )}  else  if (input$localizPS == "PSVS"){
-              updateSelectInput(session, "pregunta",  
-                      choices = c(
-                        "1. En esta calle o zona, Usted participa:" = "GPSP1T", 
-                        "2. Usted conoce a sus vecinos:" = "GPSP2T" ,
-                        "3. Participa con la autoridad para mejorar la seguridad:" = "GPSP3T" ,
-                        "6. Cuando hay un delito, en esta calle o zona los vecinos:" = "GPSP6T", 
-                        "7. Durante el último año, en esta calle o zona ha habido:" = "GPSP7T" ,
-                        "8. Valore el riesgo de sufrir un delito en alguno de los siguientes lugares: Casa" = "GPSP81T",
-                        "8. Valore el riesgo de sufrir un delito en alguno de los siguientes lugares: CallT" = "GPSP82T",
-                        "8. Valore el riesgo de sufrir un delito en alguno de los siguientes lugares: Zona" = "GPSP83T",
-                        "8. Valore el riesgo de sufrir un delito en alguno de los siguientes lugares: Ciudad" = "GPSP84T",
-                        "9. ¿Usted ha sido víctima de algún delito en el último año?" = "GPSP9T" ,
-                        "10. En caso de ser víctima del delito Usted:" = "GPSP10T", 
-                        "11. Ha sido víctima de algún delito y no denuncio:" = "GPSP11T" ,
-                        "12. En esta calle o zona:" = "GPSP12T" ,
-                        "13. En esta calle o zona, hay personas" = "GPSP13T", 
-                        "14. En esta calle o zona hay violencia:" = "GPSP14T" ,
-                        "15. En esta calle o zona, cuando hay conflictos entre vecinos se manejan:" = "GPSP15T" ,
-                        "16. En esta calle o zona hay niños o adolescentes que se quedan encerrados con llave:" = "GPSP16T" ,
-                        "17. En esta calle o zona hay niños que se quedan la mayor parte del día sin comer: " = "GPSP17T" ,
-                        "18. En esta calle o zona hay jóvenes que:" = "GPSP18T" ,
-                        "19. En esta calle o zona hay un parquT" = "GPSP19T" ,
-                        "20. En esta calle o zona hay:" = "GPSP20T" ,
-                        "21. En esta zona hay" = "GPSP21T" ,
-                        "22. En el último año Usted supo que algún menor de 18 años:" = "GPSP22T" ,
-                        "23 .Para corregir a un niño o niña que se porta mal, Usted recomienda:" = "GPSP23T" ,
-                        "24. En esta casa: (APLICA TARJETON)" = "GPSP24T" ,
-                        "25. En esta casa alguien: (APLICA TARJETON)" = "" ,
-                        "26. En el último año, por cuestiones de seguridad Usted ha pensado:" = "GPSP25T" ,
-                        "27. En el último año, por cuestiones de seguridad Usted dejó de:" = "GPSP26T" ,
-                        "28. En esta calle o zona la policía:" = "GPSP28T" ,
-                        "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: La policía " = "GPSP291T" ,
-                        "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: El Ministerio Público para denunciar " = "GPSP292T" ,
-                        "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: Las escuelas públicas de la zona " = "GPSP293T" ,
-                        "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: Su Comisario ejidal " = "GPSP294T" ,
-                        "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: Su presidente municipal " = "GPSP295T" ,
-                        "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: El Gobernador " = "GPSP296T" ,
-                        "30. Del 1 al 5, califique el trabajo de: La policía" = "GPSP301T" ,
-                        "30. Del 1 al 5, califique el trabajo de: El Ministerio Público para denunciar" = "GPSP302T" ,
-                        "30. Del 1 al 5, califique el trabajo de: Los empleados de gobierno" = "GPSP303T" ,
-                        "30. Del 1 al 5, califique el trabajo de: Su Comisario Ejida" = "GPSP304T" ,
-                        "30. Del 1 al 5, califique el trabajo de: Su presidente municipal" = "GPSP305T" ,
-                        "30. Del 1 al 5, califique el trabajo de: El Gobernador" = "GPSP306T" ,                          
-                        "31. Del 1 al 5, califique el trato que recibe de: La policía" = "GPSP30T" ,
-                        "31. Del 1 al 5, califique el trato que recibe de:El Ministerio Público para denunciar" = "GPSP311T" ,
-                        "31. Del 1 al 5, califique el trato que recibe de: Los empleados de gobierno" = "GPSP312T" ,
-                        "31. Del 1 al 5, califique el trato que recibe de: Su Comisario ejidal" = "GPSP313T" ,
-                        "31. Del 1 al 5, califique el trato que recibe de: Su presidente municipa" = "GPSP314T" ,
-                        "31. Del 1 al 5, califique el trato que recibe de: El Gobernador" = "GPSP315T"                          
-                        
-                        )      
-    )}
 
-
-
-
-
-
-
-
-
-  })
-  
 
   
   
-  # Visualizacion secundaria 
-  ##-- + Dados do candidato e eleição selecionada ----
+  #Panel: Graficas
+  ## Muestra la info de Selectores
   observe({
-    
     x <- input$enfoque
-    
     if (is.null(x))
       x <- character(0)
     # Poblacion y migracion
-    # DG , DF, DE, ID, VI, AE
-    if (x== "DF"){
-      updateSelectInput(session, "pregunta",  
-                        choices = c("¿Qué medio de transporte utilizan?" = "PFAM1" , "¿Dónde adquiere sus víveres?" = "PFAM2"," ¿A dónde acude en caso de urgencia médica? " = "PFAM3", "¿Con qué áreas de recreo cuenta en su colonia?" = "PFAM4")
+          if (x== "DF"){
+              updateSelectInput(session, "pregunta",  
+                      choices = c(
+                        "1. ¿Cuántas personas viven en esta casa?" = "PFAM01" , 
+                        "2. ¿ A qué niveles de escolaridad asisten los integrantes de esta familia?" = "PFAM02",
+                        "3. ¿Qué medio de transporte utilizan?" = "PFAM1" , 
+                        "4. ¿Dónde adquiere sus víveres?" = "PFAM2"," 
+                        ¿5. ¿A dónde acude en caso de urgencia médica? " = "PFAM3", 
+                        "6. ¿Con qué áreas de recreo cuenta en su colonia?" = "PFAM4")
                         
-      )} else  if (x== "DE"){
-    updateSelectInput(session, "pregunta",  
-                      choices = c("¿Cuál es el principal trabajo pagado del jefe o jefa de familia?" = "PPECO1" , "Máximo nivel de estudios completo del jefe p jefa de familia" = "PPECO2","Puesto o posición de trabajo del jefe o jefa de familia " = "PPECO3", "¿A cuánto asciende el salario total semanal del jefe o jefa de familia?" = "PPECO4", "Además del jefe de familia ¿Cuántas personas trabajan en el hogar con salario remunerado?"="PPECO5" , "Número de personas que no perciben ingreso económico"= "PPECO6", "¿Cuánto tiempo tarda el jefe de familia en llegar a su lugar de trabajo?"  ="PPECO7" )
+          )} else  if (x== "DE"){
+              updateSelectInput(session, "pregunta",  
+                        choices = c(
+                        "1. ¿Cuál es el principal trabajo pagado del jefe o jefa de familia?" = "PPECO1" ,
+                        "2. Puesto o posición en el trabajo del jefe de familia  " = "PPECO3",                    
+                        "3. ¿A  cuánto asciende el ingreso total semanal del jefe de familia?" = "PPECO4",
+                        "4. Máximo nivel de estudios completo del jefe o jefa de familia" = "PPECO2",
+                        "5. ¿Número de personas que dependen del Jefe de Familia? "= "PPECO6",
+                        "6. ¿Cuánto tiempo tarda el jefe de familia en llegar a su lugar de trabajo?"="PPECO7" ,
+                        "7. Además del jefe de familia ¿Cuántas personas trabajan en el hogar  con salario remunerado?"  ="PPECO8"  )
                       
-    )} else  if (x== "ID"){
-      updateSelectInput(session, "pregunta",  
-                        choices = c("¿Cuál es su lugar de origen? " = "PPIyC1" , "¿Cuánto tiempo lleva viviendo en este lugar?" = "PPIyC2","¿Qué lo motivó a venir a vivir en esta localidad?" = "PPIyC3", " ¿Qué religión practica? " = "PPIyC4", "¿Cuáles son las ventajas de vivir en este lugar?"="PPIyC5",  "¿Piensa irse a vivir a otra localidad?"= "PPIyC6", "¿Usted a qué municipio siente que pertenece?" = "PPIyC7","¿Qué tan frecuente va a la Isla, la cabecera municipal de Isla Mujeres?" = "PPIyC8","¿Cuáles son los motivos por los que viaja a la Isla?"= "PPIyC9" )
+          )} else  if (x== "ID"){
+              updateSelectInput(session, "pregunta",  
+                          choices = c(
+                        "1. ¿Cuál es su lugar de origen? " = "PPIyC1" , 
+                        "2. ¿Cuánto tiempo lleva viviendo en este lugar?" = "PPIyC2",
+                        "3. ¿Qué lo motivó a venir a vivir en esta localidad?" = "PPIyC3", 
+                        "4. En caso de requerir ayuda, apoyo legal o económico ante algún problema acudo a: " = "PPIyC4", 
+                        "5. ¿Qué religión practica? " = "PPIyC5", 
+                        "6. ¿Cuáles son las ventajas de vivir en este lugar?"="PPIyC6",
+                        "7. ¿Piensa irse a vivir a otra localidad?"= "PPIyC7", 
+                        "8. ¿Usted a qué municipio siente que pertenece?" = "PPIyC8",
+                        "9. ¿Qué tan frecuente va a la Isla, la cabecera municipal de Isla Mujeres?" = "PPIyC9",
+                        "10. ¿Cuáles son los motivos por los que viaja a la Isla?"= "PPIyC10" )
                     
-  )} else  if (x== "VI"){
-    updateSelectInput(session, "pregunta",  
-                      choices = c("Situacion Vivienda" = "V1P1R1" , "Adquisicion Vivienda" = "V1P4R1"," Huracanes " = "V1H1", " Inundaciones " = "V1I1")
+          )} else  if (x== "VI"){
+              updateSelectInput(session, "pregunta",  
+                          choices = c(
+                          "1. La vivienda que habita tu familia es " = "V1P1R1" , 
+                          "2. En caso  de ser  propia, ¿De qué forma fue adquirida?" = "V1P2R1",
+                          "3. ¿Con qué servicios cuenta su vivienda? " = "V1P3R1", 
+                          "4. ¿Cuántas inundaciones ha sufrido al vivir en esta localidad?" = "V1P4R1", 
+                          "5. A pesar de la inundación usted decidió quedarse a vivir aquí por: " = "V1P5R1", 
+                          "6. ¿Cuántas inundaciones ha sufrido al vivir en esta localidad?" = "V1P6R1", 
+                          "7. ¿Conoce los impactos o afectaciones que puede sufrir?" = "V1P7R1", 
+                          "8. FAVOR DE SEÑALAR LOS SIGUIENTES SERVICIOS OBSERVADOS ALREDEDOR DE LA VIVIENDA:" = "V1P8R1" )
                       
                       
-  )} else  if (x== "AE"){
-    updateSelectInput(session, "pregunta",  
-                      choices = c("Sin informacion" = "DF1")      
-    )} 
-    #SALINAS
-    else  if (x== "ambi1"){
-      updateSelectInput(session, "pregunta",  
-                        choices = c("Qué uso le dan sus vecinos a la salina?" = "PAMB1" , "¿Qué beneficio recibe de vivir aquí?" = "PAMB2","¿Qué desventajas recibe de vivir aquí cerca de la salina? " = "PAMB3", "¿En qué condiciones considera que se encuentra la salina? " = "PAMB4", "¿Qué efectos genera la condición de la Salina?" = "PAMB5")
-                        
-    )} else  if (x== "soc1"){
-      updateSelectInput(session, "pregunta",  
-                        choices = c("¿Entre los vecinos, realizan alguna actividad en común?" = "SOC1" , "¿Cómo es la relación con sus vecinos?" = "SOC2"," ¿Ha tenido problemas con sus vecinos? " = "SOC3", " ¿Con qué frecuencia se hacen favores entre vecinos? " = "SOC4", "¿En algún problema que se le presente, sus vecinos le ayudan?"= "SOC5")
-                          
-    )} else  if (x== "eco1"){
-      updateSelectInput(session, "pregunta",  
-    choices = c("¿Cuántas personas de esta familia trabajan? " = "ECO1" , "¿En qué trabajan?" = "ECO2"," ¿Realizan alguna actividad productiva por su cuenta? " = "ECO3", " ¿Intercambian productos con sus vecinos? " = "ECO4")      
-    )}  
-     
-
-
+          )} else  if (x== "AE"){
+                updateSelectInput(session, "pregunta",  
+                              choices = c("Sin informacion" = "DF1")      
+          )} else  if (x== "ambi1"){  #SALINAS
+                updateSelectInput(session, "pregunta",  
+                        choices = c(
+                          "1.-¿QUÉ USO LE DAN SUS VECINOS A LA SALINA?" = "PAMB1" , 
+                          "2.-¿QUÉ BENEFICIO RECIBE DE VIVIR AQUÍ?" = "PAMB2",
+                          "3.-¿QUÉ DESVENTAJA RECIBE DE VIVIR AQUÍ CERCA DE LA SALINA? " = "PAMB3", 
+                          "4.-¿EN QUÉ CONDICIONES CONSIDERA QUE SE ENCUENTRA LA SALINA? " = "PAMB4", 
+                          "5.-¿QUÉ EFECTOS GENERA LA CONDICIÓN (SUCIA O CONTAMINADA) DE LA SALINA?" = "PAMB5",
+                          "6.-¿HAN LLEVADO A CABO ALGUNA ACTIVIDAD DE LMPIEZA, SANEAMIENTO O CONSERVACIÓN DE LA SALINA?" = "PAMB6",
+                          "7.-¿ESTÁN CONECTADOS AL DRENAJE?" = "PAMB7")
+                              
+          )} else  if (x== "soc1"){
+            updateSelectInput(session, "pregunta",  
+                        choices = c(
+                          "1.-¿ENTRE LOS VECINOS, REALIZAN  ALGUNA ACTIVIDAD EN COMUN?" = "SOC1" ,
+                          "2.-¿CÓMO ES LA RELACIÓN CON SUS VECINOS?" = "SOC2",
+                          "3.-¿HA TENIDO PROBLEMAS CON SUS VECINOS: PLEITOS, DEMANDAS…? " = "SOC3", 
+                          "4.-¿CON QUE FRECUENCIA SE HACEN FAVORES ENTRE VECINOS? " = "SOC4", 
+                          "5.-¿EN ALGÚN PROBLEMA QUE SE LE PRESENTE SUS VECINOS LE AYUDAN?"= "SOC5",
+                          "6.-¿PERTENECE A ALGUNA ORGANIZACIÓN?"= "SOC6")
+                                
+      )} else  if (x== "eco1"){
+            updateSelectInput(session, "pregunta",  
+                        choices = c(
+                          "1.-¿CUÁNTAS PERSONAS DE ESTA FAMILIA TRABAJAN?" = "ECO1" , 
+                          "2.-¿EN QUÉ TRABAJAN?" = "ECO2",
+                          "3.-¿REALIZAN ALGUNA ACTIVIDAD PRODUCTIVA POR SU CUENTA? " = "ECO3", 
+                          "4.-¿INTERCAMBIAN PRODUCTOS CON SUS VECINOS? " = "ECO4",
+                          "5.-¿ SE AYUDAN ENTRE VECINOS PARA ALGÚN TRABAJO QUE BENEFICIE LA ECONOMÍA FAMILIAR DENTRO DE SUS CASAS?" = "ECO4" )      
+      )} else  if (x== "PSI"){ #percepcion
+             updateSelectInput(session, "pregunta",  
+                          choices = c(
+                            "1. En esta calle o zona, Usted participa: - IM " = "GPSI1", 
+                          #  "2. Usted conoce a sus vecinos: - IM " = "GPSI2" ,
+                          #  "3. Participa con la autoridad para mejorar la seguridad: - IM " = "GPSI3" ,
+                            "6. Cuando hay un delito, en esta calle o zona los vecinos: - IM " = "GPSI6", 
+                            "7. Durante el último año, en esta calle o zona ha habido: - IM " = "GPSI7" ,
+                            "8. Valore el riesgo de sufrir un delito en alguno de los siguientes lugares: Casa - IM " = "GPSI81",
+                            "8. Valore el riesgo de sufrir un delito en alguno de los siguientes lugares: Calle - IM " = "GPSI82",
+                            "8. Valore el riesgo de sufrir un delito en alguno de los siguientes lugares: Zona - IM " = "GPSI83",
+                            "8. Valore el riesgo de sufrir un delito en alguno de los siguientes lugares: Ciudad - IM " = "GPSI84",
+                            "9. ¿Usted ha sido víctima de algún delito en el último año? - IM " = "GPSI9" ,
+                            "10. En caso de ser víctima del delito Usted: - IM " = "GPSI10", 
+                            "11. Ha sido víctima de algún delito y no denuncio: - IM " = "GPSI11" ,
+                            "12. En esta calle o zona: - IM " = "GPSI12" ,
+                            "13. En esta calle o zona, hay personas - IM " = "GPSI13", 
+                            "14. En esta calle o zona hay violencia: - IM " = "GPSI14" ,
+                            "15. En esta calle o zona, cuando hay conflictos entre vecinos se manejan: - IM " = "GPSI15" ,
+                            "16. En esta calle o zona hay niños o adolescentes que se quedan encerrados con llave: - IM " = "GPSI16" ,
+                            "17. En esta calle o zona hay niños que se quedan la mayor parte del día sin comer:  - IM " = "GPSI17" ,
+                            "18. En esta calle o zona hay jóvenes que: - IM " = "GPSI18" ,
+                            "19. En esta calle o zona hay un parquI - IM " = "GPSI19" ,
+                            "20. En esta calle o zona hay: - IM " = "GPSI20" ,
+                            "21. En esta zona hay - IM " = "GPSI21" ,
+                            "22. En el último año Usted supo que algún menor de 18 años: - IM " = "GPSI22" ,
+                            "23 .Para corregir a un niño o niña que se porta mal, Usted recomienda: - IM " = "GPSI23" ,
+                            "24. En esta casa: (APLICA TARJETON) - IM " = "GPSI24" ,
+                            "25. En esta casa alguien: (APLICA TARJETON) - IM " = "GPSI25" ,
+                            "26. En el último año, por cuestiones de seguridad Usted ha pensado: - IM " = "GPSI26" ,
+                            "27. En el último año, por cuestiones de seguridad Usted dejó de: - IM " = "GPSI27" ,
+                            "28. En esta calle o zona la policía: - IM " = "GPSI28" ,
+                            "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: La policía  - IM " = "GPSI291" ,
+                            "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: El Ministerio Público para denunciar  - IM " = "GPSI292" ,
+                            "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: Las escuelas públicas de la zona  - IM " = "GPSI293" ,
+                            "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: Su Comisario ejidal  - IM " = "GPSI294" ,
+                            "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: Su presidente municipal  - IM " = "GPSI295" ,
+                            "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: El Gobernador  - IM " = "GPSI296" ,
+                            "30. Del 1 al 5, califique el trabajo de: La policía - IM " = "GPSI301" ,
+                            "30. Del 1 al 5, califique el trabajo de: El Ministerio Público para denunciar - IM " = "GPSI302" ,
+                            "30. Del 1 al 5, califique el trabajo de: Los empleados de gobierno - IM " = "GPSI303" ,
+                            "30. Del 1 al 5, califique el trabajo de: Su Comisario Ejida - IM " = "GPSI304" ,
+                            "30. Del 1 al 5, califique el trabajo de: Su presidente municipal - IM " = "GPSI305" ,
+                            "30. Del 1 al 5, califique el trabajo de: El Gobernador - IM " = "GPSI306" ,                          
+                            "31. Del 1 al 5, califique el trato que recibe de: La policía - IM " = "GPSI311" ,
+                            "31. Del 1 al 5, califique el trato que recibe de:El Ministerio Público para denunciar - IM " = "GPSI312" ,
+                            "31. Del 1 al 5, califique el trato que recibe de: Los empleados de gobierno - IM " = "GPSI313" ,
+                            "31. Del 1 al 5, califique el trato que recibe de: Su Comisario ejidal - IM " = "GPSI314" ,
+                            "31. Del 1 al 5, califique el trato que recibe de: Su presidente municipa - IM " = "GPSI315" ,
+                            "31. Del 1 al 5, califique el trato que recibe de: El Gobernador - IM " = "GPSI316"                          
+                            
+                            )
+              
+        )} else if(x == "PSE"){
+                  updateSelectInput(session, "pregunta",  
+                      choices = c(
+                                  "1. En esta calle o zona, Usted participa: - EJ " = "GPSE1", 
+                           #       "2. Usted conoce a sus vecinos: - EJ " = "GPSE2" ,
+                                #  "3. Participa con la autoridad para mejorar la seguridad: - EJ " = "GPSE3" ,
+                                  "6. Cuando hay un delito, en esta calle o zona los vecinos: - EJ " = "GPSE6", 
+                                  "7. Durante el último año, en esta calle o zona ha habido: - EJ " = "GPSE7" ,
+                                  "8. Valore el riesgo de sufrir un delito en alguno de los siguientes lugares: Casa - EJ " = "GPSE81",
+                                  "8. Valore el riesgo de sufrir un delito en alguno de los siguientes lugares: Calle - EJ " = "GPSE82",
+                                  "8. Valore el riesgo de sufrir un delito en alguno de los siguientes lugares: Zona - EJ " = "GPSE83",
+                                  "8. Valore el riesgo de sufrir un delito en alguno de los siguientes lugares: Ciudad - EJ " = "GPSE84",
+                                  "9. ¿Usted ha sido víctima de algún delito en el último año? - EJ " = "GPSE9I" ,
+                                  "10. En caso de ser víctima del delito Usted: - EJ " = "GPSE10", 
+                                  "11. Ha sido víctima de algún delito y no denuncio: - EJ " = "GPSE11" ,
+                                  "12. En esta calle o zona: - EJ " = "GPSE12" ,
+                                  "13. En esta calle o zona, hay personas - EJ " = "GPSE13", 
+                                  "14. En esta calle o zona hay violencia: - EJ " = "GPSE14" ,
+                                  "15. En esta calle o zona, cuando hay conflictos entre vecinos se manejan: - EJ " = "GPSE15" ,
+                                  "16. En esta calle o zona hay niños o adolescentes que se quedan encerrados con llave: - EJ " = "GPSE16" ,
+                                  "17. En esta calle o zona hay niños que se quedan la mayor parte del día sin comer:  - EJ " = "GPSE17" ,
+                                  "18. En esta calle o zona hay jóvenes que: - EJ " = "GPSE18" ,
+                                  "19. En esta calle o zona hay un parquI - EJ " = "GPSE19" ,
+                                  "20. En esta calle o zona hay: - EJ " = "GPSE20" ,
+                                  "21. En esta zona hay - EJ " = "GPSE21" ,
+                                  "22. En el último año Usted supo que algún menor de 18 años: - EJ " = "GPSE22" ,
+                                  "23 .Para corregir a un niño o niña que se porta mal, Usted recomienda: - EJ " = "GPSE23" ,
+                                  "24. En esta casa: (APLICA TARJETON) - EJ " = "GPSE24" ,
+                                  "25. En esta casa alguien: (APLICA TARJETON) - EJ " = "GPSE25" ,
+                                  "26. En el último año, por cuestiones de seguridad Usted ha pensado: - EJ " = "GPSE26" ,
+                                  "27. En el último año, por cuestiones de seguridad Usted dejó de: - EJ " = "GPSE27" ,
+                                  "28. En esta calle o zona la policía: - EJ " = "GPSE28" ,
+                                  "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: La policía  - EJ " = "GPSE291" ,
+                                  "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: El Ministerio Público para denunciar  - EJ " = "GPSE292" ,
+                                  "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: Las escuelas públicas de la zona  - EJ " = "GPSE293" ,
+                                  "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: Su Comisario ejidal  - EJ " = "GPSE294" ,
+                                  "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: Su presidente municipal  - EJ " = "GPSE295" ,
+                                  "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: El Gobernador  - EJ " = "GPSE296" ,
+                                  "30. Del 1 al 5, califique el trabajo de: La policía - EJ " = "GPSE301" ,
+                                  "30. Del 1 al 5, califique el trabajo de: El Ministerio Público para denunciar - EJ " = "GPSE302" ,
+                                  "30. Del 1 al 5, califique el trabajo de: Los empleados de gobierno - EJ " = "GPSE303" ,
+                                  "30. Del 1 al 5, califique el trabajo de: Su Comisario Ejida - EJ " = "GPSE304" ,
+                                  "30. Del 1 al 5, califique el trabajo de: Su presidente municipal - EJ " = "GPSE305" ,
+                                  "30. Del 1 al 5, califique el trabajo de: El Gobernador - EJ " = "GPSE306" ,                          
+                                  "31. Del 1 al 5, califique el trato que recibe de: La policía - EJ " = "GPSE311" ,
+                                  "31. Del 1 al 5, califique el trato que recibe de:El Ministerio Público para denunciar - EJ " = "GPSE312" ,
+                                  "31. Del 1 al 5, califique el trato que recibe de: Los empleados de gobierno - EJ " = "GPSE313" ,
+                                  "31. Del 1 al 5, califique el trato que recibe de: Su Comisario ejidal - EJ " = "GPSE314" ,
+                                  "31. Del 1 al 5, califique el trato que recibe de: Su presidente municipa - EJ " = "GPSE315" ,
+                                  "31. Del 1 al 5, califique el trato que recibe de: El Gobernador - EJ " = "GPSE316"                          
+                                  
+                      )
+        
+        )} else  if (x== "PSC"){ #percepcion
+             updateSelectInput(session, "pregunta",  
+                      choices = c(
+                              "1. En esta calle o zona, Usted participa: - CUN" = "GPSC1", 
+                            #  "2. Usted conoce a sus vecinos: - CUN" = "GPSC2" ,
+                            #  "3. Participa con la autoridad para mejorar la seguridad: - CUN" = "GPSC3" ,
+                              "6. Cuando hay un delito, en esta calle o zona los vecinos: - CUN" = "GPSC6", 
+                              "7. Durante el último año, en esta calle o zona ha habido: - CUN" = "GPSC7" ,
+                              "8. Valore el riesgo de sufrir un delito en alguno de los siguientes lugares: Casa - CUN" = "GPSC81",
+                              "8. Valore el riesgo de sufrir un delito en alguno de los siguientes lugares: Calle - CUN" = "GPSC82",
+                              "8. Valore el riesgo de sufrir un delito en alguno de los siguientes lugares: Zona - CUN" = "GPSC83",
+                              "8. Valore el riesgo de sufrir un delito en alguno de los siguientes lugares: Ciudad - CUN" = "GPSC84",
+                              "9. ¿Usted ha sido víctima de algún delito en el último año? - CUN" = "GPSC9I" ,
+                              "10. En caso de ser víctima del delito Usted: - CUN" = "GPSC10", 
+                              "11. Ha sido víctima de algún delito y no denuncio: - CUN" = "GPSC11" ,
+                              "12. En esta calle o zona: - CUN" = "GPSC12" ,
+                              "13. En esta calle o zona, hay personas - CUN" = "GPSC13", 
+                              "14. En esta calle o zona hay violencia: - CUN" = "GPSC14" ,
+                              "15. En esta calle o zona, cuando hay conflictos entre vecinos se manejan: - CUN" = "GPSC15" ,
+                              "16. En esta calle o zona hay niños o adolescentes que se quedan encerrados con llave: - CUN" = "GPSC16" ,
+                              "17. En esta calle o zona hay niños que se quedan la mayor parte del día sin comer:  - CUN" = "GPSC17" ,
+                              "18. En esta calle o zona hay jóvenes que: - CUN" = "GPSC18" ,
+                              "19. En esta calle o zona hay un parquI - CUN" = "GPSC19" ,
+                              "20. En esta calle o zona hay: - CUN" = "GPSC20" ,
+                              "21. En esta zona hay - CUN" = "GPSC21" ,
+                              "22. En el último año Usted supo que algún menor de 18 años: - CUN" = "GPSC22" ,
+                              "23 .Para corregir a un niño o niña que se porta mal, Usted recomienda: - CUN" = "GPSC23" ,
+                              "24. En esta casa: (APLICA TARJETON) - CUN" = "GPSC24" ,
+                              "25. En esta casa alguien: (APLICA TARJETON) - CUN" = "GPSC25" ,
+                              "26. En el último año, por cuestiones de seguridad Usted ha pensado: - CUN" = "GPSC26" ,
+                              "27. En el último año, por cuestiones de seguridad Usted dejó de: - CUN" = "GPSC27" ,
+                              "28. En esta calle o zona la policía: - CUN" = "GPSC28" ,
+                              "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: La policía  - CUN" = "GPSC291" ,
+                              "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: El Ministerio Público para denunciar  - CUN" = "GPSC292" ,
+                              "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: Las escuelas públicas de la zona  - CUN" = "GPSC293" ,
+                              "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: Su Comisario ejidal  - CUN" = "GPSC294" ,
+                              "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: Su presidente municipal  - CUN" = "GPSC295" ,
+                              "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: El Gobernador  - CUN" = "GPSC296" ,
+                              "30. Del 1 al 5, califique el trabajo de: La policía - CUN" = "GPSC301" ,
+                              "30. Del 1 al 5, califique el trabajo de: El Ministerio Público para denunciar - CUN" = "GPSC302" ,
+                              "30. Del 1 al 5, califique el trabajo de: Los empleados de gobierno - CUN" = "GPSC303" ,
+                              "30. Del 1 al 5, califique el trabajo de: Su Comisario Ejida - CUN" = "GPSC304" ,
+                              "30. Del 1 al 5, califique el trabajo de: Su presidente municipal - CUN" = "GPSC305" ,
+                              "30. Del 1 al 5, califique el trabajo de: El Gobernador - CUN" = "GPSC306" ,                          
+                              "31. Del 1 al 5, califique el trato que recibe de: La policía - CUN" = "GPSC311" ,
+                              "31. Del 1 al 5, califique el trato que recibe de:El Ministerio Público para denunciar - CUN" = "GPSC312" ,
+                              "31. Del 1 al 5, califique el trato que recibe de: Los empleados de gobierno - CUN" = "GPSC313" ,
+                              "31. Del 1 al 5, califique el trato que recibe de: Su Comisario ejidal - CUN" = "GPSC314" ,
+                              "31. Del 1 al 5, califique el trato que recibe de: Su presidente municipa - CUN" = "GPSC315" ,
+                              "31. Del 1 al 5, califique el trato que recibe de: El Gobernador - CUN" = "GPSC316"                          
+                              
+                      )
+        )}    
 
   })
   
+
+  #Textos descriptivos
   output$localiz <- renderText ({
-    if(input$tipomapa=="ALL"){ "Cancún - Isla Mujeres " }
-    else if(input$tipomapa=="PS"){ "Cancún, QRoo." }
-    else if(input$tipomapa=="IS"){ "Salinas, Isla Mujeres." }
-    else if(input$tipomapa=="EJ"){ " Zona Urbana Isla Mujeres "}
+      if(input$tipomapa=="ALL"){ "Cancún - Isla Mujeres " }
+      else if(input$tipomapa=="PS"){ "Cancún, QRoo." }
+      else if(input$tipomapa=="IS"){ "Salinas, Isla Mujeres." }
+      else if(input$tipomapa=="EJ"){ " Zona Urbana Isla Mujeres "}
   })
   
   output$TipoestudioG <- renderText ({
-    if(input$tipomapa=="PS"){ "Percepción sobre seguridad" }
-    else if(input$tipomapa=="IS"){ "Estudio Socioeconómico y ambiental" }
-    else if(input$tipomapa=="EJ"){ "Características sobre población y migración"}
+      if(input$tipomapa=="PS"){ "Percepción sobre seguridad" }
+      else if(input$tipomapa=="IS"){ "Estudio Socioeconómico y ambiental" }
+      else if(input$tipomapa=="EJ"){ "Características sobre población y migración"}
   })
   
   
@@ -928,11 +810,9 @@ server <- function(input, output, session) {
   
   #Pintado de mapas
   output$mymap <- renderLeaflet({
-    # if(input$showmapa=="ALL"){ GraphM(percepcion) }
-    #  else
-    if(input$showmapa=="PS"){ GraphM(percepcion) }
-    else if(input$showmapa=="IS"){ GraphM(filtro) }
-    else if(input$showmapa=="EJ"){ GraphM(df_fin) }
+        if(input$showmapa=="PS"){ GraphM(percepcion) }
+        else if(input$showmapa=="IS"){ GraphM(filtro) }
+        else if(input$showmapa=="EJ"){ GraphM(df_fin) }
   })
   
   # Texto tipo de estudio

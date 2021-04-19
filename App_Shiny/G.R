@@ -1,59 +1,8 @@
-#source("UC/PT/Entregables APP Isla/DatosEjido/Graficas/Funciones.R")
-source("Funciones.R")
+
 #------------------------------------------------------------------------
 library(shiny)
-
-#SALINAS 
-
-
 # --------- AMBIENTAL ---------------
 d <- Ambiental_df[1:55,]
-#P1 Qué uso le dan sus vecinos a la salina?
-#AP1 = graficarPlotS(Ambiental_df,1,55 ,"USO", "Numero de personas", "AMBIENTAL - P1 - USO LE DAN SUS VECINOS A LA SALINA" )
-
-#P2  ¿Qué beneficio recibe de vivir aquí?
-#AP2 = graficarPlotS(Ambiental_df,57,111 ,"VENTAJAS", "Numero de personas", "AMBIENTAL - P2 - VENTAJAS DE VIVIR CERCA DE LA SALINA" )
-
-#P3 Qué desventajas recibe de vivir aquí cerca de la salina?
-#AP3 = graficarPlotS(Ambiental_df,113,167 ,"DESVENTAJAS", "Numero de personas", "AMBIENTAL - P3 - DESVENTAJAS DE VIVIR CERCA DE LA SALINA " )
-
-#P4 ¿En qué condiciones considera que se encuentra la salina?
-#AP4 = graficarPlotS(Ambiental_df,169,223 ,"PERCEPCIÓN ", "Numero de personas", "AMBIENTAL - P4 - PERCEPCIÓN DEL ESTADO DE LA SALINA" )
-
-#P5 Qué efectos genera la condición (sucia o contaminada) de la Salina? 
-#AP5 = graficarPlotS(Ambiental_df,225,279 ,"CONSECUENCIAS", "Numero de personas", "AMBIENTAL - P5 - CONSECUENCIAS DEL ESTADO ACTUAL DE LA SALINA" )
-
-
-#P6 ¿Han llevado a cabo alguna actividad de limpieza, saneamiento o conservación de la Salina?
-#AP6 =  graficarPlotS(Ambiental_df,281,336 ,"RESPUESTA", "Numero de personas", "AMBIENTAL - P6 - SE HAN REALIZADO ACTIVIDADES DE LIMPIEZA" )
-
-
-
-
-# --------- SOCIAL ---------------
-
-
-
-#P1 Entre los vecinos, realizan alguna actividad en común:
-#AS1 = graficarPlotS(Social_df,1,55 ,"RESPUESTA", "Numero de personas", "SOCIAL - P1 - REALIZA ACTIVIDADES VECINALES" )
-
-#P2  Cómo es la relación con sus vecinos?
-#AS2 = graficarPlotS(Social_df,57,111 ,"ESTADO", "Numero de personas", "SOCIAL - P2 - ESTADO DE RELACION VECINAL" )
-
-#P3 Ha tenido problemas con sus vecinos: pleitos, demandas.?
-#AS3 = graficarPlotS(Social_df,113,167 ,"PROBLEMAS", "Numero de personas", "SOCIAL - P3 - PROBLEMAS VECINALES " )
-
-#P4 Con qué frecuencia se hacen favores entre vecinos?
-#AS4 = graficarPlotS(Social_df,169,223 ,"RESPUESTA ", "Numero de personas", "SOCIAL - P4 - FAVORES VECINALES" )
-
-#P5 ¿En algún problema que se le presente, sus vecinos le ayudan?
-#AS5 = graficarPlotS(Social_df,225,279 ,"RESPUESTA", "Numero de personas", "SOCIAL - P5 - AYUDA ENTRE VECINOS" )
-
-
-
-
-#Poblacion y migracion  VIVIENDA
-
 # --------- VIVIENDA   V1 La vivienda es :  --------- 
 vi = columna[132:148]
 A = sum(vi$VI01_Propia == 1)
@@ -62,7 +11,9 @@ C = sum(vi$VI01_Prestada == 1)
 n = c(A, B, C)
 RESPUESTA = c("Propia", "Renta", "Prestada")
 dataf <- data.frame(n,RESPUESTA)
-V1P1R1 = graficarPlot(dataf,"RESPUESTA", "Numero de personas", "VI01 - Situacion de la vivienda")
+#1
+V1P1R1 = graficarPlot(dataf,"RESPUESTA", "Numero de personas", "1. La vivienda que habita tu familia es")
+T1P1R1 = graficarTable(dataf,"RESPUESTA", "Numero de personas", "1. La vivienda que habita tu familia es")
 
 #---------- VIVIENDA   Si es propia como fue adquirida V4 ---------- 
 
@@ -72,81 +23,122 @@ C = sum(vi$VI04_Mensual == 1)
 n = c(A, B, C)
 RESPUESTA = c("Pago de contado", "Herencia", "Pagos Mensuales")
 VI04 <- data.frame(n,RESPUESTA)
+#3
+V1P2R1 = graficarPlot(VI04,"RESPUESTA", "Numero de personas", "2. En caso  de ser  propia, ¿De qué forma fue adquirida?  ")
+T1P2R1 = graficarTable(VI04,"RESPUESTA", "Numero de personas", "2. En caso  de ser  propia, ¿De qué forma fue adquirida?  ")
 
-V1P4R1 = graficarPlot(VI04,"RESPUESTA", "Numero de personas", "VI04 - Tipo de pago en vivienda propia ")
 
-#---------- VIVIENDA  Huracanes Inundaciones  V5 ----------
+# Inundacion 3
+A = 104 #INTERNET
+B = 296 #RECOLECCION-BASURA
+C = 356 #ELECTRICIDAD
+D = 356 #TV
+E = 356 #TELEFONO-CELULAR
+FF = 43 #AGUA
 
-# huracan
-Inundacion = vi[13]
-Huracan = vi[14]
-AcI  = vi[15]
-AcH = vi[16]
-VI51 = sum(Huracan$VI09PeHuracan == 1)
-VI50 = sum(Huracan$VI09PeHuracan == 0)
-n = c(VI51, VI50)
-RESPUESTA = c("Ha enfrentado huracán", "No ha enfrentado huracán")
+to = A+B+C+D+E+FF
+total = c(A, B, C,D,E,FF)
+A = as.integer((A/to)*100)
+B = as.integer((B/to)*100)
+C = as.integer((C/to)*100)
+D = as.integer((D/to)*100)
+E = as.integer((E/to)*100)
+FF = as.integer((FF/to)*100)
+
+n =  c(A, B, C,D,E,FF)
+
+
+RESPUESTA = c("INTERNET", "RECOLECCION-BASURA", "ELECTRICIDAD", "TV-PAGA", "TELEFONO-CELULAR", "AGUA")
 VI04 <- data.frame(n,RESPUESTA)
+#3
+V1P3R1 = graficarPlot(VI04,"RESPUESTA", "Numero de personas", "3. ¿Con qué servicios cuenta su vivienda? ")
+T1P3R1 = graficarTable(VI04,"RESPUESTA", "Numero de personas", "3. ¿Con qué servicios cuenta su vivienda? ")
 
-V1H1 = graficarPlot(VI04,"RESPUESTA", "Numero de personas", "VI05 - Le ha tocado enfrentar un huracán en actual localidad")
+#CHECk
 
-# Inundacion
-VI51 = sum(Inundacion$VI08NInundaciones == 1)
-VI50 = sum(Inundacion$VI08NInundaciones == 0)
+# Inundacion 4
+VI51 = sum(df_fin$VI08NInundaciones == 1)
+VI50 = sum(df_fin$VI08NInundaciones == 0)
 n = c(VI51, VI50)
 RESPUESTA = c("Ha sufrido inundaciones en localidad", "No ha sufrido inundaciones en localidad")
 VI04 <- data.frame(n,RESPUESTA)
 
-V1I1 = graficarPlot(VI04,"RESPUESTA", "Numero de personas", "VI05 - Le ha tocado pasar por una inundacion en actual localidad")
+V1P4R1 = graficarPlot(VI04,"RESPUESTA", "Numero de personas", "4. ¿Cuántas inundaciones ha sufrido al vivir en esta localidad?")
+T1P4R1 = graficarTable(VI04,"RESPUESTA", "Numero de personas", "4. ¿Cuántas inundaciones ha sufrido al vivir en esta localidad?")
 
-# --------- VIVIENDAS Huracan e inundacion  --------- 
-
-#grid.arrange(V1H1, V1I1, nrow = 2 ,top=textGrob("Inundaciones o Huracanes"))
-
-#grid.arrange(V1H2, V1I2, nrow = 2 ,top=textGrob("Inundaciones o Huracanes"))
-
-#grid.arrange(V1H2, V1I3, nrow = 2 ,top=textGrob("Inundaciones o Huracanes"))
-
-#grid.arrange(V1H2, V1I4, nrow = 2 ,top=textGrob("Inundaciones o Huracanes"))
-
-#grid.arrange(V1H3, V1I2, nrow = 2 ,top=textGrob("Inundaciones o Huracanes"))
+# 5
+op1Ii = sum(df_fin$VI11AccionInundacion == "ME-AGRADA-EL-LUGAR")
+op1I2 = sum(df_fin$VI11AccionInundacion == "OTRO")
+op1I3 = sum(df_fin$VI11AccionInundacion == "NO-ACCESO-A-CREDITO")
+op1I4 = sum(df_fin$VI11AccionInundacion == "NO-ALTERNATIVA")
+op1I5 = sum(df_fin$VI11AccionInundacion == "TRABAJO-ESCUELA-CERCA")
 
 
-#accion  inundaciones
-
-unique(AcI$VI10AccionHuracan)
-unique(AcH$VI11AccionInundacion)
-
-
-op1H1 = sum(AcI$VI10AccionHuracan == "QUEDAMOS")
-op1H2 = sum(AcI$VI10AccionHuracan == "FAMILIAR-AMIGO")
-op1H3 = sum(AcI$VI10AccionHuracan == "REFUGIO")
-op1Ii = sum(AcH$VI11AccionInundacion == "ME-AGRADA-EL-LUGAR")
-op1I2 = sum(AcH$VI11AccionInundacion == "OTRO")
-op1I3 = sum(AcH$VI11AccionInundacion == "NO-ACCESO-A-CREDITO")
-op1I4 = sum(AcH$VI11AccionInundacion == "NO-ALTERNATIVA")
-op1I5 = sum(AcH$VI11AccionInundacion == "TRABAJO-ESCUELA-CERCA")
-
-
-
-n = c(op1H1,op1H2,op1H3)
-RESPUESTA = c("QUEDAMOS","FAMILIAR-AMIGO", "REFUGIO")
-
-VI04 <- data.frame(n,RESPUESTA)
-
-
-n1 = c(op1Ii,op1I2,op1I3,op1I4, op1I5)
+n = c(op1Ii,op1I2,op1I3,op1I4, op1I5)
 RESPUESTA1 = c("ME-AGRADA-EL-LUGAR","OTRO", "NO-ACCESO-A-CREDITO","NO-ALTERNATIVA","TRABAJO-ESCUELA-CERCA" )
 
-VI041 <- data.frame(n1,RESPUESTA1)
+VI041 <- data.frame(n,RESPUESTA1)
+
+V1P5R1 = graficarPlot(VI041,"RESPUESTA", "Numero de personas", "5. A pesar de la inundación usted decidió quedarse a vivir aquí por: ")
+T1P5R1 = graficarTable(VI041,"RESPUESTA", "Numero de personas", "5. A pesar de la inundación usted decidió quedarse a vivir aquí por: ")
 
 
-HU = VI041
-#ggwordcloud2(VI04[, c("RESPUESTA", "n")], size = 2.5)
+#6
+VI51 = 39
+VI50 = 337
+n = c(VI51, VI50)
+RESPUESTA = c("SI", "NO")
+VI04 <- data.frame(n,RESPUESTA)
 
-IN = VI041
-#ggwordcloud2(VI041[, c("RESPUESTA1", "n1")], size = 2.5)
+V1P6R1 = graficarPlot(VI04,"RESPUESTA", "Numero de personas", "6. ¿Sabe si su vivienda está en zona de riesgo?")
+T1P6R1 = graficarTable(VI04,"RESPUESTA", "Numero de personas", "6. ¿Sabe si su vivienda está en zona de riesgo?")
 
+
+
+
+
+
+#6
+VI51 = 131
+VI50 = 245
+n = c(VI51, VI50)
+RESPUESTA = c("SI", "NO")
+VI04 <- data.frame(n,RESPUESTA)
+
+V1P7R1 = graficarPlot(VI04,"RESPUESTA", "Numero de personas", "7. ¿Conoce los impactos o afectaciones que puede sufrir?")
+T1P7R1 = graficarTable(VI04,"RESPUESTA", "Numero de personas", "7. ¿Conoce los impactos o afectaciones que puede sufrir?")
+
+
+
+#6
+VI51 = 131
+VI50 = 245
+# Inundacion 3
+A = 149 #INTERNET
+B = 99 #RECOLECCION-BASURA
+C = 85 #ELECTRICIDAD
+D = 290 #TV
+E = 120 #TELEFONO-CELULAR
+FF = 24 #AGUA
+H = 331
+
+to = A+B+C+D+E+FF + H
+total = c(A, B, C,D,E,FF,H)
+A = as.integer((A/to)*100)
+B = as.integer((B/to)*100)
+C = as.integer((C/to)*100)
+D = as.integer((D/to)*100)
+E = as.integer((E/to)*100)
+FF = as.integer((FF/to)*100)
+H = as.integer((H/to)*100)
+
+n =  c(A, B, C,D,E,FF,H)
+
+RESPUESTA = c("ÁREAS VERDES", "CALLES PAVIMENTADAS", "BANQUETAS", "LUMINARIAS PUBLICAS","TRANSPORTE PUBLICO"	, "PATRULLAS VIGILANDO" , "LOTES BALDIOS")
+VI04 <- data.frame(n,RESPUESTA)
+
+V1P8R1 = graficarPlot(VI04,"RESPUESTA", "Numero de personas", "8. FAVOR DE SEÑALAR LOS SIGUIENTES SERVICIOS OBSERVADOS ALREDEDOR DE LA VIVIENDA: ")
+T1P8R1 = graficarTable(VI04,"RESPUESTA", "Numero de personas", "8. FAVOR DE SEÑALAR LOS SIGUIENTES SERVICIOS OBSERVADOS ALREDEDOR DE LA VIVIENDA: ")
 
 #----------------------------------------------------------------------
 # mapas estudio socieconomico 

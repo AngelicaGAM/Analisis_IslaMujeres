@@ -39,8 +39,8 @@ varsz <- c("Ninguno", "Edad", "Sexo")
 sidebar <- dashboardSidebar(
   sidebarMenu(id="tabs",
               menuItem(text = "Inicio",  tabName = "inicio", icon = icon("home")),
-              menuItem(text = "Graficas", tabName = "graficas", icon = icon("chart-pie")), 
-              menuItem(text = "Mosaicos",  tabName = "mosaics", icon = icon("chart-bar")),
+              menuItem(text = "Graficas", tabName = "graficas", icon = icon("chart-bar")), 
+              menuItem(text = "Mosaicos",  tabName = "mosaics", icon = icon("th")),
               conditionalPanel(
                 condition = "input.tabs == 'mosaics'",
                 selectInput("var1","Primera variable de cruce",varsx,selected = "Origen"),
@@ -99,11 +99,15 @@ body <- dashboardBody(
             fluidRow(
               column(12,
                      wellPanel(
-                       HTML(" <h2><b>Estudios Socio-Económicos, Percepción de Seguridad y Características sobre población y migración. </b></h2>"),br(),
-                       infoBox( "Población y migración",377 , icon=icon("user-alt"), color = "light-blue", fill = TRUE ),
-                       infoBox("Socieconimico y Ambiental",55, icon=icon("seedling"), color = "olive", fill = TRUE),
-                       infoBox("Percepcion de seguridad",376, icon=icon("eye"),color = "aqua", fill = TRUE), br(), br(), br(), br(),br(), br(), br(),       
-                     )), br(), br(), br(), br(),br(), br(), br(),
+                       HTML(" <h2><b>Estudios Socio-Económicos, Percepción de Seguridad y Características sobre población y migración. </b></h2>")     
+                     )),    
+              column(12,
+                      br(),   
+                    infoBox( "Población y migración",377 , icon=icon("user-alt"), color = "light-blue", fill = TRUE ),
+                    infoBox("Socieconimico y Ambiental",55, icon=icon("seedling"), color = "olive", fill = TRUE),
+                    infoBox("Percepcion de seguridad",8701, icon=icon("eye"),color = "orange", fill = TRUE), br(), br(), br(), br(),br(), br(), br(),       
+                ),
+
               column(4, wellPanel(
                 HTML(" <h2><b>Características sobre población y migración.</b></h2><h3>  Zona Urbana Isla Mujeres</h3><h4>Enfoque exclusivo a la percepción de seguridad en la Zona Continental de Isla Mujeres tomando los resultados de ambos conjuntos de datos realizados por diferentes instituciones.<br> <br>Enfoque:<br> <ul><li>Economico</li><li>Social</li><li>Vivienda</li><li>Apreciación de encuestador </li> <br><br></h4>"),
                 actionBttn(inputId = "popPyM", label = "Cuestionario", style = "fill", color = "danger", icon = icon("poll-h"), size = "sm")
@@ -125,11 +129,12 @@ body <- dashboardBody(
             fluidRow(
               wellPanel(h1(textOutput("TipoestudioG"), align = "center")),    
               column(3, wellPanel(
-                selectInput(inputId='tipomapa', label = h3('Estudio:'),  choices = c("Percepcion de seguridad" = "PS", "Socioeconómico y ambiental" = "IS" ,"Población y migración" = "EJ"), selected = "EJ"),
-                    conditionalPanel(
-                            condition = "input.tipomapa == 'PS'",
-                            selectInput(inputId='localizPS', label = h3('Ubicación:'),choices = c("Comparativa"= "PSVS", "Isla Mujeres"= "PSI", "Cancun"="PSC", "Ejido"="PSE"), selected = "PSI")
-                    ),
+                selectInput(inputId='tipomapa', label = h3('Estudio:'),  choices = c("Percepcion de seguridad" = "PSQ", "Socioeconómico y ambiental" = "IS" ,"Población y migración" = "EJ"), selected = "IS"),
+               # selectInput(inputId='tipomapa', label = h3('Estudio:'),  choices = c( "Socioeconómico y ambiental" = "IS" , "Socioeconómico y ambiental" = "PS" ,"Población y migración" = "EJ"), selected = "EJ"),
+                  # conditionalPanel(
+                  #          condition = "input.tipomapa == 'PSQ'",
+                  #          selectInput(inputId='localizPS', label = h3('Ubicación:'),choices = c("Comparativa"= "PSVS", "Isla Mujeres"= "PSI", "Cancun"="PSC", "Ejido"="PSE"), selected = "PSI")
+                  # ),
                 selectInput(inputId='enfoque', label = h3('Enfoque:'), choices= c("Datos generales del encuestado" = "DG", "Datos familiares" = "DF","Datos económicos" = "DE", "Identidad y Comunidad" = "ID" , "Vivienda" = "VI", "Apreciación del encuestador" = "AE"), selected = "VI"), 
                 selectInput(inputId='pregunta', label = h3('Graficas:'),choices = c("Situacion Vivienda" = "V1P1R1" , "Adquisicion Vivienda" = "V1P4R1"," Huracanes " = "V1H1", " Inundaciones " = "V1I1"), selected = "V1P1R1") 
                   

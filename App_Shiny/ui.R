@@ -40,7 +40,7 @@ sidebar <- dashboardSidebar(
   sidebarMenu(id="tabs",
               menuItem(text = "Inicio",  tabName = "inicio", icon = icon("home")),
               menuItem(text = "Graficas", tabName = "graficas", icon = icon("chart-bar")), 
-              menuItem(text = "Mosaicos",  tabName = "mosaics", icon = icon("chart-bar")),
+              menuItem(text = "Mosaicos",  tabName = "mosaics", icon = icon("th")),
               conditionalPanel(
                 condition = "input.tabs == 'mosaics'",
                 selectInput("estudio","Estudio:",choices=c("Poblacion y migracion", "Percepcion de seguridad", "Salinas")),
@@ -94,7 +94,7 @@ sidebar <- dashboardSidebar(
               
   )
 )
-
+ 
 # body
 body <- dashboardBody(
   tabItems(

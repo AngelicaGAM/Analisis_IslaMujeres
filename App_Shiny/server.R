@@ -758,7 +758,7 @@ server <- function(input, output, session) {
                   updateSelectInput(session, "pregunta",  
                       choices = c(
                                   "1. En esta calle o zona, Usted participa: - EJ " = "GPSE1", 
-                           #       "2. Usted conoce a sus vecinos: - EJ " = "GPSE2" ,
+                                  "2. Usted conoce a sus vecinos: - EJ " = "GPSE2" ,
                                 #  "3. Participa con la autoridad para mejorar la seguridad: - EJ " = "GPSE3" ,
                                   "6. Cuando hay un delito, en esta calle o zona los vecinos: - EJ " = "GPSE6", 
                                   "7. Durante el último año, en esta calle o zona ha habido: - EJ " = "GPSE7" ,

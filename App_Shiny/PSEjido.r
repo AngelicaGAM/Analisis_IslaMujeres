@@ -18,89 +18,39 @@ E = as.integer((E/N)*100)
 FF = as.integer((FF/N)*100)
 n = c(A, B, C, D, E,FF)
 RESPUESTA = c("Eventos deportivos", "tandas", "fiestas", "iglesia o templo", "Actividades.con.hijos","Para.solucionar.problemas.de.la.comunidad")
-dataE1 <- data.frame(n,RESPUESTA,   total)
+dataC1 <- data.frame(n,RESPUESTA,   total)
 
-GPSE1 = graficarPlot(dataE1,"Respuesta", "Numero de personas", "1. En esta calle o zona, Usted participa:" )
-TPSE1 = graficarTable(dataE1,"Respuesta","Numero de personas", "1. En esta calle o zona, Usted participa:")
+GPSE1 = graficarPlot(dataC1,"Respuesta", "Numero de personas", "1. En esta calle o zona, Usted participa:" )
+TPSE1 = graficarTable(dataC1,"Respuesta","Numero de personas", "1. En esta calle o zona, Usted participa:")
 
 #------------------------------------------------------------------------------------
 #Usted conoce a sus vecinos:
-A = sum(Ejido$Usted.conoce.a.sus.vecinos. == 'SI')
-B = sum(Ejido$Usted.conoce.a.sus.vecinos..A.alguno.le.confiaría.a.los.niños == 'SI')
-C = sum(Ejido$Usted.conoce.a.sus.vecinos..A.alguno.le.confiaría.su.casa == 'SI')
-
-total = c(A, B, C)
-A = as.integer((A/N)*100)
-B = as.integer((B/N)*100)
-C = as.integer((C/N)*100)
-
-n = c(A, B, C)
-
-RESPUESTA = c("Conoce a sus vecinos", "Confiaría a los niños", "Confiaría su casa")
-dataE2 <- data.frame(n,RESPUESTA,   total)
-GPSE2 = graficarPlot(dataE2,"Respuesta", "Numero de personas", "2. Usted conoce a sus vecinos:" )
-TPSE2 = graficarTable(dataE2,"Respuesta", "Numero de personas", "2. Usted conoce a sus vecinos:" )
-#------------------------------------------------------------------------------------
-#3
-A = sum(Ejido$Usted.conoce.a.sus.vecinos..Participa.con.ellos.para.mejorar.la.seguridad == 'SI')
-B = sum(Ejido$Usted.conoce.a.sus.vecinos..Le.interesaría.participar == 'SI')
-total = c(A, B)
-A = as.integer((A/N)*100)
-B = as.integer((B/N)*100)
-n = c(A, B)
-RESPUESTA = c("Participa con ellos para mejorar la seguridad", "Interesaría participar con ellos para mejorar la seguridad")
-dataE3 <- data.frame(n,RESPUESTA,   total)
-GPSE3 = graficarPlot(dataE3,"Respuesta", "Numero de personas", "3. Participa con la autoridad para mejorar la seguridad:" )
-TPSE3 = graficarTable(dataE3,"Respuesta","Numero de personas", "3. Participa con la autoridad para mejorar la seguridad:")
-
-#------------------------------------------------------------------------------------
+# P2R1S = sum(Ejido$Usted.conoce.a.sus.vecinos. == 'SI')
+# P2R2S = sum(Ejido$Usted.conoce.a.sus.vecinos..A.alguno.le.confiaría.a.los.niños == 'SI')
+# P2R3S = sum(Ejido$Usted.conoce.a.sus.vecinos..A.alguno.le.confiaría.su.casa == 'SI')
+# P2R4S = sum(Ejido$Usted.conoce.a.sus.vecinos..Participa.con.ellos.para.mejorar.la.seguridad == 'SI')
+# P2R5S = sum(Ejido$Usted.conoce.a.sus.vecinos..Le.interesaría.participar == 'SI')
+# total = c(P2R1S, P2R2S, P2R3S, P2R4S, P2R5S)
+# P2R1S = as.integer((P2R1S/N)*100)
+# P2R2S = as.integer((P2R2S/N)*100)
+# P2R3S = as.integer((P2R3S/N)*100)
+# P2R4S = as.integer((P2R4S/N)*100)
+# P2R5S = as.integer((P2R5S/N)*100)
+# n = c(P2R1S, P2R2S, P2R3S, P2R4S, P2R5S)
+# RESPUESTA = c("Conoce a sus vecinos", "Confiaría a los niños", "Confiaría su casa", "Participa con ellos para mejorar la seguridad", "Interesaría participar")
+# dataC <- data.frame(n,RESPUESTA,   total)
+# GPSE2 = graficarPlot(dataC,"Respuesta", "Numero de personas", "Usted conoce a sus vecinos:" )
+# TPSE2 = graficarTable(dataC,"Respuesta","Numero de personas", "Usted conoce a sus vecinos:")
+# P3R1S = sum(Ejido$Participa.con.la.autoridad.para.mejorar.la.seguridad. == 'SI')
+# total = c(P3R1S, P3R1N)
+# P3R1S = as.integer((P3R1S/N)*100)
+# P3R1N = as.integer((P3R1N/N)*100)
+# n = c(P3R1S, P3R1N)
+# RESPUESTA = c("Sí", "No")
+# dataC <- data.frame(n,RESPUESTA,   total)
+# GPSE3 = graficarPlot(dataC,"Respuesta", "Numero de personas", "Usted conoce a sus vecinos:" )
+# TPSE3 = graficarTable(dataC,"Respuesta","Numero de personas", "Usted conoce a sus vecinos:")
 #4 dia y 5 horarios
-A = 516 # DOMI
-B = 260 # LUNED 
-C = 180  #MARTES
-D = 268 # MIERCOLES
-E =  254 #JUEVES
-FF = 340 #VIERNES
-G =  588 
-
-total = c(A, B, C, D, E, FF, G)
-A = as.integer((A/N)*100)
-B = as.integer((B/N)*100)
-C = as.integer((C/N)*100)
-D = as.integer((D/N)*100)
-E = as.integer((E/N)*100)
-FF = as.integer((FF/N)*100)
-
-G = as.integer((G/N)*100)
-
-n = c(A, B, C, D, E, FF, G)
-
-RESPUESTA = c(  "DOMINGO", "LUNES", "MARTES", "MIERCOLES", "JUEVES", "VIERNES", "SABADO")
-dataE4 <- data.frame(n,RESPUESTA,   total)
-GPSE4 = graficarPlot(dataE4 ,"Respuesta", "Numero de personas",  "4. Día en que podría participar en actividades con la autoridad*")
-TPSE4 = graficarTable(dataE4 ,"Respuesta", "Numero de personas",  "4. Día en que podría participar en actividades con la autoridad*")
-
-
-#HORARIO 
-
-A = 264
-B = 947
-C = 136
-total = c(A, B, C)
-A = as.integer((A/N)*100)
-B = as.integer((B/N)*100)
-C = as.integer((C/N)*100)
-D = as.integer((D/N)*100)
-E = as.integer((E/N)*100)
-
-n = c(A, B, C)
-RESPUESTA = c("MAÑANA", "TARDE", "NOCHE")
-dataE5 <- data.frame(n,RESPUESTA,   total)
-
-GPSE5 = graficarPlot(dataE5,"Respuesta", "Numero de personas", "5. Horarios en los que podría participar en actividades con la autoridad " )
-TPSE5 = graficarTable(dataE5,"Respuesta","Numero de personas", "5. Horarios en los que podría participar en actividades con la autoridad ")
-
-
 #-----------------------------------------------------------------------------------
 #6
 #Cuando hay un delito, en esta calle o zona los vecinos:
@@ -126,10 +76,10 @@ H = as.integer((H/N)*100)
 I = as.integer((I/N)*100)
 n = c(A, B, C, D, E, FF, G, H, I)
 RESPUESTA = c("Se.reúnen", "Se.organizan.para.vigilar", "Intercambian.números.telefónicos", "Forman.un.chat", "Ponen.letreros.de.advertencia", "Llaman.a.la.policía", "Denuncian.ante.la.autoridad", "Vigilan", "Buscan.desquitarse")
-dataE6 <- data.frame(n,RESPUESTA,   total)
+dataC6 <- data.frame(n,RESPUESTA,   total)
 
-GPSE6 = graficarPlot(dataE6,"Respuesta", "Numero de personas", "6. Cuando hay un delito, en esta calle o zona los vecinos:" )
-TPSE6 = graficarTable(dataE6,"Respuesta","Numero de personas", "6. Cuando hay un delito, en esta calle o zona los vecinos:")
+GPSE6 = graficarPlot(dataC6,"Respuesta", "Numero de personas", "6. Cuando hay un delito, en esta calle o zona los vecinos:" )
+TPSE6 = graficarTable(dataC6,"Respuesta","Numero de personas", "6. Cuando hay un delito, en esta calle o zona los vecinos:")
 
 #-----------------------------------------------------------------------------------
 #7
@@ -159,9 +109,9 @@ J = as.integer((J/N)*100)
 n = c(A, B, C, D, E, FF, G, H, I,J)
 
 RESPUESTA = c("Robo.en.casa", "Robo.en.la.calle", "Robo.en.transporte", "Robo.en.negocio", "Robo.de.partes.de.auto", "Robo.de.vehículo", "Balaceras", "Cobro.de.piso", "Violencia.familiar", "Peleas.de.gallos" )
-dataE7 <- data.frame(n,RESPUESTA,   total)
-GPSE7 = graficarPlot(dataE7,"Respuesta", "Numero de personas", "Cuando hay un delito, en esta calle o zona los vecinos:" )
-TPSE7 = graficarTable(dataE7,"Respuesta","Numero de personas", "Cuando hay un delito, en esta calle o zona los vecinos:")
+dataC7 <- data.frame(n,RESPUESTA,   total)
+GPSE7 = graficarPlot(dataC7,"Respuesta", "Numero de personas", "Cuando hay un delito, en esta calle o zona los vecinos:" )
+TPSE7 = graficarTable(dataC7,"Respuesta","Numero de personas", "Cuando hay un delito, en esta calle o zona los vecinos:")
 
 #-----------------------------------------------------------------------------------
 #8 . 1
@@ -181,10 +131,10 @@ E = as.integer((E/N)*100)
 
 n = c(A, B, C, D, E)
 RESPUESTA = c("1", "2", "3", "4", "5")
-dataE81 <- data.frame(n,RESPUESTA,   total)
+dataC81 <- data.frame(n,RESPUESTA,   total)
 
-GPSE81 = graficarPlot(dataE81,"Respuesta", "Numero de personas", "8.1 Valore.del.1.al.5.el.riesgo.de.sufrir.un.delito.en.alguno.de.los.siguientes.lugares..En.su.casa: " )
-TPSE81 = graficarTable(dataE81,"Respuesta","Numero de personas", "8.1 Valore.del.1.al.5.el.riesgo.de.sufrir.un.delito.en.alguno.de.los.siguientes.lugares..En.su.casa: ")
+GPSE81 = graficarPlot(dataC81,"Respuesta", "Numero de personas", "8.1 Valore.del.1.al.5.el.riesgo.de.sufrir.un.delito.en.alguno.de.los.siguientes.lugares..En.su.casa: " )
+TPSE81 = graficarTable(dataC81,"Respuesta","Numero de personas", "8.1 Valore.del.1.al.5.el.riesgo.de.sufrir.un.delito.en.alguno.de.los.siguientes.lugares..En.su.casa: ")
 
 #---------------
 # 8.2 
@@ -203,10 +153,10 @@ E = as.integer((E/N)*100)
 
 n = c(A, B, C, D, E)
 RESPUESTA = c("1", "2", "3", "4", "5")
-dataE82 <- data.frame(n,RESPUESTA,   total)
+dataC82 <- data.frame(n,RESPUESTA,   total)
 
-GPSE82 = graficarPlot(dataE82,"Respuesta", "Numero de personas", "8.2 Valore.del.1.al.5.el.riesgo.de.sufrir.un.delito.en.alguno.de.los.siguientes.lugares..En.su.calle: " )
-TPSE82 = graficarTable(dataE82,"Respuesta","Numero de personas", "8.2 Valore.del.1.al.5.el.riesgo.de.sufrir.un.delito.en.alguno.de.los.siguientes.lugares..En.su.calle: ")
+GPSE82 = graficarPlot(dataC82,"Respuesta", "Numero de personas", "8.2 Valore.del.1.al.5.el.riesgo.de.sufrir.un.delito.en.alguno.de.los.siguientes.lugares..En.su.calle: " )
+TPSE82 = graficarTable(dataC82,"Respuesta","Numero de personas", "8.2 Valore.del.1.al.5.el.riesgo.de.sufrir.un.delito.en.alguno.de.los.siguientes.lugares..En.su.calle: ")
 
 #---------------
 
@@ -225,10 +175,10 @@ E = as.integer((E/N)*100)
 
 n = c(A, B, C, D, E)
 RESPUESTA = c("1", "2", "3", "4", "5")
-dataE83 <- data.frame(n,RESPUESTA,   total)
+dataC83 <- data.frame(n,RESPUESTA,   total)
 
-GPSE83 = graficarPlot(dataE83,"Respuesta", "Numero de personas", "8.3 Valore.del.1.al.5.el.riesgo.de.sufrir.un.delito.en.alguno.de.los.siguientes.lugares..En.esta.zona: " )
-TPSE83 = graficarTable(dataE83,"Respuesta","Numero de personas", "8.3 Valore.del.1.al.5.el.riesgo.de.sufrir.un.delito.en.alguno.de.los.siguientes.lugares..En.esta.zona: ")
+GPSE83 = graficarPlot(dataC83,"Respuesta", "Numero de personas", "8.3 Valore.del.1.al.5.el.riesgo.de.sufrir.un.delito.en.alguno.de.los.siguientes.lugares..En.esta.zona: " )
+TPSE83 = graficarTable(dataC83,"Respuesta","Numero de personas", "8.3 Valore.del.1.al.5.el.riesgo.de.sufrir.un.delito.en.alguno.de.los.siguientes.lugares..En.esta.zona: ")
 
 #---------------
 
@@ -246,10 +196,10 @@ E = as.integer((E/N)*100)
 
 n = c(A, B, C, D, E)
 RESPUESTA = c("1", "2", "3", "4", "5")
-dataE84 <- data.frame(n,RESPUESTA,   total)
+dataC84 <- data.frame(n,RESPUESTA,   total)
 
-GPSE84 = graficarPlot(dataE84,"Respuesta", "Numero de personas", "8.4 Valore.del.1.al.5.el.riesgo.de.sufrir.un.delito.en.alguno.de.los.siguientes.lugares..En.esta.ciudad: " )
-TPSE84 = graficarTable(dataE84,"Respuesta","Numero de personas", "8.4 Valore.del.1.al.5.el.riesgo.de.sufrir.un.delito.en.alguno.de.los.siguientes.lugares..En.esta.ciudad: ")
+GPSE84 = graficarPlot(dataC84,"Respuesta", "Numero de personas", "8.4 Valore.del.1.al.5.el.riesgo.de.sufrir.un.delito.en.alguno.de.los.siguientes.lugares..En.esta.ciudad: " )
+TPSE84 = graficarTable(dataC84,"Respuesta","Numero de personas", "8.4 Valore.del.1.al.5.el.riesgo.de.sufrir.un.delito.en.alguno.de.los.siguientes.lugares..En.esta.ciudad: ")
 
 #---------------
 #9
@@ -261,9 +211,9 @@ A = as.integer((A/N)*100)
 B = as.integer((B/N)*100)
 n = c(A, B)
 RESPUESTA = c("Sí", "No")
-dataE9 <- data.frame(n,RESPUESTA,   total)
-GPSE9 = graficarPlot(dataE9,"Respuesta", "Numero de personas", "9. ¿Usted ha sido víctima de algún delito en el último año?" )
-TPSE9 = graficarTable(dataE9,"Respuesta","Numero de personas", "9. ¿Usted ha sido víctima de algún delito en el último año?")
+dataC9 <- data.frame(n,RESPUESTA,   total)
+GPSE9 = graficarPlot(dataC9,"Respuesta", "Numero de personas", "9. ¿Usted ha sido víctima de algún delito en el último año?" )
+TPSE9 = graficarTable(dataC9,"Respuesta","Numero de personas", "9. ¿Usted ha sido víctima de algún delito en el último año?")
 
 #-----------------------------------------------------------------------------------
 #10 
@@ -283,10 +233,10 @@ E = as.integer((E/N)*100)
 
 n = c(A, B, C, D, E)
 RESPUESTA = c("Llama.a.la.policía", "Hace.una.denuncia", "Advierte.a.sus.vecinos.del.peligro", "Advierte.a.su.familia.del.peligro", "Busca.desquitarse")
-dataE10 <- data.frame(n,RESPUESTA,   total)
+dataC10 <- data.frame(n,RESPUESTA,   total)
 
-GPSE10 = graficarPlot(dataE10,"Respuesta", "Numero de personas", "10. En caso de ser víctima del delito Usted: " )
-TPSE10 = graficarTable(dataE10,"Respuesta","Numero de personas", "10. En caso de ser víctima del delito Usted: ")
+GPSE10 = graficarPlot(dataC10,"Respuesta", "Numero de personas", "10. En caso de ser víctima del delito Usted: " )
+TPSE10 = graficarTable(dataC10,"Respuesta","Numero de personas", "10. En caso de ser víctima del delito Usted: ")
 
 
 
@@ -316,9 +266,9 @@ I = as.integer((I/N)*100)
 
 n = c(A, B, C, D,  E, FF, G, H, I )
 RESPUESTA = c("Falta.de.pruebas", "Considera.que.es.un.delito.de.poca.importancia", "Conoce.al.agresor.o.agresores", "Desconfía.de.las.autoridades", "Teme.a.que.lo.extorsionen", "Falta.de.tiempo", "Son.trámites.complicados", "Desconoce.dónde.denunciar", "Aunque.denuncie.no.va.a.pasar.nada");
-dataE11 <- data.frame(n,RESPUESTA,   total)
-GPSE11 = graficarPlot(dataE11,"Respuesta", "Numero de personas", "11. Ha sido víctima de algún delito y no denuncio:" )
-TPSE11 = graficarTable(dataE11,"Respuesta","Numero de personas", "11. Ha sido víctima de algún delito y no denuncio:")
+dataC11 <- data.frame(n,RESPUESTA,   total)
+GPSE11 = graficarPlot(dataC11,"Respuesta", "Numero de personas", "11. Ha sido víctima de algún delito y no denuncio:" )
+TPSE11 = graficarTable(dataC11,"Respuesta","Numero de personas", "11. Ha sido víctima de algún delito y no denuncio:")
 
 #-----------------------------------------------------------------------------------
 #12
@@ -334,9 +284,9 @@ C = as.integer((C/N)*100)
 D = as.integer((D/N)*100)
 n =  c(A, B, C, D)
 RESPUESTA = c("Actividades.con.hijos","Prevenir.delitos", "Las.personas.son.amables", "Hay.alguna.persona.que.siempre.ayuda.a.los.demás");
-dataE12 <- data.frame(n,RESPUESTA,   total)
-GPSE12 = graficarPlot(dataE12,"Respuesta", "Numero de personas", "En esta calle o zona:" )
-TPSE12 = graficarTable(dataE12,"Respuesta","Numero de personas", "En esta calle o zona:")
+dataC12 <- data.frame(n,RESPUESTA,   total)
+GPSE12 = graficarPlot(dataC12,"Respuesta", "Numero de personas", "En esta calle o zona:" )
+TPSE12 = graficarTable(dataC12,"Respuesta","Numero de personas", "En esta calle o zona:")
 
 
 #------------------------------------------------------------------------------------
@@ -357,9 +307,9 @@ E = as.integer((E/N)*100)
 F = as.integer((F/N)*100)
 n =  c(A, B, C, D,E,  F)
 RESPUESTA = c("A.las.que.todos.tienen.miedo", "Que.acosan.a.menores",  "Que.acosan.a.mujeres", "Que.se.emborrachan.o.se.drogan", "Que.han.estado.en.la.cárcel", "Sospechosas");
-dataE13 <- data.frame(n,RESPUESTA,   total)
-GPSE13 = graficarPlot(dataE13,"Respuesta", "Numero de personas", "13. En esta calle o zona, hay personas:" )
-TPSE13 = graficarTable(dataE13,"Respuesta","Numero de personas", "13. En esta calle o zona, hay personas:")
+dataC13 <- data.frame(n,RESPUESTA,   total)
+GPSE13 = graficarPlot(dataC13,"Respuesta", "Numero de personas", "13. En esta calle o zona, hay personas:" )
+TPSE13 = graficarTable(dataC13,"Respuesta","Numero de personas", "13. En esta calle o zona, hay personas:")
 #------------------------------------------------------------------------------------
 # 14 . En esta calle o zona hay violencia:
 
@@ -378,9 +328,9 @@ E = as.integer((E/N)*100)
 
 n =  c(A, B, C, D,E)
 RESPUESTA = c("Entre mujeres", "Entre hombres" , "Entre familias" , "Entre adultos y jóvenes", "Entre jóvenes");
-dataE14 <- data.frame(n,RESPUESTA,   total)
-GPSE14 = graficarPlot(dataE14,"Respuesta", "Numero de personas", "14. En esta calle o zona, hay personas:" )
-TPSE14 = graficarTable(dataE14,"Respuesta","Numero de personas", "14. En esta calle o zona, hay personas:")
+dataC14 <- data.frame(n,RESPUESTA,   total)
+GPSE14 = graficarPlot(dataC14,"Respuesta", "Numero de personas", "14. En esta calle o zona, hay personas:" )
+TPSE14 = graficarTable(dataC14,"Respuesta","Numero de personas", "14. En esta calle o zona, hay personas:")
 
 
 
@@ -407,9 +357,9 @@ H = as.integer((H/N)*100)
 n = c(A, B, C, D,  E, FF, G, H)
 
 RESPUESTA = c("A gritos","Con golpes","Con cuchillos, navajas o machetes","Con armas de fuego, como pistolas o rifles","Desquitándose del otro", "Amistosamente","Dialogando","De manera respetuosa");
-dataE15 <- data.frame(n,RESPUESTA,   total)
-GPSE15 = graficarPlot(dataE15,"Respuesta", "Numero de personas", "15. En esta calle o zona, cuando hay conflictos entre vecinos se manejan:" )
-TPSE15 = graficarTable(dataE15,"Respuesta","Numero de personas", "15. En esta calle o zona, cuando hay conflictos entre vecinos se manejan:")
+dataC15 <- data.frame(n,RESPUESTA,   total)
+GPSE15 = graficarPlot(dataC15,"Respuesta", "Numero de personas", "15. En esta calle o zona, cuando hay conflictos entre vecinos se manejan:" )
+TPSE15 = graficarTable(dataC15,"Respuesta","Numero de personas", "15. En esta calle o zona, cuando hay conflictos entre vecinos se manejan:")
 
 
 
@@ -429,9 +379,9 @@ D = as.integer((D/N)*100)
 
 n =  c(A, B, C, D)
 RESPUESTA = c("Por la inseguridad","Descuido de los pades","Castigo","Trabajo de los padres");
-dataE16 <- data.frame(n,RESPUESTA,   total)
-GPSE16 = graficarPlot(dataE16,"Respuesta", "Numero de personas", "16. En esta calle o zona hay niños o adolescentes que se quedan encerrados con llave:" )
-TPSE16 = graficarTable(dataE16,"Respuesta","Numero de personas", "16. En esta calle o zona hay niños o adolescentes que se quedan encerrados con llave:")
+dataC16 <- data.frame(n,RESPUESTA,   total)
+GPSE16 = graficarPlot(dataC16,"Respuesta", "Numero de personas", "16. En esta calle o zona hay niños o adolescentes que se quedan encerrados con llave:" )
+TPSE16 = graficarTable(dataC16,"Respuesta","Numero de personas", "16. En esta calle o zona hay niños o adolescentes que se quedan encerrados con llave:")
 
 
 
@@ -451,9 +401,9 @@ D = as.integer((D/N)*100)
 
 n =  c(A, B, C, D)
 RESPUESTA = c("Por descuido de los padres", "Castigo", "Falta de dinero", "Trabajo de los padres");
-dataE17 <- data.frame(n,RESPUESTA,   total)
-GPSE17 = graficarPlot(dataE17,"Respuesta", "Numero de personas", "17. En esta calle o zona hay niños que se quedan la mayor parte del día sin comer: " )
-TPSE17 = graficarTable(dataE17,"Respuesta","Numero de personas", "17. En esta calle o zona hay niños que se quedan la mayor parte del día sin comer: ")
+dataC17 <- data.frame(n,RESPUESTA,   total)
+GPSE17 = graficarPlot(dataC17,"Respuesta", "Numero de personas", "17. En esta calle o zona hay niños que se quedan la mayor parte del día sin comer: " )
+TPSE17 = graficarTable(dataC17,"Respuesta","Numero de personas", "17. En esta calle o zona hay niños que se quedan la mayor parte del día sin comer: ")
 
 
 
@@ -473,9 +423,9 @@ D = as.integer((D/N)*100)
 
 n =  c(A, B, C, D)
 RESPUESTA = c("Hacen deporte", "Ayudan a los demás", "La mayoría de los jóvenes estudian o trabajan.","Andan en pandillas");
-dataE18 <- data.frame(n,RESPUESTA,   total)
-GPSE18 = graficarPlot(dataE18,"Respuesta", "Numero de personas", "18. En esta calle o zona hay jóvenes que: " )
-TPSE18 = graficarTable(dataE18,"Respuesta","Numero de personas", "18. En esta calle o zona hay jóvenes que: ")
+dataC18 <- data.frame(n,RESPUESTA,   total)
+GPSE18 = graficarPlot(dataC18,"Respuesta", "Numero de personas", "18. En esta calle o zona hay jóvenes que: " )
+TPSE18 = graficarTable(dataC18,"Respuesta","Numero de personas", "18. En esta calle o zona hay jóvenes que: ")
 
 
 #------------------------------------------------------------------------------------
@@ -497,9 +447,9 @@ D = as.integer((D/N)*100)
 n =  c(A, B, C, D)
 
 RESPUESTA = c("Andan armados","Destruyen o vandalizan la propiedad ajena", "Son violentos", "Amenazan a los vecinos");
-dataE181 <- data.frame(n,RESPUESTA,   total)
-GPSE181 = graficarPlot(dataE181,"Respuesta", "Numero de personas", "18.1 En esta calle o zona hay jóvenes que: Andan en pandillas" )
-TPSE181 = graficarTable(dataE181,"Respuesta","Numero de personas", "18.1 En esta calle o zona hay jóvenes que: Andan en pandillas")
+dataC181 <- data.frame(n,RESPUESTA,   total)
+GPSE181 = graficarPlot(dataC181,"Respuesta", "Numero de personas", "18.1 En esta calle o zona hay jóvenes que: Andan en pandillas" )
+TPSE181 = graficarTable(dataC181,"Respuesta","Numero de personas", "18.1 En esta calle o zona hay jóvenes que: Andan en pandillas")
 
 
 
@@ -530,9 +480,9 @@ H = as.integer((H/N)*100)
 n = c(A, B, C, D,  E, FF, G, H )
 
 RESPUESTA = c("Niños y niñas", "Jóvenes", "Pandillas","Familias","Adultos",  "Personas de la tercera edad", "Encuestado", "Vandalos");
-dataE19 <- data.frame(n,RESPUESTA,   total)
-GPSE19 = graficarPlot(dataE19,"Respuesta", "Numero de personas", "19. En esta calle o zona hay un parque: ¿Quiénes lo utilizan?" )
-TPSE19 = graficarTable(dataE19,"Respuesta","Numero de personas", "19. En esta calle o zona hay un parque: ¿Quiénes lo utilizan? ")
+dataC19 <- data.frame(n,RESPUESTA,   total)
+GPSE19 = graficarPlot(dataC19,"Respuesta", "Numero de personas", "19. En esta calle o zona hay un parque: ¿Quiénes lo utilizan?" )
+TPSE19 = graficarTable(dataC19,"Respuesta","Numero de personas", "19. En esta calle o zona hay un parque: ¿Quiénes lo utilizan? ")
 
 
 #------------------------------------------------------------------------------------
@@ -560,9 +510,9 @@ FF = as.integer((FF/N)*100)
 n = c(A, B, C, D,  E, FF )
 
 RESPUESTA = c("Banquetas","Baches","Letreros con nombres de las calles","Tiendita","Alumbrado","Consumo de alcohol en la calle");
-dataE20 <- data.frame(n,RESPUESTA,   total)
-GPSE20 = graficarPlot(dataE20,"Respuesta", "Numero de personas", "20. En esta calle o zona hay: " )
-TPSE20 = graficarTable(dataE20,"Respuesta","Numero de personas", "20. En esta calle o zona hay:  ")
+dataC20 <- data.frame(n,RESPUESTA,   total)
+GPSE20 = graficarPlot(dataC20,"Respuesta", "Numero de personas", "20. En esta calle o zona hay: " )
+TPSE20 = graficarTable(dataC20,"Respuesta","Numero de personas", "20. En esta calle o zona hay:  ")
 
 
    
@@ -602,9 +552,9 @@ M = as.integer((M/N)*100)
 n = c(A, B, C, D,  E, FF, G, H ,I,J,L,M)
 
 RESPUESTA = c("Horarios de transporte que convienen","Una parada de camión cerca de esta casa","Terrenos baldíos","Basura","Autos abandonados","Casas abandonadas","Vandalismo","Grafiti","Venta de tiner o pegamento a menores","Venta de alcohol o cigarros a menores","Venta de droga","Venta de alcohol después de las 11:00 de la noche");
-dataE21 <- data.frame(n,RESPUESTA,   total)
-GPSE21 = graficarPlot(dataE21,"Respuesta", "Numero de personas", "21. En esta calle o zona hay: " )
-TPSE21 = graficarTable(dataE21,"Respuesta","Numero de personas", "21. En esta calle o zona hay:  ")
+dataC21 <- data.frame(n,RESPUESTA,   total)
+GPSE21 = graficarPlot(dataC21,"Respuesta", "Numero de personas", "21. En esta calle o zona hay: " )
+TPSE21 = graficarTable(dataC21,"Respuesta","Numero de personas", "21. En esta calle o zona hay:  ")
 
 
 #------------------------------------------------------------------------------------
@@ -628,9 +578,9 @@ E = as.integer((E/N)*100)
 n = c(A, B, C, D,  E)
 
 RESPUESTA = c("Se fue de la casa", "Sufrió violencia" , "Abandonó la escuela", "Tiene problemas de conducta","Quedó embarazada");
-dataE22 <- data.frame(n,RESPUESTA,   total)
-GPSE22 = graficarPlot(dataE22,"Respuesta", "Numero de personas", "22. En el último año Usted supo que algún menor de 18 años: " )
-TPSE22 = graficarTable(dataE22,"Respuesta","Numero de personas", "22. En el último año Usted supo que algún menor de 18 años:  ")
+dataC22 <- data.frame(n,RESPUESTA,   total)
+GPSE22 = graficarPlot(dataC22,"Respuesta", "Numero de personas", "22. En el último año Usted supo que algún menor de 18 años: " )
+TPSE22 = graficarTable(dataC22,"Respuesta","Numero de personas", "22. En el último año Usted supo que algún menor de 18 años:  ")
 
 
 #------------------------------------------------------------------------------------
@@ -658,9 +608,9 @@ G = as.integer((G/N)*100)
 n = c(A, B, C, D,  E, FF,G)
 
 RESPUESTA = c("Castigarle"  , "Gritarle" , "Darle nalgadas" , "Darle una golpiza / cueriza" , "Explicarle lo que está mal" , "Aconsejarle" , "Darle buen ejemplo" );
-dataE23 <- data.frame(n,RESPUESTA,   total)
-GPSE23 = graficarPlot(dataE23,"Respuesta", "Numero de personas", "23. Para corregir a un niño o niña que se porta mal, Usted recomienda: " )
-TPSE23 = graficarTable(dataE23,"Respuesta","Numero de personas", "23. Para corregir a un niño o niña que se porta mal, Usted recomienda:  ")
+dataC23 <- data.frame(n,RESPUESTA,   total)
+GPSE23 = graficarPlot(dataC23,"Respuesta", "Numero de personas", "23. Para corregir a un niño o niña que se porta mal, Usted recomienda: " )
+TPSE23 = graficarTable(dataC23,"Respuesta","Numero de personas", "23. Para corregir a un niño o niña que se porta mal, Usted recomienda:  ")
 
  
 #------------------------------------------------------------------------------------
@@ -689,9 +639,9 @@ H = as.integer((H/N)*100)
 n = c(A, B, C, D,  E, FF, G, H )
 
 RESPUESTA = c("Por su discapacidad, ha vivido violencia" , "Sabe manejar armas de fuego, como pistolas o rifles " , "Habla de comprar armas de fuego" , "Habla lengua indigena" , "Necesita ayuda por obesidad" , "Necesita ayuda por fumar" , "Necesita ayuda por beber" , "Necesita ayuda por drogas" );
-dataE25 <- data.frame(n,RESPUESTA,   total)
-GPSE25 = graficarPlot(dataE25,"Respuesta", "Numero de personas", "25. En esta casa alguien: (APLICA TARJETON) " )
-TPSE25 = graficarTable(dataE25,"Respuesta","Numero de personas", "25. En esta casa alguien: (APLICA TARJETON)  ")
+dataC25 <- data.frame(n,RESPUESTA,   total)
+GPSE25 = graficarPlot(dataC25,"Respuesta", "Numero de personas", "25. En esta casa alguien: (APLICA TARJETON) " )
+TPSE25 = graficarTable(dataC25,"Respuesta","Numero de personas", "25. En esta casa alguien: (APLICA TARJETON)  ")
 
 
 #------------------------------------------------------------------------------------
@@ -714,9 +664,9 @@ FF = as.integer((FF/N)*100)
 n = c(A, B, C, D,  E,FF)
 
 RESPUESTA = c("Cambiarse de casa" , "Cambiarse de ciudad" , "Cambiarse de estado" , "Cambiar de trabajo" , "Cerrar su negocio" , "Cambiar a los hijos de escuela"  );
-dataE26 <- data.frame(n,RESPUESTA,   total)
-GPSE26 = graficarPlot(dataE26,"Respuesta", "Numero de personas", "26. En el último año, por cuestiones de seguridad Usted ha pensado: " )
-TPSE26 = graficarTable(dataE26,"Respuesta","Numero de personas", "26. En el último año, por cuestiones de seguridad Usted ha pensado:  ")
+dataC26 <- data.frame(n,RESPUESTA,   total)
+GPSE26 = graficarPlot(dataC26,"Respuesta", "Numero de personas", "26. En el último año, por cuestiones de seguridad Usted ha pensado: " )
+TPSE26 = graficarTable(dataC26,"Respuesta","Numero de personas", "26. En el último año, por cuestiones de seguridad Usted ha pensado:  ")
 
 
 #------------------------------------------------------------------------------------
@@ -745,9 +695,9 @@ I = as.integer((I/N)*100)
 n = c(A, B, C, D, E, FF, G, H, I)
 
 RESPUESTA = c("Dejo de salir de noche" , "Dejo de salir a caminar o hacer ejercicio" , "Impidio que los niños salgan a la calle" , "Evito relacionarse con nuevas personas" , "Dejo de visitar a parientes o amigos" , "Dejo de usar transporte público /combi" , "Dejo de usar taxi" , "Dejo de llevar mucho dinero en efectivo" , "Dejo de usar joyas");
-dataE27 <- data.frame(n,RESPUESTA,   total)
-GPSE27 = graficarPlot(dataE27,"Respuesta", "Numero de personas", "27. En el último año, por cuestiones de seguridad Usted dejó de: " )
-TPSE27 = graficarTable(dataE27,"Respuesta","Numero de personas", "27. En el último año, por cuestiones de seguridad Usted dejó de:  ")
+dataC27 <- data.frame(n,RESPUESTA,   total)
+GPSE27 = graficarPlot(dataC27,"Respuesta", "Numero de personas", "27. En el último año, por cuestiones de seguridad Usted dejó de: " )
+TPSE27 = graficarTable(dataC27,"Respuesta","Numero de personas", "27. En el último año, por cuestiones de seguridad Usted dejó de:  ")
 
 #------------------------------------------------------------------------------------
 # 28. En esta calle o zona la policía:
@@ -769,9 +719,9 @@ FF = as.integer((FF/N)*100)
 n = c(A, B, C, D,  E,FF)
 
 RESPUESTA = c("Cuida o vigila bien" , "Comete abusos" , "Acude a  los llamados" , "Pide mordidas" , "Hace rondines" , "Comete delitos" );
-dataE28 <- data.frame(n,RESPUESTA,   total)
-GPSE28 = graficarPlot(dataE28,"Respuesta", "Numero de personas", "28. En esta calle o zona la policía: " )
-TPSE28 = graficarTable(dataE28,"Respuesta","Numero de personas", "28. En esta calle o zona la policía:  ")
+dataC28 <- data.frame(n,RESPUESTA,   total)
+GPSE28 = graficarPlot(dataC28,"Respuesta", "Numero de personas", "28. En esta calle o zona la policía: " )
+TPSE28 = graficarTable(dataC28,"Respuesta","Numero de personas", "28. En esta calle o zona la policía:  ")
 
 
 
@@ -794,9 +744,9 @@ E = as.integer((E/N)*100)
 n = c(A, B, C, D,  E)
 
 RESPUESTA = c("1" , "2" , "3" , "4" , "5" );
-dataE291 <- data.frame(n,RESPUESTA,   total)
-GPSE291 = graficarPlot(dataE291,"Respuesta", "Numero de personas", "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: La.policia  " )
-TPSE291 = graficarTable(dataE291,"Respuesta","Numero de personas", "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: La.policia  ")
+dataC291 <- data.frame(n,RESPUESTA,   total)
+GPSE291 = graficarPlot(dataC291,"Respuesta", "Numero de personas", "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: La.policia  " )
+TPSE291 = graficarTable(dataC291,"Respuesta","Numero de personas", "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: La.policia  ")
 
 
 
@@ -818,9 +768,9 @@ E = as.integer((E/N)*100)
 n = c(A, B, C, D,  E)
 
 RESPUESTA = c("1" , "2" , "3" , "4" , "5" );
-dataE292 <- data.frame(n,RESPUESTA,   total)
-GPSE292 = graficarPlot(dataE292,"Respuesta", "Numero de personas", "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: El.Ministerio.Público.para.denunciar  " )
-TPSE292 = graficarTable(dataE292,"Respuesta","Numero de personas", "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: El.Ministerio.Público.para.denunciar  ")
+dataC292 <- data.frame(n,RESPUESTA,   total)
+GPSE292 = graficarPlot(dataC292,"Respuesta", "Numero de personas", "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: El.Ministerio.Público.para.denunciar  " )
+TPSE292 = graficarTable(dataC292,"Respuesta","Numero de personas", "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: El.Ministerio.Público.para.denunciar  ")
 
 
 
@@ -843,9 +793,9 @@ E = as.integer((E/N)*100)
 n = c(A, B, C, D,  E)
 
 RESPUESTA = c("1" , "2" , "3" , "4" , "5" );
-dataE293 <- data.frame(n,RESPUESTA,   total)
-GPSE293 = graficarPlot(dataE293,"Respuesta", "Numero de personas", "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: ...La.institución.educativa.de.la.zona  " )
-TPSE293 = graficarTable(dataE293,"Respuesta","Numero de personas", "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: ...La.institución.educativa.de.la.zona  ")
+dataC293 <- data.frame(n,RESPUESTA,   total)
+GPSE293 = graficarPlot(dataC293,"Respuesta", "Numero de personas", "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: ...La.institución.educativa.de.la.zona  " )
+TPSE293 = graficarTable(dataC293,"Respuesta","Numero de personas", "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: ...La.institución.educativa.de.la.zona  ")
 
 
 
@@ -867,9 +817,9 @@ E = as.integer((E/N)*100)
 n = c(A, B, C, D,  E)
 
 RESPUESTA = c("1" , "2" , "3" , "4" , "5" );
-dataE294 <- data.frame(n,RESPUESTA,   total)
-GPSE294 = graficarPlot(dataE294,"Respuesta", "Numero de personas", "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: Su.comisario.ejidal  " )
-TPSE294 = graficarTable(dataE294,"Respuesta","Numero de personas", "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: Su.comisario.ejidal  ")
+dataC294 <- data.frame(n,RESPUESTA,   total)
+GPSE294 = graficarPlot(dataC294,"Respuesta", "Numero de personas", "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: Su.comisario.ejidal  " )
+TPSE294 = graficarTable(dataC294,"Respuesta","Numero de personas", "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: Su.comisario.ejidal  ")
 
 
 
@@ -891,9 +841,9 @@ E = as.integer((E/N)*100)
 n = c(A, B, C, D,  E)
 
 RESPUESTA = c("1" , "2" , "3" , "4" , "5" );
-dataE295 <- data.frame(n,RESPUESTA,   total)
-GPSE295 = graficarPlot(dataE295,"Respuesta", "Numero de personas", "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: Su.presidente.municipal  " )
-TPSE295 = graficarTable(dataE295,"Respuesta","Numero de personas", "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: Su.presidente.municipal  ")
+dataC295 <- data.frame(n,RESPUESTA,   total)
+GPSE295 = graficarPlot(dataC295,"Respuesta", "Numero de personas", "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: Su.presidente.municipal  " )
+TPSE295 = graficarTable(dataC295,"Respuesta","Numero de personas", "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: Su.presidente.municipal  ")
 
 
 #------------------------------------------------------------------------------------
@@ -914,9 +864,9 @@ E = as.integer((E/N)*100)
 n = c(A, B, C, D,  E)
 
 RESPUESTA = c("1" , "2" , "3" , "4" , "5" );
-dataE296 <- data.frame(n,RESPUESTA,   total)
-GPSE296 = graficarPlot(dataE296,"Respuesta", "Numero de personas", "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: El.Gobernador  " )
-TPSE296 = graficarTable(dataE296,"Respuesta","Numero de personas", "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: El.Gobernador  ")
+dataC296 <- data.frame(n,RESPUESTA,   total)
+GPSE296 = graficarPlot(dataC296,"Respuesta", "Numero de personas", "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: El.Gobernador  " )
+TPSE296 = graficarTable(dataC296,"Respuesta","Numero de personas", "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: El.Gobernador  ")
 
 
 
@@ -938,9 +888,9 @@ E = as.integer((E/N)*100)
 n = c(A, B, C, D,  E)
 
 RESPUESTA = c("1" , "2" , "3" , "4" , "5" );
-dataE301 <- data.frame(n,RESPUESTA,   total)
-GPSE301 = graficarPlot(dataE301,"Respuesta", "Numero de personas", "30 Del 1 al 5, califique el trabajo de:  La.policia " )
-TPSE301 = graficarTable(dataE301,"Respuesta","Numero de personas", "30 Del 1 al 5, califique el trabajo de:  La.policia ")
+dataC301 <- data.frame(n,RESPUESTA,   total)
+GPSE301 = graficarPlot(dataC301,"Respuesta", "Numero de personas", "30 Del 1 al 5, califique el trabajo de:  La.policia " )
+TPSE301 = graficarTable(dataC301,"Respuesta","Numero de personas", "30 Del 1 al 5, califique el trabajo de:  La.policia ")
 
 
 #------------------------------------------------------------------------------------
@@ -960,9 +910,9 @@ E = as.integer((E/N)*100)
 n = c(A, B, C, D,  E)
 
 RESPUESTA = c("1" , "2" , "3" , "4" , "5" );
-dataE302 <- data.frame(n,RESPUESTA,   total)
-GPSE302 = graficarPlot(dataE302,"Respuesta", "Numero de personas", "30 Del 1 al 5, califique el trabajo de:  El.Ministerio.Público.para.denunciar" )
-TPSE302 = graficarTable(dataE302,"Respuesta","Numero de personas", "30 Del 1 al 5, califique el trabajo de:  El.Ministerio.Público.para.denunciar")
+dataC302 <- data.frame(n,RESPUESTA,   total)
+GPSE302 = graficarPlot(dataC302,"Respuesta", "Numero de personas", "30 Del 1 al 5, califique el trabajo de:  El.Ministerio.Público.para.denunciar" )
+TPSE302 = graficarTable(dataC302,"Respuesta","Numero de personas", "30 Del 1 al 5, califique el trabajo de:  El.Ministerio.Público.para.denunciar")
 
 
 #------------------------------------------------------------------------------------
@@ -982,9 +932,9 @@ E = as.integer((E/N)*100)
 n = c(A, B, C, D,  E)
 
 RESPUESTA = c("1" , "2" , "3" , "4" , "5" );
-dataE303 <- data.frame(n,RESPUESTA,   total)
-GPSE303 = graficarPlot(dataE303,"Respuesta", "Numero de personas", "30 Del 1 al 5, califique el trabajo de:   Los.empleados.de.gobierno" )
-TPSE303 = graficarTable(dataE303,"Respuesta","Numero de personas", "30 Del 1 al 5, califique el trabajo de:   Los.empleados.de.gobierno")
+dataC303 <- data.frame(n,RESPUESTA,   total)
+GPSE303 = graficarPlot(dataC303,"Respuesta", "Numero de personas", "30 Del 1 al 5, califique el trabajo de:   Los.empleados.de.gobierno" )
+TPSE303 = graficarTable(dataC303,"Respuesta","Numero de personas", "30 Del 1 al 5, califique el trabajo de:   Los.empleados.de.gobierno")
 
 
 #------------------------------------------------------------------------------------
@@ -1004,9 +954,9 @@ E = as.integer((E/N)*100)
 n = c(A, B, C, D,  E)
 
 RESPUESTA = c("1" , "2" , "3" , "4" , "5" );
-dataE304 <- data.frame(n,RESPUESTA,   total)
-GPSE304 = graficarPlot(dataE304,"Respuesta", "Numero de personas", "30 Del 1 al 5, califique el trabajo de:  Su.comisario.ejidal " )
-TPSE304 = graficarTable(dataE304,"Respuesta","Numero de personas", "30 Del 1 al 5, califique el trabajo de:  Su.comisario.ejidal ")
+dataC304 <- data.frame(n,RESPUESTA,   total)
+GPSE304 = graficarPlot(dataC304,"Respuesta", "Numero de personas", "30 Del 1 al 5, califique el trabajo de:  Su.comisario.ejidal " )
+TPSE304 = graficarTable(dataC304,"Respuesta","Numero de personas", "30 Del 1 al 5, califique el trabajo de:  Su.comisario.ejidal ")
 
 
 #------------------------------------------------------------------------------------
@@ -1026,9 +976,9 @@ E = as.integer((E/N)*100)
 n = c(A, B, C, D,  E)
 
 RESPUESTA = c("1" , "2" , "3" , "4" , "5" );
-dataE305 <- data.frame(n,RESPUESTA,   total)
-GPSE305 = graficarPlot(dataE305,"Respuesta", "Numero de personas", "30 Del 1 al 5, califique el trabajo de:  Su.presidente.municipal " )
-TPSE305 = graficarTable(dataE305,"Respuesta","Numero de personas", "30 Del 1 al 5, califique el trabajo de:  Su.presidente.municipal ")
+dataC305 <- data.frame(n,RESPUESTA,   total)
+GPSE305 = graficarPlot(dataC305,"Respuesta", "Numero de personas", "30 Del 1 al 5, califique el trabajo de:  Su.presidente.municipal " )
+TPSE305 = graficarTable(dataC305,"Respuesta","Numero de personas", "30 Del 1 al 5, califique el trabajo de:  Su.presidente.municipal ")
 
 
 #------------------------------------------------------------------------------------
@@ -1049,9 +999,9 @@ E = as.integer((E/N)*100)
 n = c(A, B, C, D,  E)
 
 RESPUESTA = c("1" , "2" , "3" , "4" , "5" );
-dataE306 <- data.frame(n,RESPUESTA,   total)
-GPSE306 = graficarPlot(dataE306,"Respuesta", "Numero de personas", "30 Del 1 al 5, califique el trabajo de:  El.Gobernador " )
-TPSE306 = graficarTable(dataE306,"Respuesta","Numero de personas", "30 Del 1 al 5, califique el trabajo de:  El.Gobernador ")
+dataC306 <- data.frame(n,RESPUESTA,   total)
+GPSE306 = graficarPlot(dataC306,"Respuesta", "Numero de personas", "30 Del 1 al 5, califique el trabajo de:  El.Gobernador " )
+TPSE306 = graficarTable(dataC306,"Respuesta","Numero de personas", "30 Del 1 al 5, califique el trabajo de:  El.Gobernador ")
 
 
 #------------------------------------------------------------------------------------
@@ -1071,9 +1021,9 @@ E = as.integer((E/N)*100)
 n = c(A, B, C, D,  E)
 
 RESPUESTA = c("1" , "2" , "3" , "4" , "5" );
-dataE311 <- data.frame(n,RESPUESTA,   total)
-GPSE311 = graficarPlot(dataE311,"Respuesta", "Numero de personas", "31 Del 1 al 5, califique el trato que recibe de: La.policia " )
-TPSE311 = graficarTable(dataE311,"Respuesta","Numero de personas", "31 Del 1 al 5, califique el trato que recibe de: La.policia ")
+dataC311 <- data.frame(n,RESPUESTA,   total)
+GPSE311 = graficarPlot(dataC311,"Respuesta", "Numero de personas", "31 Del 1 al 5, califique el trato que recibe de: La.policia " )
+TPSE311 = graficarTable(dataC311,"Respuesta","Numero de personas", "31 Del 1 al 5, califique el trato que recibe de: La.policia ")
 
 
 #------------------------------------------------------------------------------------
@@ -1093,9 +1043,9 @@ E = as.integer((E/N)*100)
 n = c(A, B, C, D,  E)
 
 RESPUESTA = c("1" , "2" , "3" , "4" , "5" );
-dataE312 <- data.frame(n,RESPUESTA,   total)
-GPSE312 = graficarPlot(dataE312,"Respuesta", "Numero de personas", "31 Del 1 al 5, califique el trato que recibe de: El.Ministerio.Público.para.denunciar " )
-TPSE312 = graficarTable(dataE312,"Respuesta","Numero de personas", "31 Del 1 al 5, califique el trato que recibe de: El.Ministerio.Público.para.denunciar ")
+dataC312 <- data.frame(n,RESPUESTA,   total)
+GPSE312 = graficarPlot(dataC312,"Respuesta", "Numero de personas", "31 Del 1 al 5, califique el trato que recibe de: El.Ministerio.Público.para.denunciar " )
+TPSE312 = graficarTable(dataC312,"Respuesta","Numero de personas", "31 Del 1 al 5, califique el trato que recibe de: El.Ministerio.Público.para.denunciar ")
 #-----------------------------2------------------------------------------------------
 # 31 Del 1 al 5, califique el trato que recibe de: 
 A = sum(Ejido$Del.1.al.5..califique.el.trabajo.de..Los.empleados.de.gobierno == 1)
@@ -1113,9 +1063,9 @@ E = as.integer((E/N)*100)
 n = c(A, B, C, D,  E)
 
 RESPUESTA = c("1" , "2" , "3" , "4" , "5" );
-dataE313 <- data.frame(n,RESPUESTA,   total)
-GPSE313 = graficarPlot(dataE313,"Respuesta", "Numero de personas", "31 Del 1 al 5, califique el trato que recibe de: Los.empleados.de.gobierno " )
-TPSE313 = graficarTable(dataE313,"Respuesta","Numero de personas", "31 Del 1 al 5, califique el trato que recibe de: Los.empleados.de.gobierno ")
+dataC313 <- data.frame(n,RESPUESTA,   total)
+GPSE313 = graficarPlot(dataC313,"Respuesta", "Numero de personas", "31 Del 1 al 5, califique el trato que recibe de: Los.empleados.de.gobierno " )
+TPSE313 = graficarTable(dataC313,"Respuesta","Numero de personas", "31 Del 1 al 5, califique el trato que recibe de: Los.empleados.de.gobierno ")
 
 #------------------------------------------------------------------------------------
 # 31 Del 1 al 5, califique el trato que recibe de: 
@@ -1134,9 +1084,9 @@ E = as.integer((E/N)*100)
 n = c(A, B, C, D,  E)
 
 RESPUESTA = c("1" , "2" , "3" , "4" , "5" );
-dataE314 <- data.frame(n,RESPUESTA,   total)
-GPSE314 = graficarPlot(dataE314,"Respuesta", "Numero de personas", "31 Del 1 al 5, califique el trato que recibe de: Su.comisario.ejidal " )
-TPSE314 = graficarTable(dataE314,"Respuesta","Numero de personas", "31 Del 1 al 5, califique el trato que recibe de: Su.comisario.ejidal ")
+dataC314 <- data.frame(n,RESPUESTA,   total)
+GPSE314 = graficarPlot(dataC314,"Respuesta", "Numero de personas", "31 Del 1 al 5, califique el trato que recibe de: Su.comisario.ejidal " )
+TPSE314 = graficarTable(dataC314,"Respuesta","Numero de personas", "31 Del 1 al 5, califique el trato que recibe de: Su.comisario.ejidal ")
 #------------------------------------------------------------------------------------
 # 31 Del 1 al 5, califique el trato que recibe de: 
 A = sum(Ejido$Del.1.al.5..califique.el.trabajo.de..Su.presidente.municipal == 1)
@@ -1154,9 +1104,9 @@ E = as.integer((E/N)*100)
 n = c(A, B, C, D,  E)
 
 RESPUESTA = c("1" , "2" , "3" , "4" , "5" );
-dataE315 <- data.frame(n,RESPUESTA,   total)
-GPSE315 = graficarPlot(dataE315,"Respuesta", "Numero de personas", "31 Del 1 al 5, califique el trato que recibe de: Su.presidente.municipal " )
-TPSE315 = graficarTable(dataE315,"Respuesta","Numero de personas", "31 Del 1 al 5, califique el trato que recibe de: Su.presidente.municipal ")
+dataC315 <- data.frame(n,RESPUESTA,   total)
+GPSE315 = graficarPlot(dataC315,"Respuesta", "Numero de personas", "31 Del 1 al 5, califique el trato que recibe de: Su.presidente.municipal " )
+TPSE315 = graficarTable(dataC315,"Respuesta","Numero de personas", "31 Del 1 al 5, califique el trato que recibe de: Su.presidente.municipal ")
 
 #------------------------------------------------------------------------------------
 # 31 Del 1 al 5, califique el trato que recibe de: 
@@ -1175,9 +1125,9 @@ E = as.integer((E/N)*100)
 n = c(A, B, C, D,  E)
 
 RESPUESTA = c("1" , "2" , "3" , "4" , "5" );
-dataE316 <- data.frame(n,RESPUESTA,   total)
-GPSE316 = graficarPlot(dataE316,"Respuesta", "Numero de personas", "31 Del 1 al 5, califique el trato que recibe de: El.Gobernador " )
-TPSE316 = graficarTable(dataE316,"Respuesta","Numero de personas", "31 Del 1 al 5, califique el trato que recibe de: El.Gobernador ")
+dataC316 <- data.frame(n,RESPUESTA,   total)
+GPSE316 = graficarPlot(dataC316,"Respuesta", "Numero de personas", "31 Del 1 al 5, califique el trato que recibe de: El.Gobernador " )
+TPSE316 = graficarTable(dataC316,"Respuesta","Numero de personas", "31 Del 1 al 5, califique el trato que recibe de: El.Gobernador ")
 
 
 

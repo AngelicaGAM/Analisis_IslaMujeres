@@ -40,12 +40,16 @@ sidebar <- dashboardSidebar(
   sidebarMenu(id="tabs",
               menuItem(text = "Inicio",  tabName = "inicio", icon = icon("home")),
               menuItem(text = "Graficas", tabName = "graficas", icon = icon("chart-bar")), 
-              menuItem(text = "Mosaicos",  tabName = "mosaics", icon = icon("th")),
+              menuItem(text = "Mosaicos",  tabName = "mosaics", icon = icon("chart-bar")),
               conditionalPanel(
                 condition = "input.tabs == 'mosaics'",
-                selectInput("var1","Primera variable de cruce",varsx,selected = "Origen"),
-                selectInput("var2","Segunda variable de cruce",varsy,selected = "Puesto"), 
-                selectInput("var3","Tercera variable de cruce",varsz)
+                selectInput("estudio","Estudio:",choices=c("Población y migración", "Percepción de seguridad", "Salinas")),
+                #conditionalPanel(
+                #contidion = "input.estudio == 'Población y migración'",
+                #selectInput("var1","Primera variable de cruce",varsx,selected = "Origen"),
+                #selectInput("var2","Segunda variable de cruce",varsy,selected = "Puesto"), 
+                #selectInput("var3","Tercera variable de cruce",varsz)
+                #),
               ),
               menuItem(text = "Mapas",  tabName = "mapas", icon = icon("map-marker-alt")),
               menuItem(text = "Asociación",  tabName = "asociation", icon = icon("diagnoses")),
@@ -174,10 +178,31 @@ body <- dashboardBody(
     # MOSAICOS
     tabItem(tabName = "mosaics",
             column(12, wellPanel(
-              h2("Características sobre población y migración"),
-              h3("Zona Urbana Isla Mujeres"),
+              h1(textOutput("Titulo")),
+              h2(textOutput("tipoestudio"), align = "center"),
+              h3(textOutput("loc"), align = "left"),
             )), 
-            plotOutput("mosaico1", height = 700, width = "100%"),
+            column(4, wellPanel(
+              selectInput('var1', label = h3('Primera variable de cruce:'), choices= varsx) 
+            )), 
+            column(4, wellPanel(
+              selectInput('var2', label = h3('Segunda variable de cruce:'),choices = varsy)
+            )),
+            column(4, wellPanel(
+              selectInput('var3', label = h3('Tercera variable de cruce:'), choices = varsz) 
+            )), 
+            withSpinner(plotOutput("mosaico1", height = 700, width = "100%")),
+            br(),
+            br(),
+            br(),
+            br(),
+            br(),
+            br(),
+            br(),
+            br(),
+            br(),
+            br(),
+            br(),
             br(),
             br(),
             br(),
@@ -187,6 +212,7 @@ body <- dashboardBody(
             br(),
             htmlOutput("Expl1"),tags$head(tags$style("#Expl1{font-size: 20px;font-style: italic;}")),
             htmlOutput("Expl2"),tags$head(tags$style("#Expl2{font-size: 20px;font-style: italic;}")),
+            htmlOutput("Expl3"),tags$head(tags$style("#Expl3{font-size: 20px;font-style: italic;}")),
     ),
     
     

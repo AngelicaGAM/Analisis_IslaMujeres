@@ -6,9 +6,12 @@ server <- function(input, output, session) {
   source("librerias.R")
   source("Funciones.R")
   source("graficas.R")
-  source("graficarSE.r")
-  source("G.r")
-  #source("PSCUN.R")
+  source("graficarSE.R")
+  source("G.R")
+   source("PSCUN.r")
+   source("PSEjido.r")
+   source("PSIsla.r")
+   source("vsps.r")
   source("tablas.R")
   xdf  <- read.csv("x.csv", header = TRUE, sep= ",",strip.white = TRUE,na.strings = "EMPTY", encoding = "UTF-8")
   
@@ -271,13 +274,7 @@ server <- function(input, output, session) {
              else if(input$pregunta=="GPSE314"){TPSE314}
              else if(input$pregunta=="GPSE315"){TPSE315}
              else if(input$pregunta=="GPSE316"){TPSE316}
-           
-
-                            
-
-            else {GPSI1}
-
-
+        
     
   })
   
@@ -510,10 +507,33 @@ server <- function(input, output, session) {
 
                             
 
-            else {GPSI1}
 
 
 
+             else if(input$pregunta=="GPSVS25"){GPSVS25}
+             else if(input$pregunta=="GPSVS26"){GPSVS26}
+             else if(input$pregunta=="GPSVS27"){GPSVS27}
+             else if(input$pregunta=="GPSVS28"){GPSVS28}
+             else if(input$pregunta=="GPSVS291"){GPSVS291}
+             else if(input$pregunta=="GPSVS292"){GPSVS292}
+             else if(input$pregunta=="GPSVS293"){GPSVS293}
+             else if(input$pregunta=="GPSVS294"){GPSVS294}
+             else if(input$pregunta=="GPSVS295"){GPSVS295}
+             else if(input$pregunta=="GPSVS296"){GPSVS296}
+             else if(input$pregunta=="GPSVS301"){GPSVS301}
+             else if(input$pregunta=="GPSVS302"){GPSVS302}
+             else if(input$pregunta=="GPSVS303"){GPSVS303}
+             else if(input$pregunta=="GPSVS304"){GPSVS304}
+             else if(input$pregunta=="GPSVS305"){GPSVS305}
+             else if(input$pregunta=="GPSVS306"){GPSVS306}
+             else if(input$pregunta=="GPSVS311"){GPSVS311}
+             else if(input$pregunta=="GPSVS312"){GPSVS312}
+             else if(input$pregunta=="GPSVS313"){GPSVS313}
+             else if(input$pregunta=="GPSVS314"){GPSVS314}
+             else if(input$pregunta=="GPSVS315"){GPSVS315}
+             else if(input$pregunta=="GPSVS316"){GPSVS316}
+         
+                       
     
   })
   

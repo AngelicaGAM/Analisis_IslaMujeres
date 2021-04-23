@@ -278,9 +278,59 @@ server <- function(input, output, session) {
              else if(input$pregunta=="GPSE314"){TPSE314}
              else if(input$pregunta=="GPSE315"){TPSE315}
              else if(input$pregunta=="GPSE316"){TPSE316}
-              else {
-               GPSVS316
-             }
+            
+
+                #percepcion de seguridad 
+             else if(input$pregunta=="GPSVS1"){TPSVS1}
+             else if(input$pregunta=="GPSVS2"){TPSVS2}
+             else if(input$pregunta=="GPSVS3"){TPSVS3}
+             else if(input$pregunta=="GPSVS4"){TPSVS4}
+             else if(input$pregunta=="GPSVS5"){TPSVS5}
+             else if(input$pregunta=="GPSVS6"){TPSVS6}
+             else if(input$pregunta=="GPSVS7"){TPSVS7}
+             else if(input$pregunta=="GPSVS81"){TPSVS81}
+             else if(input$pregunta=="GPSVS82"){TPSVS82}
+             else if(input$pregunta=="GPSVS83"){TPSVS83}
+             else if(input$pregunta=="GPSVS84"){TPSVS84}
+             else if(input$pregunta=="GPSVS9"){TPSVS9}
+             else if(input$pregunta=="GPSVS10"){TPSVS10}
+             else if(input$pregunta=="GPSVS11"){TPSVS11}
+             else if(input$pregunta=="GPSVS12"){TPSVS12}
+             else if(input$pregunta=="GPSVS13"){TPSVS13}
+             else if(input$pregunta=="GPSVS14"){TPSVS14}
+             else if(input$pregunta=="GPSVS15"){TPSVS15}
+             else if(input$pregunta=="GPSVS16"){TPSVS16}
+             else if(input$pregunta=="GPSVS17"){TPSVS17}
+             else if(input$pregunta=="GPSVS18"){TPSVS18}
+             else if(input$pregunta=="GPSVS19"){TPSVS19}
+             else if(input$pregunta=="GPSVS20"){TPSVS20}
+             else if(input$pregunta=="GPSVS21"){TPSVS21}
+             else if(input$pregunta=="GPSVS22"){TPSVS22}
+             else if(input$pregunta=="GPSVS23"){TPSVS23}
+
+             else if(input$pregunta=="GPSVS25"){TPSVS25}
+             else if(input$pregunta=="GPSVS26"){TPSVS26}
+             else if(input$pregunta=="GPSVS27"){TPSVS27}
+             else if(input$pregunta=="GPSVS28"){TPSVS28}
+             else if(input$pregunta=="GPSVS291"){TPSVS291}
+             else if(input$pregunta=="GPSVS292"){TPSVS292}
+             else if(input$pregunta=="GPSVS293"){TPSVS293}
+             else if(input$pregunta=="GPSVS294"){TPSVS294}
+             else if(input$pregunta=="GPSVS295"){TPSVS295}
+             else if(input$pregunta=="GPSVS296"){TPSVS296}
+             else if(input$pregunta=="GPSVS301"){TPSVS301}
+             else if(input$pregunta=="GPSVS302"){TPSVS302}
+             else if(input$pregunta=="GPSVS303"){TPSVS303}
+             else if(input$pregunta=="GPSVS304"){TPSVS304}
+             else if(input$pregunta=="GPSVS305"){TPSVS305}
+             else if(input$pregunta=="GPSVS306"){TPSVS306}
+             else if(input$pregunta=="GPSVS311"){TPSVS311}
+             else if(input$pregunta=="GPSVS312"){TPSVS312}
+             else if(input$pregunta=="GPSVS313"){TPSVS313}
+             else if(input$pregunta=="GPSVS314"){TPSVS314}
+             else if(input$pregunta=="GPSVS315"){TPSVS315}
+             else if(input$pregunta=="GPSVS316"){TPSVS316}
+
  
     
   })
@@ -566,11 +616,7 @@ server <- function(input, output, session) {
              else if(input$pregunta=="GPSVS313"){GPSVS313}
              else if(input$pregunta=="GPSVS314"){GPSVS314}
              else if(input$pregunta=="GPSVS315"){GPSVS315}
-             else if(input$pregunta=="GPSVS316"){GPSVS316}
-             else {
-               GPSVS316
-             }
-                       
+             else if(input$pregunta=="GPSVS316"){GPSVS316} 
     
   })
   
@@ -689,8 +735,8 @@ server <- function(input, output, session) {
                             "1. En esta calle o zona, Usted participa: - IM " = "GPSI1", 
                             "2. Usted conoce a sus vecinos: - IM " = "GPSI2" ,
                             "3. Participa con la autoridad para mejorar la seguridad: - IM " = "GPSI3" ,
-                            "4. Día en que podría participar en actividades con la autoridad*" =  "GPSI4",
-                            "5. Horarios en los que podría participar en actividades con la autoridad " = "GPSI5",
+                            "4. Día en que podría participar en actividades con la autoridad  - IM " =  "GPSI4",
+                            "5. Horarios en los que podría participar en actividades con la autoridad  - IM " = "GPSI5",
                             "6. Cuando hay un delito, en esta calle o zona los vecinos: - IM " = "GPSI6", 
                             "7. Durante el último año, en esta calle o zona ha habido: - IM " = "GPSI7" ,
                             "8. Valore el riesgo de sufrir un delito en alguno de los siguientes lugares: Casa - IM " = "GPSI81",
@@ -742,10 +788,10 @@ server <- function(input, output, session) {
                   updateSelectInput(session, "pregunta",  
                       choices = c(
                                   "1. En esta calle o zona, Usted participa: - EJ " = "GPSE1", 
-                                  "2. Usted conoce a sus vecinos: - IM " = "GPSE2" ,
-                                  "3. Participa con la autoridad para mejorar la seguridad: - IM " = "GPSE3" ,
-                                  "4. Día en que podría participar en actividades con la autoridad*" =  "GPSE4",
-                                  "5. Horarios en los que podría participar en actividades con la autoridad " = "GPSE5",
+                                  "2. Usted conoce a sus vecinos:  - EJ " = "GPSE2" ,
+                                  "3. Participa con la autoridad para mejorar la seguridad:  - EJ " = "GPSE3" ,
+                                  "4. Día en que podría participar en actividades con la autoridad  - EJ" =  "GPSE4",
+                                  "5. Horarios en los que podría participar en actividades con la autoridad  - EJ" = "GPSE5",
                                   "6. Cuando hay un delito, en esta calle o zona los vecinos: - EJ " = "GPSE6", 
                                   "7. Durante el último año, en esta calle o zona ha habido: - EJ " = "GPSE7" ,
                                   "8. Valore el riesgo de sufrir un delito en alguno de los siguientes lugares: Casa - EJ " = "GPSE81",
@@ -797,10 +843,10 @@ server <- function(input, output, session) {
              updateSelectInput(session, "pregunta",  
                       choices = c(
                               "1. En esta calle o zona, Usted participa: - CUN" = "GPSC1", 
-                              "2. Usted conoce a sus vecinos: - IM " = "GPSC2" ,
-                              "3. Participa con la autoridad para mejorar la seguridad: - IM " = "GPSC3" ,
-                              "4. Día en que podría participar en actividades con la autoridad*" =  "GPSC4",
-                              "5. Horarios en los que podría participar en actividades con la autoridad " = "GPSC5",
+                              "2. Usted conoce a sus vecinos: - CUN " = "GPSC2" ,
+                              "3. Participa con la autoridad para mejorar la seguridad: - CUN " = "GPSC3" ,
+                              "4. Día en que podría participar en actividades con la autoridad - CUN" =  "GPSC4",
+                              "5. Horarios en los que podría participar en actividades con la autoridad - CUN" = "GPSC5",
                               "6. Cuando hay un delito, en esta calle o zona los vecinos: - CUN" = "GPSC6", 
                               "7. Durante el último año, en esta calle o zona ha habido: - CUN" = "GPSC7" ,
                               "8. Valore el riesgo de sufrir un delito en alguno de los siguientes lugares: Casa - CUN" = "GPSC81",
@@ -851,10 +897,10 @@ server <- function(input, output, session) {
                   updateSelectInput(session, "pregunta",  
                       choices = c(
                                   "1. En esta calle o zona, Usted participa: - VS " = "GPSVS1", 
-                                  "2. Usted conoce a sus vecinos: - IM " = "GPSVS2" ,
-                                  "3. Participa con la autoridad para mejorar la seguridad: - IM " = "GPSVS3" ,
-                                  "4. Día en que podría participar en actividades con la autoridad*" =  "GPSVS4",
-                                  "5. Horarios en los que podría participar en actividades con la autoridad " = "GPSVS5",
+                                  "2. Usted conoce a sus vecinos: - VS " = "GPSVS2" ,
+                                  "3. Participa con la autoridad para mejorar la seguridad: - VS " = "GPSVS3" ,
+                                  "4. Día en que podría participar en actividades con la autoridad  - VS " =  "GPSVS4",
+                                  "5. Horarios en los que podría participar en actividades con la autoridad  - VS " = "GPSVS5",
                                   "6. Cuando hay un delito, en esta calle o zona los vecinos: - VS " = "GPSVS6", 
                                   "7. Durante el último año, en esta calle o zona ha habido: - VS " = "GPSVS7" ,
                                   "8. Valore el riesgo de sufrir un delito en alguno de los siguientes lugares: Casa - VS " = "GPSVS81",

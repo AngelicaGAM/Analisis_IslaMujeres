@@ -135,19 +135,19 @@ graficarPlot <- function(dff,  textX, textY, tituloGrifco){
 }
 
 graficarPlotGroup <- function(data1,   textX, textY, tituloGrifco){
-fig <- plot_ly(data1, x = ~RESP, y = ~Isl, type = 'bar', name = 'Isla')
-fig <- fig %>% add_trace(y = ~Can, name = 'Cancun')
-fig <- fig %>% add_trace(y = ~Eji, name = 'Ejido')
+fig <- plot_ly(data1, x = ~RESP, y = ~Isl, type = 'bar', color = '#66C2A5',  name = 'Isla')
+fig <- fig %>% add_trace(y = ~Can,  color = '#FC8D62', name = 'Cancun')
+fig <- fig %>% add_trace(y = ~Eji, color = '#8DA0CB',  name = 'Ejido')
 fig <- fig  %>%
    layout(title = tituloGrifco, 
           xaxis = list(title = textX),
           yaxis = list(title = textY),barmode = 'group')
-fig
+fig 
 
 
 }
 
-        
+      
 
 
 graficarTable <- function(dff,  textX, textY, tituloGrifco){
@@ -182,7 +182,7 @@ fig
 }
 
 
-graficarTableGroup <- function(dataFI,dataFC, dataE,  textX, textY, tituloGrifco){
+graficarTableGroup <- function(A1,  textX, textY, tituloGrifco){
   m <- list(
     l = 50,
     r = 50,
@@ -190,10 +190,8 @@ graficarTableGroup <- function(dataFI,dataFC, dataE,  textX, textY, tituloGrifco
     t = 50,
     pad = 0
   )
-  
-  data = merge(dataFI, dataFC , all = TRUE)
-  data1 = merge(dataFE, data ,  all = TRUE)
-  dataT = arrange(data1, RESPUESTA)
+
+
  # dataT = order(data1$loc)
   fig <- plot_ly(
     type = 'table',

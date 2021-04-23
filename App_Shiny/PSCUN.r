@@ -41,7 +41,7 @@ TPSC1 = graficarTable(dataC1,"Respuesta","Numero de personas", "1. En esta calle
  RESPUESTA = c("Conoce a sus vecinos", "Confiaría a los niños", "Confiaría su casa")
  dataC2 <- data.frame(n,RESPUESTA,   total)
   GPSC2 = graficarPlot(dataC2,"Respuesta", "Numero de personas", "2. Usted conoce a sus vecinos:" )
-  GPSC2 = graficarPlot(dataC2,"Respuesta", "Numero de personas", "2. Usted conoce a sus vecinos:" )
+  TPSC2 = graficarTable(dataC2,"Respuesta", "Numero de personas", "2. Usted conoce a sus vecinos:" )
 #------------------------------------------------------------------------------------
 #3
     A = sum(Cancun$Usted.conoce.a.sus.vecinos..Participa.con.ellos.para.mejorar.la.seguridad == 'SI')

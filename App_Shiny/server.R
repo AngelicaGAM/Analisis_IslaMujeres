@@ -8,10 +8,10 @@ server <- function(input, output, session) {
   source("graficas.R")
   source("graficarSE.R")
   source("G.R")
-  source("PSCUN.r")
-  source("PSEjido.r")
-  source("PSIsla.r")
-  source("vsps.r")
+   source("PSCUN.r")
+   source("PSEjido.r")
+   source("PSIsla.r")
+   source("vsps.r")
   source("tablas.R")
   xdf  <- read.csv("x.csv", header = TRUE, sep= ",",strip.white = TRUE,na.strings = "EMPTY", encoding = "UTF-8")
   
@@ -278,6 +278,9 @@ server <- function(input, output, session) {
              else if(input$pregunta=="GPSE314"){TPSE314}
              else if(input$pregunta=="GPSE315"){TPSE315}
              else if(input$pregunta=="GPSE316"){TPSE316}
+              else {
+               GPSVS316
+             }
  
     
   })
@@ -564,6 +567,9 @@ server <- function(input, output, session) {
              else if(input$pregunta=="GPSVS314"){GPSVS314}
              else if(input$pregunta=="GPSVS315"){GPSVS315}
              else if(input$pregunta=="GPSVS316"){GPSVS316}
+             else {
+               GPSVS316
+             }
                        
     
   })

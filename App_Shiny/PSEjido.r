@@ -39,7 +39,7 @@ n = c(A, B, C)
 RESPUESTA = c("Conoce a sus vecinos", "Confiaría a los niños", "Confiaría su casa")
 dataE2 <- data.frame(n,RESPUESTA,   total)
 GPSE2 = graficarPlot(dataE2,"Respuesta", "Numero de personas", "2. Usted conoce a sus vecinos:" )
-TPSE2 = graficarPlot(dataE2,"Respuesta", "Numero de personas", "2. Usted conoce a sus vecinos:" )
+TPSE2 = graficarTable(dataE2,"Respuesta", "Numero de personas", "2. Usted conoce a sus vecinos:" )
 #------------------------------------------------------------------------------------
 #3
 A = sum(Ejido$Usted.conoce.a.sus.vecinos..Participa.con.ellos.para.mejorar.la.seguridad == 'SI')

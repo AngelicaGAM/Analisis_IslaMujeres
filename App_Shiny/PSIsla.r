@@ -39,7 +39,7 @@ n = c(A, B, C)
 RESPUESTA = c("Conoce a sus vecinos", "Confiaría a los niños", "Confiaría su casa")
 dataI2 <- data.frame(n,RESPUESTA,   total)
 GPSI2 = graficarPlot(dataI2,"Respuesta", "Numero de personas", "2. Usted conoce a sus vecinos:" )
-GPSI2 = graficarPlot(dataI2,"Respuesta", "Numero de personas", "2. Usted conoce a sus vecinos:" )
+TPSI2 = graficarTable(dataI2,"Respuesta", "Numero de personas", "2. Usted conoce a sus vecinos:" )
 #------------------------------------------------------------------------------------
 #3
 A = sum(Isla$Usted.conoce.a.sus.vecinos..Participa.con.ellos.para.mejorar.la.seguridad == 'SI')

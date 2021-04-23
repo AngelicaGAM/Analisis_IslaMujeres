@@ -24,7 +24,7 @@ server <- function(input, output, session) {
   observeEvent(input$popPyM, {
     showModal(modalDialog(
       title = HTML("Población y migración<br>",
-                   "I.	DATOS FAMILIARES <br><br>1. ¿Cuántas personas viven en esta casa?<br>Adultos (¿Cuantas personas viven en esta casa? Adultos) <br>Niños (¿Cuantas personas viven en esta casa? Niños)<br><br>  1. A qué niveles de escolaridad asisten los integrantes de esta familia, puede marcar más de una opción<br><br>Jardín de niños (A qué nivel de escolaridad asisten los integrantes de esta familia Jardin de niños)<br>Primaria (A qué nivel de escolaridad asisten los integrantes de esta familia Primaria)<br>Secundaria (A qué nivel de escolaridad asisten los integrantes de esta familia Secundaria)<br>Bachillerato (A qué nivel de escolaridad asisten los integrantes de esta familia Bachillerato)<br>Licenciatura (A qué nivel de escolaridad asisten los integrantes de esta familia Licenciatura)<br>Posgrado (A qué nivel de escolaridad asisten los integrantes de esta familia Posgrado)<br>2.¿Qué medio de transporte utiliza para ir a la escuela, al trabajo, etc? <br><br>Autobús (¿Qué medios de transporte utilizan para ir a la escuela, al trabajo, etc? Transportes Posibles)<br>Combi, colectivo<br>Taxi<br> Mototaxi<br>Motocicleta<br> Automóvil propio<br>Otro3. ¿Dónde adquiere sus víveres?<br><br>Mercado de la colonia (¿Dónde compra sus víveres? Posibles)<br>Tienda de abarrotes, carnicerías<br>súper mercado<br>Tienda de conveniencia (Oxxo,7eleven, …)<br>Plaza comercial<br> Otro (¿Dónde compra sus víveres? Otro)   4.¿A dónde acude en caso de urgencia médica? (¿A dónde acude en caso de urgencia médica? Posibles) <br><br>Me atiendo en casa<br>Médico particular en la comunidad<br>Médico particular Cancún<br>Hospital General Cancún<br>Cruza roja<br>Otro (¿A dónde acude en caso de urgencia médica? Otro)<br>5. ¿Con qué áreas de recreo cuenta su colonia? <br><br>Parque (¿Con qué áreas de recreo cuenta su colonia? Posibles)<br>Unidad deportiva<br>Jardines<br>Casa de la cultura<br>Biblioteca<br>Otro<br>II.	IDENTIDAD Y COMUNIDAD<br><br>6.¿Cuál es su lugar de origen?  (¿Cuál es su lugar de origen? Estados del país, ¿Cuál es su lugar de origen? Especifique)<br><br>1 Tabasco<br>2 Chiapas<br>3 Yucatán<br>4 Quintana Roo<br>5 Veracruz<br>6 CDMX<br>7 Otro______________<br><br>7.¿Cuánto tiempo lleva viviendo en este lugar?  (¿Cuánto tiempo lleva viviendo en este lugar? Opciones)<br>1 Recién llegué<br>2 Un año<br>3 Dos años<br>4 Más de dos años<br>5 Toda mi vida<br>8.Razones por las que llegó a vivir a la localidad)<br><br>1 parientes (¿Qué lo motivó a venir a vivir esta la localidad Tengo Parientes,)<br>2 amigos  (¿Qué lo motivó a venir a vivir esta la localidad Tengo amigos)<br>3 trabajo (¿Qué lo motivó a venir a vivir esta la localidad Por trabajo)<br>4 negocio  (¿Qué lo motivó a venir a vivir esta la localidad Por poner negocio,)<br>5 vivir mejor (¿Qué lo motivó a venir a vivir esta la localidad Por oportunidad de vivir mejor)<br>5 otro Especifique (¿Qué lo motivó a venir a vivir esta la localidad Otro)<br>9.En caso de requerir ayuda, apoyo legal, económico o familiar ante algún problema acudo a: <br><br>1 Grupo de vecinos (En caso de requerir ayuda, apoyo legal, económico o familiar ante algún, problema acudo a Grupo de vecinos)<br>2 Familiares  (En caso de requerir ayuda, apoyo legal, económico o familiar ante algún, problema acudo a Familiares)<br>3 A la autoridad (En caso de requerir ayuda, apoyo legal, económico o familiar ante algún, problema acudo a A la autoridad)<br>      4 La iglesia o templo (En caso de requerir ayuda, apoyo legal, económico o familiar ante algún, problema acudo a La iglesia o templo)<br>5 otro Especifique (En caso de requerir ayuda, apoyo legal, económico o familiar ante algún, problema acudo a Otro)<br>10.¿Qué religión practica? (¿Qué religión practica? Opciones)<br><br>1 Ninguna<br>2 Católica<br>3 Evangélica<br>4 Testigos de Jehová<br>5 Adventista<br>6 Mormón<br>7 Otra (¿Qué religión practica? Otro)<br>11.¿Cuáles son sus principales costumbres o tradiciones? (¿Cuáles son sus principales costumbres o tradiciones? Opciones)<br><br>1 Fiestas en honor a la Virgen de Fátima<br>2 Fiestas patronales<br>3 Festival de la cultura del Caribe<br>4 Carnaval <br>5 Fin de año<br>6 Día de muertos<br>7 Otro (¿Cuáles son sus principales costumbres o tradiciones? Otro<br>12.¿Cuáles son las ventajas de vivir en esta comunidad?<br><br>1 Tengo casa (¿Cuáles son las ventajas de vivir en esta comunidad? Tengo casa)<br>2 Trabajo (¿Cuáles son las ventajas de vivir en esta comunidad? Tengo trabajo)<br>3 Familia (¿Cuáles son las ventajas de vivir en esta comunidad? Tengo familia)<br>4 Tengo más tiempo (¿Cuáles son las ventajas de viv en esta comunidad? Tengo mas tiempo)<br>5 Es tranquilo (¿Cuáles son las ventajas de vivir ir  en esta comunidad? Es tranquilo)<br>6 Es seguro (¿Cuáles son las ventajas de vivir en esta comunidad? Es seguro)<br>7 Otro (¿Cuáles son las ventajas de vivir en esta comunidad? Otro)<br>13. Piensa irse a vivir a otra localidad (Piensa irse a vivir a otra localidad Opciones)<br><br>1 No <br>2 Quizás <br>3 Sí, en el mismo estado <br>4 Sí, me regreso a mi lugar de origen <br>5 Sí, al extranjero<br>14.¿Con qué municipio de identifica más? (¿Usted a qué municipio siente que pertenece? Opciones)<br><br>1 Benito Juárez<br>2 Isla Mujeres<br><br>3 Ninguno<br>15.¿Qué tan frecuente va a la isla, la cabecera municipal de Isla Mujeres? (¿Qué tan frecuente va a la Isla, la cabecera municipal de Isla Mujeres? Opciones)<br><br>1 Nunca <br>2 A veces [varias veces al año] <br>3 Frecuentemente [al menos una vez al mes]<br>4 casi Siempre [más de una vez al mes]<br>5 Siempre [una vez por semana]<br><br>16.¿Cuales son los motivos por los que viaja a isla? <br><br>1 Asuntos administrativos (¿Cuales son los motivos por los que viaja a isla? Asuntos administrativos)<br>2 Pagos de servicios (¿Cuales son los motivos por los que viaja a isla? Pagos de servicios)<br>3 Trabajo (¿Cuales son los motivos por los que viaja a isla? Trabajo)<br> 4 Recreación (¿Cuales son los motivos por los que viaja a isla? Recreación)<br> 5 Visita de la familia (¿Cuales son los motivos por los que viaja a isla? Visita de la familia)<br>6 Otros (¿Cuales son los motivos por los que viaja a isla? Otro)<br>IV.	VIVIENDA<br><br>La vivienda que habita tu familia es (La vivienda que habita tu familia es Opciones)<br>1 Propia.   <br>2 Prestada por (La vivienda que habita tu familia es Prestado por)<br>3 Rentada y se  paga mensual (La vivienda que habita tu familia es Renta mensual)<br> 4 Asentamiento irregular o informal <br>5 Otro (La vivienda que habita tu familia es Otro)<br>¿Ha recibido la visita del municipio para ofrecerle reubicarlo en otro lugar?  (¿Ha recibido la visita del municipio para ofrecerle reubicarlo en otro lugar? Si o no)<br>  •	Sólo si responde Asentamiento irregular o informal<br><br> ¿Le indicaron a qué sitio los reubicarían? (¿Le indicaron a qué sitio los reubicarían? Si o no)<br>•	Sólo si responde Asentamiento irregular o informal<br><br>En caso  de ser  propia, ¿De qué forma fue adquirida? (En caso de ser vivienda propia ¿De que forma fue adquirida? Opciones)<br>1 Herencia   <br>2 Pago de contado<br>3  Pagándola:    <br><br>Monto mensual (En caso de ser vivienda propia ¿De que forma fue adquirida? Monto mensual)<br>¿A quién? (En caso de ser vivienda propia ¿De que forma fue adquirida? A quien)<br>4  No es propia<br><br>¿Con qué servicios cuenta su vivienda? <br>1 televisión de paga (cable o satelital) <br>2 internet <br>3 servicio telefónico celular <br>4  energía eléctrica <br>5 agua <br><br>¿Con qué servicios cuenta su vivienda? (¿Con qué servicios cuenta su vivienda?)<br>1 televisión de paga (cable o satelital) <br>2 internet <br>3 servicio telefónico celular <br>4 energía eléctrica <br>5 agua <br><br>¿Cuántas inundaciones ha sufrido al vivir en esta localidad? (¿Cuántas inundaciones ha sufrido al vivir en esta localidad?)<br><br>¿En caso de haber sufrido una inundación qué hizo al respecto? (En caso de haber sufrido una inundación qué hizo al respecto Opciones) <br>•	Sólo si ha sufrido inundaciones<br>1 Dejé mi casa y fui al refugio<br>2 Dejé mi casa y fui a la casa de un familiar o amigo<br>3 Aquí nos quedamos<br>4 Vinieron las autoridades a desalojar pero decidimos quedarnos<br>5 Otro (En caso de haber sufrido una inundación qué hizo al respecto Otro)<br><br>A pesar de la inundación usted decidió quedarse a vivir aquí por (A pesar de la inundación usted decidió quedarse a vivir aquí por  Opciones)<br>•	Sólo si ha sufrido inundaciones<br>1 No tengo alternativa de vivienda    <br>2 Me agrada el lugar<br>3 Estoy esperando un crédito y mientras aquí me quedo<br>4 La ubicación del trabajo y escuela  nos queda más cerca<br>5 No dispongo de un trabajo que me permita acceder a un crédito para vivienda<br>6 Otro (A pesar de la inundación usted decidió quedarse a vivir aquí por  Opciones)<br><br>¿Sabe si su vivienda está en zona de riesgo? (¿Sabe si su vivienda está en zona de riesgo?)<br><br>¿Sabe si su vivienda está en zona de riesgo? ¿Cuales? (¿Sabe si su vivienda está en zona de riesgo? ¿Cuales?) <br><br>•	Sólo si responde sí a la pregunta: ¿Sabe si su vivienda está en zona de riesgo?<br>¿Conoce los impactos o afectaciones que puede sufrir? (¿Conoce los impactos o afectaciones que puede sufrir?) <br><br>¿Conoce los impactos o afectaciones que puede sufrir? (¿Conoce los impactos o afectaciones que puede sufrir? ¿Cuales?) <br><br>•	Sólo si responde Sí a la pregunta ¿Conoce los impactos o afectaciones que puede sufrir?<br>V.	APRECIACIONES DEL ENCUESTADOR<br><br>Favor de señalar los siguientes servicios observados alrededor de la vivienda <br><br>1 Áreas verdes (favor de señalar los siguientes servicios observados alrededor de la vivienda áreas verdes)<br>2 Calles pavimentadas (favor de señalar los siguientes servicios observados alrededor de la vivienda calles)<br>3 Banquetas (favor de señalar los siguientes servicios observados alrededor de la vivienda banquetas)<br>4 Luminarias públicas (favor de señalar los siguientes servicios observados alrededor de la vivienda luminarias)<br>5 Transporte público (favor de señalar los siguientes servicios observados alrededor de la vivienda transporte)<br>6 Patrullas vigilando (favor de señalar los siguientes servicios observados alrededor de la vivienda patrullas)<br>7 Lotes baldíos (favor de señalar los siguientes servicios observados alrededor de la vivienda lotes baldios)<br>¿Que percepción tuvo de la vivienda y la calle?<br><br>1 Seguridad  (¿Que percepción tuvo de la vivienda y la calle? Percepcion seguridad)<br>2 Comodidad (¿Que percepción tuvo de la vivienda y la calle? Percepcion comodidad)<br>3 Riesgo personal o natural (¿Que percepción tuvo de la vivienda y la calle? Percepcion riesgo personal o natural)  <br>"),
+                   "I.	DATOS FAMILIARES <br><br>1. ¿Cuántas personas viven en esta casa?<br>Adultos (¿Cuantas personas viven en esta casa? Adultos) <br>Niños (¿Cuantas personas viven en esta casa? Niños)<br><br>  1. A qué niveles de escolaridad asisten los integrantes de esta familia, puede marcar más de una opción<br><br>Jard??n de niños (A qué nivel de escolaridad asisten los integrantes de esta familia Jardin de niños)<br>Primaria (A qué nivel de escolaridad asisten los integrantes de esta familia Primaria)<br>Secundaria (A qué nivel de escolaridad asisten los integrantes de esta familia Secundaria)<br>Bachillerato (A qué nivel de escolaridad asisten los integrantes de esta familia Bachillerato)<br>Licenciatura (A qué nivel de escolaridad asisten los integrantes de esta familia Licenciatura)<br>Posgrado (A qué nivel de escolaridad asisten los integrantes de esta familia Posgrado)<br>2.¿Qué medio de transporte utiliza para ir a la escuela, al trabajo, etc? <br><br>Autobús (¿Qué medios de transporte utilizan para ir a la escuela, al trabajo, etc? Transportes Posibles)<br>Combi, colectivo<br>Taxi<br> Mototaxi<br>Motocicleta<br> Automóvil propio<br>Otro3. ¿Dónde adquiere sus v??veres?<br><br>Mercado de la colonia (¿Dónde compra sus v??veres? Posibles)<br>Tienda de abarrotes, carnicer??as<br>súper mercado<br>Tienda de conveniencia (Oxxo,7eleven, …)<br>Plaza comercial<br> Otro (¿Dónde compra sus v??veres? Otro)   4.¿A dónde acude en caso de urgencia médica? (¿A dónde acude en caso de urgencia médica? Posibles) <br><br>Me atiendo en casa<br>Médico particular en la comunidad<br>Médico particular Cancún<br>Hospital General Cancún<br>Cruza roja<br>Otro (¿A dónde acude en caso de urgencia médica? Otro)<br>5. ¿Con qué áreas de recreo cuenta su colonia? <br><br>Parque (¿Con qué áreas de recreo cuenta su colonia? Posibles)<br>Unidad deportiva<br>Jardines<br>Casa de la cultura<br>Biblioteca<br>Otro<br>II.	IDENTIDAD Y COMUNIDAD<br><br>6.¿Cuál es su lugar de origen?  (¿Cuál es su lugar de origen? Estados del pa??s, ¿Cuál es su lugar de origen? Especifique)<br><br>1 Tabasco<br>2 Chiapas<br>3 Yucatán<br>4 Quintana Roo<br>5 Veracruz<br>6 CDMX<br>7 Otro______________<br><br>7.¿Cuánto tiempo lleva viviendo en este lugar?  (¿Cuánto tiempo lleva viviendo en este lugar? Opciones)<br>1 Recién llegué<br>2 Un año<br>3 Dos años<br>4 Más de dos años<br>5 Toda mi vida<br>8.Razones por las que llegó a vivir a la localidad)<br><br>1 parientes (¿Qué lo motivó a venir a vivir esta la localidad Tengo Parientes,)<br>2 amigos  (¿Qué lo motivó a venir a vivir esta la localidad Tengo amigos)<br>3 trabajo (¿Qué lo motivó a venir a vivir esta la localidad Por trabajo)<br>4 negocio  (¿Qué lo motivó a venir a vivir esta la localidad Por poner negocio,)<br>5 vivir mejor (¿Qué lo motivó a venir a vivir esta la localidad Por oportunidad de vivir mejor)<br>5 otro Especifique (¿Qué lo motivó a venir a vivir esta la localidad Otro)<br>9.En caso de requerir ayuda, apoyo legal, económico o familiar ante algún problema acudo a: <br><br>1 Grupo de vecinos (En caso de requerir ayuda, apoyo legal, económico o familiar ante algún, problema acudo a Grupo de vecinos)<br>2 Familiares  (En caso de requerir ayuda, apoyo legal, económico o familiar ante algún, problema acudo a Familiares)<br>3 A la autoridad (En caso de requerir ayuda, apoyo legal, económico o familiar ante algún, problema acudo a A la autoridad)<br>      4 La iglesia o templo (En caso de requerir ayuda, apoyo legal, económico o familiar ante algún, problema acudo a La iglesia o templo)<br>5 otro Especifique (En caso de requerir ayuda, apoyo legal, económico o familiar ante algún, problema acudo a Otro)<br>10.¿Qué religión practica? (¿Qué religión practica? Opciones)<br><br>1 Ninguna<br>2 Católica<br>3 Evangélica<br>4 Testigos de Jehová<br>5 Adventista<br>6 Mormón<br>7 Otra (¿Qué religión practica? Otro)<br>11.¿Cuáles son sus principales costumbres o tradiciones? (¿Cuáles son sus principales costumbres o tradiciones? Opciones)<br><br>1 Fiestas en honor a la Virgen de Fátima<br>2 Fiestas patronales<br>3 Festival de la cultura del Caribe<br>4 Carnaval <br>5 Fin de año<br>6 D??a de muertos<br>7 Otro (¿Cuáles son sus principales costumbres o tradiciones? Otro<br>12.¿Cuáles son las ventajas de vivir en esta comunidad?<br><br>1 Tengo casa (¿Cuáles son las ventajas de vivir en esta comunidad? Tengo casa)<br>2 Trabajo (¿Cuáles son las ventajas de vivir en esta comunidad? Tengo trabajo)<br>3 Familia (¿Cuáles son las ventajas de vivir en esta comunidad? Tengo familia)<br>4 Tengo más tiempo (¿Cuáles son las ventajas de viv en esta comunidad? Tengo mas tiempo)<br>5 Es tranquilo (¿Cuáles son las ventajas de vivir ir  en esta comunidad? Es tranquilo)<br>6 Es seguro (¿Cuáles son las ventajas de vivir en esta comunidad? Es seguro)<br>7 Otro (¿Cuáles son las ventajas de vivir en esta comunidad? Otro)<br>13. Piensa irse a vivir a otra localidad (Piensa irse a vivir a otra localidad Opciones)<br><br>1 No <br>2 Quizás <br>3 S??, en el mismo estado <br>4 S??, me regreso a mi lugar de origen <br>5 S??, al extranjero<br>14.¿Con qué municipio de identifica más? (¿Usted a qué municipio siente que pertenece? Opciones)<br><br>1 Benito Juárez<br>2 Isla Mujeres<br><br>3 Ninguno<br>15.¿Qué tan frecuente va a la isla, la cabecera municipal de Isla Mujeres? (¿Qué tan frecuente va a la Isla, la cabecera municipal de Isla Mujeres? Opciones)<br><br>1 Nunca <br>2 A veces [varias veces al año] <br>3 Frecuentemente [al menos una vez al mes]<br>4 casi Siempre [más de una vez al mes]<br>5 Siempre [una vez por semana]<br><br>16.¿Cuales son los motivos por los que viaja a isla? <br><br>1 Asuntos administrativos (¿Cuales son los motivos por los que viaja a isla? Asuntos administrativos)<br>2 Pagos de servicios (¿Cuales son los motivos por los que viaja a isla? Pagos de servicios)<br>3 Trabajo (¿Cuales son los motivos por los que viaja a isla? Trabajo)<br> 4 Recreación (¿Cuales son los motivos por los que viaja a isla? Recreación)<br> 5 Visita de la familia (¿Cuales son los motivos por los que viaja a isla? Visita de la familia)<br>6 Otros (¿Cuales son los motivos por los que viaja a isla? Otro)<br>IV.	VIVIENDA<br><br>La vivienda que habita tu familia es (La vivienda que habita tu familia es Opciones)<br>1 Propia.   <br>2 Prestada por (La vivienda que habita tu familia es Prestado por)<br>3 Rentada y se  paga mensual (La vivienda que habita tu familia es Renta mensual)<br> 4 Asentamiento irregular o informal <br>5 Otro (La vivienda que habita tu familia es Otro)<br>¿Ha recibido la visita del municipio para ofrecerle reubicarlo en otro lugar?  (¿Ha recibido la visita del municipio para ofrecerle reubicarlo en otro lugar? Si o no)<br>  •	Sólo si responde Asentamiento irregular o informal<br><br> ¿Le indicaron a qué sitio los reubicar??an? (¿Le indicaron a qué sitio los reubicar??an? Si o no)<br>•	Sólo si responde Asentamiento irregular o informal<br><br>En caso  de ser  propia, ¿De qué forma fue adquirida? (En caso de ser vivienda propia ¿De que forma fue adquirida? Opciones)<br>1 Herencia   <br>2 Pago de contado<br>3  Pagándola:    <br><br>Monto mensual (En caso de ser vivienda propia ¿De que forma fue adquirida? Monto mensual)<br>¿A quién? (En caso de ser vivienda propia ¿De que forma fue adquirida? A quien)<br>4  No es propia<br><br>¿Con qué servicios cuenta su vivienda? <br>1 televisión de paga (cable o satelital) <br>2 internet <br>3 servicio telefónico celular <br>4  energ??a eléctrica <br>5 agua <br><br>¿Con qué servicios cuenta su vivienda? (¿Con qué servicios cuenta su vivienda?)<br>1 televisión de paga (cable o satelital) <br>2 internet <br>3 servicio telefónico celular <br>4 energ??a eléctrica <br>5 agua <br><br>¿Cuántas inundaciones ha sufrido al vivir en esta localidad? (¿Cuántas inundaciones ha sufrido al vivir en esta localidad?)<br><br>¿En caso de haber sufrido una inundación qué hizo al respecto? (En caso de haber sufrido una inundación qué hizo al respecto Opciones) <br>•	Sólo si ha sufrido inundaciones<br>1 Dejé mi casa y fui al refugio<br>2 Dejé mi casa y fui a la casa de un familiar o amigo<br>3 Aqu?? nos quedamos<br>4 Vinieron las autoridades a desalojar pero decidimos quedarnos<br>5 Otro (En caso de haber sufrido una inundación qué hizo al respecto Otro)<br><br>A pesar de la inundación usted decidió quedarse a vivir aqu?? por (A pesar de la inundación usted decidió quedarse a vivir aqu?? por  Opciones)<br>•	Sólo si ha sufrido inundaciones<br>1 No tengo alternativa de vivienda    <br>2 Me agrada el lugar<br>3 Estoy esperando un crédito y mientras aqu?? me quedo<br>4 La ubicación del trabajo y escuela  nos queda más cerca<br>5 No dispongo de un trabajo que me permita acceder a un crédito para vivienda<br>6 Otro (A pesar de la inundación usted decidió quedarse a vivir aqu?? por  Opciones)<br><br>¿Sabe si su vivienda está en zona de riesgo? (¿Sabe si su vivienda está en zona de riesgo?)<br><br>¿Sabe si su vivienda está en zona de riesgo? ¿Cuales? (¿Sabe si su vivienda está en zona de riesgo? ¿Cuales?) <br><br>•	Sólo si responde s?? a la pregunta: ¿Sabe si su vivienda está en zona de riesgo?<br>¿Conoce los impactos o afectaciones que puede sufrir? (¿Conoce los impactos o afectaciones que puede sufrir?) <br><br>¿Conoce los impactos o afectaciones que puede sufrir? (¿Conoce los impactos o afectaciones que puede sufrir? ¿Cuales?) <br><br>•	Sólo si responde S?? a la pregunta ¿Conoce los impactos o afectaciones que puede sufrir?<br>V.	APRECIACIONES DEL ENCUESTADOR<br><br>Favor de señalar los siguientes servicios observados alrededor de la vivienda <br><br>1 Áreas verdes (favor de señalar los siguientes servicios observados alrededor de la vivienda áreas verdes)<br>2 Calles pavimentadas (favor de señalar los siguientes servicios observados alrededor de la vivienda calles)<br>3 Banquetas (favor de señalar los siguientes servicios observados alrededor de la vivienda banquetas)<br>4 Luminarias públicas (favor de señalar los siguientes servicios observados alrededor de la vivienda luminarias)<br>5 Transporte público (favor de señalar los siguientes servicios observados alrededor de la vivienda transporte)<br>6 Patrullas vigilando (favor de señalar los siguientes servicios observados alrededor de la vivienda patrullas)<br>7 Lotes bald??os (favor de señalar los siguientes servicios observados alrededor de la vivienda lotes baldios)<br>¿Que percepción tuvo de la vivienda y la calle?<br><br>1 Seguridad  (¿Que percepción tuvo de la vivienda y la calle? Percepcion seguridad)<br>2 Comodidad (¿Que percepción tuvo de la vivienda y la calle? Percepcion comodidad)<br>3 Riesgo personal o natural (¿Que percepción tuvo de la vivienda y la calle? Percepcion riesgo personal o natural)  <br>"),
       easyClose = TRUE
     ))
   })
@@ -32,7 +32,7 @@ server <- function(input, output, session) {
   observeEvent( input$poSyA, {
     showModal(modalDialog(
       title = HTML("Diagnóstico socio económico y ambiental<br>",
-                   "Social <br><br>1. Entre los vecinos, realizan alguna actividad en común:  fiestas, reuniones vecinales, levantar quejas etc <br>2. ¿Cómo es la relación con sus vecinos? <br>3. ¿Ha tenido problemas con sus vecinos: pleitos, demandas…? <br>4. ¿Con qué frecuencia se hacen favores entre vecinos? <br>5. ¿En algún problema que se le presente, sus vecinos le ayudan? <br>6. ¿Pertenecen a alguna organización? <br><br>Economico <br><br>1.  ¿Cuántas personas de esta familia trabajan? <br>2.  ¿En qué trabajan? <br>3. ¿Realizan alguna actividad productiva por su cuenta: manualidad, artesanía u oficio, cultivo de hortalizas?<br>4. ¿Intercambian productos con sus vecinos? <br>5. ¿Se ayudan entre vecinos para algún trabajo que beneficie la economía familiar dentro de sus casas?<br><br>Ambiental <br><br>1. ¿Qué uso le dan sus vecinos a la salina? <br>2.¿Qué beneficio recibe de vivir aquí?<br>3.¿Qué desventajas recibe de vivir aquí cerca de la salina? <br>4.¿En qué condiciones considera que se encuentra la salina? <br>5.¿Qué efectos genera la condición (sucia o contaminada) de la Salina? <br>6.¿Han llevado a cabo alguna actividad de limpieza, saneamiento o conservación de la Salina?<br>7.¿Están conectados al drenaje?<br>8.¿Por qué decidieron vivir aquí?<br>"),
+                   "Social <br><br>1. Entre los vecinos, realizan alguna actividad en común:  fiestas, reuniones vecinales, levantar quejas etc <br>2. ¿Cómo es la relación con sus vecinos? <br>3. ¿Ha tenido problemas con sus vecinos: pleitos, demandas…? <br>4. ¿Con qué frecuencia se hacen favores entre vecinos? <br>5. ¿En algún problema que se le presente, sus vecinos le ayudan? <br>6. ¿Pertenecen a alguna organización? <br><br>Economico <br><br>1.  ¿Cuántas personas de esta familia trabajan? <br>2.  ¿En qué trabajan? <br>3. ¿Realizan alguna actividad productiva por su cuenta: manualidad, artesan??a u oficio, cultivo de hortalizas?<br>4. ¿Intercambian productos con sus vecinos? <br>5. ¿Se ayudan entre vecinos para algún trabajo que beneficie la econom??a familiar dentro de sus casas?<br><br>Ambiental <br><br>1. ¿Qué uso le dan sus vecinos a la salina? <br>2.¿Qué beneficio recibe de vivir aqu???<br>3.¿Qué desventajas recibe de vivir aqu?? cerca de la salina? <br>4.¿En qué condiciones considera que se encuentra la salina? <br>5.¿Qué efectos genera la condición (sucia o contaminada) de la Salina? <br>6.¿Han llevado a cabo alguna actividad de limpieza, saneamiento o conservación de la Salina?<br>7.¿Están conectados al drenaje?<br>8.¿Por qué decidieron vivir aqu???<br>"),
       easyClose = TRUE
     ))
   })
@@ -40,7 +40,7 @@ server <- function(input, output, session) {
   observeEvent(input$popC, {
     showModal(modalDialog(
       title = HTML("Percepcion de seguridad<br>",
-                   "1. En esta calle o zona, Usted participa: <br><br>En eventos deportivos<br>En tandas<br>En fiestas<br>En iglesia o templo<br>En otras actividades<br>Para solucionar problemas de la comunidad<br>2. Usted conoce a sus vecinos: <br><br>Respuesta “Si”, desplegar los siguientes reactivos:<br>Les confiaría a los niños<br>Les confiaría su casa<br>Participa con ellos para mejorar la seguridad<br>Respuesta “No”, desplegar el siguiente reactivo:<br>Le interesaría participar<br>Día en que podría participar en actividades con su comunidad. <br>Horario en que podría participar: Mañana Tarde Noche<br>3. Participa con la autoridad para mejorar la seguridad:<br><br>Respuesta “No”, desplegar el siguiente reactivo:<br>Le interesaría participar<br>4. Día en que podría participar en actividades con la autoridad<br><br>5. Horario en el que podría participar Mañana Tarde Noche<br><br>6. Cuando hay un delito, en esta calle o zona los vecinos:<br><br>Se reúnen<br>Se organizan para vigilar<br>Intercambian números telefónicos<br>Forman un chat<br>Ponen letreros de advertencia<br>Llaman a la policía<br>Denuncian ante la autoridad<br>Vigilan<br>Buscan desquitarse<br>No hacen nada<br>7. Durante el último año, en esta calle o zona ha habido:<br><br>Robo en casa<br>Robo en la calle<br>Robo en transporte<br>Robo en negocio<br>Robo de partes de auto<br>Robo de vehículo<br>Balaceras<br>Cobro de piso<br>Violencia familiar<br>Peleas de gallos o perros<br>8. Valore el riesgo de sufrir un delito en alguno de los siguientes<br><br>lugares:<br>En su casa<br>En esta calle<br>En esta zona<br>En esta ciudad<br>9. ¿Usted ha sido víctima de algún delito en el último año? si No<br><br>10. En caso de ser víctima del delito Usted:<br><br>Llama a la policía<br>Hace una denuncia<br>Advierte a sus vecinos del peligro<br>Advierte a su familia del peligro<br>Busca desquitarse<br>Amenazas<br>11. Ha sido víctima de algún delito y no denuncio:<br><br>¿Podría señalar las razones por las que no denunció?<br>Respuesta “Si”, desplegar el siguiente reactivo:<br>Falta de pruebas<br>Considera que es un delito de poca importancia<br>Conoce al agresor o agresores<br>Desconfía de las autoridades<br>Teme a que lo extorsionen<br>Falta de tiempo<br>Son trámites complicados<br>No sabe dónde denunciar<br>Aunque denuncie no va a pasar nada<br>12. En esta calle o zona:<br><br>Los padres participan en actividades con hijos<br>Los vecinos se organizan para prevenir delitos<br>Las personas son amables<br>Hay alguna persona que siempre ayuda a los demás<br>13.En esta calle o zona hay personas:<br><br>A las que todos tienen miedo<br>Que acosan a menores<br>Que acosan a mujeres<br>Que se emborrachan o se drogan<br>Que han estado en la cárcel<br>Sospechosas<br>14. En esta calle o zona hay violencia:<br><br>Entre mujeres<br>Entre hombres<br>Entre familias<br>Entre adultos y jóvenes<br>Entre jóvenes<br>15. En esta calle o zona, cuando hay conflictos entre vecinos se manejan:<br><br>Amistosamente<br>Dialogando<br>De manera respetuosa<br>A gritos<br>Con golpes<br>Con cuchillos, navajas o machetes<br>Con armas de fuego, como pistolas o rifles<br>Desquitándose del otro<br>16. En esta calle o zona hay niños o adolescentes que se quedan<br><br>encerrados con llave:<br>Respuesta “Si”, desplegar los siguientes reactivos:<br>Por la inseguridad<br>Descuido de los padres<br>Castigo<br>Trabajo de los padres<br>17. En esta calle o zona hay niños que se quedan la mayor parte del día sin comer: Respuesta “Si”, desplegar los siguientes reactivos:<br><br>Por descuido de los padres<br>Castigo<br>Falta de dinero<br>Trabajo de los padres<br>18. En esta calle o zona hay jóvenes que:<br><br>Hacen deporte<br>Ayudan a los demás<br>La mayoría de los jóvenes estudian o trabajan.<br>Andan en pandillas<br>Respuesta “Si”, desplegar los siguientes reactivos:<br>Andan armados<br>Destruyen o vandalizan la propiedad ajena<br>Son violentos<br>Amenazan a los vecinos<br>19. En esta calle o zona hay un parque<br><br>Respuesta “Si”, desplegar los siguientes reactivos:<br>Está en buen estado<br>¿Quiénes lo utilizan?: Mostrar menú abajo<br>Niños y niñas<br>Jóvenes<br>Pandillas<br>Familias<br>Adultos<br>Personas de la tercera edad<br>Hay actividades supervisadas por adultos<br>Vándalos<br>Usted lo utiliza<br>20. En esta calle o zona hay:<br><br>Banquetas<br>Baches<br>Letreros con nombres de las calles<br>Tiendita<br>Alumbrado<br>Consumo de alcohol en la calle<br>21. En esta zona hay:<br><br>Horarios de transporte que convienen<br>Una parada de camión cerca de esta casa<br>Terrenos baldíos<br>Basura<br>Autos abandonados<br>Casas abandonadas<br>Vandalismo<br>Grafiti<br>Venta de tiner o pegamento a menores<br>Venta de alcohol o cigarros a menores<br>Venta de droga<br>Venta de alcohol después de las 11:00 de la noche<br>22. En el último año Usted supo que algún menor de 18 años:<br><br>Se fue de la casa<br>Sufrió violencia<br>Abandonó la escuela<br>Tiene problemas de conducta<br>Quedó embarazada<br>23. Para corregir a un niño o niña que se porta mal, Usted recomienda:<br><br>Castigarle<br>Gritarle<br>Darle nalgadas<br>Darle una golpiza / cueriza <br>Explicarle lo que está mal<br>Aconsejarle<br>Darle buen ejemplo24. En esta casa: (APLICA TARJETON)<br>Todos se conocen<br>Platican unos con otros<br>Comen juntos<br>Se ayudan con los gastos<br>Discuten<br>Se gritan entre sí<br>Llegan a los golpes<br>Se ignoran<br>En esta casa alguien: (APLICA TARJETON)<br>Tiene discapacidad SI LA RESPUESTA ES SI, ENTONCES:<br>Por su discapacidad, ha vivido violencia<br>Sabe manejar armas de fuego, como pistolas o rifles<br>Habla de comprar armas de fuego<br>Habla lengua indigena<br>Necesita ayuda por obesidad<br>Necesita ayuda por fumar<br>Necesita ayuda por beber<br>Necesita ayuda por drogas<br>26. En el último año, por cuestiones de seguridad Usted ha<br>pensado:<br>Cambiarse de casa<br>Cambiarse de ciudad<br>Cambiarse de estado<br>Cambiar de trabajo N/A<br>Cerrar su negocio N/A<br>Cambiar a los hijos de escuela N/ASeguir como hasta ahora<br>27. En el último año, por cuestiones de seguridad Usted dejó de:Dejo de salir de noche<br><br>Dejo de salir a caminar o hacer ejercicio<br>Impidio que los niños salgan a la calle N/A<br>Evito relacionarse con nuevas personas<br>Dejo de visitar a parientes o amigos<br>Dejo de usar transporte público /combi N/A<br>Dejo de usar taxi<br>Dejo de llevar mucho dinero en efectivo<br>Dejo de usar joyas<br>28. En esta calle o zona la policía:<br>Cuida o vigila bien<br>Comete abusos<br>Acude a los llamados<br>Pide mordidas<br>Hace rondines<br>Comete delitos<br>"),
+                   "1. En esta calle o zona, Usted participa: <br><br>En eventos deportivos<br>En tandas<br>En fiestas<br>En iglesia o templo<br>En otras actividades<br>Para solucionar problemas de la comunidad<br>2. Usted conoce a sus vecinos: <br><br>Respuesta “Si”, desplegar los siguientes reactivos:<br>Les confiar??a a los niños<br>Les confiar??a su casa<br>Participa con ellos para mejorar la seguridad<br>Respuesta “No”, desplegar el siguiente reactivo:<br>Le interesar??a participar<br>D??a en que podr??a participar en actividades con su comunidad. <br>Horario en que podr??a participar: Mañana Tarde Noche<br>3. Participa con la autoridad para mejorar la seguridad:<br><br>Respuesta “No”, desplegar el siguiente reactivo:<br>Le interesar??a participar<br>4. D??a en que podr??a participar en actividades con la autoridad<br><br>5. Horario en el que podr??a participar Mañana Tarde Noche<br><br>6. Cuando hay un delito, en esta calle o zona los vecinos:<br><br>Se reúnen<br>Se organizan para vigilar<br>Intercambian números telefónicos<br>Forman un chat<br>Ponen letreros de advertencia<br>Llaman a la polic??a<br>Denuncian ante la autoridad<br>Vigilan<br>Buscan desquitarse<br>No hacen nada<br>7. Durante el último año, en esta calle o zona ha habido:<br><br>Robo en casa<br>Robo en la calle<br>Robo en transporte<br>Robo en negocio<br>Robo de partes de auto<br>Robo de veh??culo<br>Balaceras<br>Cobro de piso<br>Violencia familiar<br>Peleas de gallos o perros<br>8. Valore el riesgo de sufrir un delito en alguno de los siguientes<br><br>lugares:<br>En su casa<br>En esta calle<br>En esta zona<br>En esta ciudad<br>9. ¿Usted ha sido v??ctima de algún delito en el último año? si No<br><br>10. En caso de ser v??ctima del delito Usted:<br><br>Llama a la polic??a<br>Hace una denuncia<br>Advierte a sus vecinos del peligro<br>Advierte a su familia del peligro<br>Busca desquitarse<br>Amenazas<br>11. Ha sido v??ctima de algún delito y no denuncio:<br><br>¿Podr??a señalar las razones por las que no denunció?<br>Respuesta “Si”, desplegar el siguiente reactivo:<br>Falta de pruebas<br>Considera que es un delito de poca importancia<br>Conoce al agresor o agresores<br>Desconf??a de las autoridades<br>Teme a que lo extorsionen<br>Falta de tiempo<br>Son trámites complicados<br>No sabe dónde denunciar<br>Aunque denuncie no va a pasar nada<br>12. En esta calle o zona:<br><br>Los padres participan en actividades con hijos<br>Los vecinos se organizan para prevenir delitos<br>Las personas son amables<br>Hay alguna persona que siempre ayuda a los demás<br>13.En esta calle o zona hay personas:<br><br>A las que todos tienen miedo<br>Que acosan a menores<br>Que acosan a mujeres<br>Que se emborrachan o se drogan<br>Que han estado en la cárcel<br>Sospechosas<br>14. En esta calle o zona hay violencia:<br><br>Entre mujeres<br>Entre hombres<br>Entre familias<br>Entre adultos y jóvenes<br>Entre jóvenes<br>15. En esta calle o zona, cuando hay conflictos entre vecinos se manejan:<br><br>Amistosamente<br>Dialogando<br>De manera respetuosa<br>A gritos<br>Con golpes<br>Con cuchillos, navajas o machetes<br>Con armas de fuego, como pistolas o rifles<br>Desquitándose del otro<br>16. En esta calle o zona hay niños o adolescentes que se quedan<br><br>encerrados con llave:<br>Respuesta “Si”, desplegar los siguientes reactivos:<br>Por la inseguridad<br>Descuido de los padres<br>Castigo<br>Trabajo de los padres<br>17. En esta calle o zona hay niños que se quedan la mayor parte del d??a sin comer: Respuesta “Si”, desplegar los siguientes reactivos:<br><br>Por descuido de los padres<br>Castigo<br>Falta de dinero<br>Trabajo de los padres<br>18. En esta calle o zona hay jóvenes que:<br><br>Hacen deporte<br>Ayudan a los demás<br>La mayor??a de los jóvenes estudian o trabajan.<br>Andan en pandillas<br>Respuesta “Si”, desplegar los siguientes reactivos:<br>Andan armados<br>Destruyen o vandalizan la propiedad ajena<br>Son violentos<br>Amenazan a los vecinos<br>19. En esta calle o zona hay un parque<br><br>Respuesta “Si”, desplegar los siguientes reactivos:<br>Está en buen estado<br>¿Quiénes lo utilizan?: Mostrar menú abajo<br>Niños y niñas<br>Jóvenes<br>Pandillas<br>Familias<br>Adultos<br>Personas de la tercera edad<br>Hay actividades supervisadas por adultos<br>Vándalos<br>Usted lo utiliza<br>20. En esta calle o zona hay:<br><br>Banquetas<br>Baches<br>Letreros con nombres de las calles<br>Tiendita<br>Alumbrado<br>Consumo de alcohol en la calle<br>21. En esta zona hay:<br><br>Horarios de transporte que convienen<br>Una parada de camión cerca de esta casa<br>Terrenos bald??os<br>Basura<br>Autos abandonados<br>Casas abandonadas<br>Vandalismo<br>Grafiti<br>Venta de tiner o pegamento a menores<br>Venta de alcohol o cigarros a menores<br>Venta de droga<br>Venta de alcohol después de las 11:00 de la noche<br>22. En el último año Usted supo que algún menor de 18 años:<br><br>Se fue de la casa<br>Sufrió violencia<br>Abandonó la escuela<br>Tiene problemas de conducta<br>Quedó embarazada<br>23. Para corregir a un niño o niña que se porta mal, Usted recomienda:<br><br>Castigarle<br>Gritarle<br>Darle nalgadas<br>Darle una golpiza / cueriza <br>Explicarle lo que está mal<br>Aconsejarle<br>Darle buen ejemplo24. En esta casa: (APLICA TARJETON)<br>Todos se conocen<br>Platican unos con otros<br>Comen juntos<br>Se ayudan con los gastos<br>Discuten<br>Se gritan entre s??<br>Llegan a los golpes<br>Se ignoran<br>En esta casa alguien: (APLICA TARJETON)<br>Tiene discapacidad SI LA RESPUESTA ES SI, ENTONCES:<br>Por su discapacidad, ha vivido violencia<br>Sabe manejar armas de fuego, como pistolas o rifles<br>Habla de comprar armas de fuego<br>Habla lengua indigena<br>Necesita ayuda por obesidad<br>Necesita ayuda por fumar<br>Necesita ayuda por beber<br>Necesita ayuda por drogas<br>26. En el último año, por cuestiones de seguridad Usted ha<br>pensado:<br>Cambiarse de casa<br>Cambiarse de ciudad<br>Cambiarse de estado<br>Cambiar de trabajo N/A<br>Cerrar su negocio N/A<br>Cambiar a los hijos de escuela N/ASeguir como hasta ahora<br>27. En el último año, por cuestiones de seguridad Usted dejó de:Dejo de salir de noche<br><br>Dejo de salir a caminar o hacer ejercicio<br>Impidio que los niños salgan a la calle N/A<br>Evito relacionarse con nuevas personas<br>Dejo de visitar a parientes o amigos<br>Dejo de usar transporte público /combi N/A<br>Dejo de usar taxi<br>Dejo de llevar mucho dinero en efectivo<br>Dejo de usar joyas<br>28. En esta calle o zona la polic??a:<br>Cuida o vigila bien<br>Comete abusos<br>Acude a los llamados<br>Pide mordidas<br>Hace rondines<br>Comete delitos<br>"),
       easyClose = TRUE
     ))
   })
@@ -584,7 +584,64 @@ server <- function(input, output, session) {
         )
       }
   })
-  
+  observeEvent(input$estudio,{
+    if(input$estudio == "Salinas"){
+      updateSelectInput(session, "var1",choices = c("Trabajo" = "tro","Actividad productiva","Uso salinas"))
+      updateSelectInput(session, "var2", choices = c("Ninguno" = "ning","Trabajo","Beneficios de estar aquí"="benef","Desventajas de estar cerca de las salinas"="desv","Condiciones en que considera están las salinas"="cond","Efectos de la condición de las salinas"="efe"),selected = "benef")
+      updateSelectInput(session, "var3", choices = c("Ninguno","Edad"))
+    }else if(input$estudio == "Población y migración"){
+      updateSelectInput(session, "var1", choices = c("Origen","Escolaridad","Puesto","Trabajo"))
+      updateSelectInput(session,"var2",choices = c("Ninguno","Puesto","Trabajo","Ingreso_sem","Escolaridad"))
+      updateSelectInput(session,"var3",choices = c("Ninguno","Edad","Sexo"))
+    }
+    else if(input$estudio == "Percepción de seguridad"){
+      updateSelectInput(session, "var1", choices = c("Tiempo viviendo aquí" = "tmpa", "Tiempo en esta casa" = "tmpc","Víctima de algún delito"="vic"))
+      updateSelectInput(session, "var2", choices = c("Ninguno" = "ning2","Riesgo de sufrir un delito en esta casa" = "R1","Riesgo de sufir un delito en esa calle" = "R2", "Riesgo de sufrir un delito en esta zona" = "R3", "Riesgo de sufrir un delito en esta ciudad" = "R4"),selected = "R1")
+      updateSelectInput(session, "var3", choices = c("Ninguno", "Sexo"))
+    }
+  })
+  observeEvent(input$var1,{
+    #if(input$estudio == "PoblaciÃ³n y migraciÃ³n"){
+    if(input$var1 == "Puesto"){
+      updateSelectInput(session, "var2", choices = c("Ninguno","Trabajo","Ingreso_sem","Escolaridad"),selected = "Trabajo")
+    }
+    else if(input$var1 == "Trabajo"){
+      updateSelectInput(session, "var2",choices = c("Ninguno","Puesto","Ingreso_sem","Escolaridad"),selected = "Puesto")
+    }
+    else if(input$var1 == "Escolaridad"){
+      updateSelectInput(session,"var2",choices = c("Ninguno","Puesto","Trabajo","Ingreso_sem"),selected = "Puesto")
+    }
+    else if(input$var1 == "Origen"){
+      updateSelectInput(session,"var2",choices = c("Ninguno","Puesto","Trabajo","Ingreso_sem","Escolaridad"),selected = "Puesto")
+    }
+    # }
+  })
+  observeEvent(input$var1,{
+    if(input$var1 == "tro"){
+      updateSelectInput(session, "var2", choices = c("Ninguno" = "ning","Beneficios de estar aquí"="benef","Desventajas de estar cerca de las salinas"="desv","Condiciones en que considera están las salinas"="cond","Efectos de la condición de las salinas"="efe"),selected = "benef")
+    }
+    else if(input$var1 == "Actividad productiva"){
+      updateSelectInput(session, "var2", choices = c("Ninguno" = "ning","Trabajo","Beneficios de estar aquí"="benef","Desventajas de estar cerca de las salinas"="desv","Condiciones en que considera están las salinas"="cond","Efectos de la condición de las salinas"="efe"),selected = "Trabajo")
+    }
+    else if(input$var1 == "Uso salinas"){
+      updateSelectInput(session, "var2", choices = c("Ninguno" = "ning","Trabajo","Beneficios de estar aquí"="benef","Desventajas de estar cerca de las salinas"="desv","Condiciones en que considera están las salinas"="cond","Efectos de la condición de las salinas"="efe"),selected = "Trabajo")
+    }
+  })
+  observeEvent(input$var2,{
+    if(input$var2 == "Ninguno"){
+      updateSelectInput(session, "var3",choices = c("Ninguno","Edad","Sexo"),selected = "Edad")
+    }
+  })
+  observeEvent(input$var2,{
+    if(input$var2 == "ning"){
+      updateSelectInput(session, "var3", choices = c("Ninguno","Edad"),selected = "Edad")
+    }
+  })
+  observeEvent(input$var2,{
+    if(input$var2 == "ning2"){
+      updateSelectInput(session, "var3", choices = c("Ninguno","Sexo"),selected = "Sexo")
+    }
+  })
  
 
 
@@ -603,7 +660,7 @@ server <- function(input, output, session) {
                         "1. ¿Cuántas personas viven en esta casa?" = "PFAM01" , 
                         "2. ¿ A qué niveles de escolaridad asisten los integrantes de esta familia?" = "PFAM02",
                         "3. ¿Qué medio de transporte utilizan?" = "PFAM1" , 
-                        "4. ¿Dónde adquiere sus víveres?" = "PFAM2"," 
+                        "4. ¿Dónde adquiere sus v??veres?" = "PFAM2"," 
                         ¿5. ¿A dónde acude en caso de urgencia médica? " = "PFAM3", 
                         "6. ¿Con qué áreas de recreo cuenta en su colonia?" = "PFAM4")
                         
@@ -639,7 +696,7 @@ server <- function(input, output, session) {
                           "2. En caso  de ser  propia, ¿De qué forma fue adquirida?" = "V1P2R1",
                           "3. ¿Con qué servicios cuenta su vivienda? " = "V1P3R1", 
                           "4. ¿Cuántas inundaciones ha sufrido al vivir en esta localidad?" = "V1P4R1", 
-                          "5. A pesar de la inundación usted decidió quedarse a vivir aquí por: " = "V1P5R1", 
+                          "5. A pesar de la inundación usted decidió quedarse a vivir aqu?? por: " = "V1P5R1", 
                           "6. ¿Cuántas inundaciones ha sufrido al vivir en esta localidad?" = "V1P6R1", 
                           "7. ¿Conoce los impactos o afectaciones que puede sufrir?" = "V1P7R1", 
                           "8. FAVOR DE SEÑALAR LOS SIGUIENTES SERVICIOS OBSERVADOS ALREDEDOR DE LA VIVIENDA:" = "V1P8R1" )
@@ -691,15 +748,15 @@ server <- function(input, output, session) {
                             "8. Valore el riesgo de sufrir un delito en alguno de los siguientes lugares: Calle - IM " = "GPSI82",
                             "8. Valore el riesgo de sufrir un delito en alguno de los siguientes lugares: Zona - IM " = "GPSI83",
                             "8. Valore el riesgo de sufrir un delito en alguno de los siguientes lugares: Ciudad - IM " = "GPSI84",
-                            "9. ¿Usted ha sido víctima de algún delito en el último año? - IM " = "GPSI9" ,
-                            "10. En caso de ser víctima del delito Usted: - IM " = "GPSI10", 
-                            "11. Ha sido víctima de algún delito y no denuncio: - IM " = "GPSI11" ,
+                            "9. ¿Usted ha sido v??ctima de algún delito en el último año? - IM " = "GPSI9" ,
+                            "10. En caso de ser v??ctima del delito Usted: - IM " = "GPSI10", 
+                            "11. Ha sido v??ctima de algún delito y no denuncio: - IM " = "GPSI11" ,
                             "12. En esta calle o zona: - IM " = "GPSI12" ,
                             "13. En esta calle o zona, hay personas - IM " = "GPSI13", 
                             "14. En esta calle o zona hay violencia: - IM " = "GPSI14" ,
                             "15. En esta calle o zona, cuando hay conflictos entre vecinos se manejan: - IM " = "GPSI15" ,
                             "16. En esta calle o zona hay niños o adolescentes que se quedan encerrados con llave: - IM " = "GPSI16" ,
-                            "17. En esta calle o zona hay niños que se quedan la mayor parte del día sin comer:  - IM " = "GPSI17" ,
+                            "17. En esta calle o zona hay niños que se quedan la mayor parte del d??a sin comer:  - IM " = "GPSI17" ,
                             "18. En esta calle o zona hay jóvenes que: - IM " = "GPSI18" ,
                             "19. En esta calle o zona hay un parquI - IM " = "GPSI19" ,
                             "20. En esta calle o zona hay: - IM " = "GPSI20" ,
@@ -710,20 +767,20 @@ server <- function(input, output, session) {
                             "25. En esta casa alguien: (APLICA TARJETON) - IM " = "GPSI25" ,
                             "26. En el último año, por cuestiones de seguridad Usted ha pensado: - IM " = "GPSI26" ,
                             "27. En el último año, por cuestiones de seguridad Usted dejó de: - IM " = "GPSI27" ,
-                            "28. En esta calle o zona la policía: - IM " = "GPSI28" ,
-                            "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: La policía  - IM " = "GPSI291" ,
+                            "28. En esta calle o zona la polic??a: - IM " = "GPSI28" ,
+                            "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: La polic??a  - IM " = "GPSI291" ,
                             "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: El Ministerio Público para denunciar  - IM " = "GPSI292" ,
                             "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: Las escuelas públicas de la zona  - IM " = "GPSI293" ,
                             "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: Su Comisario ejidal  - IM " = "GPSI294" ,
                             "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: Su presidente municipal  - IM " = "GPSI295" ,
                             "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: El Gobernador  - IM " = "GPSI296" ,
-                            "30. Del 1 al 5, califique el trabajo de: La policía - IM " = "GPSI301" ,
+                            "30. Del 1 al 5, califique el trabajo de: La polic??a - IM " = "GPSI301" ,
                             "30. Del 1 al 5, califique el trabajo de: El Ministerio Público para denunciar - IM " = "GPSI302" ,
                             "30. Del 1 al 5, califique el trabajo de: Los empleados de gobierno - IM " = "GPSI303" ,
                             "30. Del 1 al 5, califique el trabajo de: Su Comisario Ejida - IM " = "GPSI304" ,
                             "30. Del 1 al 5, califique el trabajo de: Su presidente municipal - IM " = "GPSI305" ,
                             "30. Del 1 al 5, califique el trabajo de: El Gobernador - IM " = "GPSI306" ,                          
-                            "31. Del 1 al 5, califique el trato que recibe de: La policía - IM " = "GPSI311" ,
+                            "31. Del 1 al 5, califique el trato que recibe de: La polic??a - IM " = "GPSI311" ,
                             "31. Del 1 al 5, califique el trato que recibe de:El Ministerio Público para denunciar - IM " = "GPSI312" ,
                             "31. Del 1 al 5, califique el trato que recibe de: Los empleados de gobierno - IM " = "GPSI313" ,
                             "31. Del 1 al 5, califique el trato que recibe de: Su Comisario ejidal - IM " = "GPSI314" ,
@@ -746,15 +803,15 @@ server <- function(input, output, session) {
                                   "8. Valore el riesgo de sufrir un delito en alguno de los siguientes lugares: Calle - EJ " = "GPSE82",
                                   "8. Valore el riesgo de sufrir un delito en alguno de los siguientes lugares: Zona - EJ " = "GPSE83",
                                   "8. Valore el riesgo de sufrir un delito en alguno de los siguientes lugares: Ciudad - EJ " = "GPSE84",
-                                  "9. ¿Usted ha sido víctima de algún delito en el último año? - EJ " = "GPSE9I" ,
-                                  "10. En caso de ser víctima del delito Usted: - EJ " = "GPSE10", 
-                                  "11. Ha sido víctima de algún delito y no denuncio: - EJ " = "GPSE11" ,
+                                  "9. ¿Usted ha sido v??ctima de algún delito en el último año? - EJ " = "GPSE9I" ,
+                                  "10. En caso de ser v??ctima del delito Usted: - EJ " = "GPSE10", 
+                                  "11. Ha sido v??ctima de algún delito y no denuncio: - EJ " = "GPSE11" ,
                                   "12. En esta calle o zona: - EJ " = "GPSE12" ,
                                   "13. En esta calle o zona, hay personas - EJ " = "GPSE13", 
                                   "14. En esta calle o zona hay violencia: - EJ " = "GPSE14" ,
                                   "15. En esta calle o zona, cuando hay conflictos entre vecinos se manejan: - EJ " = "GPSE15" ,
                                   "16. En esta calle o zona hay niños o adolescentes que se quedan encerrados con llave: - EJ " = "GPSE16" ,
-                                  "17. En esta calle o zona hay niños que se quedan la mayor parte del día sin comer:  - EJ " = "GPSE17" ,
+                                  "17. En esta calle o zona hay niños que se quedan la mayor parte del d??a sin comer:  - EJ " = "GPSE17" ,
                                   "18. En esta calle o zona hay jóvenes que: - EJ " = "GPSE18" ,
                                   "19. En esta calle o zona hay un parquI - EJ " = "GPSE19" ,
                                   "20. En esta calle o zona hay: - EJ " = "GPSE20" ,
@@ -765,20 +822,20 @@ server <- function(input, output, session) {
                                   "25. En esta casa alguien: (APLICA TARJETON) - EJ " = "GPSE25" ,
                                   "26. En el último año, por cuestiones de seguridad Usted ha pensado: - EJ " = "GPSE26" ,
                                   "27. En el último año, por cuestiones de seguridad Usted dejó de: - EJ " = "GPSE27" ,
-                                  "28. En esta calle o zona la policía: - EJ " = "GPSE28" ,
-                                  "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: La policía  - EJ " = "GPSE291" ,
+                                  "28. En esta calle o zona la polic??a: - EJ " = "GPSE28" ,
+                                  "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: La polic??a  - EJ " = "GPSE291" ,
                                   "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: El Ministerio Público para denunciar  - EJ " = "GPSE292" ,
                                   "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: Las escuelas públicas de la zona  - EJ " = "GPSE293" ,
                                   "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: Su Comisario ejidal  - EJ " = "GPSE294" ,
                                   "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: Su presidente municipal  - EJ " = "GPSE295" ,
                                   "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: El Gobernador  - EJ " = "GPSE296" ,
-                                  "30. Del 1 al 5, califique el trabajo de: La policía - EJ " = "GPSE301" ,
+                                  "30. Del 1 al 5, califique el trabajo de: La polic??a - EJ " = "GPSE301" ,
                                   "30. Del 1 al 5, califique el trabajo de: El Ministerio Público para denunciar - EJ " = "GPSE302" ,
                                   "30. Del 1 al 5, califique el trabajo de: Los empleados de gobierno - EJ " = "GPSE303" ,
                                   "30. Del 1 al 5, califique el trabajo de: Su Comisario Ejida - EJ " = "GPSE304" ,
                                   "30. Del 1 al 5, califique el trabajo de: Su presidente municipal - EJ " = "GPSE305" ,
                                   "30. Del 1 al 5, califique el trabajo de: El Gobernador - EJ " = "GPSE306" ,                          
-                                  "31. Del 1 al 5, califique el trato que recibe de: La policía - EJ " = "GPSE311" ,
+                                  "31. Del 1 al 5, califique el trato que recibe de: La polic??a - EJ " = "GPSE311" ,
                                   "31. Del 1 al 5, califique el trato que recibe de:El Ministerio Público para denunciar - EJ " = "GPSE312" ,
                                   "31. Del 1 al 5, califique el trato que recibe de: Los empleados de gobierno - EJ " = "GPSE313" ,
                                   "31. Del 1 al 5, califique el trato que recibe de: Su Comisario ejidal - EJ " = "GPSE314" ,
@@ -801,15 +858,15 @@ server <- function(input, output, session) {
                               "8. Valore el riesgo de sufrir un delito en alguno de los siguientes lugares: Calle - CUN" = "GPSC82",
                               "8. Valore el riesgo de sufrir un delito en alguno de los siguientes lugares: Zona - CUN" = "GPSC83",
                               "8. Valore el riesgo de sufrir un delito en alguno de los siguientes lugares: Ciudad - CUN" = "GPSC84",
-                              "9. ¿Usted ha sido víctima de algún delito en el último año? - CUN" = "GPSC9I" ,
-                              "10. En caso de ser víctima del delito Usted: - CUN" = "GPSC10", 
-                              "11. Ha sido víctima de algún delito y no denuncio: - CUN" = "GPSC11" ,
+                              "9. ¿Usted ha sido v??ctima de algún delito en el último año? - CUN" = "GPSC9I" ,
+                              "10. En caso de ser v??ctima del delito Usted: - CUN" = "GPSC10", 
+                              "11. Ha sido v??ctima de algún delito y no denuncio: - CUN" = "GPSC11" ,
                               "12. En esta calle o zona: - CUN" = "GPSC12" ,
                               "13. En esta calle o zona, hay personas - CUN" = "GPSC13", 
                               "14. En esta calle o zona hay violencia: - CUN" = "GPSC14" ,
                               "15. En esta calle o zona, cuando hay conflictos entre vecinos se manejan: - CUN" = "GPSC15" ,
                               "16. En esta calle o zona hay niños o adolescentes que se quedan encerrados con llave: - CUN" = "GPSC16" ,
-                              "17. En esta calle o zona hay niños que se quedan la mayor parte del día sin comer:  - CUN" = "GPSC17" ,
+                              "17. En esta calle o zona hay niños que se quedan la mayor parte del d??a sin comer:  - CUN" = "GPSC17" ,
                               "18. En esta calle o zona hay jóvenes que: - CUN" = "GPSC18" ,
                               "19. En esta calle o zona hay un parquI - CUN" = "GPSC19" ,
                               "20. En esta calle o zona hay: - CUN" = "GPSC20" ,
@@ -820,20 +877,20 @@ server <- function(input, output, session) {
                               "25. En esta casa alguien: (APLICA TARJETON) - CUN" = "GPSC25" ,
                               "26. En el último año, por cuestiones de seguridad Usted ha pensado: - CUN" = "GPSC26" ,
                               "27. En el último año, por cuestiones de seguridad Usted dejó de: - CUN" = "GPSC27" ,
-                              "28. En esta calle o zona la policía: - CUN" = "GPSC28" ,
-                              "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: La policía  - CUN" = "GPSC291" ,
+                              "28. En esta calle o zona la polic??a: - CUN" = "GPSC28" ,
+                              "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: La polic??a  - CUN" = "GPSC291" ,
                               "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: El Ministerio Público para denunciar  - CUN" = "GPSC292" ,
                               "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: Las escuelas públicas de la zona  - CUN" = "GPSC293" ,
                               "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: Su Comisario ejidal  - CUN" = "GPSC294" ,
                               "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: Su presidente municipal  - CUN" = "GPSC295" ,
                               "29. Del 1 al 5, con el 5 como mejor calificación, califique la confianza que Usted tiene en: El Gobernador  - CUN" = "GPSC296" ,
-                              "30. Del 1 al 5, califique el trabajo de: La policía - CUN" = "GPSC301" ,
+                              "30. Del 1 al 5, califique el trabajo de: La polic??a - CUN" = "GPSC301" ,
                               "30. Del 1 al 5, califique el trabajo de: El Ministerio Público para denunciar - CUN" = "GPSC302" ,
                               "30. Del 1 al 5, califique el trabajo de: Los empleados de gobierno - CUN" = "GPSC303" ,
                               "30. Del 1 al 5, califique el trabajo de: Su Comisario Ejida - CUN" = "GPSC304" ,
                               "30. Del 1 al 5, califique el trabajo de: Su presidente municipal - CUN" = "GPSC305" ,
                               "30. Del 1 al 5, califique el trabajo de: El Gobernador - CUN" = "GPSC306" ,                          
-                              "31. Del 1 al 5, califique el trato que recibe de: La policía - CUN" = "GPSC311" ,
+                              "31. Del 1 al 5, califique el trato que recibe de: La polic??a - CUN" = "GPSC311" ,
                               "31. Del 1 al 5, califique el trato que recibe de:El Ministerio Público para denunciar - CUN" = "GPSC312" ,
                               "31. Del 1 al 5, califique el trato que recibe de: Los empleados de gobierno - CUN" = "GPSC313" ,
                               "31. Del 1 al 5, califique el trato que recibe de: Su Comisario ejidal - CUN" = "GPSC314" ,
@@ -912,9 +969,19 @@ server <- function(input, output, session) {
   output$TipoestudioG <- renderText ({
       if(input$tipomapa=="PS"){ "Percepción sobre seguridad" }
       else if(input$tipomapa=="IS"){ "Estudio Socioeconómico y ambiental" }
-      else if(input$tipomapa=="EJ"){ "Características sobre población y migración"}
+      else if(input$tipomapa=="EJ"){ "Caracter??sticas sobre población y migración"}
   })
-  
+  output$tipoestudio <- renderText({
+    if(input$estudio == "Salinas"){
+      "Diagnóstico socioeconómico y ambiental de las Salinas de Isla Mujeres"
+    }
+    else if(input$estudio == "Población y migración"){
+      "Características sobre población y migración"
+    }
+    else if(input$estudio == "Percepción de seguridad"){
+      "Consulta ciudadana sobre percepción de seguridad"
+    }
+  })
   
   
   # ---------------------------------------------------------------------
@@ -929,10 +996,10 @@ server <- function(input, output, session) {
   
   # Texto tipo de estudio
   output$Tipoestudio <- renderText ({
-    if(input$showmapa=="ALL"){ "Estudios socioeconomicos, Percepción de seguridad y Características sobre población y migración. " }
+    if(input$showmapa=="ALL"){ "Estudios socioeconomicos, Percepción de seguridad y Caracter??sticas sobre población y migración. " }
     else if(input$showmapa=="PS"){ "Percepción sobre seguridad" }
     else if(input$showmapa=="IS"){ "Estudio Socioeconómico y ambiental" }
-    else if(input$showmapa=="EJ"){ "Características sobre población y migración"}
+    else if(input$showmapa=="EJ"){ "Caracter??sticas sobre población y migración"}
   })
   
   # Grafica de edades en Mapa 
@@ -953,185 +1020,358 @@ server <- function(input, output, session) {
   # graficas de mosaico
   output$mosaico1 <- renderPlot({
     if(input$var1 == "Origen" & input$var2 == "Puesto" & input$var3 == "Edad"){
-      mosaics(tbl15, c(90,0,0,0), c(0,0,0,2))
-    }else{
-      if(input$var1 == "Origen" & input$var2 == "Puesto" & input$var3 == "Sexo"){
-        mosaics(tbl16, c(0,0,0,0), c(0,0,0,2))
-      }else{
-        if(input$var1 == "Origen" & input$var2 == "Trabajo" & input$var3 == "Edad"){
-          mosaics(tbl17, c(0,0,0,0), c(0,0,0,2))
-        }else{
-          if(input$var1 == "Origen" & input$var2 == "Trabajo" & input$var3 == "Sexo"){
-            mosaics(tbl18, c(0,0,0,0), c(0,0,0,2))
-          }else{
-            if(input$var1 == "Origen" & input$var2 == "Escolaridad" & input$var3 == "Edad"){
-              mosaics(tbl19, c(90,0,0,0), c(0,0,0,2))
-            }else{
-              if(input$var1 == "Origen" & input$var2 == "Escolaridad" & input$var3 == "Sexo"){
-                mosaics(tbl20, c(90,0,0,0), c(0,0,0,2))
-              }else{
-                if(input$var1 == "Origen" & input$var2 == "Ingreso_sem" & input$var3 == "Edad"){
-                  mosaics(tbl21, c(0,0,0,0), c(0,0,0,2))
-                }else{
-                  if(input$var1 == "Origen" & input$var2 == "Ingreso_sem" & input$var3 == "Sexo"){
-                    mosaics(tbl22, c(0,0,0,0), c(0,0,0,2))
-                  }else{
-                    if(input$var1 == "Escolaridad" & input$var2 == "Puesto" & input$var3 == "Edad"){
-                      mosaics2(tbl23, c(0,0,0,0), c(0,0,0,2))
-                    }else{
-                      if(input$var1 == "Escolaridad" & input$var2 == "Puesto" & input$var3 == "Sexo"){
-                        mosaics2(tbl24, c(0,0,0,0), c(0,0,0,2))
-                      }else{
-                        if(input$var1 == "Escolaridad" & input$var2 == "Trabajo" & input$var3 == "Edad"){
-                          mosaics2(tbl25, c(0,0,0,0), c(0,0,0,2))
-                        }else{
-                          if(input$var1 == "Escolaridad" & input$var2 == "Trabajo" & input$var3 == "Sexo"){
-                            mosaics2(tbl26, c(0,0,0,0), c(0,0,0,2))
-                          }else{
-                            if(input$var1 == "Escolaridad" & input$var2 == "Escolaridad" & input$var3 == "Edad"){
-                              mosaics2(tbl27, c(0,0,0,0), c(0,0,0,2))
-                            }else{
-                              if(input$var1 == "Escolaridad" & input$var2 == "Escolaridad" & input$var3 == "Sexo"){
-                                mosaics2(tbl28, c(0,0,0,0), c(0,0,0,2))
-                              }else{
-                                if(input$var1 == "Escolaridad" & input$var2 == "Ingreso_sem" & input$var3 == "Edad"){
-                                  mosaics2(tbl29, c(0,0,0,0), c(0,0,0,2))
-                                }else{
-                                  if(input$var1 == "Escolaridad" & input$var2 == "Ingreso_sem" & input$var3 == "Sexo"){
-                                    mosaics2(tbl30, c(0,0,0,0), c(0,0,0,2))
-                                  }else{
-                                    if(input$var1 == "Puesto" & input$var2 == "Trabajo" & input$var3 == "Edad"){
-                                      mosaics2(tbl31, c(0,0,0,0), c(0,0,0,2))
-                                    }else{
-                                      if(input$var1 == "Puesto" & input$var2 == "Trabajo" & input$var3 == "Sexo"){
-                                        mosaics2(tbl32, c(0,0,0,0), c(0,0,0,2))
-                                      }else{
-                                        if(input$var1 == "Puesto" & input$var2 == "Escolaridad" & input$var3 == "Edad"){
-                                          mosaics2(tbl33, c(0,0,0,0), c(0,0,0,2))
-                                        }else{
-                                          if(input$var1 == "Puesto" & input$var2 == "Escolaridad" & input$var3 == "Sexo"){
-                                            mosaics2(tbl34, c(0,0,0,0), c(0,0,0,2))
-                                          }else{
-                                            if(input$var1 == "Puesto" & input$var2 == "Ingreso_sem" & input$var3 == "Edad"){
-                                              mosaics2(tbl35, c(0,0,0,0), c(0,0,0,2))
-                                            }else{
-                                              if(input$var1 == "Puesto" & input$var2 == "Ingreso_sem" & input$var3 == "Sexo"){
-                                                mosaics2(tbl36, c(0,0,0,0), c(0,0,0,2))
-                                              }else{
-                                                if(input$var1 == "Trabajo" & input$var2 == "Puesto" & input$var3 == "Edad"){
-                                                  mosaics2(tbl37, c(0,0,0,0), c(0,0,0,2))
-                                                }else{
-                                                  if(input$var1 == "Trabajo" & input$var2 == "Puesto" & input$var3 == "Sexo"){
-                                                    mosaics2(tbl38, c(0,0,0,0), c(0,0,0,2))
-                                                  }else{
-                                                    if(input$var1 == "Trabajo" & input$var2 == "Escolaridad" & input$var3 == "Edad"){
-                                                      mosaics2(tbl39, c(0,0,0,0), c(0,0,0,2))
-                                                    }else{
-                                                      if(input$var1 == "Trabajo" & input$var2 == "Escolaridad" & input$var3 == "Sexo"){
-                                                        mosaics2(tbl40, c(0,0,0,0), c(0,0,0,2))
-                                                      }else{
-                                                        if(input$var1 == "Trabajo" & input$var2 == "Ingreso_sem" & input$var3 == "Edad"){
-                                                          mosaics2(tbl41, c(0,0,0,0), c(0,0,0,2))
-                                                        }else{
-                                                          if(input$var1 == "Trabajo" & input$var2 == "Ingreso_sem" & input$var3 == "Sexo"){
-                                                            mosaics2(tbl42, c(0,0,0,0), c(0,0,0,2))
-                                                          }else{
-                                                            if(input$var1 == "Origen" & input$var2 == "Puesto"){
-                                                              mosaics(tbl1, c(90,0,0,0), c(0,0,0,6.5))
-                                                            }else{
-                                                              if(input$var1 == "Origen" & input$var2 == "Trabajo"){
-                                                                mosaics(tbl2, c(0,0,0,0), c(0,0,0,6.5))
-                                                              }else{
-                                                                if(input$var1 == "Origen" & input$var2 == "Escolaridad"){
-                                                                  mosaics(tbl3, c(90,0,0,0), c(0,0,0,6.5))
-                                                                }else{
-                                                                  if(input$var1 == "Origen" & input$var2 == "Ingreso_sem"){
-                                                                    mosaics(tbl4, c(0,0,0,0), c(0,0,0,6.5))
-                                                                  }else{
-                                                                    if(input$var1 == "Escolaridad" & input$var2 == "Puesto"){
-                                                                      mosaics(tbl5, c(90,0,0,0), c(0,0,0,9.5))
-                                                                    }else{
-                                                                      if(input$var1 == "Escolaridad" & input$var2 == "Trabajo"){
-                                                                        mosaics(tbl6, c(90,0,0,0), c(0,0,0,9.5))
-                                                                      }else{
-                                                                        if(input$var1 == "Trabajo" & input$var2 == "Trabajo" & input$var3 == "Edad"){
-                                                                          mosaics(tbl45, c(0,0,0,0), c(0,0,0,5))
-                                                                        }else{
-                                                                          if(input$var1 == "Escolaridad" & input$var2 == "Ingreso_sem"){
-                                                                            mosaics(tbl8, c(0,0,0,0), c(0,0,0,9.5))
-                                                                          }else{
-                                                                            if(input$var1 == "Puesto" & input$var2 == "Trabajo"){
-                                                                              mosaics(tbl9, c(90,0,0,0), c(0,0,0,11.5))
-                                                                            }else{
-                                                                              if(input$var1 == "Puesto" & input$var2 == "Escolaridad"){
-                                                                                mosaics(tbl10, c(90,0,0,0), c(0,0,0,11.5))
-                                                                              }else{
-                                                                                if(input$var1 == "Puesto" & input$var2 == "Ingreso_sem"){
-                                                                                  mosaics(tbl11, c(0,0,0,0), c(0,0,0,11.5))
-                                                                                }else{
-                                                                                  if(input$var1 == "Trabajo" & input$var2 == "Puesto"){
-                                                                                    mosaics(tbl12, c(90,0,0,0), c(0,0,0,5))
-                                                                                  }else{
-                                                                                    if(input$var1 == "Trabajo" & input$var2 == "Escolaridad"){
-                                                                                      mosaics(tbl13, c(90,0,0,0), c(0,0,0,5))
-                                                                                    }else{
-                                                                                      if(input$var1 == "Trabajo" & input$var2 == "Ingreso_sem"){
-                                                                                        mosaics(tbl14, c(0,0,0,0), c(0,0,0,5))
-                                                                                      }else{
-                                                                                        if(input$var1 == "Puesto" & input$var2 == "Puesto" & input$var3 == "Edad"){
-                                                                                          mosaics(tbl43, c(0,0,0,0), c(0,0,0,11.5))
-                                                                                        }else{
-                                                                                          if(input$var1 == "Puesto" & input$var2 == "Puesto" & input$var3 == "Sexo"){
-                                                                                            mosaics(tbl44, c(0,0,0,0), c(0,0,0,11.5))
-                                                                                          }
-                                                                                        }
-                                                                                      }
-                                                                                    }
-                                                                                  }
-                                                                                }
-                                                                              }
-                                                                            }
-                                                                          }
-                                                                        }
-                                                                      }
-                                                                    }
-                                                                  }
-                                                                }
-                                                              }
-                                                            }
-                                                          }
-                                                        }
-                                                      }
-                                                    }
-                                                  }
-                                                }
-                                              }
-                                            }
-                                          }
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              }
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
+      mosaics2(tbl15, c(0,0,0,0), c(0,0,0,2))
+    }
+    else if(input$var1 == "Origen" & input$var2 == "Puesto" & input$var3 == "Sexo"){
+      mosaics2(tbl16, c(0,0,0,0), c(0,0,0,2))
+    }
+    else if(input$var1 == "Origen" & input$var2 == "Trabajo" & input$var3 == "Edad"){
+      mosaics(tbl17, c(0,0,0,0), c(0,0,0,2))
+    }
+    else if(input$var1 == "Origen" & input$var2 == "Trabajo" & input$var3 == "Sexo"){
+      mosaics(tbl18, c(0,0,0,0), c(0,0,0,2))
+    }
+    else if(input$var1 == "Origen" & input$var2 == "Escolaridad" & input$var3 == "Edad"){
+      mosaics(tbl19, c(90,0,0,0), c(0,0,0,2))
+    }
+    else if(input$var1 == "Origen" & input$var2 == "Escolaridad" & input$var3 == "Sexo"){
+      mosaics(tbl20, c(90,0,0,0), c(0,0,0,2))
+    }
+    else if(input$var1 == "Origen" & input$var2 == "Ingreso_sem" & input$var3 == "Edad"){
+      mosaics(tbl21, c(0,0,0,0), c(0,0,0,2))
+    }
+    else if(input$var1 == "Origen" & input$var2 == "Ingreso_sem" & input$var3 == "Sexo"){
+      mosaics(tbl22, c(0,0,0,0), c(0,0,0,2))
+    }
+    else if(input$var1 == "Escolaridad" & input$var2 == "Puesto" & input$var3 == "Edad"){
+      mosaics2(tbl23, c(0,0,0,0), c(0,0,0,2))
+    }
+    else if(input$var1 == "Escolaridad" & input$var2 == "Puesto" & input$var3 == "Sexo"){
+      mosaics2(tbl24, c(0,0,0,0), c(0,0,0,2))
+    }
+    else if(input$var1 == "Escolaridad" & input$var2 == "Trabajo" & input$var3 == "Edad"){
+      mosaics2(tbl25, c(0,0,0,0), c(0,0,0,2))
+    }
+    else if(input$var1 == "Escolaridad" & input$var2 == "Trabajo" & input$var3 == "Sexo"){
+      mosaics2(tbl26, c(0,0,0,0), c(0,0,0,2))
+    }
+    else if(input$var1 == "Escolaridad" & input$var2 == "Escolaridad" & input$var3 == "Edad"){
+      mosaics2(tbl27, c(0,0,0,0), c(0,0,0,2))
+    }
+    else if(input$var1 == "Escolaridad" & input$var2 == "Escolaridad" & input$var3 == "Sexo"){
+      mosaics2(tbl28, c(0,0,0,0), c(0,0,0,2))
+    }
+    else if(input$var1 == "Escolaridad" & input$var2 == "Ingreso_sem" & input$var3 == "Edad"){
+      mosaics2(tbl29, c(0,0,0,0), c(0,0,0,2))
+    }
+    else if(input$var1 == "Escolaridad" & input$var2 == "Ingreso_sem" & input$var3 == "Sexo"){
+      mosaics2(tbl30, c(0,0,0,0), c(0,0,0,2))
+    }
+    else if(input$var1 == "Puesto" & input$var2 == "Trabajo" & input$var3 == "Edad"){
+      mosaics2(tbl31, c(0,0,0,0), c(0,0,0,2))
+    }
+    else if(input$var1 == "Puesto" & input$var2 == "Trabajo" & input$var3 == "Sexo"){
+      mosaics2(tbl32, c(0,0,0,0), c(0,0,0,2))
+    }
+    else if(input$var1 == "Puesto" & input$var2 == "Escolaridad" & input$var3 == "Edad"){
+      mosaics2(tbl33, c(0,0,0,0), c(0,0,0,2))
+    }
+    else if(input$var1 == "Puesto" & input$var2 == "Escolaridad" & input$var3 == "Sexo"){
+      mosaics2(tbl34, c(0,0,0,0), c(0,0,0,2))
+    }
+    else if(input$var1 == "Puesto" & input$var2 == "Ingreso_sem" & input$var3 == "Edad"){
+      mosaics2(tbl35, c(0,0,0,0), c(0,0,0,2))
+    }
+    else if(input$var1 == "Puesto" & input$var2 == "Ingreso_sem" & input$var3 == "Sexo"){
+      mosaics2(tbl36, c(0,0,0,0), c(0,0,0,2))
+    }
+    else if(input$var1 == "Trabajo" & input$var2 == "Puesto" & input$var3 == "Edad"){
+      mosaics2(tbl37, c(0,0,0,0), c(0,0,0,2))
+    }
+    else if(input$var1 == "Trabajo" & input$var2 == "Puesto" & input$var3 == "Sexo"){
+      mosaics2(tbl38, c(0,0,0,0), c(0,0,0,2))
+    }
+    else if(input$var1 == "Trabajo" & input$var2 == "Escolaridad" & input$var3 == "Edad"){
+      mosaics2(tbl39, c(0,0,0,0), c(0,0,0,2))
+    }
+    else if(input$var1 == "Trabajo" & input$var2 == "Escolaridad" & input$var3 == "Sexo"){
+      mosaics2(tbl40, c(0,0,0,0), c(0,0,0,2))
+    }
+    else if(input$var1 == "Trabajo" & input$var2 == "Ingreso_sem" & input$var3 == "Edad"){
+      mosaics2(tbl41, c(0,0,0,0), c(0,0,0,2))
+    }
+    else if(input$var1 == "Trabajo" & input$var2 == "Ingreso_sem" & input$var3 == "Sexo"){
+      mosaics2(tbl42, c(0,0,0,0), c(0,0,0,2))
+    }
+    else if(input$var1 == "Origen" & input$var2 == "Puesto"){
+      mosaics(tbl1, c(90,0,0,0), c(-1,0,0,6.5))
+    }
+    else if(input$var1 == "Origen" & input$var2 == "Trabajo"){
+      mosaics(tbl2, c(0,0,0,0), c(0,0,0,6.5))
+    }
+    else if(input$var1 == "Origen" & input$var2 == "Escolaridad"){
+      mosaics(tbl3, c(90,0,0,0), c(0,0,0,6.5))
+    }
+    else if(input$var1 == "Origen" & input$var2 == "Ingreso_sem"){
+      mosaics(tbl4, c(0,0,0,0), c(0,0,0,6.5))
+    }
+    else if(input$var1 == "Escolaridad" & input$var2 == "Puesto"){
+      mosaics(tbl5, c(90,0,0,0), c(-1,0,0,9.5))
+    }
+    else if(input$var1 == "Escolaridad" & input$var2 == "Trabajo"){
+      mosaics(tbl6, c(90,0,0,0), c(0,0,0,9.5))
+    }
+    else if(input$var1 == "Trabajo" & input$var2 == "Trabajo" & input$var3 == "Edad"){
+      mosaics(tbl45, c(0,0,0,0), c(0,0,0,5))
+    }
+    else if(input$var1 == "Escolaridad" & input$var2 == "Ingreso_sem"){
+      mosaics(tbl8, c(0,0,0,0), c(0,0,0,9.5))
+    }
+    else if(input$var1 == "Puesto" & input$var2 == "Trabajo"){
+      mosaics(tbl9, c(0,0,0,0), c(0,0,0,11.5))
+    }
+    else if(input$var1 == "Puesto" & input$var2 == "Escolaridad"){
+      mosaics(tbl10, c(90,0,0,0), c(0,0,0,11.5))
+    }
+    else if(input$var1 == "Puesto" & input$var2 == "Ingreso_sem"){
+      mosaics(tbl11, c(0,0,0,0), c(0,0,0,11.5))
+    }
+    else if(input$var1 == "Trabajo" & input$var2 == "Puesto"){
+      mosaics(tbl12, c(90,0,0,0), c(-1,0,0,5))
+    }
+    else if(input$var1 == "Trabajo" & input$var2 == "Escolaridad"){
+      mosaics(tbl13, c(90,0,0,0), c(0,0,0,5))
+    }
+    else if(input$var1 == "Trabajo" & input$var2 == "Ingreso_sem"){
+      mosaics(tbl14, c(0,0,0,0), c(0,0,0,5))
+    }
+    else if(input$var1 == "Puesto" & input$var2 == "Puesto" & input$var3 == "Edad"){
+      mosaics(tbl43, c(0,0,0,0), c(0,0,0,11.5))
+    }
+    else if(input$var1 == "Puesto" & input$var2 == "Puesto" & input$var3 == "Sexo"){
+      mosaics(tbl44, c(0,0,0,0), c(0,0,0,11.5))
+    }
+    else if(input$var1 == "Trabajo" & input$var2 == "Trabajo" & input$var3 == "Sexo"){
+      mosaics(tbl46, c(0,0,0,0), c(0,0,0,11.5))
+    }
+    #salinas
+    else if(input$var1 == "tro" & input$var2 == "benef" & input$var3 == "Ninguno"){
+      mosaics(sbl1 , c(0,0,0,0), c(0,0,0,11.5))
+    }
+    else if(input$var1 == "tro" & input$var2 == "desv" & input$var3 == "Ninguno"){
+      mosaics(sbl2 , c(0,0,0,0), c(0,0,0,11.5))
+    }
+    else if(input$var1 == "tro" & input$var2 == "cond" & input$var3 == "Ninguno"){
+      mosaics(sbl3 , c(0,0,0,0), c(0,0,0,11.5))
+    }
+    else if(input$var1 == "tro" & input$var2 == "efe" & input$var3 == "Ninguno"){
+      mosaics(sbl4 , c(90,0,0,0), c(0,0,0,11.5))
+    }
+    
+    else if(input$var1 == "Actividad productiva" & input$var2 == "benef" & input$var3 == "Ninguno"){
+      mosaics(sbl5 , c(0,0,0,0), c(0,0,0,11.5))
+    }
+    else if(input$var1 == "Actividad productiva" & input$var2 == "desv" & input$var3 == "Ninguno"){
+      mosaics(sbl6 , c(90,0,0,0), c(0,0,0,11.5))
+    }
+    else if(input$var1 == "Actividad productiva" & input$var2 == "cond" & input$var3 == "Ninguno"){
+      mosaics(sbl7 , c(0,0,0,0), c(0,0,0,11.5))
+    }
+    else if(input$var1 == "Actividad productiva" & input$var2 == "efe" & input$var3 == "Ninguno"){
+      mosaics(sbl8 , c(90,0,0,0), c(0,0,0,11.5))
+    }
+    
+    else if(input$var1 == "Uso salinas" & input$var2 == "benef" & input$var3 == "Ninguno"){
+      mosaics(sbl9 , c(0,0,0,0), c(0,0,0,11.5))
+    }
+    else if(input$var1 == "Uso salinas" & input$var2 == "desv" & input$var3 == "Ninguno"){
+      mosaics(sbl10 , c(0,0,0,0), c(0,0,0,11.5))
+    }
+    else if(input$var1 == "Uso salinas" & input$var2 == "cond" & input$var3 == "Ninguno"){
+      mosaics(sbl11 , c(0,0,0,0), c(0,0,0,11))
+    }
+    else if(input$var1 == "Uso salinas" & input$var2 == "efe" & input$var3 == "Ninguno"){
+      mosaics(sbl12 , c(90,0,0,0), c(0,0,0,11.5))
+    }
+    ### Edad ###
+    #salinas
+    else if(input$var1 == "tro" & input$var2 == "benef" & input$var3 == "Edad"){
+      mosaics3(sbl13 , c(0,0,0,0), c(0,0,0,1))
+    }
+    else if(input$var1 == "tro" & input$var2 == "desv" & input$var3 == "Edad"){
+      mosaics3(sbl14 , c(0,0,0,0), c(0,0,0,1))
+    }
+    else if(input$var1 == "tro" & input$var2 == "cond" & input$var3 == "Edad"){
+      mosaics3(sbl15 , c(0,0,0,0), c(0,0,0,1))
+    }
+    else if(input$var1 == "tro" & input$var2 == "efe" & input$var3 == "Edad"){
+      mosaics3(sbl16 , c(0,0,0,0), c(0,0,0,1))
+    }
+    
+    else if(input$var1 == "Actividad productiva" & input$var2 == "benef" & input$var3 == "Edad"){
+      mosaics3(sbl17 , c(0,0,0,0), c(0,0,0,1))
+    }
+    else if(input$var1 == "Actividad productiva" & input$var2 == "desv" & input$var3 == "Edad"){
+      mosaics3(sbl18 , c(0,0,0,0), c(0,0,0,1))
+    }
+    else if(input$var1 == "Actividad productiva" & input$var2 == "cond" & input$var3 == "Edad"){
+      mosaics3(sbl19 , c(0,0,0,0), c(0,0,0,1))
+    }
+    else if(input$var1 == "Actividad productiva" & input$var2 == "efe" & input$var3 == "Edad"){
+      mosaics3(sbl20 , c(0,0,0,0), c(0,0,0,1))
+    }
+    
+    else if(input$var1 == "Uso salinas" & input$var2 == "benef" & input$var3 == "Edad"){
+      mosaics3(sbl21 , c(0,0,0,0), c(0,0,0,1))
+    }
+    else if(input$var1 == "Uso salinas" & input$var2 == "desv" & input$var3 == "Edad"){
+      mosaics3(sbl22 , c(0,0,0,0), c(0,0,0,1))
+    }
+    else if(input$var1 == "Uso salinas" & input$var2 == "cond" & input$var3 == "Edad"){
+      mosaics3(sbl23 , c(0,0,0,0), c(0,0,0,1))
+    }
+    else if(input$var1 == "Uso salinas" & input$var2 == "efe" & input$var3 == "Edad"){
+      mosaics3(sbl24 , c(0,0,0,0), c(0,0,0,1))
+    }
+    else if(input$var1 == "Actividad productiva" & input$var2 == "Trabajo" & input$var3 == "Ninguno"){
+      mosaics(sbl25 , c(0,0,0,0), c(0,0,0,6))
+    }
+    else if(input$var1 == "Actividad productiva" & input$var2 == "Trabajo" & input$var3 == "Edad"){
+      mosaics2(sbl26 , c(0,0,0,0), c(0,0,0,1))
+    }
+    else if(input$var1 == "Uso salinas" & input$var2 == "Trabajo" & input$var3 == "Ninguno"){
+      mosaics(sbl27 , c(0,0,0,0), c(0,0,0,6))
+    }
+    else if(input$var1 == "Uso salinas" & input$var2 == "Trabajo" & input$var3 == "Edad"){
+      mosaics2(sbl28 , c(0,0,0,0), c(0,0,0,1))
+    }
+    ##### percepción #####
+    else if(input$var1 == "tmpa" & input$var2 == "R1" & input$var3 == "Ninguno"){
+      mosaics(pl1 , c(0,0,0,0), c(0,0,0,6))
+    }
+    else if(input$var1 == "tmpa" & input$var2 == "R2" & input$var3 == "Ninguno"){
+      mosaics(pl2 , c(0,0,0,0), c(0,0,0,6))
+    }
+    else if(input$var1 == "tmpa" & input$var2 == "R3" & input$var3 == "Ninguno"){
+      mosaics(pl3 , c(0,0,0,0), c(0,0,0,6))
+    }
+    else if(input$var1 == "tmpa" & input$var2 == "R4" & input$var3 == "Ninguno"){
+      mosaics(pl4 , c(0,0,0,0), c(0,0,0,6))
+    }
+    ##
+    else if(input$var1 == "tmpc" & input$var2 == "R1" & input$var3 == "Ninguno"){
+      mosaics(pl5 , c(0,0,0,0), c(0,0,0,6))
+    }
+    else if(input$var1 == "tmpc" & input$var2 == "R2" & input$var3 == "Ninguno"){
+      mosaics(pl6 , c(0,0,0,0), c(0,0,0,6))
+    }
+    else if(input$var1 == "tmpc" & input$var2 == "R3" & input$var3 == "Ninguno"){
+      mosaics(pl7 , c(0,0,0,0), c(0,0,0,6))
+    }
+    else if(input$var1 == "tmpc" & input$var2 == "R4" & input$var3 == "Ninguno"){
+      mosaics(pl8 , c(0,0,0,0), c(0,0,0,6))
+    }
+    ##
+    else if(input$var1 == "vic" & input$var2 == "R1" & input$var3 == "Ninguno"){
+      mosaics(pl9 , c(0,0,0,0), c(0,0,0,6))
+    }
+    else if(input$var1 == "vic" & input$var2 == "R2" & input$var3 == "Ninguno"){
+      mosaics(pl10 , c(0,0,0,0), c(0,0,0,6))
+    }
+    else if(input$var1 == "vic" & input$var2 == "R3" & input$var3 == "Ninguno"){
+      mosaics(pl11 , c(0,0,0,0), c(0,0,0,6))
+    }
+    else if(input$var1 == "vic" & input$var2 == "R4" & input$var3 == "Ninguno"){
+      mosaics(pl12 , c(0,0,0,0), c(0,0,0,6))
+    }
+    ######
+    else if(input$var1 == "tmpa" & input$var2 == "R1" & input$var3 == "Sexo"){
+      mosaics2(pl13 , c(0,0,0,0), c(0,0,0,2))
+    }
+    else if(input$var1 == "tmpa" & input$var2 == "R2" & input$var3 == "Sexo"){
+      mosaics2(pl14 , c(0,0,0,0), c(0,0,0,2))
+    }
+    else if(input$var1 == "tmpa" & input$var2 == "R3" & input$var3 == "Sexo"){
+      mosaics2(pl15 , c(0,0,0,0), c(0,0,0,2))
+    }
+    else if(input$var1 == "tmpa" & input$var2 == "R4" & input$var3 == "Sexo"){
+      mosaics2(pl16 , c(0,0,0,0), c(0,0,0,2))
+    }
+    ##
+    else if(input$var1 == "tmpc" & input$var2 == "R1" & input$var3 == "Sexo"){
+      mosaics2(pl17 , c(0,0,0,0), c(0,0,0,2))
+    }
+    else if(input$var1 == "tmpc" & input$var2 == "R2" & input$var3 == "Sexo"){
+      mosaics2(pl18 , c(0,0,0,0), c(0,0,0,2))
+    }
+    else if(input$var1 == "tmpc" & input$var2 == "R3" & input$var3 == "Sexo"){
+      mosaics2(pl19 , c(0,0,0,0), c(0,0,0,2))
+    }
+    else if(input$var1 == "tmpc" & input$var2 == "R4" & input$var3 == "Sexo"){
+      mosaics2(pl20 , c(0,0,0,0), c(0,0,0,2))
+    }
+    ##
+    else if(input$var1 == "vic" & input$var2 == "R1" & input$var3 == "Sexo"){
+      mosaics2(pl21 , c(0,0,0,0), c(0,0,0,2))
+    }
+    else if(input$var1 == "vic" & input$var2 == "R2" & input$var3 == "Sexo"){
+      mosaics2(pl22 , c(0,0,0,0), c(0,0,0,2))
+    }
+    else if(input$var1 == "vic" & input$var2 == "R3" & input$var3 == "Sexo"){
+      mosaics2(pl23 , c(0,0,0,0), c(0,0,0,2))
+    }
+    else if(input$var1 == "vic" & input$var2 == "R4" & input$var3 == "Sexo"){
+      mosaics2(pl24 , c(0,0,0,0), c(0,0,0,2))
+    }
+    #Ninguno
+    else if(input$var1 == "Origen" & input$var2 == "Ninguno" & input$var3 == "Edad"){
+      mosaics(nbl1, c(0,0,0,0), c(0,0,0,6))
+    }
+    else if(input$var1 == "Origen" & input$var2 == "Ninguno" & input$var3 == "Sexo"){
+      mosaics(nbl2, c(0,0,0,0), c(0,0,0,6))
+    }
+    else if(input$var1 == "Escolaridad" & input$var2 == "Ninguno" & input$var3 == "Edad"){
+      mosaics(nbl3, c(0,0,0,0), c(0,0,0,7.5))
+    }
+    else if(input$var1 == "Escolaridad" & input$var2 == "Ninguno" & input$var3 == "Sexo"){
+      mosaics(nbl4, c(0,0,0,0), c(0,0,0,7.5))
+    }
+    else if(input$var1 == "Puesto" & input$var2 == "Ninguno" & input$var3 == "Edad"){
+      mosaics(nbl5, c(0,0,0,0), c(0,0,0,8.5))
+    }
+    else if(input$var1 == "Puesto" & input$var2 == "Ninguno" & input$var3 == "Sexo"){
+      mosaics(nbl6, c(0,0,0,0), c(0,0,0,8.5))
+    }
+    else if(input$var1 == "Trabajo" & input$var2 == "Ninguno" & input$var3 == "Edad"){
+      mosaics(nbl7, c(0,0,0,0), c(0,0,0,4))
+    }
+    else if(input$var1 == "Trabajo" & input$var2 == "Ninguno" & input$var3 == "Sexo"){
+      mosaics(nbl8, c(0,0,0,0), c(0,0,0,4))
+    }
+    #extrasalinas
+    else if(input$var1 == "tro" & input$var2 == "ning" & input$var3 == "Edad"){
+      mosaics(sbl29, c(0,0,0,0), c(0,0,0,4))
+    }
+    else if(input$var1 == "Actividad productiva" & input$var2 == "ning" & input$var3 == "Edad"){
+      mosaics(sbl30, c(0,0,0,0), c(0,0,0,5))
+    }
+    else if(input$var1 == "Uso salinas" & input$var2 == "ning" & input$var3 == "Edad"){
+      mosaics(sbl31, c(0,0,0,0), c(0,0,0,5))
+    }
+    else if(input$var1 == "tmpa" & input$var2 == "ning2" & input$var3 == "Sexo"){
+      mosaics(pl25, c(0,0,0,0), c(0,0,0,5))
+    }
+    else if(input$var1 == "tmpc" & input$var2 == "ning2" & input$var3 == "Sexo"){
+      mosaics(pl26, c(0,0,0,0), c(0,0,0,5))
+    }
+    else if(input$var1 == "vic" & input$var2 == "ning2" & input$var3 == "Sexo"){
+      mosaics(pl27, c(0,0,0,0), c(0,0,0,5))
     }
   })
   output$Expl1 <- renderUI({
     if(input$var3 == "Edad"){
-      word <- paste("<b>",tags$i("o Edad:"),"</b>",tags$i("Grupo A: Encuestados entre 18 y 40 aÃ±os,
-                                                          Grupo B: Encuestados mayores de 40 aÃ±os"))
+      word <- paste("<b>",tags$i("o Edad:"),"</b>",tags$i("Grupo A: Encuestados entre 18 y 40 años,
+                                                          Grupo B: Encuestados mayores de 40 años"))
       HTML(paste(word))
     }
   })
@@ -1140,11 +1380,20 @@ server <- function(input, output, session) {
       word <- paste("<b>",tags$i("o Ingreso semanal:"),"</b>",tags$i("Grupo A: $0 a $1200,
                                                           Grupo B: $1201 a $2500,
                                                           Grupo C: $2501 a $5000,
-                                                          Grupo D: MÃ¡s de $5000"))
+                                                          Grupo D: Más de $5000"))
       HTML(paste(word))
     }
   })
-  
+  output$Expl3 <- renderUI({
+    if(input$var2 == "R1" || input$var2 == "R2" || input$var2 == "R3" || input$var2 == "R4"){
+      word <- paste("<b>",tags$i("o Riesgos de sufrir un delito:"),"</b>",tags$i("A: Riesgo Muy Bajo,
+                                                          B: Riesgo Bajo,
+                                                          C: Riesgo Medio,
+                                                          D: Riesgo Alto,
+                                                          E: Riesgo Muy Alto"))
+      HTML(paste(word))
+    }
+  })
  
   output$data <- DT::renderDataTable({
     DT::datatable(read.table(file='./CSV/ps/columnas1.csv', sep=',', header = TRUE, stringsAsFactors = FALSE, fileEncoding="latin1")[, input$show_vars, drop = FALSE])
@@ -2289,7 +2538,7 @@ server <- function(input, output, session) {
   
   output$txt4 <- renderUI({
     word <- paste("<b>",tags$i("o Descripción del grafo:"),"</b>",tags$i("Los nodos del grafo indican las reglas de asociación que se obtienen con las columnas seleccionadas, 
-                 estas se conectan por medio de flechas que van del antecedente al consecuente. En el medio de estas flechas de conexiones, podemos encontrar un círculo cuyo tam. 
+                 estas se conectan por medio de flechas que van del antecedente al consecuente. En el medio de estas flechas de conexiones, podemos encontrar un c??rculo cuyo tam. 
                                                                          representa el valor de soporte o frecuencia de la regla mientras que el color representa la confianza. 
                                                                          Podemos ver que la confianza se representa desde rosa pálido hasta el rojo, siendo este último el valor más alto."))
     HTML(paste(word))

@@ -1,0 +1,173 @@
+tiempo_aqui,tiempo_casa,Sexo,riesgo_casa,riesgo_calle,riesgo_zona,riesgo_ciudad,victima
+Mas de 10 ,Entre 6 y 10 ,H,A,B,A,B,No
+Mas de 10 ,Mas de 10 ,H,A,A,B,A,No
+Mas de 10 ,Mas de 10 ,H,D,D,D,C,No
+Mas de 10 ,Mas de 10 ,M,C,D,D,D,No
+Mas de 10 ,Mas de 10 ,M,A,A,A,A,No
+Mas de 10 ,Mas de 10 ,M,A,E,E,E,No
+Mas de 10 ,Entre 6 y 10 ,H,A,A,B,B,No
+Entre 1 y 5 ,Entre 1 y 5 ,M,A,E,D,E,No
+Mas de 10 ,Mas de 10 ,M,C,E,E,E,No
+Mas de 10 ,Mas de 10 ,H,A,A,A,A,No
+Mas de 10 ,Mas de 10 ,M,D,E,E,E,No
+Mas de 10 ,Mas de 10 ,H,C,E,E,E,No
+Mas de 10 ,Mas de 10 ,M,A,A,B,C,No
+Mas de 10 ,Mas de 10 ,H,C,D,D,D,No
+Mas de 10 ,Mas de 10 ,H,C,C,C,D,No
+Mas de 10 ,Mas de 10 ,H,A,A,A,A,No
+Entre 6 y 10 ,Entre 1 y 5 ,M,B,B,E,E,No
+Mas de 10 ,Mas de 10 ,H,D,D,D,D,No
+Entre 1 y 5 ,Entre 1 y 5 ,H,A,B,D,D,No
+Mas de 10 ,Entre 1 y 5 ,M,A,A,A,A,No
+Mas de 10 ,Mas de 10 ,H,B,B,B,C,No
+Mas de 10 ,Mas de 10 ,M,A,C,E,E,No
+Mas de 10 ,Mas de 10 ,M,A,A,A,A,No
+Mas de 10 ,Mas de 10 ,H,B,C,C,C,No
+Mas de 10 ,Mas de 10 ,H,A,A,A,A,No
+Entre 1 y 5 ,Entre 1 y 5 ,M,A,A,A,C,No
+Mas de 10 ,Entre 1 y 5 ,M,A,A,A,C,No
+Mas de 10 ,Mas de 10 ,M,D,C,C,C,No
+Mas de 10 ,Entre 6 y 10 ,M,A,A,A,B,No
+Mas de 10 ,Mas de 10 ,H,C,E,E,E,No
+Mas de 10 ,Mas de 10 ,H,A,B,B,B,No
+Mas de 10 ,Mas de 10 ,M,A,A,A,B,No
+Mas de 10 ,Mas de 10 ,M,D,E,E,E,Si
+Mas de 10 ,Mas de 10 ,M,B,B,C,C,No
+Mas de 10 ,Mas de 10 ,M,C,E,E,E,No
+Mas de 10 ,Entre 6 y 10 ,M,C,C,D,C,No
+Mas de 10 ,Mas de 10 ,H,A,B,B,B,No
+Mas de 10 ,Mas de 10 ,H,A,A,A,A,No
+Mas de 10 ,Mas de 10 ,M,A,A,C,C,No
+Mas de 10 ,Mas de 10 ,M,A,A,A,C,No
+Mas de 10 ,Entre 6 y 10 ,H,A,A,A,B,No
+Mas de 10 ,Entre 1 y 5 ,M,A,C,D,D,No
+Mas de 10 ,Entre 6 y 10 ,M,A,C,D,C,No
+Entre 6 y 10 ,Entre 1 y 5 ,M,A,A,A,B,Si
+Mas de 10 ,Mas de 10 ,H,A,A,A,A,No
+Mas de 10 ,Mas de 10 ,M,A,C,D,E,No
+Mas de 10 ,Mas de 10 ,M,A,A,E,E,No
+Mas de 10 ,Mas de 10 ,M,B,B,B,E,No
+Mas de 10 ,Entre 1 y 5 ,M,E,E,E,E,No
+Mas de 10 ,Entre 6 y 10 ,H,A,B,D,D,No
+Mas de 10 ,Mas de 10 ,M,C,E,E,E,Si
+Mas de 10 ,Mas de 10 ,M,A,A,A,C,No
+Mas de 10 ,Mas de 10 ,M,A,B,B,C,No
+Mas de 10 ,Mas de 10 ,M,A,B,C,E,No
+Mas de 10 ,Mas de 10 ,M,A,E,E,E,No
+Mas de 10 ,Mas de 10 ,H,A,E,E,E,No
+Mas de 10 ,Entre 1 y 5 ,M,A,A,B,B,No
+Entre 1 y 5 ,Entre 1 y 5 ,H,C,D,E,D,No
+Mas de 10 ,Mas de 10 ,M,E,E,E,E,Si
+Mas de 10 ,Mas de 10 ,M,A,A,B,C,No
+Entre 1 y 5 ,Entre 1 y 5 ,M,D,D,E,D,No
+Mas de 10 ,Mas de 10 ,H,C,D,D,C,No
+Mas de 10 ,Mas de 10 ,M,C,C,C,E,No
+Entre 6 y 10 ,Entre 1 y 5 ,H,A,B,B,D,No
+Entre 1 y 5 ,Entre 1 y 5 ,H,D,E,E,E,No
+Mas de 10 ,Mas de 10 ,M,C,D,D,D,No
+Entre 6 y 10 ,Entre 6 y 10 ,M,B,D,E,E,No
+Mas de 10 ,Mas de 10 ,H,E,E,E,E,Si
+Mas de 10 ,Mas de 10 ,M,C,E,E,E,No
+Entre 1 y 5 ,Entre 1 y 5 ,H,A,B,C,C,No
+Entre 1 y 5 ,Entre 1 y 5 ,M,D,E,E,E,No
+Mas de 10 ,Mas de 10 ,H,D,D,D,D,No
+Mas de 10 ,Entre 1 y 5 ,M,A,A,C,C,No
+Mas de 10 ,Entre 1 y 5 ,M,A,A,A,C,No
+Entre 1 y 5 ,Entre 1 y 5 ,H,D,E,E,E,No
+Mas de 10 ,Mas de 10 ,H,D,C,C,C,No
+Mas de 10 ,Mas de 10 ,M,A,B,B,D,No
+Entre 1 y 5 ,Entre 1 y 5 ,H,C,C,E,E,No
+Mas de 10 ,Mas de 10 ,M,D,D,D,E,No
+Mas de 10 ,Entre 6 y 10 ,M,A,A,A,A,No
+Entre 6 y 10 ,Entre 1 y 5 ,M,D,D,E,E,No
+Mas de 10 ,Mas de 10 ,M,C,E,E,E,No
+Entre 1 y 5 ,Entre 1 y 5 ,M,A,A,A,A,No
+Mas de 10 ,Mas de 10 ,M,B,B,D,D,No
+Mas de 10 ,Mas de 10 ,H,C,C,C,C,No
+Mas de 10 ,Mas de 10 ,M,C,D,D,D,No
+Menos de 1 ,Menos de 1 ,M,A,B,B,B,No
+Entre 6 y 10 ,Entre 1 y 5 ,M,A,A,A,C,No
+Mas de 10 ,Mas de 10 ,M,D,E,E,E,No
+Mas de 10 ,Mas de 10 ,H,C,D,D,D,No
+Mas de 10 ,Mas de 10 ,M,A,E,E,E,No
+Mas de 10 ,Entre 6 y 10 ,H,A,A,A,C,No
+Mas de 10 ,Entre 1 y 5 ,H,E,E,E,E,No
+Mas de 10 ,Mas de 10 ,M,C,C,D,D,No
+Entre 1 y 5 ,Entre 1 y 5 ,M,A,B,B,D,No
+Mas de 10 ,Entre 6 y 10 ,M,A,A,C,C,No
+Entre 1 y 5 ,Entre 1 y 5 ,M,C,D,E,E,No
+Mas de 10 ,Mas de 10 ,M,A,E,E,E,No
+Mas de 10 ,Mas de 10 ,H,A,A,A,C,No
+Mas de 10 ,Mas de 10 ,M,A,A,A,C,No
+Mas de 10 ,Mas de 10 ,H,E,E,E,E,No
+Entre 6 y 10 ,Entre 6 y 10 ,M,A,B,B,D,No
+Entre 6 y 10 ,Entre 1 y 5 ,M,A,B,B,B,No
+Mas de 10 ,Entre 1 y 5 ,M,E,E,E,E,Si
+Mas de 10 ,Mas de 10 ,H,A,B,B,B,Si
+Mas de 10 ,Mas de 10 ,H,A,C,C,C,No
+Entre 1 y 5 ,Entre 1 y 5 ,M,B,C,E,E,No
+Entre 6 y 10 ,Entre 1 y 5 ,M,A,A,A,C,No
+Mas de 10 ,Mas de 10 ,M,A,E,E,E,No
+Mas de 10 ,Mas de 10 ,M,A,A,A,A,No
+Entre 1 y 5 ,Entre 1 y 5 ,M,A,B,D,D,No
+Mas de 10 ,Mas de 10 ,M,A,B,A,B,No
+Mas de 10 ,Mas de 10 ,M,A,B,B,B,No
+Mas de 10 ,Entre 6 y 10 ,H,D,D,D,E,No
+Mas de 10 ,Mas de 10 ,H,A,C,C,C,No
+Mas de 10 ,Mas de 10 ,M,A,B,B,B,No
+Mas de 10 ,Mas de 10 ,M,A,B,C,C,No
+Mas de 10 ,Mas de 10 ,H,A,A,B,C,No
+Mas de 10 ,Entre 1 y 5 ,M,A,E,E,E,No
+Mas de 10 ,Mas de 10 ,M,A,A,A,A,Si
+Mas de 10 ,Mas de 10 ,H,E,E,E,E,No
+Mas de 10 ,Mas de 10 ,H,A,A,A,B,No
+Mas de 10 ,Mas de 10 ,M,A,E,E,E,No
+Mas de 10 ,Mas de 10 ,M,A,A,C,E,No
+Entre 1 y 5 ,Entre 1 y 5 ,H,A,A,A,A,Si
+Mas de 10 ,Mas de 10 ,H,E,E,E,E,No
+Mas de 10 ,Mas de 10 ,M,A,A,A,C,No
+Mas de 10 ,Mas de 10 ,H,A,A,C,C,Si
+Mas de 10 ,Mas de 10 ,M,A,A,A,C,No
+Mas de 10 ,Mas de 10 ,H,A,A,A,C,No
+Mas de 10 ,Mas de 10 ,H,E,E,E,E,Si
+Mas de 10 ,Entre 1 y 5 ,M,A,A,A,D,No
+Mas de 10 ,Mas de 10 ,M,C,D,E,E,No
+Menos de 1 ,Menos de 1 ,M,E,E,E,E,No
+Mas de 10 ,Mas de 10 ,M,E,E,E,E,No
+Menos de 1 ,Menos de 1 ,M,B,C,E,E,No
+Mas de 10 ,Mas de 10 ,M,A,C,C,C,No
+Mas de 10 ,Mas de 10 ,M,A,A,C,E,No
+Mas de 10 ,Mas de 10 ,M,A,A,A,E,No
+Mas de 10 ,Mas de 10 ,M,A,A,A,C,No
+Mas de 10 ,Mas de 10 ,M,A,E,E,E,No
+Mas de 10 ,Entre 1 y 5 ,M,A,B,B,B,No
+Mas de 10 ,Entre 6 y 10 ,M,A,E,E,E,No
+Menos de 1 ,Menos de 1 ,H,B,B,C,E,No
+Mas de 10 ,Mas de 10 ,M,A,A,A,C,No
+Mas de 10 ,Mas de 10 ,M,A,A,A,C,No
+Entre 6 y 10 ,Entre 6 y 10 ,M,C,C,C,C,No
+Mas de 10 ,Entre 6 y 10 ,H,D,E,E,E,No
+Mas de 10 ,Mas de 10 ,H,C,D,E,E,No
+Mas de 10 ,Mas de 10 ,M,E,E,E,E,No
+Mas de 10 ,Entre 6 y 10 ,M,C,D,E,E,No
+Entre 1 y 5 ,Entre 1 y 5 ,M,C,D,D,D,No
+Mas de 10 ,Entre 6 y 10 ,H,C,C,C,C,No
+Mas de 10 ,Entre 1 y 5 ,M,A,C,C,C,No
+Entre 6 y 10 ,Entre 1 y 5 ,M,C,D,E,E,No
+Mas de 10 ,Mas de 10 ,M,D,E,E,E,No
+Mas de 10 ,Mas de 10 ,H,E,E,E,E,No
+Mas de 10 ,Mas de 10 ,H,E,E,E,E,No
+Mas de 10 ,Entre 6 y 10 ,M,D,D,B,C,No
+Mas de 10 ,Mas de 10 ,H,C,C,C,C,No
+Mas de 10 ,Mas de 10 ,M,D,E,E,E,No
+Mas de 10 ,Mas de 10 ,M,C,C,D,C,No
+Mas de 10 ,Entre 6 y 10 ,M,C,E,E,E,No
+Mas de 10 ,Entre 1 y 5 ,M,C,E,E,E,No
+Mas de 10 ,Mas de 10 ,M,C,E,E,E,No
+Mas de 10 ,Mas de 10 ,H,B,C,B,B,No
+Mas de 10 ,Mas de 10 ,H,C,C,D,D,Si
+Mas de 10 ,Entre 6 y 10 ,H,C,C,D,E,No
+Mas de 10 ,Mas de 10 ,H,D,D,E,E,No
+Mas de 10 ,Entre 1 y 5 ,M,E,D,E,E,No
+Mas de 10 ,Mas de 10 ,M,C,D,D,D,No
+Mas de 10 ,Mas de 10 ,M,D,D,E,E,No

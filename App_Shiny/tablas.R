@@ -3,7 +3,7 @@ library(shiny)
 
 #graficas
 mosaics <- function(tbl, rot, offs){
-  vcd::mosaic(tbl,gp = shading_Friendly2,labeling = labeling_border(rot_labels = rot, 
+  vcd::mosaic(tbl,gp = shading_Friendly,labeling = labeling_border(rot_labels = rot, 
                                                          just_labels = c("left", 
                                                                          "left", 
                                                                          "left", 
@@ -13,7 +13,7 @@ mosaics <- function(tbl, rot, offs){
                                                          gp_varnames = gpar(fontsize = 0, fontface = 2)))
 }
 mosaics2 <- function(tbl, rot, offs){
-  vcd::mosaic(tbl,gp = shading_Friendly2,direction = TRUE,labeling = labeling_border(rot_labels = rot, 
+  vcd::mosaic(tbl,gp = shading_Friendly,direction = TRUE,labeling = labeling_border(rot_labels = rot, 
                                                         just_labels = c("left", 
                                                                         "left", 
                                                                         "left", 
@@ -23,12 +23,25 @@ mosaics2 <- function(tbl, rot, offs){
                                                         gp_labels = gpar(fontsize = 10),
                                                         gp_varnames = gpar(fontsize = 0, fontface = 2)))
 }
-
+mosaics3 <- function(tbl, rot, offs){
+  vcd::mosaic(tbl,gp = shading_Friendly,direction = TRUE,labeling = labeling_border(rot_labels = rot, 
+                                                                                    just_labels = c("right", 
+                                                                                                    "left", 
+                                                                                                    "left", 
+                                                                                                    "left"),
+                                                                                    offset_labels = offs,
+                                                                                    abbreviate_labs = TRUE,
+                                                                                    gp_labels = gpar(fontsize = 10),
+                                                                                    gp_varnames = gpar(fontsize = 0, fontface = 2)))
+}
+salinas <- read.csv("salinas_mosaicos.csv",header=TRUE,sep=",",strip.white = TRUE,na.strings="EMPTY",encoding = "UTF-8")
 xdf <- read.csv("x.csv",header=TRUE,sep=",",strip.white = TRUE,na.strings="EMPTY",encoding = "UTF-8")
+percep <- read.csv("percepcion_mosaicos.csv",header=TRUE,sep=",",strip.white = TRUE,na.strings="EMPTY", encoding = "UTF-8")
+
+
 
 tbl1 <- xtabs(~Origen + Puesto, xdf)
 tbl1 <- tbl1[c(1,2,11,13,15,16),c(1,2,6,5,3,4)]
-
 
 tbl2 <- xtabs(~Origen + Trabajo, xdf)
 tbl2 <- tbl2[c(1,2,11,13,15,16),]
@@ -208,9 +221,178 @@ tbl44 <- tbl44[c(1,2,6,5,3,4),]
 tbl45 <- xtabs(~Trabajo + Edad, xdf)
 
 tbl46 <- xtabs(~Trabajo + Sexo, xdf)
-
-
 ################################
+#############SALINAS############
+
+sbl1 <- xtabs(~trabajo + beneficio_aqu.ed. , salinas) 
+sbl1 <- sbl1[c(2,3,5,6,4),c(2,3,4,6,5)]
+sbl2 <- xtabs(~trabajo + Desventaja_cerca, salinas)
+sbl2 <- sbl2[c(2,3,5,6,4),c(2,3,4,5)]
+sbl3 <- xtabs(~trabajo + condiciones_considera_salina, salinas)
+sbl3 <- sbl3[c(2,3,5,6,4),c(2,3,5,4)]
+sbl4 <- xtabs(~trabajo + efectos_condici.f3.n_salina, salinas)
+sbl4 <- sbl4[c(2,3,5,6,4),c(2,3,4,5,6)]
+
+sbl5 <- xtabs(~actividad_productiva + beneficio_aqu.ed. , salinas) 
+sbl5 <- sbl5[c(2,3,4,6,5),c(2,3,4,6,5)]
+sbl6 <- xtabs(~actividad_productiva + Desventaja_cerca, salinas)
+sbl6 <- sbl6[c(2,3,4,6,5),c(2,3,4,5)]
+sbl7 <- xtabs(~actividad_productiva + condiciones_considera_salina, salinas)
+sbl7 <- sbl7[c(2,3,4,6,5),c(2,3,5,4)]
+sbl8 <- xtabs(~actividad_productiva + efectos_condici.f3.n_salina, salinas)
+sbl8 <- sbl8[c(2,3,4,6,5),c(2,3,4,5,6)]
+
+sbl9 <- xtabs(~uso_salina + beneficio_aqu.ed. , salinas) 
+sbl9 <- sbl9[c(2,3,5,4),c(2,3,4,6,5)]
+sbl10 <- xtabs(~uso_salina + Desventaja_cerca, salinas)
+sbl10 <- sbl10[c(2,3,5,4),c(2,3,4,5)]
+sbl11 <- xtabs(~uso_salina + condiciones_considera_salina, salinas)
+sbl11 <- sbl11[c(2,3,5,4),c(2,3,5,4)]
+sbl12 <- xtabs(~uso_salina + efectos_condici.f3.n_salina, salinas)
+sbl12 <- sbl12[c(2,3,5,4),c(2,3,4,5,6)]
+
+#############
+sbl13 <- xtabs(~trabajo + beneficio_aqu.ed. + Edad, salinas) 
+sbl13 <- sbl13[c(2,3,5,6,4),c(2,3,4,6,5),]
+sbl14 <- xtabs(~trabajo + Desventaja_cerca + Edad, salinas)
+sbl14 <- sbl14[c(2,3,5,6,4),c(2,3,4,5),]
+sbl15 <- xtabs(~trabajo + condiciones_considera_salina + Edad, salinas)
+sbl15 <- sbl15[c(2,3,5,6,4),c(2,3,5,4),]
+sbl16 <- xtabs(~trabajo + efectos_condici.f3.n_salina + Edad, salinas)
+sbl16<- sbl16[c(2,3,5,6,4),c(2,3,4,5,6),]
+
+sbl17 <- xtabs(~actividad_productiva + beneficio_aqu.ed. + Edad, salinas) 
+sbl17 <- sbl17[c(2,3,4,6,5),c(2,3,4,6,5),]
+sbl18 <- xtabs(~actividad_productiva + Desventaja_cerca + Edad, salinas)
+sbl18 <- sbl18[c(2,3,4,6,5),c(2,3,4,5),]
+sbl19<- xtabs(~actividad_productiva + condiciones_considera_salina + Edad, salinas)
+sbl19 <- sbl19[c(2,3,4,6,5),c(2,3,5,4),]
+sbl20 <- xtabs(~actividad_productiva + efectos_condici.f3.n_salina + Edad, salinas)
+sbl20 <- sbl20[c(2,3,4,6,5),c(2,3,4,5,6),]
+
+sbl21 <- xtabs(~uso_salina + beneficio_aqu.ed. + Edad, salinas) 
+sbl21 <- sbl21[c(2,3,5,4),c(2,3,4,6,5),]
+sbl22 <- xtabs(~uso_salina + Desventaja_cerca + Edad, salinas)
+sbl22 <- sbl22[c(2,3,5,4),c(2,3,4,5),]
+sbl23 <- xtabs(~uso_salina + condiciones_considera_salina + Edad, salinas)
+sbl23 <- sbl23[c(2,3,5,4),c(2,3,5,4),]
+sbl24 <- xtabs(~uso_salina + efectos_condici.f3.n_salina + Edad, salinas)
+sbl24 <- sbl24[c(2,3,5,4),c(2,3,4,5,6),]
+
+sbl25 <- xtabs(~actividad_productiva + trabajo, salinas) 
+sbl25 <- sbl25[c(2,3,4,6,5),c(2,3,5,6,4)]
+sbl26 <- xtabs(~actividad_productiva + trabajo + Edad, salinas) 
+sbl26 <- sbl26[c(2,3,4,6,5),c(2,3,5,6,4),]
+
+sbl27 <- xtabs(~uso_salina + trabajo, salinas) 
+sbl27 <- sbl27[c(2,3,5,4),c(2,3,5,6,4)]
+sbl28 <- xtabs(~uso_salina + trabajo + Edad, salinas) 
+sbl28 <- sbl28[c(2,3,5,4),c(2,3,5,6,4),]
+
+sbl29 <- xtabs(~trabajo + Edad, salinas)
+sbl29 <- sbl29[c(2,3,5,6,4),]
+
+sbl30 <- xtabs(~actividad_productiva + Edad, salinas)
+sbl30 <- sbl30[c(2,3,4,6,5),]
+
+sbl31 <- xtabs(~uso_salina + Edad, salinas)
+sbl31 <- sbl31[c(2,3,5,4),]
+
+##############
+###### percepcion #####
+pl1 <- xtabs(~tiempo_aqui + riesgo_casa, percep)
+pl1 <- pl1[c(4,1,2,3),]
+
+pl2 <- xtabs(~tiempo_aqui + riesgo_calle, percep)
+pl2 <- pl2[c(4,1,2,3),]
+
+pl3 <- xtabs(~tiempo_aqui + riesgo_zona, percep)
+pl3 <- pl3[c(4,1,2,3),]
+
+pl4 <- xtabs(~tiempo_aqui + riesgo_ciudad, percep)
+pl4 <- pl4[c(4,1,2,3),]
+
+pl5 <- xtabs(~tiempo_casa + riesgo_casa, percep)
+pl5 <- pl5[c(4,1,2,3),]
+
+pl6 <- xtabs(~tiempo_casa + riesgo_calle, percep)
+pl6 <- pl6[c(4,1,2,3),]
+
+pl7 <- xtabs(~tiempo_casa + riesgo_zona, percep)
+pl7 <- pl7[c(4,1,2,3),]
+
+pl8 <- xtabs(~tiempo_casa + riesgo_ciudad, percep)
+pl8 <- pl8[c(4,1,2,3),]
+
+pl9 <- xtabs(~victima + riesgo_casa, percep)
+
+pl10 <- xtabs(~victima + riesgo_calle, percep)
+
+pl11 <- xtabs(~victima + riesgo_zona, percep)
+
+pl12 <- xtabs(~victima + riesgo_ciudad, percep)
+
+pl13 <- xtabs(~tiempo_aqui + riesgo_casa + Sexo, percep)
+pl13 <- pl13[c(4,1,2,3),,]
+
+pl14 <- xtabs(~tiempo_aqui + riesgo_calle + Sexo, percep)
+pl14 <- pl14[c(4,1,2,3),,]
+
+pl15 <- xtabs(~tiempo_aqui + riesgo_zona + Sexo, percep)
+pl15 <- pl15[c(4,1,2,3),,]
+
+pl16 <- xtabs(~tiempo_aqui + riesgo_ciudad + Sexo, percep)
+pl16 <- pl16[c(4,1,2,3),,]
+
+pl17 <- xtabs(~tiempo_casa + riesgo_casa + Sexo, percep)
+pl17 <- pl17[c(4,1,2,3),,]
+
+pl18 <- xtabs(~tiempo_casa + riesgo_calle + Sexo, percep)
+pl18 <- pl18[c(4,1,2,3),,]
+
+pl19 <- xtabs(~tiempo_casa + riesgo_zona + Sexo, percep)
+pl19 <- pl19[c(4,1,2,3),,]
+
+pl20 <- xtabs(~tiempo_casa + riesgo_ciudad + Sexo, percep)
+pl20 <- pl20[c(4,1,2,3),,]
+pl20
+pl21 <- xtabs(~victima + riesgo_casa + Sexo, percep)
+
+pl22 <- xtabs(~victima + riesgo_calle + Sexo, percep)
+
+pl23 <- xtabs(~victima + riesgo_zona+ Sexo, percep)
+
+pl24 <- xtabs(~victima + riesgo_ciudad + Sexo, percep)
+
+#extra
+pl25 <- xtabs(~tiempo_aqui + Sexo, percep)
+pl25 <- pl25[c(4,1,2,3),]
+
+pl26 <- xtabs(~tiempo_casa + Sexo, percep)
+pl26 <- pl26[c(4,1,2,3),]
+
+pl27 <- xtabs(~victima + Sexo, percep)
 
 
+################## NINGUNO ###########################
+nbl1 <- xtabs(~Origen + Edad, xdf)
+nbl1 <- nbl1[c(1,2,11,13,15,16),]
 
+nbl2 <- xtabs(~Origen + Sexo, xdf)
+nbl2 <- nbl2[c(1,2,11,13,15,16),]
+
+nbl3 <- xtabs(~Escolaridad + Edad, xdf)
+nbl3 <- nbl3[c(4,5,6,1,7,2,3),]
+
+nbl4 <- xtabs(~Escolaridad + Sexo, xdf)
+nbl4 <- nbl4[c(4,5,6,1,7,2,3),]
+
+nbl5 <- xtabs(~Puesto + Edad, xdf)
+nbl5 <- nbl5[c(1,2,6,5,3,4),]
+
+nbl6 <- xtabs(~Puesto + Sexo,xdf)
+nbl6 <- nbl6[c(1,2,6,5,3,4),]
+
+nbl7 <- xtabs(~Trabajo + Edad, xdf)
+
+nbl8 <- xtabs(~Trabajo + Sexo,xdf)

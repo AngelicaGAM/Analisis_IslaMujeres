@@ -43,7 +43,7 @@ sidebar <- dashboardSidebar(
               menuItem(text = "Mosaicos",  tabName = "mosaics", icon = icon("chart-bar")),
               conditionalPanel(
                 condition = "input.tabs == 'mosaics'",
-                selectInput("estudio","Estudio:",choices=c("Población y migración", "Percepción de seguridad", "Salinas")),
+                selectInput("estudio","Estudio:",choices=c("Poblacion y migracion", "Percepcion de seguridad", "Salinas")),
                 #conditionalPanel(
                 #contidion = "input.estudio == 'Población y migración'",
                 #selectInput("var1","Primera variable de cruce",varsx,selected = "Origen"),

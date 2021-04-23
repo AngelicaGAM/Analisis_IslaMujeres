@@ -6,12 +6,9 @@ server <- function(input, output, session) {
   source("librerias.R")
   source("Funciones.R")
   source("graficas.R")
-  source("graficarSE.R")
-  source("G.R")
-   source("PSCUN.r")
-   source("PSEjido.r")
-   source("PSIsla.r")
-   source("vsps.r")
+  source("graficarSE.r")
+  source("G.r")
+  #source("PSCUN.R")
   source("tablas.R")
   xdf  <- read.csv("x.csv", header = TRUE, sep= ",",strip.white = TRUE,na.strings = "EMPTY", encoding = "UTF-8")
   
@@ -94,6 +91,7 @@ server <- function(input, output, session) {
             else if(input$pregunta=="V1P7R1"){T1P7R1}
             else if(input$pregunta=="V1P8R1"){T1P8R1}
 
+
             
             else if(input$pregunta=="PPCC1"){TCC1}
             else if(input$pregunta=="PPCC2"){TCC2}
@@ -102,7 +100,7 @@ server <- function(input, output, session) {
             
             
             
-            #            Salinas
+            #Salinas
             else if(input$pregunta=="PAMB1"){TAMB1}
             else if(input$pregunta=="PAMB2"){TAMB2}
             else if(input$pregunta=="PAMB3"){TAMB3}
@@ -118,6 +116,7 @@ server <- function(input, output, session) {
             else if(input$pregunta=="SOC5"){TSOC5}
             else if(input$pregunta=="SOC6"){TSOC6}
 
+
             else if(input$pregunta=="SOC6"){TSOC6}
             else if(input$pregunta=="ECO1"){TEC1}
             else if(input$pregunta=="ECO2"){TEC2}
@@ -129,15 +128,13 @@ server <- function(input, output, session) {
              else if(input$pregunta=="GPSI1"){TPSI1}
              else if(input$pregunta=="GPSI2"){TPSI2}
              else if(input$pregunta=="GPSI3"){TPSI3}
-             else if(input$pregunta=="GPSI4"){TPSI4}
-             else if(input$pregunta=="GPSI5"){TPSI5}
              else if(input$pregunta=="GPSI6"){TPSI6}
              else if(input$pregunta=="GPSI7"){TPSI7}
-             else if(input$pregunta=="GPSI81"){TPSI81}
-             else if(input$pregunta=="GPSI82"){TPSI82}
-             else if(input$pregunta=="GPSI83"){TPSI83}
-             else if(input$pregunta=="GPSI84"){TPSI84}
-             else if(input$pregunta=="GPSI9"){TPSI9}
+            else if(input$pregunta=="GPSI81"){TPSI81}
+            else if(input$pregunta=="GPSI82"){TPSI82}
+            else if(input$pregunta=="GPSI83"){TPSI83}
+            else if(input$pregunta=="GPSI84"){TPSI84}
+            else if(input$pregunta=="GPSI9"){TPSI9}
              else if(input$pregunta=="GPSI10"){TPSI10}
              else if(input$pregunta=="GPSI11"){TPSI11}
              else if(input$pregunta=="GPSI12"){TPSI12}
@@ -169,7 +166,7 @@ server <- function(input, output, session) {
              else if(input$pregunta=="GPSI304"){TPSI304}
              else if(input$pregunta=="GPSI305"){TPSI305}
              else if(input$pregunta=="GPSI306"){TPSI306}
-             else if(input$pregunta=="GPSI311"){TPSI311}
+            else if(input$pregunta=="GPSI311"){TPSI311}
              else if(input$pregunta=="GPSI312"){TPSI312}
              else if(input$pregunta=="GPSI313"){TPSI313}
              else if(input$pregunta=="GPSI314"){TPSI314}
@@ -180,15 +177,13 @@ server <- function(input, output, session) {
              else if(input$pregunta=="GPSC1"){TPSC1}
              else if(input$pregunta=="GPSC2"){TPSC2}
              else if(input$pregunta=="GPSC3"){TPSC3}
-             else if(input$pregunta=="GPSC4"){TPSC4}
-             else if(input$pregunta=="GPSC5"){TPSC5}
              else if(input$pregunta=="GPSC6"){TPSC6}
              else if(input$pregunta=="GPSC7"){TPSC7}
-             else if(input$pregunta=="GPSC81"){TPSC81}
-             else if(input$pregunta=="GPSC82"){TPSC82}
-             else if(input$pregunta=="GPSC83"){TPSC83}
-             else if(input$pregunta=="GPSC84"){TPSC84}
-             else if(input$pregunta=="GPSC9"){TPSC9}
+            else if(input$pregunta=="GPSC81"){TPSC81}
+            else if(input$pregunta=="GPSC82"){TPSC82}
+            else if(input$pregunta=="GPSC83"){TPSC83}
+            else if(input$pregunta=="GPSC84"){TPSC84}
+            else if(input$pregunta=="GPSC9"){TPSC9}
              else if(input$pregunta=="GPSC10"){TPSC10}
              else if(input$pregunta=="GPSC11"){TPSC11}
              else if(input$pregunta=="GPSC12"){TPSC12}
@@ -220,7 +215,7 @@ server <- function(input, output, session) {
              else if(input$pregunta=="GPSC304"){TPSC304}
              else if(input$pregunta=="GPSC305"){TPSC305}
              else if(input$pregunta=="GPSC306"){TPSC306}
-             else if(input$pregunta=="GPSC311"){TPSC311}
+            else if(input$pregunta=="GPSC311"){TPSC311}
              else if(input$pregunta=="GPSC312"){TPSC312}
              else if(input$pregunta=="GPSC313"){TPSC313}
              else if(input$pregunta=="GPSC314"){TPSC314}
@@ -232,15 +227,13 @@ server <- function(input, output, session) {
              else if(input$pregunta=="GPSE1"){TPSE1}
              else if(input$pregunta=="GPSE2"){TPSE2}
              else if(input$pregunta=="GPSE3"){TPSE3}
-             else if(input$pregunta=="GPSE4"){TPSE4}
-             else if(input$pregunta=="GPSE5"){TPSE5}
              else if(input$pregunta=="GPSE6"){TPSE6}
              else if(input$pregunta=="GPSE7"){TPSE7}
-             else if(input$pregunta=="GPSE81"){TPSE81}
-             else if(input$pregunta=="GPSE82"){TPSE82}
-             else if(input$pregunta=="GPSE83"){TPSE83}
-             else if(input$pregunta=="GPSE84"){TPSE84}
-             else if(input$pregunta=="GPSE9"){TPSE9}
+            else if(input$pregunta=="GPSE81"){TPSE81}
+            else if(input$pregunta=="GPSE82"){TPSE82}
+            else if(input$pregunta=="GPSE83"){TPSE83}
+            else if(input$pregunta=="GPSE84"){TPSE84}
+            else if(input$pregunta=="GPSE9"){TPSE9}
              else if(input$pregunta=="GPSE10"){TPSE10}
              else if(input$pregunta=="GPSE11"){TPSE11}
              else if(input$pregunta=="GPSE12"){TPSE12}
@@ -272,16 +265,19 @@ server <- function(input, output, session) {
              else if(input$pregunta=="GPSE304"){TPSE304}
              else if(input$pregunta=="GPSE305"){TPSE305}
              else if(input$pregunta=="GPSE306"){TPSE306}
-             else if(input$pregunta=="GPSE311"){TPSE311}
+            else if(input$pregunta=="GPSE311"){TPSE311}
              else if(input$pregunta=="GPSE312"){TPSE312}
              else if(input$pregunta=="GPSE313"){TPSE313}
              else if(input$pregunta=="GPSE314"){TPSE314}
              else if(input$pregunta=="GPSE315"){TPSE315}
              else if(input$pregunta=="GPSE316"){TPSE316}
-              else {
-               GPSVS316
-             }
- 
+           
+
+                            
+
+            else {GPSI1}
+
+
     
   })
   
@@ -316,9 +312,10 @@ server <- function(input, output, session) {
         else if(input$pregunta=="PPIyC8"){PIyC8}
         else if(input$pregunta=="PPIyC9"){PIyC9}
         else if(input$pregunta=="PPIyC10"){PIyC10}
-         
+          #vivienda
         #       vivienda
-        else if(input$pregunta=="V1P1R1"){V1P1R1}
+        else if(input$pregunta=="V1P1R1"
+        ){V1P1R1}
         else if(input$pregunta=="V1P2R1"){V1P2R1}
         else if(input$pregunta=="V1P3R1"){V1P3R1}
         else if(input$pregunta=="V1P4R1"){V1P4R1}
@@ -363,15 +360,13 @@ server <- function(input, output, session) {
              else if(input$pregunta=="GPSI1"){GPSI1}
              else if(input$pregunta=="GPSI2"){GPSI2}
              else if(input$pregunta=="GPSI3"){GPSI3}
-             else if(input$pregunta=="GPSI4"){GPSI4}
-             else if(input$pregunta=="GPSI5"){GPSI5}
              else if(input$pregunta=="GPSI6"){GPSI6}
              else if(input$pregunta=="GPSI7"){GPSI7}
-             else if(input$pregunta=="GPSI81"){GPSI81}
-             else if(input$pregunta=="GPSI82"){GPSI82}
-             else if(input$pregunta=="GPSI83"){GPSI83}
-             else if(input$pregunta=="GPSI84"){GPSI84}
-             else if(input$pregunta=="GPSI9"){GPSI9}
+            else if(input$pregunta=="GPSI81"){GPSI81}
+            else if(input$pregunta=="GPSI82"){GPSI82}
+            else if(input$pregunta=="GPSI83"){GPSI83}
+            else if(input$pregunta=="GPSI84"){GPSI84}
+            else if(input$pregunta=="GPSI9"){GPSI9}
              else if(input$pregunta=="GPSI10"){GPSI10}
              else if(input$pregunta=="GPSI11"){GPSI11}
              else if(input$pregunta=="GPSI12"){GPSI12}
@@ -403,7 +398,7 @@ server <- function(input, output, session) {
              else if(input$pregunta=="GPSI304"){GPSI304}
              else if(input$pregunta=="GPSI305"){GPSI305}
              else if(input$pregunta=="GPSI306"){GPSI306}
-             else if(input$pregunta=="GPSI311"){GPSI311}
+            else if(input$pregunta=="GPSI311"){GPSI311}
              else if(input$pregunta=="GPSI312"){GPSI312}
              else if(input$pregunta=="GPSI313"){GPSI313}
              else if(input$pregunta=="GPSI314"){GPSI314}
@@ -415,15 +410,13 @@ server <- function(input, output, session) {
              else if(input$pregunta=="GPSC1"){GPSC1}
              else if(input$pregunta=="GPSC2"){GPSC2}
              else if(input$pregunta=="GPSC3"){GPSC3}
-             else if(input$pregunta=="GPSC4"){GPSC4}
-             else if(input$pregunta=="GPSC5"){GPSC5}
              else if(input$pregunta=="GPSC6"){GPSC6}
              else if(input$pregunta=="GPSC7"){GPSC7}
-             else if(input$pregunta=="GPSC81"){GPSC81}
-             else if(input$pregunta=="GPSC82"){GPSC82}
-             else if(input$pregunta=="GPSC83"){GPSC83}
-             else if(input$pregunta=="GPSC84"){GPSC84}
-             else if(input$pregunta=="GPSC9"){GPSC9}
+            else if(input$pregunta=="GPSC81"){GPSC81}
+            else if(input$pregunta=="GPSC82"){GPSC82}
+            else if(input$pregunta=="GPSC83"){GPSC83}
+            else if(input$pregunta=="GPSC84"){GPSC84}
+            else if(input$pregunta=="GPSC9"){GPSC9}
              else if(input$pregunta=="GPSC10"){GPSC10}
              else if(input$pregunta=="GPSC11"){GPSC11}
              else if(input$pregunta=="GPSC12"){GPSC12}
@@ -455,7 +448,7 @@ server <- function(input, output, session) {
              else if(input$pregunta=="GPSC304"){GPSC304}
              else if(input$pregunta=="GPSC305"){GPSC305}
              else if(input$pregunta=="GPSC306"){GPSC306}
-             else if(input$pregunta=="GPSC311"){GPSC311}
+            else if(input$pregunta=="GPSC311"){GPSC311}
              else if(input$pregunta=="GPSC312"){GPSC312}
              else if(input$pregunta=="GPSC313"){GPSC313}
              else if(input$pregunta=="GPSC314"){GPSC314}
@@ -468,15 +461,13 @@ server <- function(input, output, session) {
              else if(input$pregunta=="GPSE1"){GPSE1}
              else if(input$pregunta=="GPSE2"){GPSE2}
              else if(input$pregunta=="GPSE3"){GPSE3}
-             else if(input$pregunta=="GPSE4"){GPSE4}
-             else if(input$pregunta=="GPSE5"){GPSE5}
              else if(input$pregunta=="GPSE6"){GPSE6}
              else if(input$pregunta=="GPSE7"){GPSE7}
-             else if(input$pregunta=="GPSE81"){GPSE81}
-             else if(input$pregunta=="GPSE82"){GPSE82}
-             else if(input$pregunta=="GPSE83"){GPSE83}
-             else if(input$pregunta=="GPSE84"){GPSE84}
-             else if(input$pregunta=="GPSE9"){GPSE9}
+            else if(input$pregunta=="GPSE81"){GPSE81}
+            else if(input$pregunta=="GPSE82"){GPSE82}
+            else if(input$pregunta=="GPSE83"){GPSE83}
+            else if(input$pregunta=="GPSE84"){GPSE84}
+            else if(input$pregunta=="GPSE9"){GPSE9}
              else if(input$pregunta=="GPSE10"){GPSE10}
              else if(input$pregunta=="GPSE11"){GPSE11}
              else if(input$pregunta=="GPSE12"){GPSE12}
@@ -508,7 +499,7 @@ server <- function(input, output, session) {
              else if(input$pregunta=="GPSE304"){GPSE304}
              else if(input$pregunta=="GPSE305"){GPSE305}
              else if(input$pregunta=="GPSE306"){GPSE306}
-             else if(input$pregunta=="GPSE311"){GPSE311}
+            else if(input$pregunta=="GPSE311"){GPSE311}
              else if(input$pregunta=="GPSE312"){GPSE312}
              else if(input$pregunta=="GPSE313"){GPSE313}
              else if(input$pregunta=="GPSE314"){GPSE314}
@@ -517,67 +508,19 @@ server <- function(input, output, session) {
                
            
 
-              #percepcion de seguridad 
-             else if(input$pregunta=="GPSVS1"){GPSVS1}
-             else if(input$pregunta=="GPSVS2"){GPSVS2}
-             else if(input$pregunta=="GPSVS3"){GPSVS3}
-             else if(input$pregunta=="GPSVS4"){GPSVS4}
-             else if(input$pregunta=="GPSVS5"){GPSVS5}
-             else if(input$pregunta=="GPSVS6"){GPSVS6}
-             else if(input$pregunta=="GPSVS7"){GPSVS7}
-             else if(input$pregunta=="GPSVS81"){GPSVS81}
-             else if(input$pregunta=="GPSVS82"){GPSVS82}
-             else if(input$pregunta=="GPSVS83"){GPSVS83}
-             else if(input$pregunta=="GPSVS84"){GPSVS84}
-             else if(input$pregunta=="GPSVS9"){GPSVS9}
-             else if(input$pregunta=="GPSVS10"){GPSVS10}
-             else if(input$pregunta=="GPSVS11"){GPSVS11}
-             else if(input$pregunta=="GPSVS12"){GPSVS12}
-             else if(input$pregunta=="GPSVS13"){GPSVS13}
-             else if(input$pregunta=="GPSVS14"){GPSVS14}
-             else if(input$pregunta=="GPSVS15"){GPSVS15}
-             else if(input$pregunta=="GPSVS16"){GPSVS16}
-             else if(input$pregunta=="GPSVS17"){GPSVS17}
-             else if(input$pregunta=="GPSVS18"){GPSVS18}
-             else if(input$pregunta=="GPSVS19"){GPSVS19}
-             else if(input$pregunta=="GPSVS20"){GPSVS20}
-             else if(input$pregunta=="GPSVS21"){GPSVS21}
-             else if(input$pregunta=="GPSVS22"){GPSVS22}
-             else if(input$pregunta=="GPSVS23"){GPSVS23}
+                            
 
-             else if(input$pregunta=="GPSVS25"){GPSVS25}
-             else if(input$pregunta=="GPSVS26"){GPSVS26}
-             else if(input$pregunta=="GPSVS27"){GPSVS27}
-             else if(input$pregunta=="GPSVS28"){GPSVS28}
-             else if(input$pregunta=="GPSVS291"){GPSVS291}
-             else if(input$pregunta=="GPSVS292"){GPSVS292}
-             else if(input$pregunta=="GPSVS293"){GPSVS293}
-             else if(input$pregunta=="GPSVS294"){GPSVS294}
-             else if(input$pregunta=="GPSVS295"){GPSVS295}
-             else if(input$pregunta=="GPSVS296"){GPSVS296}
-             else if(input$pregunta=="GPSVS301"){GPSVS301}
-             else if(input$pregunta=="GPSVS302"){GPSVS302}
-             else if(input$pregunta=="GPSVS303"){GPSVS303}
-             else if(input$pregunta=="GPSVS304"){GPSVS304}
-             else if(input$pregunta=="GPSVS305"){GPSVS305}
-             else if(input$pregunta=="GPSVS306"){GPSVS306}
-             else if(input$pregunta=="GPSVS311"){GPSVS311}
-             else if(input$pregunta=="GPSVS312"){GPSVS312}
-             else if(input$pregunta=="GPSVS313"){GPSVS313}
-             else if(input$pregunta=="GPSVS314"){GPSVS314}
-             else if(input$pregunta=="GPSVS315"){GPSVS315}
-             else if(input$pregunta=="GPSVS316"){GPSVS316}
-             else {
-               GPSVS316
-             }
-                       
+            else {GPSI1}
+
+
+
     
   })
   
   observeEvent(input$tipomapa, {  
        if (input$tipomapa== "PSQ"){
         updateSelectInput(session, "enfoque",                        
-                           choices = c("Isla Mujeres"= "PSI", "Cancun"="PSC", "Ejido"="PSE", "Comparativa" = "PSVS")
+                           choices = c("Isla Mujeres"= "PSI", "Cancun"="PSC", "Ejido"="PSE")
          )
        }else
        if (input$tipomapa== "IS"){
@@ -593,21 +536,20 @@ server <- function(input, output, session) {
   observeEvent(input$estudio,{
     if(input$estudio == "Salinas"){
       updateSelectInput(session, "var1",choices = c("Trabajo" = "tro","Actividad productiva","Uso salinas"))
-      updateSelectInput(session, "var2", choices = c("Ninguno" = "ning","Trabajo","Beneficios de estar aquí"="benef","Desventajas de estar cerca de las salinas"="desv","Condiciones en que considera están las salinas"="cond","Efectos de la condición de las salinas"="efe"),selected = "benef")
+      updateSelectInput(session, "var2", choices = c("Ninguno" = "ning","Trabajo","Beneficios de estar aqui"="benef","Desventajas de estar cerca de las salinas"="desv","Condiciones en que considera estan las salinas"="cond","Efectos de la condicion de las salinas"="efe"),selected = "benef")
       updateSelectInput(session, "var3", choices = c("Ninguno","Edad"))
-    }else if(input$estudio == "Población y migración"){
+    }else if(input$estudio == "Poblacion y migracion"){
       updateSelectInput(session, "var1", choices = c("Origen","Escolaridad","Puesto","Trabajo"))
       updateSelectInput(session,"var2",choices = c("Ninguno","Puesto","Trabajo","Ingreso_sem","Escolaridad"))
       updateSelectInput(session,"var3",choices = c("Ninguno","Edad","Sexo"))
     }
-    else if(input$estudio == "Percepción de seguridad"){
-      updateSelectInput(session, "var1", choices = c("Tiempo viviendo aquí" = "tmpa", "Tiempo en esta casa" = "tmpc","Víctima de algún delito"="vic"))
+    else if(input$estudio == "Percepcion de seguridad"){
+      updateSelectInput(session, "var1", choices = c("Tiempo viviendo aqui" = "tmpa", "Tiempo en esta casa" = "tmpc","Victima de algún delito"="vic"))
       updateSelectInput(session, "var2", choices = c("Ninguno" = "ning2","Riesgo de sufrir un delito en esta casa" = "R1","Riesgo de sufir un delito en esa calle" = "R2", "Riesgo de sufrir un delito en esta zona" = "R3", "Riesgo de sufrir un delito en esta ciudad" = "R4"),selected = "R1")
       updateSelectInput(session, "var3", choices = c("Ninguno", "Sexo"))
     }
   })
   observeEvent(input$var1,{
-    #if(input$estudio == "PoblaciÃ³n y migraciÃ³n"){
     if(input$var1 == "Puesto"){
       updateSelectInput(session, "var2", choices = c("Ninguno","Trabajo","Ingreso_sem","Escolaridad"),selected = "Trabajo")
     }
@@ -620,17 +562,16 @@ server <- function(input, output, session) {
     else if(input$var1 == "Origen"){
       updateSelectInput(session,"var2",choices = c("Ninguno","Puesto","Trabajo","Ingreso_sem","Escolaridad"),selected = "Puesto")
     }
-    # }
   })
   observeEvent(input$var1,{
     if(input$var1 == "tro"){
-      updateSelectInput(session, "var2", choices = c("Ninguno" = "ning","Beneficios de estar aquí"="benef","Desventajas de estar cerca de las salinas"="desv","Condiciones en que considera están las salinas"="cond","Efectos de la condición de las salinas"="efe"),selected = "benef")
+      updateSelectInput(session, "var2", choices = c("Ninguno" = "ning","Beneficios de estar aqui"="benef","Desventajas de estar cerca de las salinas"="desv","Condiciones en que considera estan las salinas"="cond","Efectos de la condicion de las salinas"="efe"),selected = "benef")
     }
     else if(input$var1 == "Actividad productiva"){
-      updateSelectInput(session, "var2", choices = c("Ninguno" = "ning","Trabajo","Beneficios de estar aquí"="benef","Desventajas de estar cerca de las salinas"="desv","Condiciones en que considera están las salinas"="cond","Efectos de la condición de las salinas"="efe"),selected = "Trabajo")
+      updateSelectInput(session, "var2", choices = c("Ninguno" = "ning","Trabajo","Beneficios de estar aqui"="benef","Desventajas de estar cerca de las salinas"="desv","Condiciones en que considera estan las salinas"="cond","Efectos de la condicion de las salinas"="efe"),selected = "Trabajo")
     }
     else if(input$var1 == "Uso salinas"){
-      updateSelectInput(session, "var2", choices = c("Ninguno" = "ning","Trabajo","Beneficios de estar aquí"="benef","Desventajas de estar cerca de las salinas"="desv","Condiciones en que considera están las salinas"="cond","Efectos de la condición de las salinas"="efe"),selected = "Trabajo")
+      updateSelectInput(session, "var2", choices = c("Ninguno" = "ning","Trabajo","Beneficios de estar aqui"="benef","Desventajas de estar cerca de las salinas"="desv","Condiciones en que considera estan las salinas"="cond","Efectos de la condicion de las salinas"="efe"),selected = "Trabajo")
     }
   })
   observeEvent(input$var2,{
@@ -744,10 +685,8 @@ server <- function(input, output, session) {
              updateSelectInput(session, "pregunta",  
                           choices = c(
                             "1. En esta calle o zona, Usted participa: - IM " = "GPSI1", 
-                            "2. Usted conoce a sus vecinos: - IM " = "GPSI2" ,
-                            "3. Participa con la autoridad para mejorar la seguridad: - IM " = "GPSI3" ,
-                            "4. Día en que podría participar en actividades con la autoridad*" =  "GPSI4",
-                            "5. Horarios en los que podría participar en actividades con la autoridad " = "GPSI5",
+                          #  "2. Usted conoce a sus vecinos: - IM " = "GPSI2" ,
+                          #  "3. Participa con la autoridad para mejorar la seguridad: - IM " = "GPSI3" ,
                             "6. Cuando hay un delito, en esta calle o zona los vecinos: - IM " = "GPSI6", 
                             "7. Durante el último año, en esta calle o zona ha habido: - IM " = "GPSI7" ,
                             "8. Valore el riesgo de sufrir un delito en alguno de los siguientes lugares: Casa - IM " = "GPSI81",
@@ -799,10 +738,8 @@ server <- function(input, output, session) {
                   updateSelectInput(session, "pregunta",  
                       choices = c(
                                   "1. En esta calle o zona, Usted participa: - EJ " = "GPSE1", 
-                                  "2. Usted conoce a sus vecinos: - IM " = "GPSE2" ,
-                                  "3. Participa con la autoridad para mejorar la seguridad: - IM " = "GPSE3" ,
-                                  "4. Día en que podría participar en actividades con la autoridad*" =  "GPSE4",
-                                  "5. Horarios en los que podría participar en actividades con la autoridad " = "GPSE5",
+                           #       "2. Usted conoce a sus vecinos: - EJ " = "GPSE2" ,
+                                #  "3. Participa con la autoridad para mejorar la seguridad: - EJ " = "GPSE3" ,
                                   "6. Cuando hay un delito, en esta calle o zona los vecinos: - EJ " = "GPSE6", 
                                   "7. Durante el último año, en esta calle o zona ha habido: - EJ " = "GPSE7" ,
                                   "8. Valore el riesgo de sufrir un delito en alguno de los siguientes lugares: Casa - EJ " = "GPSE81",
@@ -854,10 +791,8 @@ server <- function(input, output, session) {
              updateSelectInput(session, "pregunta",  
                       choices = c(
                               "1. En esta calle o zona, Usted participa: - CUN" = "GPSC1", 
-                              "2. Usted conoce a sus vecinos: - IM " = "GPSC2" ,
-                              "3. Participa con la autoridad para mejorar la seguridad: - IM " = "GPSC3" ,
-                              "4. Día en que podría participar en actividades con la autoridad*" =  "GPSC4",
-                              "5. Horarios en los que podría participar en actividades con la autoridad " = "GPSC5",
+                            #  "2. Usted conoce a sus vecinos: - CUN" = "GPSC2" ,
+                            #  "3. Participa con la autoridad para mejorar la seguridad: - CUN" = "GPSC3" ,
                               "6. Cuando hay un delito, en esta calle o zona los vecinos: - CUN" = "GPSC6", 
                               "7. Durante el último año, en esta calle o zona ha habido: - CUN" = "GPSC7" ,
                               "8. Valore el riesgo de sufrir un delito en alguno de los siguientes lugares: Casa - CUN" = "GPSC81",
@@ -904,62 +839,7 @@ server <- function(input, output, session) {
                               "31. Del 1 al 5, califique el trato que recibe de: El Gobernador - CUN" = "GPSC316"                          
                               
                       )
-        )}    else if(x == "PSVS"){
-                  updateSelectInput(session, "pregunta",  
-                      choices = c(
-                                  "1. En esta calle o zona, Usted participa: - VS " = "GPSVS1", 
-                                  "2. Usted conoce a sus vecinos: - IM " = "GPSVS2" ,
-                                  "3. Participa con la autoridad para mejorar la seguridad: - IM " = "GPSVS3" ,
-                                  "4. Día en que podría participar en actividades con la autoridad*" =  "GPSVS4",
-                                  "5. Horarios en los que podría participar en actividades con la autoridad " = "GPSVS5",
-                                  "6. Cuando hay un delito, en esta calle o zona los vecinos: - VS " = "GPSVS6", 
-                                  "7. Durante el último año, en esta calle o zona ha habido: - VS " = "GPSVS7" ,
-                                  "8. Valore el riesgo de sufrir un delito en alguno de los siguientes lugares: Casa - VS " = "GPSVS81",
-                                  "8. Valore el riesgo de sufrir un delito en alguno de los siguientes lugares: Calle - VS " = "GPSVS82",
-                                  "8. Valore el riesgo de sufrir un delito en alguno de los siguientes lugares: Zona - VS " = "GPSVS83",
-                                  "8. Valore el riesgo de sufrir un delito en alguno de los siguientes lugares: Ciudad - VS " = "GPSVS84",
-                                  "9. ¿Usted ha sido víctima de algún delito en el último año? - VS " = "GPSVS9I" ,
-                                  "10. En caso de ser víctima del delito Usted: - VS " = "GPSVS10", 
-                                  "11. Ha sido víctima de algún delito y no denuncio: - VS " = "GPSVS11" ,
-                                  "12. En esta calle o zona: - VS " = "GPSVS12" ,
-                                  "13. En esta calle o zona, hay personas - VS " = "GPSVS13", 
-                                  "14. En esta calle o zona hay violencia: - VS " = "GPSVS14" ,
-                                  "15. En esta calle o zona, cuando hay conflictos entre vecinos se manVSan: - VS " = "GPSVS15" ,
-                                  "16. En esta calle o zona hay niños o adolescentes que se quedan encerrados con llave: - VS " = "GPSVS16" ,
-                                  "17. En esta calle o zona hay niños que se quedan la mayor parte del día sin comer:  - VS " = "GPSVS17" ,
-                                  "18. En esta calle o zona hay jóvenes que: - VS " = "GPSVS18" ,
-                                  "19. En esta calle o zona hay un parquI - VS " = "GPSVS19" ,
-                                  "20. En esta calle o zona hay: - VS " = "GPSVS20" ,
-                                  "21. En esta zona hay - VS " = "GPSVS21" ,
-                                  "22. En el último año Usted supo que algún menor de 18 años: - VS " = "GPSVS22" ,
-                                  "23 .Para corregir a un niño o niña que se porta mal, Usted recomienda: - VS " = "GPSVS23" ,
-                                  "24. En esta casa: (APLICA TARJETON) - VS " = "GPSVS24" ,
-                                  "25. En esta casa alguien: (APLICA TARJETON) - VS " = "GPSVS25" ,
-                                  "26. En el último año, por cuestiones de seguridad Usted ha pensado: - VS " = "GPSVS26" ,
-                                  "27. En el último año, por cuestiones de seguridad Usted dVSó de: - VS " = "GPSVS27" ,
-                                  "28. En esta calle o zona la policía: - VS " = "GPSVS28" ,
-                                  "29. Del 1 al 5, con el 5 como mVSor calificación, califique la confianza que Usted tiene en: La policía  - VS " = "GPSVS291" ,
-                                  "29. Del 1 al 5, con el 5 como mVSor calificación, califique la confianza que Usted tiene en: El Ministerio Público para denunciar  - VS " = "GPSVS292" ,
-                                  "29. Del 1 al 5, con el 5 como mVSor calificación, califique la confianza que Usted tiene en: Las escuelas públicas de la zona  - VS " = "GPSVS293" ,
-                                  "29. Del 1 al 5, con el 5 como mVSor calificación, califique la confianza que Usted tiene en: Su Comisario VSidal  - VS " = "GPSVS294" ,
-                                  "29. Del 1 al 5, con el 5 como mVSor calificación, califique la confianza que Usted tiene en: Su presidente municipal  - VS " = "GPSVS295" ,
-                                  "29. Del 1 al 5, con el 5 como mVSor calificación, califique la confianza que Usted tiene en: El Gobernador  - VS " = "GPSVS296" ,
-                                  "30. Del 1 al 5, califique el trabajo de: La policía - VS " = "GPSVS301" ,
-                                  "30. Del 1 al 5, califique el trabajo de: El Ministerio Público para denunciar - VS " = "GPSVS302" ,
-                                  "30. Del 1 al 5, califique el trabajo de: Los empleados de gobierno - VS " = "GPSVS303" ,
-                                  "30. Del 1 al 5, califique el trabajo de: Su Comisario VSida - VS " = "GPSVS304" ,
-                                  "30. Del 1 al 5, califique el trabajo de: Su presidente municipal - VS " = "GPSVS305" ,
-                                  "30. Del 1 al 5, califique el trabajo de: El Gobernador - VS " = "GPSVS306" ,                          
-                                  "31. Del 1 al 5, califique el trato que recibe de: La policía - VS " = "GPSVS311" ,
-                                  "31. Del 1 al 5, califique el trato que recibe de:El Ministerio Público para denunciar - VS " = "GPSVS312" ,
-                                  "31. Del 1 al 5, califique el trato que recibe de: Los empleados de gobierno - VS " = "GPSVS313" ,
-                                  "31. Del 1 al 5, califique el trato que recibe de: Su Comisario VSidal - VS " = "GPSVS314" ,
-                                  "31. Del 1 al 5, califique el trato que recibe de: Su presidente municipa - VS " = "GPSVS315" ,
-                                  "31. Del 1 al 5, califique el trato que recibe de: El Gobernador - VS " = "GPSVS316"                          
-                                  
-                      )
-        
-        )} 
+        )}    
 
   })
   
@@ -981,10 +861,10 @@ server <- function(input, output, session) {
     if(input$estudio == "Salinas"){
       "Diagnóstico socioeconómico y ambiental de las Salinas de Isla Mujeres"
     }
-    else if(input$estudio == "Población y migración"){
+    else if(input$estudio == "Poblacion y migracion"){
       "Características sobre población y migración"
     }
-    else if(input$estudio == "Percepción de seguridad"){
+    else if(input$estudio == "Percepcion de seguridad"){
       "Consulta ciudadana sobre percepción de seguridad"
     }
   })

@@ -25,32 +25,82 @@ TPSI1 = graficarTable(dataI1,"Respuesta","Numero de personas", "1. En esta calle
 
 #------------------------------------------------------------------------------------
 #Usted conoce a sus vecinos:
-# P2R1S = sum(Isla$Usted.conoce.a.sus.vecinos. == 'SI')
-# P2R2S = sum(Isla$Usted.conoce.a.sus.vecinos..A.alguno.le.confiaría.a.los.niños == 'SI')
-# P2R3S = sum(Isla$Usted.conoce.a.sus.vecinos..A.alguno.le.confiaría.su.casa == 'SI')
-# P2R4S = sum(Isla$Usted.conoce.a.sus.vecinos..Participa.con.ellos.para.mejorar.la.seguridad == 'SI')
-# P2R5S = sum(Isla$Usted.conoce.a.sus.vecinos..Le.interesaría.participar == 'SI')
-# total = c(P2R1S, P2R2S, P2R3S, P2R4S, P2R5S)
-# P2R1S = as.integer((P2R1S/N)*100)
-# P2R2S = as.integer((P2R2S/N)*100)
-# P2R3S = as.integer((P2R3S/N)*100)
-# P2R4S = as.integer((P2R4S/N)*100)
-# P2R5S = as.integer((P2R5S/N)*100)
-# n = c(P2R1S, P2R2S, P2R3S, P2R4S, P2R5S)
-# RESPUESTA = c("Conoce a sus vecinos", "Confiaría a los niños", "Confiaría su casa", "Participa con ellos para mejorar la seguridad", "Interesaría participar")
-# dataI <- data.frame(n,RESPUESTA,   total)
-# GPSI2 = graficarPlot(dataI,"Respuesta", "Numero de personas", "Usted conoce a sus vecinos:" )
-# TPSI2 = graficarTable(dataI,"Respuesta","Numero de personas", "Usted conoce a sus vecinos:")
-# P3R1S = sum(Isla$Participa.con.la.autoridad.para.mejorar.la.seguridad. == 'SI')
-# total = c(P3R1S, P3R1N)
-# P3R1S = as.integer((P3R1S/N)*100)
-# P3R1N = as.integer((P3R1N/N)*100)
-# n = c(P3R1S, P3R1N)
-# RESPUESTA = c("Sí", "No")
-# dataI <- data.frame(n,RESPUESTA,   total)
-# GPSI3 = graficarPlot(dataI,"Respuesta", "Numero de personas", "Usted conoce a sus vecinos:" )
-# TPSI3 = graficarTable(dataI,"Respuesta","Numero de personas", "Usted conoce a sus vecinos:")
+A = sum(Isla$Usted.conoce.a.sus.vecinos. == 'SI')
+B = sum(Isla$Usted.conoce.a.sus.vecinos..A.alguno.le.confiaría.a.los.niños == 'SI')
+C = sum(Isla$Usted.conoce.a.sus.vecinos..A.alguno.le.confiaría.su.casa == 'SI')
+
+total = c(A, B, C)
+A = as.integer((A/N)*100)
+B = as.integer((B/N)*100)
+C = as.integer((C/N)*100)
+
+n = c(A, B, C)
+
+RESPUESTA = c("Conoce a sus vecinos", "Confiaría a los niños", "Confiaría su casa")
+dataI2 <- data.frame(n,RESPUESTA,   total)
+GPSI2 = graficarPlot(dataI2,"Respuesta", "Numero de personas", "2. Usted conoce a sus vecinos:" )
+GPSI2 = graficarPlot(dataI2,"Respuesta", "Numero de personas", "2. Usted conoce a sus vecinos:" )
+#------------------------------------------------------------------------------------
+#3
+A = sum(Isla$Usted.conoce.a.sus.vecinos..Participa.con.ellos.para.mejorar.la.seguridad == 'SI')
+B = sum(Isla$Usted.conoce.a.sus.vecinos..Le.interesaría.participar == 'SI')
+total = c(A, B)
+A = as.integer((A/N)*100)
+B = as.integer((B/N)*100)
+n = c(A, B)
+RESPUESTA = c("Participa con ellos para mejorar la seguridad", "Interesaría participar con ellos para mejorar la seguridad")
+dataI3 <- data.frame(n,RESPUESTA,   total)
+GPSI3 = graficarPlot(dataI3,"Respuesta", "Numero de personas", "3. Participa con la autoridad para mejorar la seguridad:" )
+TPSI3 = graficarTable(dataI3,"Respuesta","Numero de personas", "3. Participa con la autoridad para mejorar la seguridad:")
+
+#------------------------------------------------------------------------------------
 #4 dia y 5 horarios
+A = 516 # DOMI
+B = 260 # LUNED 
+C = 180  #MARTES
+D = 268 # MIERCOLES
+E =  254 #JUEVES
+FF = 340 #VIERNES
+G =  588 
+
+total = c(A, B, C, D, E, FF, G)
+A = as.integer((A/N)*100)
+B = as.integer((B/N)*100)
+C = as.integer((C/N)*100)
+D = as.integer((D/N)*100)
+E = as.integer((E/N)*100)
+FF = as.integer((FF/N)*100)
+
+G = as.integer((G/N)*100)
+
+n = c(A, B, C, D, E, FF, G)
+
+RESPUESTA = c(  "DOMINGO", "LUNES", "MARTES", "MIERCOLES", "JUEVES", "VIERNES", "SABADO")
+dataI4 <- data.frame(n,RESPUESTA,   total)
+GPSI4 = graficarPlot(dataI4 ,"Respuesta", "Numero de personas",  "4. Día en que podría participar en actividades con la autoridad*")
+TPSI4 = graficarTable(dataI4 ,"Respuesta", "Numero de personas",  "4. Día en que podría participar en actividades con la autoridad*")
+
+
+#HORARIO 
+
+A = 264
+B = 947
+C = 136
+total = c(A, B, C)
+A = as.integer((A/N)*100)
+B = as.integer((B/N)*100)
+C = as.integer((C/N)*100)
+D = as.integer((D/N)*100)
+E = as.integer((E/N)*100)
+
+n = c(A, B, C)
+RESPUESTA = c("MAÑANA", "TARDE", "NOCHE")
+dataI5 <- data.frame(n,RESPUESTA,   total)
+
+GPSI5 = graficarPlot(dataI5,"Respuesta", "Numero de personas", "5. Horarios en los que podría participar en actividades con la autoridad " )
+TPSI5 = graficarTable(dataI5,"Respuesta","Numero de personas", "5. Horarios en los que podría participar en actividades con la autoridad ")
+
+
 #-----------------------------------------------------------------------------------
 #6
 #Cuando hay un delito, en esta calle o zona los vecinos:

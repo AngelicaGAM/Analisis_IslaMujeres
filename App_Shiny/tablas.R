@@ -34,7 +34,8 @@ mosaics3 <- function(tbl, rot, offs){
                                                                                     gp_labels = gpar(fontsize = 10),
                                                                                     gp_varnames = gpar(fontsize = 0, fontface = 2)))
 }
-salinas <- read.csv("salinas_mosaicos.csv",header=TRUE,sep=",",strip.white = TRUE,na.strings="EMPTY",encoding = "UTF-8")
+
+salinas <- read.csv("salinas_mosaicos.csv",header=TRUE,sep=",",strip.white = TRUE,na.strings="EMPTY",encoding = "latin1")
 xdf <- read.csv("x.csv",header=TRUE,sep=",",strip.white = TRUE,na.strings="EMPTY",encoding = "UTF-8")
 percep <- read.csv("percepcion_mosaicos.csv",header=TRUE,sep=",",strip.white = TRUE,na.strings="EMPTY", encoding = "UTF-8")
 
@@ -224,59 +225,59 @@ tbl46 <- xtabs(~Trabajo + Sexo, xdf)
 ################################
 #############SALINAS############
 
-sbl1 <- xtabs(~trabajo + beneficio_aqu.ed. , salinas) 
+sbl1 <- xtabs(~trabajo + beneficio_aqui , salinas) 
 sbl1 <- sbl1[c(2,3,5,6,4),c(2,3,4,6,5)]
 sbl2 <- xtabs(~trabajo + Desventaja_cerca, salinas)
 sbl2 <- sbl2[c(2,3,5,6,4),c(2,3,4,5)]
 sbl3 <- xtabs(~trabajo + condiciones_considera_salina, salinas)
 sbl3 <- sbl3[c(2,3,5,6,4),c(2,3,5,4)]
-sbl4 <- xtabs(~trabajo + efectos_condici.f3.n_salina, salinas)
+sbl4 <- xtabs(~trabajo + efectos_condicion_salina, salinas)
 sbl4 <- sbl4[c(2,3,5,6,4),c(2,3,4,5,6)]
 
-sbl5 <- xtabs(~actividad_productiva + beneficio_aqu.ed. , salinas) 
+sbl5 <- xtabs(~actividad_productiva + beneficio_aqui , salinas) 
 sbl5 <- sbl5[c(2,3,4,6,5),c(2,3,4,6,5)]
 sbl6 <- xtabs(~actividad_productiva + Desventaja_cerca, salinas)
 sbl6 <- sbl6[c(2,3,4,6,5),c(2,3,4,5)]
 sbl7 <- xtabs(~actividad_productiva + condiciones_considera_salina, salinas)
 sbl7 <- sbl7[c(2,3,4,6,5),c(2,3,5,4)]
-sbl8 <- xtabs(~actividad_productiva + efectos_condici.f3.n_salina, salinas)
+sbl8 <- xtabs(~actividad_productiva + efectos_condicion_salina, salinas)
 sbl8 <- sbl8[c(2,3,4,6,5),c(2,3,4,5,6)]
 
-sbl9 <- xtabs(~uso_salina + beneficio_aqu.ed. , salinas) 
+sbl9 <- xtabs(~uso_salina + beneficio_aqui , salinas) 
 sbl9 <- sbl9[c(2,3,5,4),c(2,3,4,6,5)]
 sbl10 <- xtabs(~uso_salina + Desventaja_cerca, salinas)
 sbl10 <- sbl10[c(2,3,5,4),c(2,3,4,5)]
 sbl11 <- xtabs(~uso_salina + condiciones_considera_salina, salinas)
 sbl11 <- sbl11[c(2,3,5,4),c(2,3,5,4)]
-sbl12 <- xtabs(~uso_salina + efectos_condici.f3.n_salina, salinas)
+sbl12 <- xtabs(~uso_salina + efectos_condicion_salina, salinas)
 sbl12 <- sbl12[c(2,3,5,4),c(2,3,4,5,6)]
 
 #############
-sbl13 <- xtabs(~trabajo + beneficio_aqu.ed. + Edad, salinas) 
+sbl13 <- xtabs(~trabajo + beneficio_aqui + Edad, salinas) 
 sbl13 <- sbl13[c(2,3,5,6,4),c(2,3,4,6,5),]
 sbl14 <- xtabs(~trabajo + Desventaja_cerca + Edad, salinas)
 sbl14 <- sbl14[c(2,3,5,6,4),c(2,3,4,5),]
 sbl15 <- xtabs(~trabajo + condiciones_considera_salina + Edad, salinas)
 sbl15 <- sbl15[c(2,3,5,6,4),c(2,3,5,4),]
-sbl16 <- xtabs(~trabajo + efectos_condici.f3.n_salina + Edad, salinas)
+sbl16 <- xtabs(~trabajo + efectos_condicion_salina + Edad, salinas)
 sbl16<- sbl16[c(2,3,5,6,4),c(2,3,4,5,6),]
 
-sbl17 <- xtabs(~actividad_productiva + beneficio_aqu.ed. + Edad, salinas) 
+sbl17 <- xtabs(~actividad_productiva + beneficio_aqui + Edad, salinas) 
 sbl17 <- sbl17[c(2,3,4,6,5),c(2,3,4,6,5),]
 sbl18 <- xtabs(~actividad_productiva + Desventaja_cerca + Edad, salinas)
 sbl18 <- sbl18[c(2,3,4,6,5),c(2,3,4,5),]
 sbl19<- xtabs(~actividad_productiva + condiciones_considera_salina + Edad, salinas)
 sbl19 <- sbl19[c(2,3,4,6,5),c(2,3,5,4),]
-sbl20 <- xtabs(~actividad_productiva + efectos_condici.f3.n_salina + Edad, salinas)
+sbl20 <- xtabs(~actividad_productiva + efectos_condicion_salina + Edad, salinas)
 sbl20 <- sbl20[c(2,3,4,6,5),c(2,3,4,5,6),]
 
-sbl21 <- xtabs(~uso_salina + beneficio_aqu.ed. + Edad, salinas) 
+sbl21 <- xtabs(~uso_salina + beneficio_aqui + Edad, salinas) 
 sbl21 <- sbl21[c(2,3,5,4),c(2,3,4,6,5),]
 sbl22 <- xtabs(~uso_salina + Desventaja_cerca + Edad, salinas)
 sbl22 <- sbl22[c(2,3,5,4),c(2,3,4,5),]
 sbl23 <- xtabs(~uso_salina + condiciones_considera_salina + Edad, salinas)
 sbl23 <- sbl23[c(2,3,5,4),c(2,3,5,4),]
-sbl24 <- xtabs(~uso_salina + efectos_condici.f3.n_salina + Edad, salinas)
+sbl24 <- xtabs(~uso_salina + efectos_condicion_salina + Edad, salinas)
 sbl24 <- sbl24[c(2,3,5,4),c(2,3,4,5,6),]
 
 sbl25 <- xtabs(~actividad_productiva + trabajo, salinas) 

@@ -6,12 +6,12 @@ server <- function(input, output, session) {
   source("librerias.R")
   source("Funciones.R")
   source("G.R")
-   source("PSCUN.r")
-   source("PSEjido.r")
-   source("PSIsla.r")
-   source("vsps.r")
+  source("PSCUN.r")
+  source("PSEjido.r")
+  source("PSIsla.r")
+  source("vsps.r")
   source("tablas.R")
-  xdf  <- read.csv("x.csv", header = TRUE, sep= ",",strip.white = TRUE,na.strings = "EMPTY", encoding = "UTF-8")
+  #xdf  <- read.csv("x.csv", header = TRUE, sep= ",",strip.white = TRUE,na.strings = "EMPTY", encoding = "UTF-8")
   
   
   

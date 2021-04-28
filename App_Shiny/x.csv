@@ -1,0 +1,377 @@
+﻿,Origen,Escolaridad,Puesto,Trabajo,Tiempo_aqui,Ingreso_sem,Edad,Sexo
+0,Quintana Roo,Secundaria,Trabajador-Arrendador,Comercio,TODA,B,B,M
+1,Quintana Roo,Licenciatura,Empleado-Medio,Comercio,ENTRE UN AÃ‘O Y CINCO,C,A,H
+2,GUERRERO,Bachillerato,Empleado-Medio,Comercio,MAS DE 5 ANOS,C,A,M
+3,Yucatan,Licenciatura,Empleado-Medio,Comercio,MAS DE 5 ANOS,A,A,M
+4,Yucatan,Primaria,Trabajador-Arrendador,Comercio,TODA,B,B,M
+5,Quintana Roo,Bachillerato,Empleado-Bajo,Comercio,TODA,D,A,H
+6,Chiapas,Bachillerato,Empleado-Bajo,Industria,MAS DE 5 ANOS,A,A,M
+7,Veracruz,Primaria,Empleado-Bajo,Comercio,MENOS DE UN AÃ‘O,B,A,M
+8,Quintana Roo,Licenciatura,Empleado-Bajo,Comercio,TODA,B,A,H
+9,Yucatan,Licenciatura,Empleado-Bajo,Comercio,MENOS DE UN AÃ‘O,B,A,H
+10,Quintana Roo,Primaria,Trabajador-Arrendador,Comercio,TODA,C,A,H
+11,SONORA,Secundaria,Trabajador-Arrendador,Industria,MAS DE 5 ANOS,C,B,H
+12,Chiapas,Primaria,Empleado-Bajo,Comercio,MAS DE 5 ANOS,A,B,M
+13,Tabasco,Primaria,Trabajador-Arrendador,Industria,MAS DE 5 ANOS,B,B,H
+14,GUERRERO,Secundaria,Empleado-Bajo,Comercio,MAS DE 5 ANOS,B,B,H
+15,Quintana Roo,Secundaria,Empleado-Medio,Comercio,MAS DE 5 ANOS,B,A,M
+16,Chiapas,Primaria,Patrón,Comercio,MAS DE 5 ANOS,A,B,M
+17,Quintana Roo,Primaria,Empleado-Bajo,Industria,TODA,B,B,M
+18,Veracruz,Secundaria,Empleado-Medio,Comercio,TODA,B,B,M
+19,GUERRERO,Primaria,Trabajador-Arrendador,Comercio,ENTRE UN AÃ‘O Y CINCO,B,A,M
+20,Veracruz,Primaria,Empleado-Bajo,Comercio,ENTRE UN AÃ‘O Y CINCO,B,A,H
+21,Yucatan,Bachillerato,Empleado-Bajo,Comercio,TODA,B,A,M
+22,Yucatan,Bachillerato,Trabajador-Arrendador,Comercio,MENOS DE UN AÃ‘O,B,A,M
+23,ESTADO DE MÃ‰XICO,Bachillerato,Empleado-Medio,Comercio,MAS DE 5 ANOS,A,B,M
+24,Veracruz,Primaria,Trabajador-Arrendador,Industria,MAS DE 5 ANOS,A,B,H
+25,Quintana Roo,Bachillerato,Trabajador-Arrendador,Comercio,TODA,B,A,M
+26,DISTRITO FEDERAL,Secundaria,Empleado-Bajo,Comercio,MAS DE 5 ANOS,B,A,M
+27,Chiapas,Secundaria,Empleado-Bajo,Comercio,ENTRE UN AÃ‘O Y CINCO,B,B,M
+28,OAXACA,Primaria,Empleado-Bajo,Comercio,MAS DE 5 ANOS,A,A,M
+29,Chiapas,Primaria,Empleado-Medio,Comercio,ENTRE UN AÃ‘O Y CINCO,A,B,M
+30,Tabasco,Licenciatura,Trabajador-Arrendador,Comercio,MAS DE 5 ANOS,A,B,M
+31,CHIHUAHUA,Primaria,Empleado-Bajo,Industria,MAS DE 5 ANOS,A,B,H
+32,Tabasco,Secundaria,Empleado-Bajo,Industria,MAS DE 5 ANOS,C,B,H
+33,Quintana Roo,Bachillerato,Empleado-Bajo,Comercio,MAS DE 5 ANOS,B,A,H
+34,Tabasco,Secundaria,Empleado-Bajo,Comercio,TODA,B,A,H
+35,Tabasco,Primaria,Jubilado,Jubilado,MAS DE 5 ANOS,A,B,M
+36,Yucatan,Bachillerato,Trabajador-Arrendador,Comercio,MAS DE 5 ANOS,B,A,M
+37,Yucatan,Bachillerato,Trabajador-Arrendador,Comercio,TODA,A,B,H
+38,Veracruz,Primaria,Empleado-Bajo,Comercio,TODA,A,B,H
+39,Yucatan,Primaria,Empleado-Bajo,Comercio,MAS DE 5 ANOS,B,A,M
+40,Campeche,Bachillerato,OTRO,Comercio,ENTRE UN AÃ‘O Y CINCO,D,A,H
+41,DISTRITO FEDERAL,Bachillerato,Trabajador-Arrendador,Comercio,ENTRE UN AÃ‘O Y CINCO,C,B,H
+42,Chiapas,Secundaria,Empleado-Bajo,Comercio,MAS DE 5 ANOS,A,B,M
+43,Tabasco,Ninguno,Patrón,Industria,MAS DE 5 ANOS,A,B,H
+44,Yucatan,Primaria,Empleado-Bajo,Comercio,MENOS DE UN AÃ‘O,A,B,M
+45,Chiapas,Secundaria,Trabajador-Arrendador,Industria,ENTRE UN AÃ‘O Y CINCO,C,A,M
+46,Yucatan,Primaria,Empleado-Bajo,Comercio,MAS DE 5 ANOS,B,A,M
+47,Tabasco,Ninguno,Jubilado,Jubilado,MAS DE 5 ANOS,A,B,H
+48,Yucatan,Primaria,Empleado-Bajo,Industria,MAS DE 5 ANOS,B,A,M
+49,Quintana Roo,Bachillerato,Empleado-Medio,Comercio,TODA,A,A,H
+50,Quintana Roo,Bachillerato,Trabajador-Arrendador,Comercio,ENTRE UN AÃ‘O Y CINCO,A,A,H
+51,Veracruz,Primaria,Empleado-Bajo,Comercio,MAS DE 5 ANOS,A,B,H
+52,Veracruz,Secundaria,Empleado-Medio,Industria,MENOS DE UN AÃ‘O,B,A,M
+53,Tabasco,Bachillerato,Empleado-Medio,Comercio,MAS DE 5 ANOS,B,A,H
+54,Campeche,Licenciatura,Empleado-Bajo,Industria,MAS DE 5 ANOS,C,B,H
+55,Quintana Roo,Bachillerato,Trabajador-Arrendador,Comercio,TODA,B,A,H
+56,Tabasco,Primaria,Empleado-Bajo,Comercio,ENTRE UN AÃ‘O Y CINCO,B,B,M
+57,Yucatan,Primaria,Empleado-Bajo,Comercio,MAS DE 5 ANOS,B,A,M
+58,TAMAULIPAS,Licenciatura,Empleado-Bajo,Comercio,MAS DE 5 ANOS,B,B,M
+59,ESTADO DE MÃ‰XICO,Licenciatura,Empleado-Medio,Comercio,ENTRE UN AÃ‘O Y CINCO,C,B,H
+60,Veracruz,Primaria,Trabajador-Arrendador,Comercio,MAS DE 5 ANOS,A,B,M
+61,Tabasco,Primaria,Trabajador-Arrendador,Comercio,MAS DE 5 ANOS,A,A,M
+62,Quintana Roo,Primaria,Empleado-Bajo,Industria,ENTRE UN AÃ‘O Y CINCO,C,A,M
+63,Tabasco,Primaria,Empleado-Bajo,Comercio,MAS DE 5 ANOS,B,A,H
+64,Campeche,Primaria,Empleado-Medio,Comercio,MAS DE 5 ANOS,B,B,M
+65,Tabasco,Ninguno,Empleado-Bajo,Industria,MAS DE 5 ANOS,A,B,H
+66,Quintana Roo,Secundaria,Trabajador-Arrendador,Comercio,MAS DE 5 ANOS,A,A,M
+67,PUEBLA,Secundaria,Empleado-Bajo,Comercio,MAS DE 5 ANOS,B,B,M
+68,Tabasco,Primaria,Empleado-Bajo,Industria,MAS DE 5 ANOS,B,B,M
+69,Chiapas,Primaria,Empleado-Bajo,Comercio,MAS DE 5 ANOS,B,B,H
+70,Campeche,Bachillerato,Empleado-Medio,Comercio,TODA,C,B,M
+71,Quintana Roo,Secundaria,Trabajador-Arrendador,Comercio,MAS DE 5 ANOS,B,A,H
+72,Campeche,Secundaria,Empleado-Bajo,Comercio,MAS DE 5 ANOS,B,A,M
+73,Tabasco,Primaria,Empleado-Bajo,Comercio,MAS DE 5 ANOS,B,A,M
+74,Quintana Roo,Bachillerato,Empleado-Bajo,Comercio,TODA,A,A,M
+75,Tabasco,Secundaria,Empleado-Bajo,Comercio,MAS DE 5 ANOS,B,A,M
+76,Quintana Roo,Primaria,Trabajador-Arrendador,Comercio,MAS DE 5 ANOS,B,A,H
+77,Veracruz,Primaria,Trabajador-Arrendador,Comercio,ENTRE UN AÃ‘O Y CINCO,A,B,H
+78,Yucatan,Tecnico-Superior,Empleado-Bajo,Comercio,MAS DE 5 ANOS,C,A,H
+79,Yucatan,Secundaria,Trabajador-Arrendador,Comercio,MAS DE 5 ANOS,A,A,M
+80,Chiapas,Primaria,Empleado-Bajo,Comercio,TODA,B,B,M
+81,Tabasco,Secundaria,Trabajador-Arrendador,Comercio,MAS DE 5 ANOS,B,A,H
+82,Chiapas,Primaria-Incompleta,Empleado-Bajo,Comercio,MAS DE 5 ANOS,A,B,H
+83,Yucatan,Ninguno,Empleado-Bajo,Comercio,MAS DE 5 ANOS,B,A,M
+84,Campeche,Bachillerato,Trabajador-Arrendador,Comercio,MAS DE 5 ANOS,A,B,M
+85,Yucatan,Secundaria,Empleado-Bajo,Comercio,MAS DE 5 ANOS,B,A,M
+86,Chiapas,Primaria,Empleado-Bajo,Comercio,ENTRE UN AÃ‘O Y CINCO,B,A,M
+87,Tabasco,Bachillerato,Empleado-Bajo,Comercio,MAS DE 5 ANOS,B,A,M
+88,Chiapas,Ninguno,Empleado-Bajo,Comercio,MAS DE 5 ANOS,A,B,M
+89,Veracruz,Primaria,Empleado-Bajo,Industria,MENOS DE UN AÃ‘O,B,A,M
+90,Chiapas,Bachillerato,Empleado-Medio,Comercio,MAS DE 5 ANOS,B,A,H
+91,Veracruz,Licenciatura,Empleado-Bajo,Agricola,MAS DE 5 ANOS,B,B,M
+92,Veracruz,Secundaria,Empleado-Bajo,Comercio,ENTRE UN AÃ‘O Y CINCO,A,B,M
+93,Yucatan,Primaria,Empleado-Bajo,Comercio,MENOS DE UN AÃ‘O,B,A,H
+94,Tabasco,Primaria,Trabajador-Arrendador,Comercio,MAS DE 5 ANOS,A,B,H
+95,Tabasco,Primaria,Trabajador-Arrendador,Comercio,MAS DE 5 ANOS,A,B,M
+96,Quintana Roo,Bachillerato,Empleado-Bajo,Industria,MAS DE 5 ANOS,B,A,M
+97,Yucatan,Primaria,Empleado-Bajo,Industria,MAS DE 5 ANOS,B,B,M
+98,Tabasco,Secundaria,Empleado-Bajo,Comercio,ENTRE UN AÃ‘O Y CINCO,C,B,M
+99,Yucatan,Primaria,Trabajador-Arrendador,Comercio,MAS DE 5 ANOS,A,B,M
+100,GUERRERO,Primaria,Empleado-Bajo,Industria,MAS DE 5 ANOS,B,A,M
+101,GUERRERO,Primaria,Empleado-Bajo,Industria,MAS DE 5 ANOS,B,A,M
+102,Tabasco,Bachillerato,Trabajador-Arrendador,Comercio,ENTRE UN AÃ‘O Y CINCO,C,A,M
+103,Veracruz,Secundaria,Trabajador-Arrendador,Industria,MAS DE 5 ANOS,B,B,H
+104,Yucatan,Primaria,Empleado-Bajo,Industria,MAS DE 5 ANOS,A,B,M
+105,Veracruz,Secundaria,Empleado-Medio,Comercio,ENTRE UN AÃ‘O Y CINCO,C,A,H
+106,Tabasco,Bachillerato,Empleado-Bajo,Comercio,MAS DE 5 ANOS,A,A,M
+107,Quintana Roo,Secundaria,Empleado-Medio,Industria,TODA,B,B,M
+108,Yucatan,Bachillerato,Empleado-Bajo,Comercio,ENTRE UN AÃ‘O Y CINCO,B,A,M
+109,GUANAJUATO,Secundaria,Empleado-Bajo,Comercio,MAS DE 5 ANOS,A,B,M
+110,Yucatan,Tecnico-Superior,Empleado-Bajo,Comercio,MAS DE 5 ANOS,B,A,M
+111,Campeche,Primaria,Empleado-Bajo,Comercio,MAS DE 5 ANOS,C,B,M
+112,Campeche,Bachillerato,Patrón,Comercio,MAS DE 5 ANOS,C,B,H
+113,Tabasco,Primaria,Empleado-Bajo,Industria,MENOS DE UN AÃ‘O,C,B,M
+114,Quintana Roo,Primaria,Trabajador-Arrendador,Comercio,ENTRE UN AÃ‘O Y CINCO,B,A,M
+115,Veracruz,Primaria,Trabajador-Arrendador,Comercio,ENTRE UN AÃ‘O Y CINCO,B,A,M
+116,Chiapas,Primaria,Trabajador-Arrendador,Industria,MAS DE 5 ANOS,B,A,M
+117,Yucatan,Primaria,Empleado-Bajo,Industria,ENTRE UN AÃ‘O Y CINCO,B,A,M
+118,TAMAULIPAS,Primaria,Empleado-Medio,Comercio,MAS DE 5 ANOS,B,B,H
+119,Campeche,Bachillerato,Empleado-Bajo,Comercio,ENTRE UN AÃ‘O Y CINCO,A,A,M
+120,Yucatan,Secundaria,Empleado-Bajo,Industria,MAS DE 5 ANOS,A,A,M
+121,Tabasco,Primaria,Trabajador-Arrendador,Comercio,MAS DE 5 ANOS,B,A,M
+122,Chiapas,Primaria,Trabajador-Arrendador,Comercio,MAS DE 5 ANOS,A,B,H
+123,Yucatan,Secundaria,Empleado-Bajo,Industria,MENOS DE UN AÃ‘O,B,A,M
+124,Yucatan,Primaria,Trabajador-Arrendador,Industria,MAS DE 5 ANOS,B,A,M
+125,Campeche,Bachillerato,Patrón,Comercio,MAS DE 5 ANOS,C,A,M
+126,Tabasco,Bachillerato,Empleado-Bajo,Comercio,TODA,B,A,M
+127,Quintana Roo,Primaria,Empleado-Bajo,Industria,TODA,B,A,H
+128,DISTRITO FEDERAL,Primaria,Trabajador-Arrendador,Comercio,MAS DE 5 ANOS,A,B,H
+129,DISTRITO FEDERAL,Secundaria,Trabajador-Arrendador,Comercio,MENOS DE UN AÃ‘O,B,B,H
+130,Quintana Roo,Secundaria,Empleado-Bajo,Comercio,MAS DE 5 ANOS,C,A,H
+131,Tabasco,Secundaria,Empleado-Bajo,Comercio,MAS DE 5 ANOS,B,A,H
+132,Quintana Roo,Primaria,Empleado-Bajo,Comercio,MAS DE 5 ANOS,B,A,M
+133,Yucatan,Bachillerato,Empleado-Bajo,Comercio,ENTRE UN AÃ‘O Y CINCO,A,A,M
+134,Quintana Roo,Bachillerato,Empleado-Bajo,Comercio,MAS DE 5 ANOS,B,B,M
+135,Quintana Roo,Secundaria,Empleado-Bajo,Comercio,TODA,A,B,H
+136,Yucatan,Tecnico-Superior,Empleado-Bajo,Industria,MAS DE 5 ANOS,B,A,H
+137,Yucatan,Primaria,Empleado-Bajo,Comercio,MAS DE 5 ANOS,A,A,M
+138,Quintana Roo,Secundaria,Empleado-Bajo,Industria,MAS DE 5 ANOS,B,A,M
+139,Quintana Roo,Secundaria,Empleado-Bajo,Comercio,MENOS DE UN AÃ‘O,A,A,H
+140,Yucatan,Ninguno,Empleado-Bajo,Comercio,ENTRE UN AÃ‘O Y CINCO,B,A,M
+141,Veracruz,Primaria,Empleado-Bajo,Comercio,MAS DE 5 ANOS,B,A,M
+142,GUERRERO,Secundaria,Empleado-Bajo,Industria,MENOS DE UN AÃ‘O,B,A,M
+143,Tabasco,Primaria-Incompleta,Empleado-Medio,Industria,ENTRE UN AÃ‘O Y CINCO,B,B,M
+144,Veracruz,Bachillerato,Empleado-Bajo,Industria,MAS DE 5 ANOS,B,A,M
+145,Chiapas,Ninguno,Trabajador-Arrendador,Comercio,ENTRE UN AÃ‘O Y CINCO,A,A,H
+146,Chiapas,Secundaria,Empleado-Bajo,Comercio,ENTRE UN AÃ‘O Y CINCO,B,A,H
+147,Tabasco,Secundaria,Empleado-Bajo,Industria,ENTRE UN AÃ‘O Y CINCO,A,A,M
+148,Tabasco,Secundaria,Empleado-Bajo,Industria,ENTRE UN AÃ‘O Y CINCO,B,A,H
+149,Yucatan,Secundaria,Empleado-Bajo,Industria,ENTRE UN AÃ‘O Y CINCO,B,B,M
+150,Veracruz,Licenciatura,OTRO,Comercio,MENOS DE UN AÃ‘O,A,A,M
+151,Yucatan,Primaria,Empleado-Bajo,Comercio,MAS DE 5 ANOS,A,B,H
+152,Campeche,Primaria,Empleado-Bajo,Industria,MAS DE 5 ANOS,B,A,H
+153,Tabasco,Secundaria,Empleado-Bajo,Industria,ENTRE UN AÃ‘O Y CINCO,A,A,M
+154,Yucatan,Secundaria,Patrón,Comercio,TODA,B,B,M
+155,Tabasco,Primaria,Empleado-Medio,Comercio,MAS DE 5 ANOS,B,B,M
+156,DISTRITO FEDERAL,Secundaria,Empleado-Bajo,Comercio,MAS DE 5 ANOS,A,B,H
+157,Quintana Roo,Bachillerato,Trabajador-Arrendador,Industria,MENOS DE UN AÃ‘O,B,A,M
+158,Yucatan,Bachillerato,Empleado-Bajo,Comercio,ENTRE UN AÃ‘O Y CINCO,A,B,M
+159,Veracruz,Primaria,Empleado-Bajo,Industria,MAS DE 5 ANOS,B,B,H
+160,Chiapas,Bachillerato,Empleado-Medio,Comercio,ENTRE UN AÃ‘O Y CINCO,B,B,M
+161,Campeche,Ninguno,Empleado-Bajo,Industria,MAS DE 5 ANOS,B,A,H
+162,Veracruz,Primaria-Incompleta,Empleado-Bajo,Comercio,ENTRE UN AÃ‘O Y CINCO,B,A,M
+163,Tabasco,Secundaria,Empleado-Bajo,Comercio,ENTRE UN AÃ‘O Y CINCO,B,A,M
+164,Campeche,Bachillerato,Empleado-Medio,Comercio,ENTRE UN AÃ‘O Y CINCO,B,A,M
+165,Quintana Roo,Primaria,Empleado-Bajo,Industria,ENTRE UN AÃ‘O Y CINCO,B,A,M
+166,Tabasco,Secundaria,Empleado-Bajo,Comercio,MAS DE 5 ANOS,A,B,M
+167,Tabasco,Bachillerato,Trabajador-Arrendador,Comercio,MAS DE 5 ANOS,B,A,M
+168,Campeche,Primaria,Trabajador-Arrendador,Industria,MENOS DE UN AÃ‘O,B,A,M
+169,Quintana Roo,Secundaria,Empleado-Medio,Industria,MAS DE 5 ANOS,A,A,M
+170,Chiapas,Primaria,Empleado-Bajo,Industria,ENTRE UN AÃ‘O Y CINCO,B,A,M
+171,Chiapas,Primaria-Incompleta,Trabajador-Arrendador,Comercio,MAS DE 5 ANOS,B,B,H
+172,Tabasco,Secundaria,Empleado-Bajo,Industria,ENTRE UN AÃ‘O Y CINCO,C,A,M
+173,Chiapas,Secundaria,Empleado-Bajo,Comercio,ENTRE UN AÃ‘O Y CINCO,B,A,H
+174,Veracruz,Primaria-Incompleta,Empleado-Bajo,Comercio,TODA,A,A,M
+175,Tabasco,Primaria,Empleado-Bajo,Industria,MAS DE 5 ANOS,A,B,M
+176,Veracruz,Ninguno,Empleado-Medio,Comercio,TODA,A,A,M
+177,Yucatan,Primaria,Empleado-Bajo,Comercio,ENTRE UN AÃ‘O Y CINCO,A,B,M
+178,Veracruz,Secundaria,Empleado-Bajo,Comercio,MAS DE 5 ANOS,A,A,M
+179,Tabasco,Secundaria,Empleado-Bajo,Comercio,MAS DE 5 ANOS,A,A,M
+180,Tabasco,Primaria-Incompleta,Empleado-Bajo,Comercio,MAS DE 5 ANOS,B,A,H
+181,Veracruz,Secundaria,Empleado-Bajo,Comercio,ENTRE UN AÃ‘O Y CINCO,B,B,M
+182,GUERRERO,Primaria-Incompleta,Empleado-Bajo,Comercio,MAS DE 5 ANOS,B,B,M
+183,OAXACA,Primaria-Incompleta,Empleado-Bajo,Industria,MENOS DE UN AÃ‘O,A,B,H
+184,Yucatan,Bachillerato,Empleado-Bajo,Comercio,MAS DE 5 ANOS,B,B,H
+185,Tabasco,Primaria,Empleado-Bajo,Comercio,MAS DE 5 ANOS,B,A,M
+186,Veracruz,Bachillerato,Empleado-Bajo,Comercio,ENTRE UN AÃ‘O Y CINCO,B,A,M
+187,Veracruz,Secundaria,Empleado-Bajo,Industria,MAS DE 5 ANOS,B,B,H
+188,Quintana Roo,Secundaria,Empleado-Bajo,Comercio,ENTRE UN AÃ‘O Y CINCO,B,B,M
+189,Tabasco,Bachillerato,Empleado-Bajo,Comercio,ENTRE UN AÃ‘O Y CINCO,B,A,H
+190,Tabasco,Ninguno,Trabajador-Arrendador,Comercio,ENTRE UN AÃ‘O Y CINCO,A,B,M
+191,Chiapas,Secundaria,Empleado-Bajo,Comercio,ENTRE UN AÃ‘O Y CINCO,A,B,H
+192,OAXACA,Secundaria,Empleado-Bajo,Comercio,ENTRE UN AÃ‘O Y CINCO,A,B,M
+193,Chiapas,Secundaria,Empleado-Bajo,Comercio,MENOS DE UN AÃ‘O,B,A,M
+194,Campeche,Bachillerato,Empleado-Bajo,Comercio,ENTRE UN AÃ‘O Y CINCO,B,A,M
+195,Campeche,Secundaria,Trabajador-Arrendador,Comercio,MENOS DE UN AÃ‘O,B,A,M
+196,Yucatan,Primaria,Empleado-Bajo,Industria,ENTRE UN AÃ‘O Y CINCO,B,B,H
+197,Campeche,Bachillerato,Empleado-Bajo,Comercio,MENOS DE UN AÃ‘O,B,A,M
+198,Quintana Roo,Primaria,Empleado-Bajo,Industria,MAS DE 5 ANOS,A,A,M
+199,Tabasco,Secundaria,Empleado-Bajo,Industria,MAS DE 5 ANOS,B,B,M
+200,Tabasco,Bachillerato,Empleado-Bajo,Comercio,MAS DE 5 ANOS,A,A,M
+201,Veracruz,Secundaria,Empleado-Bajo,Comercio,MAS DE 5 ANOS,A,A,M
+202,Tabasco,Secundaria,Empleado-Bajo,Comercio,MENOS DE UN AÃ‘O,B,A,M
+203,Yucatan,Bachillerato,Empleado-Bajo,Comercio,MAS DE 5 ANOS,B,B,M
+204,Yucatan,Secundaria,Patrón,Industria,MAS DE 5 ANOS,A,B,H
+205,Yucatan,Secundaria,Empleado-Bajo,Comercio,MAS DE 5 ANOS,B,A,M
+206,Chiapas,Secundaria,Empleado-Bajo,Industria,MAS DE 5 ANOS,A,A,M
+207,Campeche,Secundaria,Empleado-Bajo,Comercio,MAS DE 5 ANOS,B,A,M
+208,Tabasco,Primaria,Trabajador-Arrendador,Comercio,ENTRE UN AÃ‘O Y CINCO,B,A,M
+209,Quintana Roo,Secundaria,Empleado-Bajo,Comercio,MAS DE 5 ANOS,A,A,H
+210,Quintana Roo,Secundaria,Empleado-Bajo,Comercio,MAS DE 5 ANOS,A,A,M
+211,Chiapas,Primaria,Empleado-Bajo,Agricola,MENOS DE UN AÃ‘O,A,B,H
+212,Tabasco,Secundaria,Empleado-Bajo,Industria,MENOS DE UN AÃ‘O,A,A,M
+213,Yucatan,Secundaria,Empleado-Bajo,Comercio,ENTRE UN AÃ‘O Y CINCO,A,A,M
+214,Chiapas,Secundaria,Empleado-Bajo,Industria,MAS DE 5 ANOS,A,A,M
+215,Yucatan,Primaria-Incompleta,Jubilado,Agricola,MAS DE 5 ANOS,B,B,H
+216,Yucatan,Licenciatura,Empleado-Bajo,Comercio,ENTRE UN AÃ‘O Y CINCO,A,A,M
+217,TAMAULIPAS,Secundaria,Empleado-Bajo,Comercio,ENTRE UN AÃ‘O Y CINCO,B,A,M
+218,Tabasco,Secundaria,Empleado-Bajo,Industria,MAS DE 5 ANOS,A,A,M
+219,ESTADO DE MÃ‰XICO,Secundaria,Empleado-Bajo,Comercio,MAS DE 5 ANOS,B,B,M
+220,Tabasco,Secundaria,Empleado-Bajo,Industria,MAS DE 5 ANOS,A,B,M
+221,Quintana Roo,Primaria,Empleado-Bajo,Industria,MAS DE 5 ANOS,A,A,H
+222,Chiapas,Primaria,Empleado-Medio,Industria,ENTRE UN AÃ‘O Y CINCO,A,B,M
+223,Tabasco,Primaria-Incompleta,Empleado-Bajo,Comercio,MAS DE 5 ANOS,B,A,M
+224,Chiapas,Secundaria,Empleado-Bajo,Industria,ENTRE UN AÃ‘O Y CINCO,A,A,M
+225,ESTADO DE MÃ‰XICO,Primaria-Incompleta,Empleado-Bajo,Comercio,MAS DE 5 ANOS,A,B,H
+226,TAMAULIPAS,Secundaria,Empleado-Bajo,Comercio,MENOS DE UN AÃ‘O,A,A,H
+227,Tabasco,Primaria-Incompleta,Empleado-Bajo,Comercio,ENTRE UN AÃ‘O Y CINCO,A,A,M
+228,Veracruz,Primaria-Incompleta,Empleado-Bajo,Comercio,MAS DE 5 ANOS,A,B,M
+229,Veracruz,Primaria,Empleado-Bajo,Comercio,ENTRE UN AÃ‘O Y CINCO,B,A,M
+230,Veracruz,Secundaria,Empleado-Bajo,Industria,ENTRE UN AÃ‘O Y CINCO,A,B,M
+231,Veracruz,Secundaria,Empleado-Bajo,Comercio,ENTRE UN AÃ‘O Y CINCO,A,A,H
+232,Tabasco,Bachillerato,Empleado-Medio,Industria,ENTRE UN AÃ‘O Y CINCO,B,A,H
+233,Chiapas,Bachillerato,Empleado-Medio,Comercio,MAS DE 5 ANOS,B,A,H
+234,Tabasco,Secundaria,Empleado-Bajo,Comercio,MAS DE 5 ANOS,B,A,M
+235,Veracruz,Secundaria,Empleado-Bajo,Industria,ENTRE UN AÃ‘O Y CINCO,A,B,M
+236,Chiapas,Primaria-Incompleta,Empleado-Bajo,Industria,MAS DE 5 ANOS,A,B,M
+237,Campeche,Primaria-Incompleta,Empleado-Bajo,Industria,MAS DE 5 ANOS,B,A,H
+238,Campeche,Secundaria,Empleado-Bajo,Industria,MAS DE 5 ANOS,A,A,M
+239,Campeche,Primaria-Incompleta,Empleado-Bajo,Comercio,MAS DE 5 ANOS,B,A,M
+240,Quintana Roo,Primaria,Trabajador-Arrendador,Comercio,MAS DE 5 ANOS,A,A,M
+241,Chiapas,Secundaria,Trabajador-Arrendador,Comercio,MENOS DE UN AÃ‘O,A,A,M
+242,Yucatan,Secundaria,Empleado-Bajo,Industria,MAS DE 5 ANOS,B,A,M
+243,Chiapas,Secundaria,Empleado-Bajo,Comercio,MAS DE 5 ANOS,B,A,M
+244,Chiapas,Ninguno,Empleado-Bajo,Comercio,MAS DE 5 ANOS,A,B,H
+245,TAMAULIPAS,Primaria,Empleado-Bajo,Comercio,MAS DE 5 ANOS,A,A,M
+246,Quintana Roo,Primaria,Empleado-Bajo,Comercio,MENOS DE UN AÃ‘O,B,A,H
+247,Yucatan,Secundaria,Trabajador-Arrendador,Comercio,MAS DE 5 ANOS,A,B,M
+248,Quintana Roo,Bachillerato,Empleado-Bajo,Comercio,MAS DE 5 ANOS,B,A,H
+249,Tabasco,Bachillerato,Empleado-Bajo,Comercio,MAS DE 5 ANOS,B,A,M
+250,Campeche,Secundaria,Empleado-Bajo,Comercio,MAS DE 5 ANOS,B,B,H
+251,Veracruz,Secundaria,Empleado-Bajo,Comercio,MAS DE 5 ANOS,A,A,M
+252,Quintana Roo,Primaria,Trabajador-Arrendador,Comercio,MAS DE 5 ANOS,B,A,M
+253,Chiapas,Primaria-Incompleta,Empleado-Bajo,Comercio,ENTRE UN AÃ‘O Y CINCO,B,A,M
+254,Tabasco,Secundaria,Trabajador-Arrendador,Comercio,ENTRE UN AÃ‘O Y CINCO,B,A,M
+255,Campeche,Bachillerato,Empleado-Bajo,Comercio,ENTRE UN AÃ‘O Y CINCO,A,B,M
+256,Campeche,Primaria-Incompleta,Empleado-Bajo,Comercio,ENTRE UN AÃ‘O Y CINCO,A,A,M
+257,Yucatan,Bachillerato,Empleado-Bajo,Comercio,ENTRE UN AÃ‘O Y CINCO,A,A,M
+258,Tabasco,Primaria-Incompleta,Empleado-Bajo,Comercio,MAS DE 5 ANOS,B,A,H
+259,Quintana Roo,Secundaria,Empleado-Bajo,Industria,TODA,A,A,M
+260,Campeche,Bachillerato,Empleado-Bajo,Comercio,MAS DE 5 ANOS,A,A,M
+261,Tabasco,Licenciatura,Empleado-Bajo,Industria,MENOS DE UN AÃ‘O,B,A,M
+262,Quintana Roo,Bachillerato,Empleado-Bajo,Comercio,ENTRE UN AÃ‘O Y CINCO,A,A,M
+263,Veracruz,Primaria,Empleado-Bajo,Comercio,MAS DE 5 ANOS,A,B,H
+264,Campeche,Secundaria,Empleado-Bajo,Comercio,MAS DE 5 ANOS,B,A,M
+265,Tabasco,Bachillerato,Empleado-Bajo,Comercio,MAS DE 5 ANOS,A,A,M
+266,Campeche,Bachillerato,Empleado-Bajo,Comercio,MAS DE 5 ANOS,C,B,H
+267,Veracruz,Primaria-Incompleta,Trabajador-Arrendador,Comercio,MAS DE 5 ANOS,A,B,M
+268,Tabasco,Primaria,Jubilado,Jubilado,MAS DE 5 ANOS,A,B,M
+269,Campeche,Primaria-Incompleta,OTRO,Comercio,ENTRE UN AÃ‘O Y CINCO,B,A,H
+270,Tabasco,Bachillerato,Empleado-Bajo,Comercio,MAS DE 5 ANOS,B,B,H
+271,Yucatan,Primaria,Empleado-Bajo,Agricola,MAS DE 5 ANOS,A,A,M
+272,Yucatan,Bachillerato,Empleado-Bajo,Comercio,MAS DE 5 ANOS,B,B,M
+273,SONORA,Bachillerato,Empleado-Bajo,Comercio,MAS DE 5 ANOS,B,B,H
+274,Tabasco,Bachillerato,Trabajador-Arrendador,Comercio,MAS DE 5 ANOS,B,A,M
+275,Tabasco,Licenciatura,Empleado-Bajo,Comercio,ENTRE UN AÃ‘O Y CINCO,B,A,M
+276,Quintana Roo,Bachillerato,Empleado-Bajo,Comercio,ENTRE UN AÃ‘O Y CINCO,B,A,M
+277,Chiapas,Secundaria,Empleado-Bajo,Comercio,MAS DE 5 ANOS,B,B,M
+278,Quintana Roo,Licenciatura,Empleado-Bajo,Comercio,MAS DE 5 ANOS,B,A,M
+279,Yucatan,Secundaria,Empleado-Bajo,Industria,MAS DE 5 ANOS,B,A,M
+280,Veracruz,Ninguno,Empleado-Bajo,Agricola,MAS DE 5 ANOS,B,A,M
+281,Veracruz,Secundaria,Empleado-Bajo,Comercio,MENOS DE UN AÃ‘O,A,A,M
+282,Campeche,Primaria,Empleado-Bajo,Comercio,MAS DE 5 ANOS,A,A,M
+283,Yucatan,Primaria,Empleado-Bajo,Comercio,MENOS DE UN AÃ‘O,B,B,M
+284,Yucatan,Bachillerato,Empleado-Bajo,Comercio,ENTRE UN AÃ‘O Y CINCO,A,A,M
+285,Campeche,Licenciatura,Empleado-Medio,Comercio,MAS DE 5 ANOS,C,A,M
+286,Chiapas,Primaria,Empleado-Bajo,Industria,ENTRE UN AÃ‘O Y CINCO,B,A,H
+287,Yucatan,Secundaria,Trabajador-Arrendador,Comercio,ENTRE UN AÃ‘O Y CINCO,A,A,M
+288,Yucatan,Primaria,Empleado-Bajo,Comercio,MAS DE 5 ANOS,A,B,M
+289,Yucatan,Secundaria,Empleado-Bajo,Industria,MAS DE 5 ANOS,B,A,M
+290,Quintana Roo,Secundaria,Trabajador-Arrendador,Agricola,ENTRE UN AÃ‘O Y CINCO,C,A,M
+291,Tabasco,Primaria,OTRO,Industria,MAS DE 5 ANOS,A,B,M
+292,Chiapas,Primaria-Incompleta,Empleado-Bajo,Agricola,MENOS DE UN AÃ‘O,A,A,M
+293,Chiapas,Primaria-Incompleta,Empleado-Bajo,Industria,ENTRE UN AÃ‘O Y CINCO,B,A,M
+294,HIDALGO,Licenciatura,Empleado-Bajo,Comercio,MENOS DE UN AÃ‘O,B,A,M
+295,Chiapas,Secundaria,Empleado-Bajo,Industria,MAS DE 5 ANOS,A,A,M
+296,Campeche,Secundaria,Trabajador-Arrendador,Comercio,ENTRE UN AÃ‘O Y CINCO,A,A,M
+297,Tabasco,Secundaria,Empleado-Bajo,Industria,MAS DE 5 ANOS,B,A,M
+298,Tabasco,Secundaria,OTRO,Comercio,ENTRE UN AÃ‘O Y CINCO,A,A,M
+299,Quintana Roo,Primaria,Empleado-Bajo,Comercio,TODA,A,A,M
+300,Chiapas,Primaria,Trabajador-Arrendador,Comercio,MAS DE 5 ANOS,B,B,H
+301,Yucatan,Bachillerato,Empleado-Medio,Industria,MAS DE 5 ANOS,C,A,M
+302,Quintana Roo,Primaria,Trabajador-Arrendador,Comercio,MAS DE 5 ANOS,A,B,H
+303,Campeche,Secundaria,Empleado-Bajo,Comercio,MAS DE 5 ANOS,C,B,M
+304,Veracruz,Bachillerato,OTRO,Industria,MAS DE 5 ANOS,A,A,H
+305,Yucatan,Secundaria,Empleado-Bajo,Comercio,MAS DE 5 ANOS,A,B,M
+306,Tabasco,Secundaria,Empleado-Bajo,Industria,MAS DE 5 ANOS,C,A,M
+307,OAXACA,Primaria,Trabajador-Arrendador,Industria,MAS DE 5 ANOS,A,A,M
+308,Tabasco,Secundaria,Empleado-Bajo,Industria,MAS DE 5 ANOS,A,A,M
+309,Campeche,Bachillerato,Empleado-Bajo,Comercio,MAS DE 5 ANOS,B,B,M
+310,Veracruz,Secundaria,Empleado-Bajo,Industria,MENOS DE UN AÃ‘O,B,A,M
+311,Chiapas,Secundaria,Empleado-Bajo,Comercio,MAS DE 5 ANOS,B,B,M
+312,Yucatan,Secundaria,Empleado-Bajo,Industria,MAS DE 5 ANOS,B,A,M
+313,Campeche,Bachillerato,Empleado-Bajo,Comercio,MAS DE 5 ANOS,B,B,H
+314,Quintana Roo,Secundaria,Empleado-Bajo,Industria,MENOS DE UN AÃ‘O,A,B,M
+315,Quintana Roo,Primaria-Incompleta,Patrón,Comercio,MAS DE 5 ANOS,C,A,M
+316,Yucatan,Primaria,Trabajador-Arrendador,Comercio,ENTRE UN AÃ‘O Y CINCO,B,B,H
+317,Veracruz,Bachillerato,Patrón,Industria,MAS DE 5 ANOS,C,A,M
+318,Tabasco,Primaria,Empleado-Bajo,Industria,MENOS DE UN AÃ‘O,B,B,M
+319,Quintana Roo,Licenciatura,Empleado-Bajo,Comercio,ENTRE UN AÃ‘O Y CINCO,B,A,M
+320,Tabasco,Bachillerato,Empleado-Bajo,Comercio,ENTRE UN AÃ‘O Y CINCO,C,A,M
+321,Yucatan,Bachillerato,Empleado-Bajo,Comercio,ENTRE UN AÃ‘O Y CINCO,B,A,M
+322,Quintana Roo,Secundaria,Empleado-Bajo,Industria,MAS DE 5 ANOS,B,A,M
+323,Tabasco,Bachillerato,Empleado-Bajo,Comercio,ENTRE UN AÃ‘O Y CINCO,B,A,H
+324,Yucatan,Secundaria,Trabajador-Arrendador,Agricola,MAS DE 5 ANOS,B,A,H
+325,Yucatan,Primaria,Patrón,Comercio,ENTRE UN AÃ‘O Y CINCO,A,A,H
+326,Yucatan,Bachillerato,Empleado-Bajo,Comercio,MAS DE 5 ANOS,B,A,M
+327,Tabasco,Secundaria,Empleado-Bajo,Comercio,MAS DE 5 ANOS,C,B,H
+328,Veracruz,Secundaria,Empleado-Medio,Comercio,MAS DE 5 ANOS,B,A,H
+329,Quintana Roo,Secundaria,Empleado-Bajo,Industria,ENTRE UN AÃ‘O Y CINCO,B,A,H
+330,Yucatan,Bachillerato,Empleado-Bajo,Comercio,MAS DE 5 ANOS,B,A,M
+331,DISTRITO FEDERAL,Primaria-Incompleta,Empleado-Bajo,Industria,MAS DE 5 ANOS,B,A,M
+332,Yucatan,Primaria,Empleado-Bajo,Agricola,MAS DE 5 ANOS,B,B,H
+333,Yucatan,Secundaria,Empleado-Bajo,Comercio,MAS DE 5 ANOS,B,B,M
+334,ESTADO DE MÃ‰XICO,Secundaria,Empleado-Bajo,Industria,TODA,B,A,M
+335,Veracruz,Primaria-Incompleta,Empleado-Medio,Comercio,ENTRE UN AÃ‘O Y CINCO,B,B,H
+336,Veracruz,Primaria,Empleado-Bajo,Comercio,ENTRE UN AÃ‘O Y CINCO,B,A,M
+337,Tabasco,Licenciatura,Empleado-Bajo,Comercio,ENTRE UN AÃ‘O Y CINCO,A,A,M
+338,Chiapas,Primaria-Incompleta,Empleado-Bajo,Comercio,MAS DE 5 ANOS,B,A,M
+339,Veracruz,Primaria-Incompleta,Empleado-Bajo,Comercio,MENOS DE UN AÃ‘O,A,B,M
+340,GUERRERO,Primaria-Incompleta,Empleado-Bajo,Comercio,MAS DE 5 ANOS,B,B,M
+341,Yucatan,Bachillerato,Empleado-Medio,Comercio,MAS DE 5 ANOS,B,A,H
+342,Chiapas,Secundaria,Empleado-Bajo,Comercio,MAS DE 5 ANOS,B,A,M
+343,Yucatan,Primaria-Incompleta,Empleado-Bajo,Industria,ENTRE UN AÃ‘O Y CINCO,A,A,H
+344,Campeche,Primaria-Incompleta,Empleado-Bajo,Comercio,MAS DE 5 ANOS,A,B,M
+345,Tabasco,Primaria-Incompleta,Empleado-Bajo,Industria,ENTRE UN AÃ‘O Y CINCO,B,A,M
+346,Yucatan,Primaria,Empleado-Bajo,Industria,MENOS DE UN AÃ‘O,B,A,M
+347,Campeche,Secundaria,Empleado-Bajo,Comercio,MAS DE 5 ANOS,B,B,M
+348,Campeche,Secundaria,Empleado-Bajo,Comercio,MAS DE 5 ANOS,A,A,M
+349,Tabasco,Secundaria,Empleado-Bajo,Industria,MENOS DE UN AÃ‘O,A,A,M
+350,Chiapas,Secundaria,Empleado-Bajo,Industria,ENTRE UN AÃ‘O Y CINCO,B,A,H
+351,Veracruz,Secundaria,Empleado-Bajo,Comercio,MAS DE 5 ANOS,B,B,M
+352,Yucatan,Primaria,Empleado-Bajo,Industria,MAS DE 5 ANOS,B,A,H
+353,ESTADO DE MÃ‰XICO,Licenciatura,Empleado-Medio,Industria,MAS DE 5 ANOS,C,A,H
+354,Veracruz,Primaria-Incompleta,Trabajador-Arrendador,Comercio,MAS DE 5 ANOS,B,A,H
+355,Chiapas,Secundaria,Trabajador-Arrendador,Comercio,ENTRE UN AÃ‘O Y CINCO,B,A,H
+356,PUEBLA,Secundaria,Empleado-Medio,Comercio,ENTRE UN AÃ‘O Y CINCO,C,B,M
+357,Chiapas,Secundaria,Empleado-Bajo,Industria,MAS DE 5 ANOS,B,A,M
+358,Chiapas,Secundaria,Empleado-Medio,Industria,TODA,B,A,M
+359,Chiapas,Secundaria,Empleado-Medio,Comercio,MAS DE 5 ANOS,B,A,H
+360,Chiapas,Secundaria,Empleado-Bajo,Industria,MAS DE 5 ANOS,A,B,H
+361,Chiapas,Secundaria,Empleado-Bajo,Industria,MAS DE 5 ANOS,B,A,M
+362,Yucatan,Licenciatura,Trabajador-Arrendador,Industria,MAS DE 5 ANOS,B,A,H
+363,Campeche,Secundaria,Empleado-Medio,Comercio,MAS DE 5 ANOS,B,A,H
+364,Tabasco,Secundaria,Trabajador-Arrendador,Industria,MAS DE 5 ANOS,B,A,H
+365,Quintana Roo,Bachillerato,Empleado-Bajo,Comercio,MAS DE 5 ANOS,C,A,H
+366,Veracruz,Secundaria,Trabajador-Arrendador,Comercio,MAS DE 5 ANOS,B,A,H
+367,Tabasco,Secundaria,Empleado-Bajo,Comercio,TODA,B,A,M
+368,Tabasco,Bachillerato,Empleado-Bajo,Comercio,TODA,B,B,M
+369,Tabasco,Secundaria,Empleado-Medio,Comercio,TODA,C,A,H
+370,Tabasco,Primaria,Trabajador-Arrendador,Comercio,ENTRE UN AÃ‘O Y CINCO,A,B,H
+371,Veracruz,Primaria,Empleado-Bajo,Comercio,MAS DE 5 ANOS,B,A,H
+372,Chiapas,Bachillerato,Empleado-Bajo,Comercio,MAS DE 5 ANOS,B,A,M
+373,Yucatan,Primaria-Incompleta,Empleado-Bajo,Comercio,ENTRE UN AÃ‘O Y CINCO,B,B,M
+374,Tabasco,Secundaria,Jubilado,Jubilado,MAS DE 5 ANOS,A,B,M
+375,Tabasco,Secundaria,Empleado-Bajo,Industria,ENTRE UN AÃ‘O Y CINCO,A,A,M

@@ -1,0 +1,6 @@
+  output$Tipoestudio <- renderText ({
+    if(input$showmapa=="ALL"){ "Estudios socioeconomicos, Percepción de seguridad y Características sobre población y migración. " }
+    else if(input$showmapa=="PS"){ "Percepción sobre seguridad" }
+    else if(input$showmapa=="IS"){ "Estudio Socioeconómico y ambiental" }
+    else if(input$showmapa=="EJ"){ "Características sobre población y migración"}
+  })

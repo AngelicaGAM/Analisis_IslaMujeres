@@ -1,0 +1,12 @@
+name: Ex_App
+title: Ex_App
+username:
+account: analisisexploratorioislamujeres
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 3852953
+bundleId: 4409102
+url: https://analisisexploratorioislamujeres.shinyapps.io/Ex_App/
+when: 1617050543.3719
+asMultiple: FALSE
+asStatic: FALSE

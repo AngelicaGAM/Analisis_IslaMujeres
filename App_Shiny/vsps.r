@@ -643,6 +643,34 @@ dataT = arrange(data1, RESPUESTA)
 TPSVS23 = graficarTableGroup(dataT ,"Respuesta","Numero de personas", "23. Para corregir a un niño o niña que se porta mal, Usted recomienda:  ")
 # ------------------------------------------------------------------------
 
+
+ #------------------------------------------------------------------------------------
+# 24. Para corregir a un niño o niña que se porta mal, Usted recomienda:
+
+# 24. En esta casa
+
+Can = dataC24$n
+Eji = dataE24$n 
+Isl = dataI24$n 
+RESP = dataI24$RESPUESTA
+A1 <- data.frame(Can,Eji,Isl, RESP)
+
+GPSVS24 = graficarPlotGroup( A1 ,"Respuesta", "Numero de personas", "24. En esta casa " )
+
+Can = dataC24
+Eji = dataE24 
+Isl = dataI24 
+RESP = dataI24$RESPUESTA
+Isl['loc'] = 'Isla'
+Can['loc'] = 'Cancún'
+Eji['loc'] = 'Ejido'
+A1 <- data.frame(Can,Eji,Isl, RESP)
+data = merge(Isl, Can , all = TRUE)
+data1 = merge(Eji, data ,  all = TRUE)
+dataT = arrange(data1, RESPUESTA)
+TPSVS24 = graficarTableGroup(dataT ,"Respuesta","Numero de personas", "24. En esta casa  ")
+
+
 #------------------------------------------------------------------------------------
 # 25. En esta casa alguien: (APLICA TARJETON)
 Can = dataC25$n

@@ -438,10 +438,10 @@ TPSI16 = graficarTable(dataI16,"Respuesta","Numero de personas", "16. En esta ca
 #------------------------------------------------------------------------------------
 # 17. En esta calle o zona hay niños que se quedan la mayor parte del día sin comer:
 
-A = sum(Isla$En.esta.calle.o.zona.hay.niños.que.se.quedan.la.mayor.parte.del.día.sin.comer..Por.descuido.de.los.padres == 'SI')
-B = sum(Isla$En.esta.calle.o.zona.hay.niños.que.se.quedan.la.mayor.parte.del.día.sin.comer..Castigo == 'SI')
-C = sum(Isla$En.esta.calle.o.zona.hay.niños.que.se.quedan.la.mayor.parte.del.día.sin.comer..Falta.de.dinero == 'SI')
-D = sum(Isla$En.esta.calle.o.zona.hay.niños.que.se.quedan.la.mayor.parte.del.día.sin.comer..Trabajo.de.los.padres == 'SI')
+A = 0
+B = 0
+C = 0
+D = 0
 
 total = c(A, B, C, D)
 A = as.integer((A/N)*100)
@@ -663,6 +663,44 @@ GPSI23 = graficarPlot(dataI23,"Respuesta", "Numero de personas", "23. Para corre
 TPSI23 = graficarTable(dataI23,"Respuesta","Numero de personas", "23. Para corregir a un niño o niña que se porta mal, Usted recomienda:  ")
 
  
+
+ #------------------------------------------------------------------------------------
+# 24. Para corregir a un niño o niña que se porta mal, Usted recomienda:
+
+
+
+A = sum(Isla$En.esta.casa...APLICA.TARJETON..Todos.se.conocen == 'SI')
+B = sum(Isla$En.esta.casa...APLICA.TARJETON..Platican.unos.con.otros == 'SI')
+C = sum(Isla$En.esta.casa...APLICA.TARJETON..Comen.juntos == 'SI')
+D = sum(Isla$En.esta.casa...APLICA.TARJETON..Se.ayudan.con.los.gastos == 'SI')
+E = sum(Isla$En.esta.casa...APLICA.TARJETON..Discuten == 'SI')
+FF = sum(Isla$En.esta.casa...APLICA.TARJETON..Se.gritan.entre.sí == 'SI')
+G = sum(Isla$En.esta.casa...APLICA.TARJETON..Llegan.a.los.golpes == 'SI')
+H = sum(Isla$En.esta.casa...APLICA.TARJETON..Se.ignoran == 'SI')
+
+
+total = c(A, B, C, D,  E ,FF,G, H)
+A = as.integer((A/N)*100)
+B = as.integer((B/N)*100)
+C = as.integer((C/N)*100)
+D = as.integer((D/N)*100)
+E = as.integer((E/N)*100)
+FF = as.integer((FF/N)*100)
+G = as.integer((G/N)*100)
+
+H = as.integer((H/N)*100)
+n = c(A, B, C, D,  E, FF,G, H)
+
+RESPUESTA = c("Todos se conocen" , "Platican unos con otros" , "Comen juntos" , "Se ayudan con los gastos" , "Discuten" , "Se gritan entre sí" , "Llegan a los golpes" , "Se ignoran" );
+dataI24 <- data.frame(n,RESPUESTA,   total)
+GPSI24 = graficarPlot(dataI24,"Respuesta", "Numero de personas", "24. En esta casa:  " )
+TPSI24 = graficarTable(dataI24,"Respuesta","Numero de personas", "24. En esta casa:   ")
+
+
+
+
+
+ 
 #------------------------------------------------------------------------------------
 # 25. En esta casa alguien: (APLICA TARJETON)
 
@@ -690,8 +728,8 @@ n = c(A, B, C, D,  E, FF, G, H )
 
 RESPUESTA = c("Por su discapacidad, ha vivido violencia" , "Sabe manejar armas de fuego, como pistolas o rifles " , "Habla de comprar armas de fuego" , "Habla lengua indigena" , "Necesita ayuda por obesidad" , "Necesita ayuda por fumar" , "Necesita ayuda por beber" , "Necesita ayuda por drogas" );
 dataI25 <- data.frame(n,RESPUESTA,   total)
-GPSI25 = graficarPlot(dataI25,"Respuesta", "Numero de personas", "25. En esta casa alguien: (APLICA TARJETON) " )
-TPSI25 = graficarTable(dataI25,"Respuesta","Numero de personas", "25. En esta casa alguien: (APLICA TARJETON)  ")
+GPSI25 = graficarPlot(dataI25,"Respuesta", "Numero de personas", "25. En esta casa alguien:  " )
+TPSI25 = graficarTable(dataI25,"Respuesta","Numero de personas", "25. En esta casa alguien:   ")
 
 
 #------------------------------------------------------------------------------------

@@ -307,7 +307,7 @@ textMap <- function(M){
   mytext <- paste(
     "Pais: ", "Mexico","<br/>", 
     "Area: ", M$zona , "<br/>", 
-    "Estudio: ", M$est , "<br/>", 
+ 
     sep="") %>%
     lapply(htmltools::HTML)
 }

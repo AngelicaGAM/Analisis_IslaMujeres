@@ -50,13 +50,16 @@ library(visNetwork)
 
 
 server <- function(input, output, session) {
-  source("librerias.R")
-  source("Funciones.R")
-  source("graficas.R")
-  source("graficarSE.R")
-  source("G.R")
+    source("librerias.R")
+    source("Funciones.R")
+    source("graficas.R")
+    source("graficarSE.R")
+    source("G.R")
+   source("PSCUN.r")
+   source("PSEjido.r")
+   source("PSIsla.r")
+   source("vsps.r")
   source("tablas.R")
-  
   # ---------------------------------------------------------------------
   # HOME
   #cuestionarios
@@ -634,7 +637,7 @@ server <- function(input, output, session) {
              else if(input$pregunta=="GPSVS21"){GPSVS21}
              else if(input$pregunta=="GPSVS22"){GPSVS22}
              else if(input$pregunta=="GPSVS23"){GPSVS23}
-
+             else if(input$pregunta=="GPSVS24"){GPSVS24}
              else if(input$pregunta=="GPSVS25"){GPSVS25}
              else if(input$pregunta=="GPSVS26"){GPSVS26}
              else if(input$pregunta=="GPSVS27"){GPSVS27}

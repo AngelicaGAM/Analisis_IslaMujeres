@@ -1495,7 +1495,23 @@ server <- function(input, output, session) {
 
  # asociacion
 
-
+output$txt81 <- renderUI({
+    #income_rules <-rules()
+    if(input$selec == "Percepción de Seguridad" ){
+      if(input$len>input$mlen){
+        word <- paste("El mínimo de combinaciones de reglas no puede superar al máximo, por lo que es necesario reducir o aumentar, el número de combinaciones para la regla de asociación. Modificar en la barra lateral izquierda, debajo de 'Mín. Combinación reglas:' o de 'Máx. Combinación reglas:'")
+       }else{
+        word = " " 
+      }
+    }else{
+      if(input$len>input$mlen){
+        word <- paste("El mínimo de combinaciones de reglas no puede superar al máximo, por lo que es necesario reducir o aumentar, el número de combinaciones para la regla de asociación. Modificar en la barra lateral izquierda, debajo de 'Mín. Combinación reglas:' o de 'Máx. Combinación reglas:'")
+      }else{
+        word = " "
+      }
+    }
+    HTML(paste(word))
+  })
 
 
   
@@ -4769,13 +4785,13 @@ output$txt9 <- renderUI({
   income_rules <- rules()
   if(input$selec == "Percepción de Seguridad" ){
     if(length(income_rules)==0 && any(length(input$show_vars)>=2)){
-      word <- paste(("Error: Es necesario reducir ya sea el soporte o la confianza en la barra lateral izquierda, de lo contrario la asociación no encontró reglas significativas."))
+      word <- paste(("Error: Es necesario reducir ya sea el soporte, la confianza o modificar el mín y máx de cambinaciones en la barra lateral izquierda, de lo contrario la asociación no encontró reglas significativas."))
     }else{
       word = ""
     }
   }else{
     if(length(income_rules)==0 && any(length(input$show_vards)>=2)){
-      word <- paste(("Error: Es necesario reducir ya sea el soporte o la confianza en la barra lateral izquierda, de lo contrario la asociación no encontró reglas significativas."))
+      word <- paste(("Error: Es necesario reducir ya sea el soporte, la confianza o modificar el mín y máx de cambinaciones en la barra lateral izquierda, de lo contrario la asociación no encontró reglas significativas."))
     }else{
       word = ""
     }

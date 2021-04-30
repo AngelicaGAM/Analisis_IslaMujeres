@@ -255,6 +255,7 @@ body <- dashboardBody(
                        br(),
                        htmlOutput("txt5"),tags$head(tags$style("#txt5{color:red;font-size: 20px;font-style: italic;}")),
                        htmlOutput("txt9"),tags$head(tags$style("#txt9{color:red;font-size: 20px;font-style: italic;}")),
+                       htmlOutput("txt81"),tags$head(tags$style("#txt81{color:red;font-size: 20px;font-style: italic;}")),
                        fluidRow(align="center", visNetworkOutput('plot',height = 450, width = 800)),
                        br(),
                        br(),

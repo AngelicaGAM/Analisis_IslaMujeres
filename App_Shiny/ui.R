@@ -36,7 +36,7 @@ library(visNetwork)
 
 
 # header
-header <- dashboardHeader( title="Analisis Exploratorio")
+header <- dashboardHeader( title=" Analisis Exploratorio Isla Mujeres ")
 varsx <- c("Origen", "Escolaridad", "Puesto","Trabajo")
 varsy <- c("Puesto","Trabajo","Ingreso_sem","Escolaridad")
 varsz <- c("Ninguno", "Edad", "Sexo")
@@ -132,28 +132,45 @@ body <- dashboardBody(
     #INICIO
     tabItem(tabName = "inicio",
             fluidRow(
-              column(12,
-                     wellPanel(
-                       HTML(" <h2><b>Estudios Socio-Económicos, Percepción de Seguridad y Características sobre población y migración. </b></h2>")     
+              column(12, 
+                     wellPanel( 
+                       list(img(src="https://github.com/AngelicaGAM/Analisis_IslaMujeres/blob/main/logob.png?raw=true",  width = '20%', align = "center") ),
+                       HTML(" <h2><b>Análisis y Visualización de datos en Estudios Socio-Económicos y de Percepción de Seguridad en el Municipio de Isla Mujeres</b></h2>") ,
+                       HTML(" <h6> Proyecto que tiene como objetivo: Desarrollar un conjunto de herramientas computacionales le permita a los investigadores extraer conclusiones, formular hipótesis y encontrar hallazgos a partir de instrumentos de consulta en estudios socioeconómicos y de percepción de seguridad realizados en el municipio de Isla Mujeres. <br><br> Realizado por los estudiantes Angelica Guadalupe Arellanes Merino, Victoria Andrea Garza Romero y Gustavo Xavier Hernandez Arce del programa educativo Ingeniería en Datos e Inteligencia Organizacional asesorados por el Dr. David Flores Granados del Departamento de Ciencias basicas e Ingenierías para el Cuerpo Académico de Negocios Internacionales de la Universidad del Caribe representado por la Dra. Rosiluz Ceballos Povedano.</h6>") 
+                       
                      )),    
-              column(12,
-                      br(),   
-                    infoBox( "Población y migración",377 , icon=icon("user-alt"), color = "light-blue", fill = TRUE ),
-                    infoBox("Socieconimico y Ambiental",55, icon=icon("seedling"), color = "olive", fill = TRUE),
-                    infoBox("Percepcion de seguridad",8701, icon=icon("eye"),color = "orange", fill = TRUE), br(), br(), br(), br(),br(), br(), br(),       
-                ),
+             column(12,
+                     br(),   
+                      infoBox("Población y migración",377 , icon=icon("user-alt"), color = "light-blue", fill = TRUE ),
+                      infoBox("Socieconimico y Ambiental",55, icon=icon("seedling"), color = "olive", fill = TRUE),
+                      infoBox("Percepcion de seguridad",8701, icon=icon("eye"),color = "orange", fill = TRUE), br(), br(), br(), br(),br(), br(), br(),       
+               ),
 
               column(4, wellPanel(
-                HTML(" <h2><b>Características sobre población y migración.</b></h2><h3>  Zona Urbana Isla Mujeres</h3><h4>Enfoque exclusivo a la percepción de seguridad en la Zona Continental de Isla Mujeres tomando los resultados de ambos conjuntos de datos realizados por diferentes instituciones.<br> <br>Enfoque:<br> <ul><li>Economico</li><li>Social</li><li>Vivienda</li><li>Apreciación de encuestador </li> <br><br></h4>"),
-                actionBttn(inputId = "popPyM", label = "Cuestionario", style = "fill", color = "danger", icon = icon("poll-h"), size = "sm")
+                      HTML(" <h3><b>Encuesta sobre las principales características de población y migración en la zona urbana continental de Isla Mujeres.</b></h3>  
+                            <p> Lugar de aplicación:  Zona Urbana Continental, Isla Mujeres</p>
+                            <h6> Encuesta sobre las principales características de población y migración en la zona urbana continental de Isla Mujeres. <br> El instrumento de consulta consta de 109 columnas, de las cuales 106 están relacionados a ítems, 2 son variables de geolocalización y una es un identificador único de control. <br> 
+                            <br>Dimensiones:<br> <ul><li>Datos familiares</li><li>Datos económicos </li><li>Identidad y Comunidad</li> <li> Vivienda </li><li>Apreciación de encuestador </li> <br><br></h6>
+                              <p><b>Créditos:</b>  Dra. Rosiluz Ceballos Povedano Representante del Cuerpo Académico de Negocios Internacionales<br><br></p>"),
+                      actionBttn(inputId = "popPyM", label = "Cuestionario", style = "fill", color = "danger", icon = icon("poll-h"), size = "sm")
               )),
               column(4,wellPanel(             
-                HTML(" <h2><b>Diagnóstico socio económico y ambiental.</b></h2><h3>  Salinas, Isla Mujeres.</h3><h4>Estudio enfocado en las colonias que colindan con las Salinas localizadas en el municipio de Isla Mujeres. <br> <br>Enfoque:<br> <ul><li>Economico</li><li>Social</li> <li>Ambiental</li> <br><br></h4>"),
-                actionBttn(inputId = "poSyA", label = "Cuestionario", style = "fill", color = "danger", icon = icon("poll-h"), size = "sm") 
+                    HTML(" <h3><b>Diagnóstico socioeconómico y ambiental Salinas de Isla Mujeres, Quintana Roo.</b></h3>
+                          <p>  Lugar de aplicación:  Salinas, Isla Mujeres.</p>
+                          <h6>Estudio enfocado en las colonias que colindan con las Salinas localizadas en el municipio de Isla Mujeres. <br><br>
+                         Tiene como objetivo: Describir las relaciones sociales entre los vecinos de las Salinas y los valores y tradiciones que los sustentan para calcular el potencial de agrupación comercial como característica para el comercio comunitario. 
+                          <br>Dimensiones:<br> <ul><li>Economico</li><li>Social</li> <li>Ambiental</li> <br><br></h6>
+                            <p><b>Créditos: </b> Rosiluz Ceballos-Povedano*, Enrique Corona-Sandoval **, Miguel Ángel Olivares-Urbina*** <br><br> </p>"),
+                    actionBttn(inputId = "poSyA", label = "Cuestionario", style = "fill", color = "danger", icon = icon("poll-h"), size = "sm") 
               )),
               column(4, wellPanel(
-                HTML(" <h2><b>Estudio de percepción de seguridad.</b></h2><h3>  Estado de Quintana Roo.</h3><h4> Estudio donde 16,671 encuestas válidas aplicadas en el Estado de Quintana Roo, donde 9,233 son en Benito Juárez/Puerto Morelos y 208 en Isla Mujeres(Isla y Zona Urbana Ejido)<br> <br>Enfoque:<br> <ul><li>Percepción de seguridad </li><br><br></h4>") ,
-                actionBttn(inputId = "popC", label = "Cuestionario", style = "fill", color = "danger", icon = icon("poll-h"), size = "sm") 
+                    HTML(" <h3><b>Estudio de Percepción de Seguridad.</b></h3>
+                          <p>  Lugar de aplicación: Estado de Quintana Roo.</p>
+                          <h6> Estudio donde 16,671 encuestas válidas aplicadas en el Estado de Quintana Roo, donde 8,458 son en Benito Juárez/Puerto Morelos y 243 en Isla Mujeres(Isla y Zona Urbana Ejido)<br> 
+                          <br>Tiene como objetivo obtener información que permita realizar estimaciones con representatividad a nivel nacional sobre la percepción de la población en tema de seguridad pública en su ciudad.
+                          <br>Dimensiones:<br> <ul><li>Social </li> <li>Situacional</li> <li>Impunidad autoridad</li>  <li>Eficacia Colectiva</li>  <br><br></h6>
+                          <p><b>Créditos:</b>  <br><br></p>"),
+                    actionBttn(inputId = "popC", label = "Cuestionario", style = "fill", color = "danger", icon = icon("poll-h"), size = "sm") 
                 
               )),     
             )
@@ -165,12 +182,7 @@ body <- dashboardBody(
               wellPanel(h1(textOutput("TipoestudioG"), align = "center")),    
               column(3, wellPanel(
                 selectInput(inputId='tipomapa', label = h3('Estudio:'),  choices = c("Percepcion de seguridad" = "PSQ", "Socioeconómico y ambiental" = "IS" ,"Población y migración" = "EJ"), selected = "IS"),
-               # selectInput(inputId='tipomapa', label = h3('Estudio:'),  choices = c( "Socioeconómico y ambiental" = "IS" , "Socioeconómico y ambiental" = "PS" ,"Población y migración" = "EJ"), selected = "EJ"),
-                  # conditionalPanel(
-                  #          condition = "input.tipomapa == 'PSQ'",
-                  #          selectInput(inputId='localizPS', label = h3('Ubicación:'),choices = c("Comparativa"= "PSVS", "Isla Mujeres"= "PSI", "Cancun"="PSC", "Ejido"="PSE"), selected = "PSI")
-                  # ),
-                selectInput(inputId='enfoque', label = h3('Enfoque:'), choices= c("Datos generales del encuestado" = "DG", "Datos familiares" = "DF","Datos económicos" = "DE", "Identidad y Comunidad" = "ID" , "Vivienda" = "VI", "Apreciación del encuestador" = "AE"), selected = "VI"), 
+                selectInput(inputId='enfoque', label = h3('Dimensión:'), choices= c("Datos generales del encuestado" = "DG", "Datos familiares" = "DF","Datos económicos" = "DE", "Identidad y Comunidad" = "ID" , "Vivienda" = "VI", "Apreciación del encuestador" = "AE"), selected = "VI"), 
                 selectInput(inputId='pregunta', label = h3('Graficas:'),choices = c("Situacion Vivienda" = "V1P1R1" , "Adquisicion Vivienda" = "V1P4R1"," Huracanes " = "V1H1", " Inundaciones " = "V1I1"), selected = "V1P1R1") 
                   
               )), 

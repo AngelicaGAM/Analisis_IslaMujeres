@@ -23,6 +23,7 @@ h1, .h2, .h3, h1, h2 {
   line-height: 1.5;
   color: #26415d;
 }
+
 h1, h1 {
   font-size: 36px;
 }
@@ -112,12 +113,27 @@ h1, h2, h4 { font-weight: 400; }
 }
 
 h3 {
-  font-size: 16px;
+  font-size: 21px;
   font-weight: 200 !important;
-  font-family: 'Source Sans Pro',sans-serif;
+ 
 
 }
 
 .selectize-input{
       padding: 4px 8px;
+}
+
+img {
+  margin-left: 73%;
+  vertical-align: middle;
+}
+
+.h6, h6 {
+  font-weight: 200;
+  font-size: 17.6px;
+}
+.bttn-fill.bttn-danger {
+  margin-left: 25%;
+  background: #3c8dbc!important;
+  color: #fff;
 }

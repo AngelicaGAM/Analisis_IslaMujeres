@@ -201,7 +201,7 @@ graficarTableGroup <- function(A1,  textX, textY, tituloGrifco){
       line = list(color = '#B0C4DE'),
       fill = list(color = '#4169E1'),
       align = c('left','center'),
-      font = list(color = 'white', size = 16)
+      font = list(color = 'white', size = 18)
     ),
     cells = list(
       values = rbind( dataT$RESPUESTA, dataT$total, paste(dataT$n,'%'), dataT$loc ),
@@ -210,9 +210,12 @@ graficarTableGroup <- function(A1,  textX, textY, tituloGrifco){
       fill = list(color = c( 'white','#6495ED')),
       align = c('left', 'center'),
       font = list(color = c('white','#696969'), size = 14)
-    ))
+    )
+    )
+
+
   
-  fig
+  fig 
 }
 
 graficarPlotS <- function(df,  textX, textY, tituloGrifco){

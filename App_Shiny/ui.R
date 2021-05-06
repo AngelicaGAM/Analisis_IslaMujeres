@@ -1,13 +1,10 @@
-
 library(shinydashboard)
 library(plotly)
 library(shiny)
 library(ggplot2)
 library(leaflet)
 library(RColorBrewer)
-
 library(DT)
-
 library(likert)
 library(plotrix)
 library(scales)
@@ -26,8 +23,6 @@ library(shinyWidgets)
 library(plyr)
 library(janitor)
 library(shiny)
-
-
 library(shinyBS)
 library(visNetwork)
 
@@ -37,19 +32,19 @@ library(visNetwork)
 
 # header
 header <- dashboardHeader( title=" Analisis Exploratorio Isla Mujeres ")
-varsx <- c("Origen", "Escolaridad", "Puesto","Trabajo")
-varsy <- c("Puesto","Trabajo","Ingreso_sem","Escolaridad")
-varsz <- c("Ninguno", "Edad", "Sexo")
+          varsx <- c("Origen", "Escolaridad", "Puesto","Trabajo")
+          varsy <- c("Puesto","Trabajo","Ingreso_sem","Escolaridad")
+          varsz <- c("Ninguno", "Edad", "Sexo")
 
 # sidebar
 sidebar <- dashboardSidebar(
   sidebarMenu(id="tabs",
               menuItem(text = "Inicio",  tabName = "inicio", icon = icon("home")),
-              menuItem(text = "Graficas", tabName = "graficas", icon = icon("chart-bar")), 
+              menuItem(text = "Gráficas", tabName = "graficas", icon = icon("chart-bar")), 
               menuItem(text = "Mosaicos",  tabName = "mosaics", icon = icon("th")),
                   conditionalPanel(
                     condition = "input.tabs == 'mosaics'",
-                    selectInput("estudio","Estudio:",choices=c("Población y migración", "Percepción de seguridad", "Salinas")),
+                    selectInput("estudio","Estudio:",choices=c("Población y Migración", "Percepción de Seguridad", "Salinas")),
                     ),
               menuItem(text = "Mapas",  tabName = "mapas", icon = icon("map-marker-alt")),
               menuItem(text = "Asociación",  tabName = "asociation", icon = icon("diagnoses")),
@@ -57,7 +52,7 @@ sidebar <- dashboardSidebar(
                           condition = "input.tabs == 'asociation'",
                                 br(),
                                 selectInput( "selec", "Seleccionar Repositorio:",
-                                      c("Percepción de Seguridad", "Características de población y migración"),
+                                      c("Percepción de Seguridad", "Características de Población y Migración"),
                                       selected = "Percepción de Seguridad" , multiple = FALSE, width = 310),
                           
                           conditionalPanel(
@@ -123,7 +118,7 @@ sidebar <- dashboardSidebar(
                   )
               
   )
-  , width = 310)
+  , width = 270)
 
 
 # body
@@ -181,18 +176,21 @@ body <- dashboardBody(
             fluidRow(
               wellPanel(h1(textOutput("TipoestudioG"), align = "center")),    
               column(3, wellPanel(
-                selectInput(inputId='tipomapa', label = h3('Estudio:'),  choices = c("Percepcion de seguridad" = "PSQ", "Socioeconómico y ambiental" = "IS" ,"Población y migración" = "EJ"), selected = "IS"),
-                selectInput(inputId='enfoque', label = h3('Dimensión:'), choices= c("Datos generales del encuestado" = "DG", "Datos familiares" = "DF","Datos económicos" = "DE", "Identidad y Comunidad" = "ID" , "Vivienda" = "VI", "Apreciación del encuestador" = "AE"), selected = "VI"), 
-                selectInput(inputId='pregunta', label = h3('Graficas:'),choices = c("Situacion Vivienda" = "V1P1R1" , "Adquisicion Vivienda" = "V1P4R1"," Huracanes " = "V1H1", " Inundaciones " = "V1I1"), selected = "V1P1R1") 
+                selectInput(inputId='tipomapa', label = h3('Estudio:'), 
+                        choices = c("Percepcion de seguridad" = "PSQ", "Socioeconómico y ambiental" = "IS" ,"Población y migración" = "EJ"), selected = "IS"),
+                selectInput(inputId='enfoque', label = h3('Dimensión:'),
+                        choices= c("Datos generales del encuestado" = "DG", "Datos familiares" = "DF","Datos económicos" = "DE", "Identidad y Comunidad" = "ID" , "Vivienda" = "VI", "Apreciación del encuestador" = "AE"), selected = "VI"), 
+                selectInput(inputId='pregunta', label = h3('Graficas:'),
+                        choices = c("Situacion Vivienda" = "V1P1R1" , "Adquisicion Vivienda" = "V1P4R1"," Huracanes " = "V1H1", " Inundaciones " = "V1I1"), selected = "V1P1R1") 
                   
               )), 
               
               column(width = 9,
-                     withSpinner(plotlyOutput("plot1"), type = 6)
-                     
-                     
+                     withSpinner(plotlyOutput("plot1"), type = 6)   
               ),
+              
               column(width = 12,br(),
+              h3(textOutput("noteGra"), style="color:#AB0707", align = "center"),
                      plotlyOutput("tableGraficas", height = 'auto', width = 'auto')
               )
               
@@ -208,12 +206,12 @@ body <- dashboardBody(
                 leafletOutput("mymap", height=600), 
                 #Panel movil
                 absolutePanel(id = "controls", class = "panel panel-default", 
-                              top = 75, right = 300, width = 400, fixed=TRUE, 
+                              top = 75, right = 300, width = 500, fixed=TRUE, 
                               draggable = TRUE, height = "auto",
                               h1("Analisis Exploratorio", style="color:#045a8d"),
                               h3(textOutput("Tipoestudio"), align = "right"),
                               h3(textOutput("zona"), align = "right"),
-                              selectInput(inputId='showmapa', label = h3('Estudio:'), choices = c("Percepcion de seguridad" = "PS", "Estudio Socioeconómico y ambiental" = "IS" ,"Población y migración" = "EJ")),
+                              selectInput(inputId='showmapa', label = h3('Estudio:'), choices = c("Percepcion de Seguridad" = "PS", "Estudio Socioeconómico y Ambiental" = "IS" ,"Población y Migración" = "EJ")),
                               plotOutput("plot3", height = 190, width = 330)                    
                 )),
             

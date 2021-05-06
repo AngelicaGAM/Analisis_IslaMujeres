@@ -679,6 +679,92 @@ server <- function(input, output, session) {
         )
       }
   })
+
+  output$noteGra <- renderText ({
+     if(input$pregunta=="PFAM01"
+     || input$pregunta== "GPSI1"
+     || input$pregunta== "GPSC1"
+     || input$pregunta== "GPSE1"
+     || input$pregunta== "GPSVS1"
+     
+     || input$pregunta== "GPSI2"
+     || input$pregunta== "GPSC2"
+     || input$pregunta== "GPSE2"
+     || input$pregunta== "GPSVS2"
+
+     || input$pregunta== "GPSI4"
+     || input$pregunta== "GPSC4"
+     || input$pregunta== "GPSE4"
+     || input$pregunta== "GPSVS4"
+
+     || input$pregunta== "GPSI5"
+     || input$pregunta== "GPSC5"
+     || input$pregunta== "GPSE5"
+     || input$pregunta== "GPSVS5"
+
+     || input$pregunta== "GPSI6"
+     || input$pregunta== "GPSC6"
+     || input$pregunta== "GPSE6"
+     || input$pregunta== "GPSVS6"
+
+     || input$pregunta== "GPSI10"
+     || input$pregunta== "GPSC10"
+     || input$pregunta== "GPSE10"
+     || input$pregunta== "GPSVS10"
+
+     || input$pregunta== "GPSI15"
+     || input$pregunta== "GPSC15"
+     || input$pregunta== "GPSE15"
+     || input$pregunta== "GPSVS15"
+    
+    || input$pregunta== "GPSI18"
+    || input$pregunta== "GPSC18"
+    || input$pregunta== "GPSE18"
+    || input$pregunta== "GPSVS18"
+
+    || input$pregunta== "GPSI19"
+    || input$pregunta== "GPSC19"
+    || input$pregunta== "GPSE19"
+    || input$pregunta== "GPSVS19"
+
+    || input$pregunta== "GPSI20"
+    || input$pregunta== "GPSC20"
+    || input$pregunta== "GPSE20"
+    || input$pregunta== "GPSVS20"
+
+     || input$pregunta== "GPSI21"
+     || input$pregunta== "GPSC21"
+     || input$pregunta== "GPSE21"
+     || input$pregunta== "GPSVS21"
+
+    || input$pregunta== "GPSI27"
+    || input$pregunta== "GPSC27"
+    || input$pregunta== "GPSE27"
+    || input$pregunta== "GPSVS27"
+
+     || input$pregunta== "GPSI28"
+     || input$pregunta== "GPSC28"
+     || input$pregunta== "GPSE28"
+     || input$pregunta== "GPSVS28"
+
+    || input$pregunta== "PPIyC1"
+    || input$pregunta== "PPIyC3"
+    || input$pregunta== "PPIyC6"
+
+     ){"Nota: Los valores porcentuales en está pregunta pueden variarar, dado que es una pregunta de opción multiple. "} 
+
+
+     else if (  input$pregunta== "GPSE11"   
+            ||  input$pregunta== "GPSI17" 
+              
+     
+     ){"Nota: Sin información "}
+            
+  })
+
+
+
+
   observeEvent(input$estudio,{
     if(input$estudio == "Salinas"){
       updateSelectInput(session, "var1",choices = c("Trabajo" = "tro","Actividad productiva","Uso salinas"))
@@ -1062,10 +1148,10 @@ server <- function(input, output, session) {
       else if(input$tipomapa=="IS"){ "Salinas, Isla Mujeres." }
       else if(input$tipomapa=="EJ"){ " Zona Urbana Isla Mujeres "}
   })
-  
+
   output$TipoestudioG <- renderText ({
       if(input$tipomapa=="PS"){ "Percepción sobre seguridad" }
-      else if(input$tipomapa=="IS"){ "Estudio Socioeconómico y ambiental" }
+      else if(input$tipomapa=="IS"){ "Estudio Socioeconómico y Ambiental" }
       else if(input$tipomapa=="EJ"){ "Características sobre población y migración"}
   })
   output$tipoestudio <- renderText({
@@ -1095,7 +1181,7 @@ server <- function(input, output, session) {
   output$Tipoestudio <- renderText ({
     if(input$showmapa=="ALL"){ "Estudios socioeconomicos, Percepción de seguridad y Características sobre población y migración. " }
     else if(input$showmapa=="PS"){ "Percepción sobre seguridad" }
-    else if(input$showmapa=="IS"){ "Estudio Socioeconómico y ambiental" }
+    else if(input$showmapa=="IS"){ "Estudio Socioeconómico y Ambiental" }
     else if(input$showmapa=="EJ"){ "Características sobre población y migración"}
   })
   

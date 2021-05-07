@@ -31,7 +31,7 @@ library(visNetwork)
 
 
 # header
-header <- dashboardHeader( title=" Analisis Exploratorio Isla Mujeres ")
+header <- dashboardHeader( title=" Análisis Exploratorio Isla Mujeres ")
           varsx <- c("Origen", "Escolaridad", "Puesto","Trabajo")
           varsy <- c("Puesto","Trabajo","Ingreso_sem","Escolaridad")
           varsz <- c("Ninguno", "Edad", "Sexo")
@@ -70,7 +70,7 @@ sidebar <- dashboardSidebar(
                                    "Ingreso.Sem"="DE05_ingreso_sem","Jefe.Escolaridad"="DE06_esc_jefe","Cuántos.Sin.Ingreso"="DE07_sIngreso","Tiempo.A.Trabajo"="DE08_tmp","Colonia.Trabajo"="DE09_col","Municipio.Trabajo"="DE10_mun", "Estado.Origen"="IyC02_Estado_Origen",
                                    "Tiempo.En.Isla"="IyC03_Tiempo","Motivo.Localidad.Parientes"="IyC04_Motivo_Localidad_Parientes","Motivo.Localidad.Amigos"="IyC04_Motivo_Localidad_Amigos","Motivo.Localidad.Trabajo"="IyC04_Motivo_Localidad_Trabajo","Motivo.Localidad.Negocio"="IyC04_Motivo_Localidad_Negocio",
                                    "Motivo.Localidad.Oportunidad"="IyC04_Motivo_Localidad_Oportunidad","Motivo.Localidad.Otro"="IyC04_Motivo_Localidad_Otro","Acudo.Vecinos"="IyC05_Acudo_Vecinos","Acudo.Familia"="IyC05_Acudo_Familia","Acudo.Autoridad"="IyC05_Acudo_Autoridad","Acudo.Iglesia"="IyC05_Acudo_Iglesia",	
-                                   "Acudo.Otro"="IyC05_Acudo_Otro","Religion"="IyC06_Religion",
+                                   "Acudo.Otro"="IyC05_Acudo_Otro","Religión"="IyC06_Religion",
                                    "Ventajas.Casa"="IyC08_Ventajas_Casa","Ventajas.Trabajo"="IyC08_Ventajas_Trabajo","Ventajas.Familia"="IyC08_Ventajas_Familia","Ventajas.Tiempo"="IyC08_Ventajas_Tiempo",
                                    
                                    "Ventajas.Tranquilo"="IyC08_Ventajas_Tranquilo","Ventajas.Seguro"="IyC08_Ventajas_Seguro","Ventajas.Otro"="IyC08_Ventajas_Otro","Emigrar"="IyC09_Emigrar","Pertenencia"="IyC10_Pertenencia","Frec.Visita.Cabecera_Isla"="IyC11_Frecuencia_Cabecera_Isla","Motivo.Viaja.Asuntos.Admin"="IyC12_Motivo_Viaja_Asuntos_Admin",
@@ -137,35 +137,38 @@ body <- dashboardBody(
                      )),    
              column(12,
                      br(),   
-                      infoBox("Población y migración",377 , icon=icon("user-alt"), color = "light-blue", fill = TRUE ),
-                      infoBox("Socieconimico y Ambiental",55, icon=icon("seedling"), color = "olive", fill = TRUE),
-                      infoBox("Percepcion de seguridad",8701, icon=icon("eye"),color = "orange", fill = TRUE), br(), br(), br(), br(),br(), br(), br(),       
+                      infoBox("Población y Migración",377 , icon=icon("user-alt"), color = "light-blue", fill = TRUE ),
+                      infoBox("Socioeconómico y Ambiental",55, icon=icon("seedling"), color = "olive", fill = TRUE),
+                      infoBox("Percepción de Seguridad",8701, icon=icon("eye"),color = "orange", fill = TRUE), br(), br(), br(), br(),br(), br(), br(),       
                ),
 
               column(4, wellPanel(
                       HTML(" <h3><b>Encuesta sobre las principales características de población y migración en la zona urbana continental de Isla Mujeres.</b></h3>  
                             <p> Lugar de aplicación:  Zona Urbana Continental, Isla Mujeres</p>
+                             <p><b>Año:  2020  </p> <br> </b>
                             <h6> Encuesta sobre las principales características de población y migración en la zona urbana continental de Isla Mujeres. <br> El instrumento de consulta consta de 109 columnas, de las cuales 106 están relacionados a ítems, 2 son variables de geolocalización y una es un identificador único de control. <br> 
                             <br>Dimensiones:<br> <ul><li>Datos familiares</li><li>Datos económicos </li><li>Identidad y Comunidad</li> <li> Vivienda </li><li>Apreciación de encuestador </li> <br><br></h6>
-                              <p><b>Créditos:</b>  Dra. Rosiluz Ceballos Povedano Representante del Cuerpo Académico de Negocios Internacionales<br><br></p>"),
+                             <p><b>Créditos:</b>  Dra. Rosiluz Ceballos Povedano Representante del Cuerpo Académico de Negocios Internacionales<br><br></p>"),
                       actionBttn(inputId = "popPyM", label = "Cuestionario", style = "fill", color = "danger", icon = icon("poll-h"), size = "sm")
               )),
               column(4,wellPanel(             
                     HTML(" <h3><b>Diagnóstico socioeconómico y ambiental Salinas de Isla Mujeres, Quintana Roo.</b></h3>
                           <p>  Lugar de aplicación:  Salinas, Isla Mujeres.</p>
+                          <p><b>Año:  2017 </p> <br> </b>
                           <h6>Estudio enfocado en las colonias que colindan con las Salinas localizadas en el municipio de Isla Mujeres. <br><br>
                          Tiene como objetivo: Describir las relaciones sociales entre los vecinos de las Salinas y los valores y tradiciones que los sustentan para calcular el potencial de agrupación comercial como característica para el comercio comunitario. 
                           <br>Dimensiones:<br> <ul><li>Economico</li><li>Social</li> <li>Ambiental</li> <br><br></h6>
-                            <p><b>Créditos: </b> Rosiluz Ceballos-Povedano*, Enrique Corona-Sandoval **, Miguel Ángel Olivares-Urbina*** <br><br> </p>"),
+                           <p><b>Créditos: </b> Rosiluz Ceballos-Povedano, Enrique Corona-Sandoval , Miguel Ángel Olivares-Urbina <br><br> </p>"),
                     actionBttn(inputId = "poSyA", label = "Cuestionario", style = "fill", color = "danger", icon = icon("poll-h"), size = "sm") 
               )),
               column(4, wellPanel(
                     HTML(" <h3><b>Estudio de Percepción de Seguridad.</b></h3>
+                          <p><b>Año: 2019- 2020  </p> <br> </b>
                           <p>  Lugar de aplicación: Estado de Quintana Roo.</p>
                           <h6> Estudio donde 16,671 encuestas válidas aplicadas en el Estado de Quintana Roo, donde 8,458 son en Benito Juárez/Puerto Morelos y 243 en Isla Mujeres(Isla y Zona Urbana Ejido)<br> 
                           <br>Tiene como objetivo obtener información que permita realizar estimaciones con representatividad a nivel nacional sobre la percepción de la población en tema de seguridad pública en su ciudad.
                           <br>Dimensiones:<br> <ul><li>Social </li> <li>Situacional</li> <li>Impunidad autoridad</li>  <li>Eficacia Colectiva</li>  <br><br></h6>
-                          <p><b>Créditos:</b>  <br><br></p>"),
+                          <p><b>Créditos:</b> Universidad del Caribe , Celina Izquierdo, Fernando Gómez, Jairo Ayala, David Flores Granados, Pilivet Aguilar y Cristine Mckoy  <br><br></p>"),
                     actionBttn(inputId = "popC", label = "Cuestionario", style = "fill", color = "danger", icon = icon("poll-h"), size = "sm") 
                 
               )),     
@@ -178,7 +181,7 @@ body <- dashboardBody(
               wellPanel(h1(textOutput("TipoestudioG"), align = "center")),    
               column(3, wellPanel(
                 selectInput(inputId='tipomapa', label = h3('Estudio:'), 
-                        choices = c("Percepcion de seguridad" = "PSQ", "Socioeconómico y ambiental" = "IS" ,"Población y migración" = "EJ"), selected = "IS"),
+                        choices = c("Percepción de seguridad" = "PSQ", "Socioeconómico y ambiental" = "IS" ,"Población y migración" = "EJ"), selected = "IS"),
                 selectInput(inputId='enfoque', label = h3('Dimensión:'),
                         choices= c("Datos generales del encuestado" = "DG", "Datos familiares" = "DF","Datos económicos" = "DE", "Identidad y Comunidad" = "ID" , "Vivienda" = "VI", "Apreciación del encuestador" = "AE"), selected = "VI"), 
                 selectInput(inputId='pregunta', label = h3('Graficas:'),
@@ -209,11 +212,11 @@ body <- dashboardBody(
                 absolutePanel(id = "controls", class = "panel panel-default", 
                               top = 75, right = 300, width = 500, fixed=TRUE, 
                               draggable = TRUE, height = "auto",
-                              h1("Analisis Exploratorio", style="color:#045a8d"),
+                              h1("Análisis Exploratorio", style="color:#045a8d"),
                               h3(textOutput("Tipoestudio"), align = "right"),
                               h3(textOutput("zona"), align = "right"),
                               selectInput(inputId='showmapa', label = h3('Estudio:'), choices = c("Percepcion de Seguridad" = "PS", "Estudio Socioeconómico y Ambiental" = "IS" ,"Población y Migración" = "EJ")),
-                              plotOutput("plot3", height = 190, width = 330)                    
+                              plotOutput("plot3", height = 310, width = 470)                    
                 )),
             
     ),

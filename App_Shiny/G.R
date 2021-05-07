@@ -5,24 +5,34 @@ library(shiny)
 d <- Ambiental_df[1:55,]
 # --------- VIVIENDA   V1 La vivienda es :  --------- 
 vi = columna[132:148]
+to = nrow(columna)
+total = c(A, B, C)
 A = sum(vi$VI01_Propia == 1)
 B = sum(vi$VI01_Renta == 1)
 C = sum(vi$VI01_Prestada == 1)
+total = c(A, B, C)
+A = as.integer((A/to)*100)
+B = as.integer((B/to)*100)
+C = as.integer((C/to)*100)
 n = c(A, B, C)
 RESPUESTA = c("Propia", "Renta", "Prestada")
-dataf <- data.frame(n,RESPUESTA)
+dataf <- data.frame(n,RESPUESTA, total)
 #1
 V1P1R1 = graficarPlot(dataf,"RESPUESTA", "Numero de personas", "1. La vivienda que habita tu familia es")
 T1P1R1 = graficarTable(dataf,"RESPUESTA", "Numero de personas", "1. La vivienda que habita tu familia es")
 
 #---------- VIVIENDA   Si es propia como fue adquirida V4 ---------- 
-
 A = sum(vi$VI04_Contado == 1)
 B = sum(vi$VI04_Herencia == 1)
 C = sum(vi$VI04_Mensual == 1)
+
+total = c(A, B, C)
+A = as.integer((A/to)*100)
+B = as.integer((B/to)*100)
+C = as.integer((C/to)*100)
 n = c(A, B, C)
 RESPUESTA = c("Pago de contado", "Herencia", "Pagos Mensuales")
-VI04 <- data.frame(n,RESPUESTA)
+VI04 <- data.frame(n,RESPUESTA,total)
 #3
 V1P2R1 = graficarPlot(VI04,"RESPUESTA", "Numero de personas", "2. En caso  de ser  propia, ¿De qué forma fue adquirida?  ")
 T1P2R1 = graficarTable(VI04,"RESPUESTA", "Numero de personas", "2. En caso  de ser  propia, ¿De qué forma fue adquirida?  ")
@@ -36,7 +46,7 @@ D = 356 #TV
 E = 356 #TELEFONO-CELULAR
 FF = 43 #AGUA
 
-to = A+B+C+D+E+FF
+
 total = c(A, B, C,D,E,FF)
 A = as.integer((A/to)*100)
 B = as.integer((B/to)*100)
@@ -49,7 +59,7 @@ n =  c(A, B, C,D,E,FF)
 
 
 RESPUESTA = c("INTERNET", "RECOLECCION-BASURA", "ELECTRICIDAD", "TV-PAGA", "TELEFONO-CELULAR", "AGUA")
-VI04 <- data.frame(n,RESPUESTA)
+VI04 <- data.frame(n,RESPUESTA,total)
 #3
 V1P3R1 = graficarPlot(VI04,"RESPUESTA", "Numero de personas", "3. ¿Con qué servicios cuenta su vivienda? ")
 T1P3R1 = graficarTable(VI04,"RESPUESTA", "Numero de personas", "3. ¿Con qué servicios cuenta su vivienda? ")
@@ -57,38 +67,51 @@ T1P3R1 = graficarTable(VI04,"RESPUESTA", "Numero de personas", "3. ¿Con qué se
 #CHECk
 
 # Inundacion 4
-VI51 = sum(df_fin$VI08NInundaciones == 1)
-VI50 = sum(df_fin$VI08NInundaciones == 0)
-n = c(VI51, VI50)
+A = sum(df_fin$VI08NInundaciones == 1)
+B = sum(df_fin$VI08NInundaciones == 0)
+total = c(A, B)
+A = as.integer((A/to)*100)
+B = as.integer((B/to)*100)
+n = c(A, B)
 RESPUESTA = c("Ha sufrido inundaciones en localidad", "No ha sufrido inundaciones en localidad")
-VI04 <- data.frame(n,RESPUESTA)
+VI04 <- data.frame(n,RESPUESTA, total)
 
 V1P4R1 = graficarPlot(VI04,"RESPUESTA", "Numero de personas", "4. ¿Cuántas inundaciones ha sufrido al vivir en esta localidad?")
 T1P4R1 = graficarTable(VI04,"RESPUESTA", "Numero de personas", "4. ¿Cuántas inundaciones ha sufrido al vivir en esta localidad?")
 
 # 5
-op1Ii = sum(df_fin$VI11AccionInundacion == "ME-AGRADA-EL-LUGAR")
-op1I2 = sum(df_fin$VI11AccionInundacion == "OTRO")
-op1I3 = sum(df_fin$VI11AccionInundacion == "NO-ACCESO-A-CREDITO")
-op1I4 = sum(df_fin$VI11AccionInundacion == "NO-ALTERNATIVA")
-op1I5 = sum(df_fin$VI11AccionInundacion == "TRABAJO-ESCUELA-CERCA")
+A = sum(df_fin$VI11AccionInundacion == "ME-AGRADA-EL-LUGAR")
+B = sum(df_fin$VI11AccionInundacion == "OTRO")
+C = sum(df_fin$VI11AccionInundacion == "NO-ACCESO-A-CREDITO")
+D = sum(df_fin$VI11AccionInundacion == "NO-ALTERNATIVA")
+E = sum(df_fin$VI11AccionInundacion == "TRABAJO-ESCUELA-CERCA")
 
 
-n = c(op1Ii,op1I2,op1I3,op1I4, op1I5)
+total = c(A, B, C,D,E)
+A = as.integer((A/to)*100)
+B = as.integer((B/to)*100)
+C = as.integer((C/to)*100)
+D = as.integer((D/to)*100)
+E = as.integer((E/to)*100) 
+n =  c(A, B, C,D,E)
+
 RESPUESTA1 = c("ME-AGRADA-EL-LUGAR","OTRO", "NO-ACCESO-A-CREDITO","NO-ALTERNATIVA","TRABAJO-ESCUELA-CERCA" )
 
-VI041 <- data.frame(n,RESPUESTA1)
+VI041 <- data.frame(n,RESPUESTA1, total)
 
 V1P5R1 = graficarPlot(VI041,"RESPUESTA", "Numero de personas", "5. A pesar de la inundación usted decidió quedarse a vivir aquí por: ")
 T1P5R1 = graficarTable(VI041,"RESPUESTA", "Numero de personas", "5. A pesar de la inundación usted decidió quedarse a vivir aquí por: ")
 
 
 #6
-VI51 = 39
-VI50 = 337
-n = c(VI51, VI50)
+A = 39
+B = 337
+total = c(A, B)
+A = as.integer((A/to)*100)
+B = as.integer((B/to)*100)
+n = c(A, B)
 RESPUESTA = c("SI", "NO")
-VI04 <- data.frame(n,RESPUESTA)
+VI04 <- data.frame(n,RESPUESTA, total)
 
 V1P6R1 = graficarPlot(VI04,"RESPUESTA", "Numero de personas", "6. ¿Sabe si su vivienda está en zona de riesgo?")
 T1P6R1 = graficarTable(VI04,"RESPUESTA", "Numero de personas", "6. ¿Sabe si su vivienda está en zona de riesgo?")
@@ -99,11 +122,14 @@ T1P6R1 = graficarTable(VI04,"RESPUESTA", "Numero de personas", "6. ¿Sabe si su 
 
 
 #6
-VI51 = 131
-VI50 = 245
-n = c(VI51, VI50)
+A = 131
+B = 245
+total = c(A, B)
+A = as.integer((A/to)*100)
+B = as.integer((B/to)*100)
+n = c(A, B)
 RESPUESTA = c("SI", "NO")
-VI04 <- data.frame(n,RESPUESTA)
+VI04 <- data.frame(n,RESPUESTA, total)
 
 V1P7R1 = graficarPlot(VI04,"RESPUESTA", "Numero de personas", "7. ¿Conoce los impactos o afectaciones que puede sufrir?")
 T1P7R1 = graficarTable(VI04,"RESPUESTA", "Numero de personas", "7. ¿Conoce los impactos o afectaciones que puede sufrir?")
@@ -135,7 +161,7 @@ H = as.integer((H/to)*100)
 n =  c(A, B, C,D,E,FF,H)
 
 RESPUESTA = c("ÁREAS VERDES", "CALLES PAVIMENTADAS", "BANQUETAS", "LUMINARIAS PUBLICAS","TRANSPORTE PUBLICO"	, "PATRULLAS VIGILANDO" , "LOTES BALDIOS")
-VI04 <- data.frame(n,RESPUESTA)
+VI04 <- data.frame(n,RESPUESTA, total)
 
 V1P8R1 = graficarPlot(VI04,"RESPUESTA", "Numero de personas", "8. FAVOR DE SEÑALAR LOS SIGUIENTES SERVICIOS OBSERVADOS ALREDEDOR DE LA VIVIENDA: ")
 T1P8R1 = graficarTable(VI04,"RESPUESTA", "Numero de personas", "8. FAVOR DE SEÑALAR LOS SIGUIENTES SERVICIOS OBSERVADOS ALREDEDOR DE LA VIVIENDA: ")
@@ -164,7 +190,7 @@ edades18 = edades1
     labs(
       y = "Quinquenios de edad",
       x = "Población",
-      title = "Pirámide de población total por sexo. ", 
+      title = "Edad de encuestados por sexo. ", 
       subtitle = "Zona continental, 2020")
  
  #----------------------------------------------------------------------
@@ -199,7 +225,7 @@ edadSalinas =   edadSf   %>% ggplot(
           labs(
             y = "Quinquenios de edad",
             x = "Población",
-            title = "Pirámide de población total por sexo.", 
+            title = "Edad de encuestados por sexo.", 
             subtitle = " Salinas, 2017")
 #edadSalinas
 
@@ -235,7 +261,7 @@ edadSalinas =   edadSf   %>% ggplot(
   labs(
     y = "Quinquenios de edad",
     x = "Población",
-    title = "Pirámide de población total por sexo.", 
+    title = "Edad de los encuestados.", 
     subtitle = " Salinas, 2017")
 #edadSalinas
 

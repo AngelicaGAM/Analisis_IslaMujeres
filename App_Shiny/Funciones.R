@@ -16,17 +16,17 @@ library(shiny)
   
 
   Isla$id <- 1
-  Isla$est <- 'Percepcion de seguridad'
+  Isla$est <- 'Percepción de seguridad'
   Isla$zona <- 'Isla Mujeres'
 
 
   #Datos mapas
   df_fin$id <- 2
-  df_fin$est <- 'Caracteristicas de poblacion y migracion'
+  df_fin$est <- 'Caracteristicas de poblacion y migración'
   df_fin$zona <- 'Zona continental, Isla Mujeres'
 
   percepcion$id <- 3
-  percepcion$est <- 'Percepcion de seguridad'
+  percepcion$est <- 'Percepción de seguridad'
   percepcion$zona <- 'Estado de Quintana Roo'
   
   

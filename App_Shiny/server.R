@@ -55,10 +55,10 @@ server <- function(input, output, session) {
     source("graficas.R")
     source("graficarSE.R")
     source("G.R")
-   source("PSCUN.r")
-   source("PSEjido.r")
-   source("PSIsla.r")
-   source("vsps.r")
+    source("PSCUN.r")
+    source("PSEjido.r")
+    source("PSIsla.r")
+    source("vsps.r")
   source("tablas.R")
   # ---------------------------------------------------------------------
   # HOME
@@ -750,6 +750,7 @@ server <- function(input, output, session) {
     || input$pregunta== "PPIyC1"
     || input$pregunta== "PPIyC3"
     || input$pregunta== "PPIyC6"
+    || input$pregunta== "V1P3R1"
 
      ){"Nota: Los valores porcentuales en está pregunta pueden variarar, dado que es una pregunta de opción multiple. "} 
 
@@ -4329,7 +4330,7 @@ server <- function(input, output, session) {
                           "DE08_tmp"="Tiempo.A.Trabajo","DE09_col"="Colonia.Trabajo","DE10_mun"="Municipio.Trabajo","IyC02_Estado_Origen"= "Estado.Origen",
                           "IyC03_Tiempo"="Tiempo.En.Isla","IyC04_Motivo_Localidad_Parientes"="Motivo.Localidad.Parientes","IyC04_Motivo_Localidad_Amigos"="Motivo.Localidad.Amigos","IyC04_Motivo_Localidad_Trabajo"="Motivo.Localidad.Trabajo","IyC04_Motivo_Localidad_Negocio"="Motivo.Localidad.Negocio",
                           "IyC04_Motivo_Localidad_Oportunidad"="Motivo.Localidad.Oportunidad","IyC04_Motivo_Localidad_Otro"="Motivo.Localidad.Otro","IyC05_Acudo_Vecinos"="Acudo.Vecinos","IyC05_Acudo_Familia"="Acudo.Familia","IyC05_Acudo_Autoridad"="Acudo.Autoridad","IyC05_Acudo_Iglesia"="Acudo.Iglesia",
-                          "IyC05_Acudo_Otro"="Acudo.Otro","IyC06_Religion"="Religion",
+                          "IyC05_Acudo_Otro"="Acudo.Otro","IyC06_Religion"="Religión",
                           "IyC08_Ventajas_Casa"="Ventajas.Casa","IyC08_Ventajas_Trabajo"="Ventajas.Trabajo","IyC08_Ventajas_Familia"="Ventajas.Familia","IyC08_Ventajas_Tiempo"="Ventajas.Tiempo",
                           # 
                           "IyC08_Ventajas_Tranquilo"="Ventajas.Tranquilo","IyC08_Ventajas_Seguro"="Ventajas.Seguro","IyC08_Ventajas_Otro"="Ventajas.Otro","IyC09_Emigrar"="Emigrar","IyC10_Pertenencia"="Pertenencia","IyC11_Frecuencia_Cabecera_Isla"="Frec.Visita.Cabecera_Isla","IyC12_Motivo_Viaja_Asuntos_Admin"="Motivo.Viaja.Asuntos.Admin",
@@ -4381,7 +4382,7 @@ server <- function(input, output, session) {
                   "DE08_tmp"="Tiempo.A.Trabajo","DE09_col"="Colonia.Trabajo","DE10_mun"="Municipio.Trabajo","IyC02_Estado_Origen"= "Estado.Origen",
                   "IyC03_Tiempo"="Tiempo.En.Isla","IyC04_Motivo_Localidad_Parientes"="Motivo.Localidad.Parientes","IyC04_Motivo_Localidad_Amigos"="Motivo.Localidad.Amigos","IyC04_Motivo_Localidad_Trabajo"="Motivo.Localidad.Trabajo","IyC04_Motivo_Localidad_Negocio"="Motivo.Localidad.Negocio",
                   "IyC04_Motivo_Localidad_Oportunidad"="Motivo.Localidad.Oportunidad","IyC04_Motivo_Localidad_Otro"="Motivo.Localidad.Otro","IyC05_Acudo_Vecinos"="Acudo.Vecinos","IyC05_Acudo_Familia"="Acudo.Familia","IyC05_Acudo_Autoridad"="Acudo.Autoridad","IyC05_Acudo_Iglesia"="Acudo.Iglesia",
-                  "IyC05_Acudo_Otro"="Acudo.Otro","IyC06_Religion"="Religion",
+                  "IyC05_Acudo_Otro"="Acudo.Otro","IyC06_Religion"="Religión",
                   "IyC08_Ventajas_Casa"="Ventajas.Casa","IyC08_Ventajas_Trabajo"="Ventajas.Trabajo","IyC08_Ventajas_Familia"="Ventajas.Familia","IyC08_Ventajas_Tiempo"="Ventajas.Tiempo",
                   "IyC08_Ventajas_Tranquilo"="Ventajas.Tranquilo","IyC08_Ventajas_Seguro"="Ventajas.Seguro","IyC08_Ventajas_Otro"="Ventajas.Otro","IyC09_Emigrar"="Emigrar","IyC10_Pertenencia"="Pertenencia","IyC11_Frecuencia_Cabecera_Isla"="Frec.Visita.Cabecera_Isla","IyC12_Motivo_Viaja_Asuntos_Admin"="Motivo.Viaja.Asuntos.Admin",
                   "IyC12_Motivo_Viaja_Pago_FALTA_DE_SERVICIOS"="Motivo.Viaja.Pago.Servicio","IyC12_Motivo_Viaja_Trabajo"="Motivo.Viaja.Trabajo","IyC12_Motivio_Viaja_Recreacion"="Motivio.Viaja.Recreación","IyC12_Motivo_Viaja_Familia"="Motivo.Viaja.Familia","IyC12_Motivo_Viaja_Otro"="Motivo.Viaja.Otro",
@@ -5717,7 +5718,7 @@ server <- function(input, output, session) {
   secc2(Text, showvar, selec) } })
   
   output$rows63 <- renderUI({ if(input$selec == "Características de población y migración"){ Text <- "IyC06_Religion"
-  tex <- "Religion"
+  tex <- "Religión"
   showvar <- input$show_vars
   selec <- input$selec
   secc(Text, showvar, selec, tex)}else{Text <- "Hay.Parque.Utilizado.Por.Adultos"

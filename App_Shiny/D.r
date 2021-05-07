@@ -35,7 +35,7 @@ library(shinycssloaders)
                                                 br(),
                                                 infoBox("Población y migración",108 , icon=icon("user-alt"), color = "light-blue", fill = TRUE),
                                                 infoBox("Socieconimico y Ambiental",55, icon=icon("seedling"), color = "olive", fill = TRUE),
-                                                infoBox("Percepcion de seguridad",376, icon=icon("eye"),color = "aqua", fill = TRUE)              
+                                                infoBox("Percepción de seguridad",376, icon=icon("eye"),color = "aqua", fill = TRUE)              
                                         ),
                                         br(), br(), br(), br(),br(), br(), br(),br(), br(), br(), br(),br(), br(), br(),
                                          column(12,
@@ -83,7 +83,7 @@ library(shinycssloaders)
                                 absolutePanel(id = "controls", class = "panel panel-default", 
                                         top = 75, right = 300, width = 400, fixed=TRUE, 
                                         draggable = TRUE, height = "auto",
-                                        h1("Analisis Exploratorio", style="color:#045a8d"),
+                                        h1("Análisis Exploratorio", style="color:#045a8d"),
                                         h3(textOutput("Tipoestudio"), align = "right"),
                                         h3(textOutput("zona"), align = "right"),
                                         selectInput(inputId='showmapa', label = h3('Estudio:'), choices = c("Todos" = "ALL" ,"Percepcion de seguridad" = "PS", "Estudio Socioeconómico y ambiental" = "IS" ,"Población y migración" = "EJ")),
